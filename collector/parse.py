@@ -1,12 +1,10 @@
-"""Read links and scoreboards out of Global Sports Archive pages.
+"""Read the site's daily match list and its match-report scoreboards.
 
-Links are found by address pattern anywhere in the page source, so they are
-picked up whether they sit in a menu, a drop-down or a script. The scoreboard
-reader follows the layout the original ACB prototype was proven against.
+Both readers were checked against pages saved from the live site
+(see probe/).
 """
 from __future__ import annotations
 
-import json
 import re
 
 from lxml import html
@@ -14,101 +12,89 @@ from lxml import html
 _SEG = r"""[^/"'\s<>\\?#]+"""
 COMP_RE = re.compile(rf"/competition/basketball/({_SEG})/({_SEG})/(\d+)/?")
 MATCH_RE = re.compile(rf"/match/basketball/(\d{{4}}-\d{{2}}-\d{{2}})/({_SEG})/(\d+)/?")
-LISTING_RE = re.compile(r"""/competitions/basketball/[^"'\s<>\\?#]*""")
-SLUG_SEASON_RE = re.compile(r"^(.*?)-(\d{4})(?:-(\d{4}))?$")
+SEASON_IN_TITLE_RE = re.compile(r"\b((?:19|20)\d{2})(?:/((?:19|20)\d{2}))?\b")
+SLUG_SEASON_RE = re.compile(r"^(.*?)-((?:19|20)\d{2})(?:-((?:19|20)\d{2}))?(?:-.*)?$")
 QUARTER_LABEL_RE = re.compile(r"^(?:Q[1-4]|[1-4]Q|[1-4])$", re.I)
+SCORE_RE = re.compile(r"^(\d+)\s*:\s*(\d+)$")
+TEAM_LINK_RE = re.compile(r"gotoUrl\((\d+)\s*,\s*['\"]([^'\"]*)")
 TITLE_RE = re.compile(r"Match Report of (.*?) vs (.*?) - \d{4}-\d{2}-\d{2}")
 
 
-def _clean(text):
-    return text.replace("\\/", "/")
+def _text(node):
+    return " ".join(node.text_content().split())
 
 
-def split_slug(slug):
-    """'liga-endesa-2025-2026' -> ('liga-endesa', '2025/2026'); 'wnba-2025' -> ('wnba', '2025')."""
-    m = SLUG_SEASON_RE.match(slug)
-    if not m:
-        return slug, ""
-    name, first, second = m.group(1), m.group(2), m.group(3)
-    if second is None:
-        return name, first
-    if int(second) == int(first) + 1:
-        return name, f"{first}/{second}"
-    return f"{name}-{first}", second
+def split_title(title, slug=""):
+    """'NBA 2026/2027' -> ('NBA', '2026/2027'); 'Liga UNO 2026' -> ('Liga UNO', '2026').
+
+    Falls back to the address name ('liga-endesa-2025-2026') when the title
+    carries no year. Returns an empty season if neither does.
+    """
+    found = list(SEASON_IN_TITLE_RE.finditer(title or ""))
+    if found:
+        m = found[-1]
+        season = f"{m.group(1)}/{m.group(2)}" if m.group(2) else m.group(1)
+        return (title[:m.start()].strip(" -") or title.strip()), season
+    m = SLUG_SEASON_RE.match(slug or "")
+    if m:
+        first, second = m.group(2), m.group(3)
+        season = f"{first}/{second}" if second and int(second) == int(first) + 1 else (second or first)
+        return (title or m.group(1).replace("-", " ").title()).strip(), season
+    return (title or slug.replace("-", " ").title()).strip(), ""
 
 
-def competition_links(text):
-    """Every competition stage link in the page, one per round ID."""
-    found = {}
-    for m in COMP_RE.finditer(_clean(text)):
-        slug, stage, round_id = m.group(1), m.group(2), m.group(3)
-        if round_id in found:
+def parse_daily(text):
+    """Every game in one day's match list, with the competition it sits under.
+
+    Each item: game_id, date, url, comp_id, competition title, address name,
+    stage, round_id, list status (Played, Postponed, Fixture, ...), kickoff,
+    team names and IDs, and the final score shown in the list.
+    """
+    doc = html.fromstring(text)
+    games, current = [], None
+    for a in doc.iter("a"):
+        href = a.get("href") or ""
+        m = MATCH_RE.search(href)
+        if m and "gsa-match-link" in (a.get("class") or ""):
+            comp_id = re.search(r"(?:^|\s)c(\d+)(?:\s|$)", a.get("class") or "")
+            box = a.find(".//div")
+            status = ((box.get("class") or "").split() or [""])[0] if box is not None else ""
+            item = {"game_id": m.group(3), "date": m.group(1),
+                    "url": f"/match/basketball/{m.group(1)}/{m.group(2)}/{m.group(3)}/",
+                    "comp_id": comp_id.group(1) if comp_id else "", "list_status": status,
+                    "kickoff": "", "list_home": "", "list_away": ""}
+            item.update(current or {"title": "", "slug": "", "stage": "", "round_id": "", "comp_url": ""})
+            times = a.xpath('.//span[contains(@class,"kickoff_time")]')
+            if times:
+                item["kickoff"] = _text(times[0])
+            for side, key in (("a", "home"), ("b", "away")):
+                spans = a.xpath(f'.//span[contains(@class,"team_{side}_name")]')
+                name, team_id = "", ""
+                if spans:
+                    full = spans[0].xpath('.//span[contains(@class,"team_full")]')
+                    name = _text(full[0] if full else spans[0])
+                    link = TEAM_LINK_RE.search(spans[0].get("onclick") or "")
+                    team_id = link.group(1) if link else ""
+                item[f"{key}_team"], item[f"{key}_team_id"] = name, team_id
+            for span in a.xpath('.//span[contains(@class,"match_score")]'):
+                if "match_stat_con" in (span.get("class") or ""):
+                    continue
+                score = SCORE_RE.match(_text(span))
+                if score:
+                    item["list_home"], item["list_away"] = score.group(1), score.group(2)
+                break
+            games.append(item)
             continue
-        competition, season = split_slug(slug)
-        found[round_id] = {
-            "competition": competition, "season": season, "slug": slug, "stage": stage,
-            "round_id": round_id, "path": f"/competition/basketball/{slug}/{stage}/{round_id}/",
-        }
-    return list(found.values())
-
-
-def match_links(text):
-    """Every match link in the page, one per game ID."""
-    found = {}
-    for m in MATCH_RE.finditer(_clean(text)):
-        date, slug, game_id = m.group(1), m.group(2), m.group(3)
-        found.setdefault(game_id, {
-            "game_id": game_id, "date": date,
-            "path": f"/match/basketball/{date}/{slug}/{game_id}/",
-        })
-    return list(found.values())
-
-
-def listing_links(text):
-    """Links to basketball competition-list pages (the index and any sub-lists)."""
-    seen = []
-    for m in LISTING_RE.finditer(_clean(text)):
-        path = m.group(0)
-        if not path.endswith("/"):
-            path += "/"
-        if path not in seen:
-            seen.append(path)
-    return seen
-
-
-def listing_area(path):
-    """Best-effort area name from a listing address such as /competitions/basketball/spain/."""
-    parts = [p for p in path.split("/") if p][2:]
-    for part in parts:
-        if re.search(r"[a-zA-Z]", part):
-            return part.replace("-", " ").title()
-    return ""
-
-
-def ajax_html(text):
-    """The schedule widget answers with JSON holding an HTML fragment."""
-    try:
-        payload = json.loads(text)
-    except ValueError:
-        return text
-    if isinstance(payload, dict) and isinstance(payload.get("result"), str):
-        return payload["result"]
-    return text
-
-
-def max_week(text):
-    """Number of rounds (or pages) the schedule widget offers; 0 if none."""
-    values = []
-    try:
-        doc = html.fromstring(text)
-        values = doc.xpath('//input[@id="maxweek"]/@value')
-    except Exception:
-        pass
-    if not values:
-        values = re.findall(r"""id=["']maxweek["'][^>]*?value=["'](\d+)""", text)
-        values += re.findall(r"""value=["'](\d+)["'][^>]*?id=["']maxweek["']""", text)
-    numbers = [int(v) for v in values if str(v).strip().isdigit()]
-    return max(numbers) if numbers else 0
+        c = COMP_RE.search(href)
+        if c:
+            path = f"/competition/basketball/{c.group(1)}/{c.group(2)}/{c.group(3)}/"
+            if current is None or current["comp_url"] != path:
+                current = {"title": "", "slug": c.group(1), "stage": c.group(2),
+                           "round_id": c.group(3), "comp_url": path}
+            label = _text(a)
+            if label:
+                current["title"] = label
+    return games
 
 
 def page_title(text):
@@ -131,13 +117,24 @@ def parse_scoreboard(text):
       no_scoreboard  the page has no period scoreboard
       incomplete     a scoreboard exists but a quarter or total is blank
       other_periods  the game is not scored in four quarters (e.g. halves)
+    'label' is the scoreboard's own status text, normally 'Final'.
     """
     doc = html.fromstring(text)
     cells = doc.xpath('//div[contains(concat(" ", normalize-space(@class), " "), " bas_scores ")]')
-    values = [" ".join(c.text_content().split()) for c in cells]
-    home_team, away_team, home_id, away_id = _teams(doc, cells)
-    out = {"status": "no_scoreboard", "detail": "", "home_team": home_team, "away_team": away_team,
-           "home_team_id": home_id, "away_team_id": away_id}
+    values = [_text(c) for c in cells]
+    rows = []
+    for cell in cells:
+        parent = cell.getparent()
+        if parent is not None and not any(parent is r for r in rows):
+            rows.append(parent)
+    home_team, away_team = _board_teams(doc, rows)
+    label = ""
+    if rows:
+        first = rows[0].find("./div")
+        if first is not None and "bas_scores" not in (first.get("class") or ""):
+            label = _text(first)
+    out = {"status": "no_scoreboard", "detail": "", "label": label,
+           "home_team": home_team, "away_team": away_team}
     if "TOT" not in values:
         return out
     width = values.index("TOT") + 1
@@ -163,30 +160,16 @@ def parse_scoreboard(text):
             "home_final": home[-1], "away_final": away[-1]}
 
 
-def _teams(doc, cells):
-    """Team names from the page title, falling back to the scoreboard rows."""
-    rows = []
-    for cell in cells:
-        parent = cell.getparent()
-        if parent is not None and not any(parent is r for r in rows):
-            rows.append(parent)
-    names, ids = [], []
+def _board_teams(doc, rows):
+    """Team names from the scoreboard rows, falling back to the page title."""
+    names = []
     for row in rows[1:3]:
-        spans = row.xpath('.//span[contains(@class,"team_full") or contains(@class,"team_name")]')
-        if spans:
-            names.append(" ".join(spans[0].text_content().split()))
-        else:
-            clone = html.fromstring(html.tostring(row))
-            for node in clone.xpath('.//*[contains(@class,"bas_scores")]'):
-                node.drop_tree()
-            names.append(" ".join(clone.text_content().split()))
-        onclick = " ".join(row.xpath(".//@onclick"))
-        found = re.findall(r"(?:gotoUrl|gotoTeam)\((\d+)", onclick)
-        ids.append(found[0] if found else "")
+        spans = row.xpath('.//span[contains(@class,"full_name")]')
+        names.append(_text(spans[0]) if spans else "")
     names += ["", ""]
-    ids += ["", ""]
-    title = doc.xpath("string(//title)")
-    m = TITLE_RE.search(title or "")
+    if names[0] and names[1]:
+        return names[0], names[1]
+    m = TITLE_RE.search(doc.xpath("string(//title)") or "")
     if m:
-        return m.group(1).strip(), m.group(2).strip(), ids[0], ids[1]
-    return names[0], names[1], ids[0], ids[1]
+        return names[0] or m.group(1).strip(), names[1] or m.group(2).strip()
+    return names[0], names[1]

@@ -9,7 +9,7 @@ on:
         description: What to run
         type: choice
         default: update
-        options: [update, probe, discover, harvest]
+        options: [update, discover, harvest, probe]
       max_minutes:
         description: Stop cleanly after this many minutes
         default: "240"

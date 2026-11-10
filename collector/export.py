@@ -8,12 +8,12 @@ from pathlib import Path
 from . import store as st
 from .validate import EXCEPTION_FIELDS
 
-QUARTER_FIELDS = ["game_id", "date", "competition", "competition_name", "area", "season", "stage",
+QUARTER_FIELDS = ["game_id", "date", "comp_id", "competition", "season", "stage",
                   "home_team", "away_team", "quarter", "home_points", "away_points", "total_points",
                   "home_margin", "quarter_result", "check"]
 NUMERIC = {"home_q1", "away_q1", "home_q2", "away_q2", "home_q3", "away_q3", "home_q4", "away_q4",
-           "overtime_periods", "home_ot", "away_ot", "home_final", "away_final", "week",
-           "games_listed", "games_collected"}
+           "overtime_periods", "home_ot", "away_ot", "home_final", "away_final",
+           "games_listed", "games_played", "games_collected"}
 CHUNK_ROWS = 5000
 
 
@@ -26,16 +26,23 @@ def quarter_rows(game):
                "quarter_result": "Home" if home > away else "Away" if away > home else "Tie"}
 
 
-def write_quarters(store, root, log=print):
-    """exports/quarters_<season>.csv: four rows per game."""
+def games_by_season(store):
+    """{season label: games sorted by date}, newest season first."""
+    seasons = {}
+    for game in store.games.values():
+        seasons.setdefault(game["season"], []).append(game)
+    return {label: sorted(seasons[label], key=st.by_date) for label in sorted(seasons, reverse=True)}
+
+
+def write_csv_exports(store, root, log=print):
+    """exports/games_<season>.csv (one row per game) and quarters_<season>.csv (four rows per game)."""
     folder = Path(root) / "exports"
-    for name in store.season_names():
-        games = sorted(store.season(name).games.values(), key=lambda g: (g["date"], g["game_id"].zfill(12)))
-        if not games:
-            continue
+    for label, games in games_by_season(store).items():
+        name = label.replace("/", "-")
+        st.write_csv(folder / f"games_{name}.csv", st.GAME_FIELDS, games)
         rows = [row for game in games for row in quarter_rows(game)]
         st.write_csv(folder / f"quarters_{name}.csv", QUARTER_FIELDS, rows)
-        log(f"exports/quarters_{name}.csv: {len(rows)} rows")
+        log(f"exports/games_{name}.csv: {len(games)} games; quarters_{name}.csv: {len(rows)} rows")
 
 
 # -------------------------------------------------------------- Google Sheets
@@ -52,12 +59,9 @@ def table(fields, rows):
 
 def sheet_tabs(store):
     """(tab name, table) pairs, newest season first."""
-    tabs = []
-    for name in sorted(store.season_names(), reverse=True):
-        games = sorted(store.season(name).games.values(), key=lambda g: (g["date"], g["game_id"].zfill(12)))
-        if games:
-            tabs.append((f"Games {name}", table(st.GAME_FIELDS, games)))
-    leagues = sorted(store.leagues.values(), key=lambda r: (r["competition"], r["season"]))
+    tabs = [(f"Games {label.replace('/', '-')}", table(st.GAME_FIELDS, games))
+            for label, games in games_by_season(store).items()]
+    leagues = sorted(store.leagues.values(), key=lambda r: (r["name"].lower(), r["season"]))
     tabs.append(("Leagues", table(st.LEAGUE_FIELDS, leagues)))
     exceptions = st.read_csv(store.dir / "exceptions.csv", EXCEPTION_FIELDS)
     tabs.append(("Exceptions", table(EXCEPTION_FIELDS, exceptions)))

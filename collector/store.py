@@ -1,13 +1,13 @@
 """The collector's records: plain CSV files under data/.
 
-  data/competitions.csv              every basketball competition found
-  data/leagues.csv                   one row per competition and season
-  data/seasons/<season>/rounds.csv   schedule pages read, and when
-  data/seasons/<season>/schedule.csv every game listed, with its status
-  data/seasons/<season>/games.csv    one row per collected game
+  data/leagues.csv            one row per competition and season
+  data/days.csv               which dates' match lists have been read
+  data/schedule/YYYY-MM.csv   every game listed, with its collection status
+  data/games/YYYY-MM.csv      one row per game with quarter scores
 
-Files are written whole and swapped into place, so an interrupted run never
-leaves a half-written file.
+Games are filed by month so that finished months stop changing. Files are
+written whole and swapped into place, so an interrupted run never leaves a
+half-written file.
 """
 from __future__ import annotations
 
@@ -16,22 +16,26 @@ import datetime
 import os
 from pathlib import Path
 
-COMPETITION_FIELDS = ["competition", "name", "area", "url", "seasons_seen", "last_checked"]
-LEAGUE_FIELDS = ["competition", "season", "name", "area", "url", "has_quarters", "include",
-                 "sampled", "games_listed", "games_collected", "last_harvested", "closed", "note"]
-ROUND_FIELDS = ["competition", "stage", "round_id", "week", "listed", "last_fetched"]
-SCHEDULE_FIELDS = ["game_id", "date", "competition", "stage", "round_id", "week", "url",
-                   "status", "attempts", "last_try", "detail"]
-GAME_FIELDS = ["game_id", "date", "competition", "competition_name", "area", "season", "stage", "week",
+LEAGUE_FIELDS = ["comp_id", "season", "name", "has_quarters", "include", "games_listed", "games_played",
+                 "games_collected", "first_date", "last_date", "sampled", "note", "title", "url"]
+DAY_FIELDS = ["date", "fetched", "games", "open"]
+SCHEDULE_FIELDS = ["game_id", "date", "kickoff", "comp_id", "season", "stage", "round_id", "url",
+                   "list_status", "home_team", "away_team", "home_team_id", "away_team_id",
+                   "list_home", "list_away", "status", "attempts", "last_try", "detail"]
+GAME_FIELDS = ["game_id", "date", "kickoff", "comp_id", "competition", "season", "stage",
                "home_team", "away_team", "home_team_id", "away_team_id",
                "home_q1", "away_q1", "home_q2", "away_q2", "home_q3", "away_q3", "home_q4", "away_q4",
                "overtime_periods", "home_ot", "away_ot", "ot_detail",
-               "home_final", "away_final", "winner", "check", "source_url", "retrieved"]
+               "home_final", "away_final", "winner", "result_note", "check", "source_url", "retrieved"]
 
-# Schedule statuses.
+# Collection statuses for a listed game.
 PENDING, DONE, NO_SCOREBOARD, OTHER_PERIODS, ERROR, GAVE_UP = (
     "pending", "done", "no_scoreboard", "other_periods", "error", "gave_up")
 OPEN_STATUSES = (PENDING, NO_SCOREBOARD, ERROR)
+# The site's own word for a game that has been played.
+PLAYED = "Played"
+# List statuses that will not change any more.
+SETTLED_LIST = (PLAYED, "Postponed", "Cancelled", "Awarded", "Retired", "Abandoned")
 
 
 def now_utc():
@@ -59,7 +63,7 @@ def hours_since(text):
 
 def to_date(text):
     try:
-        return datetime.date.fromisoformat(text)
+        return datetime.date.fromisoformat(str(text))
     except (TypeError, ValueError):
         return None
 
@@ -81,63 +85,48 @@ def write_csv(path, fields, rows):
     os.replace(tmp, path)
 
 
-def _week_number(row):
-    return int(row["week"]) if str(row["week"]).isdigit() else 0
-
-
-class Season:
-    """Rounds, schedule and games for one season label."""
-
-    def __init__(self, folder):
-        self.folder = folder
-        self.rounds = {(r["competition"], r["round_id"], r["week"]): r
-                       for r in read_csv(folder / "rounds.csv", ROUND_FIELDS)}
-        self.schedule = {r["game_id"]: r for r in read_csv(folder / "schedule.csv", SCHEDULE_FIELDS)}
-        self.games = {r["game_id"]: r for r in read_csv(folder / "games.csv", GAME_FIELDS)}
-        self.dirty = False
-
-    def save(self):
-        if not self.dirty:
-            return
-        write_csv(self.folder / "rounds.csv", ROUND_FIELDS, sorted(
-            self.rounds.values(), key=lambda r: (r["competition"], r["stage"], r["round_id"], _week_number(r))))
-        by_date = lambda r: (r["date"], r["game_id"].zfill(12))
-        write_csv(self.folder / "schedule.csv", SCHEDULE_FIELDS, sorted(self.schedule.values(), key=by_date))
-        write_csv(self.folder / "games.csv", GAME_FIELDS, sorted(self.games.values(), key=by_date))
-        self.dirty = False
+def by_date(row):
+    return (row["date"], row["game_id"].zfill(12))
 
 
 class Store:
     def __init__(self, root):
         self.dir = Path(root) / "data"
-        self.competitions = {}
-        self.leagues = {}
-        self._seasons = {}
+        self.leagues = {}        # (comp_id, season) -> row
+        self.days = {}           # date -> row
+        self.schedule = {}       # game_id -> row
+        self.games = {}          # game_id -> row
+        self._dirty = {"schedule": set(), "games": set()}
 
     def load(self):
-        self.competitions = {r["competition"]: r
-                             for r in read_csv(self.dir / "competitions.csv", COMPETITION_FIELDS)}
-        self.leagues = {(r["competition"], r["season"]): r
-                        for r in read_csv(self.dir / "leagues.csv", LEAGUE_FIELDS)}
-        seasons_dir = self.dir / "seasons"
-        if seasons_dir.exists():
-            for folder in sorted(p for p in seasons_dir.iterdir() if p.is_dir()):
-                self._seasons[folder.name] = Season(folder)
+        self.leagues = {(r["comp_id"], r["season"]): r for r in read_csv(self.dir / "leagues.csv", LEAGUE_FIELDS)}
+        self.days = {r["date"]: r for r in read_csv(self.dir / "days.csv", DAY_FIELDS)}
+        for kind, fields, target in (("schedule", SCHEDULE_FIELDS, self.schedule),
+                                     ("games", GAME_FIELDS, self.games)):
+            folder = self.dir / kind
+            if folder.exists():
+                for file in sorted(folder.glob("*.csv")):
+                    for row in read_csv(file, fields):
+                        target[row["game_id"]] = row
         return self
 
-    def season(self, label):
-        name = label.replace("/", "-")
-        if name not in self._seasons:
-            self._seasons[name] = Season(self.dir / "seasons" / name)
-        return self._seasons[name]
-
-    def season_names(self):
-        return sorted(self._seasons)
+    def touch(self, kind, date):
+        """Note that a month's file needs rewriting."""
+        self._dirty[kind].add(str(date)[:7])
 
     def save(self):
-        write_csv(self.dir / "competitions.csv", COMPETITION_FIELDS,
-                  sorted(self.competitions.values(), key=lambda r: r["competition"]))
         write_csv(self.dir / "leagues.csv", LEAGUE_FIELDS,
-                  sorted(self.leagues.values(), key=lambda r: (r["competition"], r["season"])))
-        for season in self._seasons.values():
-            season.save()
+                  sorted(self.leagues.values(), key=lambda r: (r["name"].lower(), r["season"], r["comp_id"])))
+        write_csv(self.dir / "days.csv", DAY_FIELDS, sorted(self.days.values(), key=lambda r: r["date"]))
+        for kind, fields, rows in (("schedule", SCHEDULE_FIELDS, self.schedule),
+                                   ("games", GAME_FIELDS, self.games)):
+            months = self._dirty[kind]
+            if not months:
+                continue
+            grouped = {m: [] for m in months}
+            for row in rows.values():
+                if row["date"][:7] in grouped:
+                    grouped[row["date"][:7]].append(row)
+            for month, items in grouped.items():
+                write_csv(self.dir / kind / f"{month}.csv", fields, sorted(items, key=by_date))
+            months.clear()
