@@ -1,0 +1,13 @@
+# Downloaded pages and generated exports stay on the machine that made them
+cache/
+exports/
+
+# Google key file: never commit
+service_account.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.tmp

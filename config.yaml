@@ -1,0 +1,60 @@
+# Basketball quarter-results collector settings.
+
+site:
+  base_url: https://globalsportsarchive.com
+  index_path: /sport/basketball/-/
+  # Extra starting points for league discovery, in case the index page does
+  # not link to everything directly.
+  seed_paths:
+    - /competition/basketball/liga-endesa-2025-2026/regular-season/130983/
+    - /competition/basketball/basketball-champions-league-2025-2026/quarter-finals/127415/
+
+identity:
+  # Sent with every request. It says plainly what this is.
+  user_agent: "BasketballQuarterResearch/1.0 (personal research; low-rate collector)"
+  # Optional: an email address or URL so the site can reach you. It is added
+  # to the user agent. You can also set it with the COLLECTOR_CONTACT
+  # environment variable instead of saving it here.
+  contact: ""
+
+pace:
+  delay_seconds: 3.0              # pause after every request; a larger robots.txt Crawl-delay wins
+  timeout_seconds: 45
+  max_retries: 3                  # for timeouts and server errors only
+  max_wait_seconds: 900           # if the site asks us to wait longer than this, the run stops
+  stop_after_consecutive_failures: 5
+
+# Season labels to collect, written the way the site writes them.
+# Leagues that run on a calendar year use a single year.
+seasons:
+  - "2025/2026"
+  - "2026/2027"
+  - "2025"
+  - "2026"
+
+discovery:
+  sample_games: 3                 # finished games tested per league-season for a Q1-Q4 scoreboard
+  max_listing_pages: 400          # safety limit on listing pages followed from the index
+  max_competitions: 3000          # safety limit on competitions examined
+  season_check_days: 14           # how often to look for a new season of a known competition
+
+harvest:
+  settle_days: 2                  # wait this long after the game date before fetching it
+  retry_days: 21                  # keep retrying a game that shows no scoreboard for this long
+  refresh_hours: 20               # re-read schedules of active seasons no more often than this
+  season_closed_after_days: 45    # a finished season is closed this long after its last game
+  save_every: 50                  # write progress to disk after this many games
+  cache_match_pages: true         # keep downloaded match pages so they never need fetching twice
+
+sheets:
+  # The long ID from the Google Sheet's address, between /d/ and /edit.
+  # Can also be set with the SHEET_ID environment variable.
+  spreadsheet_id: ""
+  # Service-account key file for local runs. On GitHub the key is read from
+  # the GOOGLE_SERVICE_ACCOUNT_JSON secret instead.
+  credentials_file: service_account.json
+  max_cells: 9000000              # stay under Google's per-spreadsheet cell cap
+
+probe:
+  season_page: /competition/basketball/liga-endesa-2025-2026/regular-season/130983/
+  stage_page: /competition/basketball/basketball-champions-league-2025-2026/quarter-finals/127415/
