@@ -1,0 +1,3 @@
+﻿game_id,date,kickoff,comp_id,competition,season,stage,home_team,away_team,home_team_id,away_team_id,home_q1,away_q1,home_q2,away_q2,home_q3,away_q3,home_q4,away_q4,overtime_periods,home_ot,away_ot,ot_detail,home_final,away_final,winner,result_note,check,source_url,retrieved
+3591275,2025-05-12,00:00,4788,CEBL,2025,final,Edmonton Stingers,Calgary Surge,52100,65029,23,23,21,22,22,13,18,28,0,0,0,,84,86,away,,OK,https://globalsportsarchive.com/match/basketball/2025-05-12/edmonton-stingers-vs-calgary-surge/3591275/,2026-11-10
+3685069,2025-05-17,01:30,2341,WNBA,2025,final,Washington Mystics,Atlanta Dream,40822,40817,20,24,21,21,30,25,23,20,0,0,0,,94,90,home,,OK,https://globalsportsarchive.com/match/basketball/2025-05-17/washington-mystics-vs-atlanta-dream/3685069/,2026-11-10

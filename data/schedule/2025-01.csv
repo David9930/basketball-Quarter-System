@@ -1,0 +1,7 @@
+﻿game_id,date,kickoff,comp_id,season,stage,round_id,url,list_status,home_team,away_team,home_team_id,away_team_id,list_home,list_away,status,attempts,last_try,detail
+3614954,2025-01-25,21:00,4742,2025,final,141359,/match/basketball/2025-01-25/minas-basquete-vs-sao-paulo-basquete/3614954/,Played,Minas Basquete,São Paulo Basquete,47333,47332,82,66,done,1,2026-11-10T21:47:16Z,
+3614955,2025-01-25,23:30,4742,2025,final,141359,/match/basketball/2025-01-25/brasilia-basquete-vs-uniao-corinthians/3614955/,Played,Brasília Basquete,União Corinthians,52007,52008,85,75,pending,0,,
+3614956,2025-01-26,15:00,4742,2025,final,141359,/match/basketball/2025-01-26/cr-flamengo-basquete-vs-vasco-da-gama/3614956/,Played,CR Flamengo Basquete,Vasco da Gama,44058,63243,92,73,pending,0,,
+3614957,2025-01-26,20:00,4742,2025,final,141359,/match/basketball/2025-01-26/franca-bc-vs-pinheiros-basquete/3614957/,Played,Franca BC,Pinheiros Basquete,47331,47335,91,59,pending,0,,
+3624780,2025-01-28,23:00,4742,2025,final,141359,/match/basketball/2025-01-28/minas-basquete-vs-brasilia-basquete/3624780/,Played,Minas Basquete,Brasília Basquete,47333,52007,61,58,pending,0,,
+3624781,2025-01-29,23:00,4742,2025,final,141359,/match/basketball/2025-01-29/cr-flamengo-basquete-vs-franca-bc/3624781/,Played,CR Flamengo Basquete,Franca BC,44058,47331,103,72,pending,0,,

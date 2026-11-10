@@ -1,0 +1,69 @@
+{
+  "generated": "2026-11-10T22:11:46Z",
+  "days_read": 677,
+  "first_day": "2025-01-01",
+  "last_day": "2026-11-08",
+  "empty_days": [],
+  "league_seasons": {
+    "no": 65,
+    "yes": 188
+  },
+  "games_listed": 38872,
+  "schedule_status": {
+    "done": 188,
+    "league without quarter scores": 15188,
+    "no_scoreboard": 188,
+    "not played (Awarded)": 36,
+    "not played (Cancelled)": 153,
+    "not played (Fixture)": 1,
+    "not played (Playing)": 1,
+    "not played (Postponed)": 50,
+    "other_periods": 12,
+    "pending": 23055
+  },
+  "games_collected": 188,
+  "quarter_records": 752,
+  "games_flagged": 3,
+  "flags": {
+    "PERIOD_SUM_MISMATCH": 3
+  },
+  "requeued_missing_records": 0,
+  "seasons": {
+    "2025": {
+      "games": 28,
+      "overtime_games": 0,
+      "flagged": 0,
+      "first_game": "2025-01-25",
+      "last_game": "2025-09-27"
+    },
+    "2025/2026": {
+      "games": 65,
+      "overtime_games": 4,
+      "flagged": 2,
+      "first_game": "2025-09-12",
+      "last_game": "2026-05-16"
+    },
+    "2026": {
+      "games": 33,
+      "overtime_games": 1,
+      "flagged": 1,
+      "first_game": "2026-01-24",
+      "last_game": "2026-10-06"
+    },
+    "2026/2027": {
+      "games": 62,
+      "overtime_games": 0,
+      "flagged": 0,
+      "first_game": "2026-09-14",
+      "last_game": "2026-11-07"
+    }
+  },
+  "flag_meanings": {
+    "PERIOD_SUM_MISMATCH": "quarters plus overtime do not add up to the final score",
+    "LIST_SCORE_MISMATCH": "the match report's final differs from the daily list's final",
+    "OT_WITHOUT_TIE": "overtime is listed but regulation was not tied",
+    "TIED_FINAL": "final score is level (possible in two-leg ties; otherwise suspect)",
+    "SUSPECT_VALUE": "an unusual score: a quarter above 60, a 0-0 quarter, or a final under 20",
+    "BAD_VALUE": "a score is missing or not a whole number"
+  }
+}

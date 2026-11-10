@@ -1,0 +1,11 @@
+{
+  "command": "discover",
+  "started": "2026-11-10T20:57:52Z",
+  "finished": "2026-11-10T22:11:46Z",
+  "outcome": "completed",
+  "requests": 1066,
+  "cache_hits": 0,
+  "robots_refusals": 0,
+  "delay_seconds": 3.0,
+  "user_agent": "BasketballQuarterResearch/1.0 (personal research; low-rate collector)"
+}
