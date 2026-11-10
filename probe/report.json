@@ -1,0 +1,507 @@
+{
+  "started": "2026-11-10T20:43:27Z",
+  "steps": [
+    {
+      "step": "index",
+      "path": "/competitions/basketball/",
+      "bytes": 71020,
+      "title": "Global Sports Archive - Competitions",
+      "max_week": 0,
+      "competition_links": 4,
+      "competitions": 4,
+      "seasons_seen": [
+        "2023/2024",
+        "2024/2025"
+      ],
+      "listing_links": 1,
+      "match_links": 0,
+      "sample_competition_links": [
+        "/competition/basketball/nba-2023-2024/nba-finals/84505/",
+        "/competition/basketball/turkish-airlines-euroleague-2024-2025/regular-season/103955/",
+        "/competition/basketball/bkt-eurocup-2024-2025/regular-season/103602/",
+        "/competition/basketball/liga-endesa-2023-2024/final/83726/"
+      ],
+      "sample_listing_links": [
+        "/competitions/basketball/"
+      ],
+      "sample_match_links": [],
+      "class_counts": {
+        "bas_match": 0,
+        "bas_scoreboard": 0,
+        "bas_scores": 0,
+        "bas_team_name": 0,
+        "period_score": 0,
+        "inning_container": 0,
+        "innin_col": 0,
+        "comp_cont": 0
+      },
+      "expand_ids": 0
+    },
+    {
+      "step": "daily_list",
+      "path": "/sport_ajax_v3.php?d=2026-11-07&widget_client_id=1&sp=basketball",
+      "bytes": 877182,
+      "title": "",
+      "max_week": 0,
+      "competition_links": 47,
+      "competitions": 47,
+      "seasons_seen": [
+        "",
+        "2026",
+        "2026/2027"
+      ],
+      "listing_links": 0,
+      "match_links": 360,
+      "sample_competition_links": [
+        "/competition/basketball/nba-2026-2027/regular-season/159063/",
+        "/competition/basketball/liga-endesa-2026-2027/regular-season/161965/",
+        "/competition/basketball/bleague-premier-2026-2027/regular-season/158171/",
+        "/competition/basketball/easycredit-bbl-2026-2027/regular-season/156829/",
+        "/competition/basketball/ligat-winner-sal-2026-2027/regular-season/163448/",
+        "/competition/basketball/lpb-2026-2027/regular-season/159055/",
+        "/competition/basketball/betclic-elite-2026-2027/regular-season/163958/",
+        "/competition/basketball/kbl-2026-2027/regular-season/161550/"
+      ],
+      "sample_listing_links": [],
+      "sample_match_links": [
+        "/match/basketball/2026-11-07/atlanta-hawks-vs-washington-wizards/4467066/",
+        "/match/basketball/2026-11-07/charlotte-hornets-vs-boston-celtics/4467067/",
+        "/match/basketball/2026-11-07/cleveland-cavaliers-vs-philadelphia-76ers/4467068/",
+        "/match/basketball/2026-11-07/dallas-mavericks-vs-utah-jazz/4467069/"
+      ],
+      "class_counts": {
+        "bas_match": 0,
+        "bas_scoreboard": 0,
+        "bas_scores": 0,
+        "bas_team_name": 0,
+        "period_score": 0,
+        "inning_container": 0,
+        "innin_col": 0,
+        "comp_cont": 0
+      },
+      "expand_ids": 0
+    },
+    {
+      "step": "season_page",
+      "path": "/competition/basketball/liga-endesa-2025-2026/regular-season/130983/",
+      "bytes": 138397,
+      "title": "Liga Endesa 2025/2026 - Results, fixtures, tables and stats - Global Sports Archive",
+      "max_week": 34,
+      "competition_links": 33,
+      "competitions": 11,
+      "seasons_seen": [
+        "2017/2018",
+        "2018/2019",
+        "2019/2020",
+        "2020/2021",
+        "2021/2022",
+        "2022/2023",
+        "2023/2024",
+        "2024",
+        "2024/2025",
+        "2025/2026",
+        "2026",
+        "2026/2027"
+      ],
+      "listing_links": 1,
+      "match_links": 9,
+      "sample_competition_links": [
+        "/competition/basketball/nba-2023-2024/nba-finals/84505/",
+        "/competition/basketball/turkish-airlines-euroleague-2024-2025/regular-season/103955/",
+        "/competition/basketball/bkt-eurocup-2024-2025/regular-season/103602/",
+        "/competition/basketball/liga-endesa-2023-2024/final/83726/",
+        "/competition/basketball/caceres-challenger-2026/final/170449/",
+        "/competition/basketball/madrid-challenger-2026/final/170577/",
+        "/competition/basketball/mataro-challenger-2026/final/170568/",
+        "/competition/basketball/copa-del-rey-de-baloncesto-2025-2026/final/142157/"
+      ],
+      "sample_listing_links": [
+        "/competitions/basketball/"
+      ],
+      "sample_match_links": [
+        "/match/basketball/2026-05-23/unicaja-vs-cb-breogan/3885646/",
+        "/match/basketball/2026-05-23/herbalife-gran-canaria-vs-icl-manresa/3885642/",
+        "/match/basketball/2026-05-23/cb-granada-vs-cb-canarias/3885643/",
+        "/match/basketball/2026-05-24/retabet-bilbao-basket-vs-basquet-girona/3885640/"
+      ],
+      "class_counts": {
+        "bas_match": 0,
+        "bas_scoreboard": 0,
+        "bas_scores": 0,
+        "bas_team_name": 0,
+        "period_score": 0,
+        "inning_container": 0,
+        "innin_col": 0,
+        "comp_cont": 0
+      },
+      "expand_ids": 0
+    },
+    {
+      "step": "round_list",
+      "path": "/comp_ajax.php",
+      "bytes": 8721,
+      "title": "",
+      "max_week": 0,
+      "competition_links": 0,
+      "competitions": 0,
+      "seasons_seen": [],
+      "listing_links": 0,
+      "match_links": 9,
+      "sample_competition_links": [],
+      "sample_listing_links": [],
+      "sample_match_links": [
+        "/match/basketball/2025-10-04/unicaja-vs-retabet-bilbao-basket/3885356/",
+        "/match/basketball/2025-10-04/cb-miraflores-vs-basquet-girona/3885354/",
+        "/match/basketball/2025-10-04/cb-canarias-vs-icl-manresa/3885355/",
+        "/match/basketball/2025-10-04/ce-lleida-basquet-vs-cb-breogan/3885350/"
+      ],
+      "class_counts": {
+        "bas_match": 0,
+        "bas_scoreboard": 0,
+        "bas_scores": 0,
+        "bas_team_name": 0,
+        "period_score": 0,
+        "inning_container": 0,
+        "innin_col": 0,
+        "comp_cont": 0
+      },
+      "expand_ids": 0
+    },
+    {
+      "step": "match_report",
+      "path": "/match/basketball/2025-10-05/valencia-basket-vs-fc-barcelona/3885357/",
+      "bytes": 101405,
+      "title": "Match Report of Valencia Basket vs Bar\u00e7a - 2025-10-05 - Liga Endesa - Global Sports Archive",
+      "max_week": 0,
+      "competition_links": 5,
+      "competitions": 4,
+      "seasons_seen": [
+        "2023/2024",
+        "2024/2025",
+        "2025/2026"
+      ],
+      "listing_links": 1,
+      "match_links": 5,
+      "sample_competition_links": [
+        "/competition/basketball/nba-2023-2024/nba-finals/84505/",
+        "/competition/basketball/turkish-airlines-euroleague-2024-2025/regular-season/103955/",
+        "/competition/basketball/bkt-eurocup-2024-2025/regular-season/103602/",
+        "/competition/basketball/liga-endesa-2023-2024/final/83726/",
+        "/competition/basketball/liga-endesa-2025-2026/regular-season/130983/"
+      ],
+      "sample_listing_links": [
+        "/competitions/basketball/"
+      ],
+      "sample_match_links": [
+        "/match/basketball/2027-04-25/valencia-basket-vs-fc-barcelona/4477103/",
+        "/match/basketball/2027-02-05/valencia-basket-vs-fc-barcelona/4435879/",
+        "/match/basketball/2026-10-30/fc-barcelona-vs-valencia-basket/4435699/",
+        "/match/basketball/2026-10-11/fc-barcelona-vs-valencia-basket/4476860/"
+      ],
+      "class_counts": {
+        "bas_match": 0,
+        "bas_scoreboard": 0,
+        "bas_scores": 15,
+        "bas_team_name": 0,
+        "period_score": 0,
+        "inning_container": 0,
+        "innin_col": 0,
+        "comp_cont": 0
+      },
+      "expand_ids": 0,
+      "scoreboard": {
+        "status": "ok",
+        "detail": "",
+        "home_team": "Valencia Basket",
+        "away_team": "Bar\u00e7a",
+        "home_team_id": "",
+        "away_team_id": "",
+        "headers": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4",
+          "TOT"
+        ],
+        "home_q": [
+          24,
+          22,
+          23,
+          24
+        ],
+        "away_q": [
+          15,
+          18,
+          25,
+          23
+        ],
+        "overtime": [],
+        "home_final": 93,
+        "away_final": 81
+      }
+    },
+    {
+      "step": "stage_page",
+      "path": "/competition/basketball/basketball-champions-league-2025-2026/quarter-finals/127415/",
+      "bytes": 103825,
+      "title": "Basketball Champions League 2025/2026 - Results, fixtures, tables and stats - Global Sports Archive",
+      "max_week": 0,
+      "competition_links": 43,
+      "competitions": 22,
+      "seasons_seen": [
+        "2017/2018",
+        "2018/2019",
+        "2019/2020",
+        "2020/2021",
+        "2021/2022",
+        "2022/2023",
+        "2023/2024",
+        "2024/2025",
+        "2025",
+        "2025/2026",
+        "2026/2027",
+        "2029"
+      ],
+      "listing_links": 1,
+      "match_links": 10,
+      "sample_competition_links": [
+        "/competition/basketball/nba-2023-2024/nba-finals/84505/",
+        "/competition/basketball/turkish-airlines-euroleague-2024-2025/regular-season/103955/",
+        "/competition/basketball/bkt-eurocup-2024-2025/regular-season/103602/",
+        "/competition/basketball/liga-endesa-2023-2024/final/83726/",
+        "/competition/basketball/eurobasket-2025/final/120607/",
+        "/competition/basketball/eurobasket-qualifiers-2029/round-2/135762/",
+        "/competition/basketball/fiba-wc-qualification-2027-qatar/round-2/124205/",
+        "/competition/basketball/euroleague-2026-2027/regular-season/156050/"
+      ],
+      "sample_listing_links": [
+        "/competitions/basketball/"
+      ],
+      "sample_match_links": [
+        "/match/basketball/2026-04-01/cb-canarias-vs-galatasaray-doga-sigorta/4128219/",
+        "/match/basketball/2026-04-08/galatasaray-doga-sigorta-vs-cb-canarias/4128220/",
+        "/match/basketball/2026-04-15/cb-canarias-vs-galatasaray-doga-sigorta/4128221/",
+        "/match/basketball/2026-04-01/kk-rytas-vs-era-nymburk/4138438/"
+      ],
+      "class_counts": {
+        "bas_match": 0,
+        "bas_scoreboard": 0,
+        "bas_scores": 0,
+        "bas_team_name": 0,
+        "period_score": 0,
+        "inning_container": 0,
+        "innin_col": 0,
+        "comp_cont": 0
+      },
+      "expand_ids": 0
+    },
+    {
+      "step": "stage_match_report",
+      "path": "/match/basketball/2026-04-08/alba-berlin-vs-unicaja/4138443/",
+      "bytes": 103964,
+      "title": "Match Report of ALBA Berlin vs Unicaja - 2026-04-08 - Basketball Champions League - Global Sports Archive",
+      "max_week": 0,
+      "competition_links": 5,
+      "competitions": 5,
+      "seasons_seen": [
+        "2023/2024",
+        "2024/2025",
+        "2025/2026"
+      ],
+      "listing_links": 1,
+      "match_links": 5,
+      "sample_competition_links": [
+        "/competition/basketball/nba-2023-2024/nba-finals/84505/",
+        "/competition/basketball/turkish-airlines-euroleague-2024-2025/regular-season/103955/",
+        "/competition/basketball/bkt-eurocup-2024-2025/regular-season/103602/",
+        "/competition/basketball/liga-endesa-2023-2024/final/83726/",
+        "/competition/basketball/basketball-champions-league-2025-2026/quarter-finals/127415/"
+      ],
+      "sample_listing_links": [
+        "/competitions/basketball/"
+      ],
+      "sample_match_links": [
+        "/match/basketball/2026-04-08/alba-berlin-vs-unicaja/4138443/",
+        "/match/basketball/2026-04-01/unicaja-vs-alba-berlin/4138440/",
+        "/match/basketball/2019-03-13/alba-berlin-vs-unicaja/1569866/",
+        "/match/basketball/2019-03-08/unicaja-vs-alba-berlin/1569862/"
+      ],
+      "class_counts": {
+        "bas_match": 0,
+        "bas_scoreboard": 0,
+        "bas_scores": 15,
+        "bas_team_name": 0,
+        "period_score": 0,
+        "inning_container": 0,
+        "innin_col": 0,
+        "comp_cont": 0
+      },
+      "expand_ids": 0,
+      "scoreboard": {
+        "status": "ok",
+        "detail": "",
+        "home_team": "ALBA Berlin",
+        "away_team": "Unicaja",
+        "home_team_id": "",
+        "away_team_id": "",
+        "headers": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4",
+          "TOT"
+        ],
+        "home_q": [
+          15,
+          21,
+          13,
+          25
+        ],
+        "away_q": [
+          13,
+          21,
+          26,
+          14
+        ],
+        "overtime": [],
+        "home_final": 85,
+        "away_final": 88
+      }
+    },
+    {
+      "step": "other_competition",
+      "path": "/competition/basketball/nba-2023-2024/nba-finals/84505/",
+      "bytes": 134366,
+      "title": "NBA 2023/2024 - Results, fixtures, tables and stats - Global Sports Archive",
+      "max_week": 0,
+      "competition_links": 41,
+      "competitions": 14,
+      "seasons_seen": [
+        "2016/2017",
+        "2017/2018",
+        "2018/2019",
+        "2019/2020",
+        "2020/2021",
+        "2021/2022",
+        "2022/2023",
+        "2023/2024",
+        "2024/2025",
+        "2025/2026",
+        "2026",
+        "2026/2027"
+      ],
+      "listing_links": 1,
+      "match_links": 5,
+      "sample_competition_links": [
+        "/competition/basketball/nba-2023-2024/nba-finals/84505/",
+        "/competition/basketball/turkish-airlines-euroleague-2024-2025/regular-season/103955/",
+        "/competition/basketball/bkt-eurocup-2024-2025/regular-season/103602/",
+        "/competition/basketball/liga-endesa-2023-2024/final/83726/",
+        "/competition/basketball/fise-birmingham-challenger-2026/final/170499/",
+        "/competition/basketball/phoenix-challenger-2026/final/170562/",
+        "/competition/basketball/nba-g-league-2026-2027/preliminary/164640/",
+        "/competition/basketball/nba-preseason-2026-2027/regular-season/159137/"
+      ],
+      "sample_listing_links": [
+        "/competitions/basketball/"
+      ],
+      "sample_match_links": [
+        "/match/basketball/2024-06-07/boston-celtics-vs-dallas-mavericks/3347950/",
+        "/match/basketball/2024-06-10/boston-celtics-vs-dallas-mavericks/3347951/",
+        "/match/basketball/2024-06-13/dallas-mavericks-vs-boston-celtics/3347952/",
+        "/match/basketball/2024-06-15/dallas-mavericks-vs-boston-celtics/3347953/"
+      ],
+      "class_counts": {
+        "bas_match": 0,
+        "bas_scoreboard": 0,
+        "bas_scores": 0,
+        "bas_team_name": 0,
+        "period_score": 0,
+        "inning_container": 0,
+        "innin_col": 0,
+        "comp_cont": 0
+      },
+      "expand_ids": 0
+    },
+    {
+      "step": "other_match_report",
+      "path": "/match/basketball/2024-06-18/boston-celtics-vs-dallas-mavericks/3347954/",
+      "bytes": 105606,
+      "title": "Match Report of Boston Celtics vs Dallas Mavericks - 2024-06-18 - NBA - Global Sports Archive",
+      "max_week": 0,
+      "competition_links": 4,
+      "competitions": 4,
+      "seasons_seen": [
+        "2023/2024",
+        "2024/2025"
+      ],
+      "listing_links": 1,
+      "match_links": 5,
+      "sample_competition_links": [
+        "/competition/basketball/nba-2023-2024/nba-finals/84505/",
+        "/competition/basketball/turkish-airlines-euroleague-2024-2025/regular-season/103955/",
+        "/competition/basketball/bkt-eurocup-2024-2025/regular-season/103602/",
+        "/competition/basketball/liga-endesa-2023-2024/final/83726/"
+      ],
+      "sample_listing_links": [
+        "/competitions/basketball/"
+      ],
+      "sample_match_links": [
+        "/match/basketball/2026-12-01/dallas-mavericks-vs-boston-celtics/4467276/",
+        "/match/basketball/2026-11-16/boston-celtics-vs-dallas-mavericks/4467147/",
+        "/match/basketball/2026-03-07/boston-celtics-vs-dallas-mavericks/3923496/",
+        "/match/basketball/2026-02-04/dallas-mavericks-vs-boston-celtics/3923309/"
+      ],
+      "class_counts": {
+        "bas_match": 0,
+        "bas_scoreboard": 0,
+        "bas_scores": 15,
+        "bas_team_name": 0,
+        "period_score": 0,
+        "inning_container": 0,
+        "innin_col": 0,
+        "comp_cont": 0
+      },
+      "expand_ids": 0,
+      "scoreboard": {
+        "status": "ok",
+        "detail": "",
+        "home_team": "Boston Celtics",
+        "away_team": "Dallas Mavericks",
+        "home_team_id": "",
+        "away_team_id": "",
+        "headers": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4",
+          "TOT"
+        ],
+        "home_q": [
+          28,
+          39,
+          19,
+          20
+        ],
+        "away_q": [
+          18,
+          28,
+          21,
+          21
+        ],
+        "overtime": [],
+        "home_final": 106,
+        "away_final": 88
+      }
+    }
+  ],
+  "robots_txt": "User-agent: *\nAllow: /\nSitemap: http://www.globalsportsarchive.com/sitemap.xml",
+  "fetch": {
+    "requests": 10,
+    "cache_hits": 0,
+    "robots_refusals": 0,
+    "delay_seconds": 3.0,
+    "user_agent": "BasketballQuarterResearch/1.0 (personal research; low-rate collector)"
+  },
+  "finished": "2026-11-10T20:44:12Z"
+}

@@ -1,0 +1,1693 @@
+<!DOCTYPE HTML>
+<head>
+<title>Liga Endesa 2025/2026 - Results, fixtures, tables and stats - Global Sports Archive</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-language" content="en" />
+<meta name="description" content="Liga Endesa 2025/2026 - Results, fixtures, tables and stats">
+<meta name="keywords" content="Liga Endesa, Liga Endesa 2025/2026, Liga Endesa, Soccer, Football, American Football, Kabaddi, Rugby, Volleyball, Handball, League of Legends, Counter-Strike GO, Baseball, Basketball, Tennis, Ice Hockey, Cricket, Golf, Soccer results, Football results, American Football results, Kabaddi results, Rugby results, Volleyball results, Handball results, League of Legends results, CSGO results, Baseball results, Basketball results, Tennis results, Ice Hockey results, Cricket results, Golf results, Soccer statistics, Football statistics, American Football statistics, Kabaddi statistics, Rugby statistics, Volleyball statistics, Handball statistics, League of Legends statistics, CSGO statistics, Baseball statistics, Basketball statistics, Tennis statistics, Ice Hockey statistics, Cricket statistics, Golf statistics">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="monetization" content="$ilp.uphold.com/LzHL4JDUZyhP" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<link rel="stylesheet" type="text/css" href="//globalsportsarchive.com/css/main.css" />
+<link rel="stylesheet" type="text/css" href="//globalsportsarchive.com/css/gsa.css" />
+<link rel="stylesheet" href="https://globalsportsarchive.com/css/jquery-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="https://globalsportsarchive.com/js/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://globalsportsarchive.com/js/slick/slick-theme.css"/>
+<script src="https://globalsportsarchive.com/js/jquery.min.js"></script>
+<script src="https://globalsportsarchive.com/js/jquery-ui.min.js"></script>
+<script>
+
+$(function() {
+	
+	$('#body').on('click', '.roster_more', function() {
+		
+		var target = $(this).parent().parent().find('.table_row_mobile_2');
+		
+		if (target.css('display') == 'none') {
+			target.css('display', 'flex');
+			$(this).html('-');
+		}
+		else {
+			target.css('display', 'none');
+			$(this).html('+');
+		}
+	});
+	$('.loader').hide();
+	$('#body_content').show();
+	
+	$('#round_select_2').on('click', function() {		
+		var target = $('#round_menu_2');		
+		if (target.css('display') == 'none') {
+			$('#body_content').css('position','relative');
+			target.slideDown();			
+			
+		}
+		else {
+			
+			target.slideUp(function() {
+				$('#body_content').css('position','unset');
+			});
+		}
+		footer();
+	});	
+		
+	$('body').on('click', function(e) {
+		var target = $(e.target).attr('id');					
+		if (target !== 'week_sel' && target !== 'weeks' && target !== 'roundNav_sel' && target !== 'roundNav_list') {
+			$('#weeks').hide();	
+			$('#week_sel').removeClass('opened');
+			$('#roundNav_list').hide();	
+			$('#roundNav_sel').removeClass('opened');
+		}
+	});
+	$('#week_sel').on('click',  function() {
+		
+		if ($('#week_sel').hasClass('opened')) {
+			$('#weeks').hide();
+			$('#week_sel').removeClass('opened');
+		}
+		else {
+			$('#week_sel').addClass('opened');
+			$('#weeks').css({'display':'block',
+										  'position' : 'absolute',
+										  'z-index' : '1',
+										  'left' : '0',
+										  'top' : '0%',
+										  'background-color' : '#E9EBEC',
+										  'width' : $('#week_sel').width() + 20,
+										  'margin-top' : $(this).offset().top + $(this).outerHeight(true),
+										  'margin-left' : $(this).offset().left - $('#body').offset().left});
+			if ($(window).width() < 600) {
+				$('#weeks').css({'margin-left' : ($(window).width() - $('#weeks').outerWidth())/2});
+			}
+		}	
+	});
+	$('#roundNav_sel').on('click',  function() {
+		if ($('#roundNav_sel').hasClass('opened')) {
+			$('#roundNav_list').hide();
+			$('#roundNav_sel').removeClass('opened');
+		}
+		else {
+			$('#roundNav_sel').addClass('opened');
+			
+			var left = $('#roundNav_sel').offset().left - $('#body').offset().left;
+			var wdth = $('#roundNav_sel').outerWidth();
+
+			$('#roundNav_list').css({'display':'table',
+										  'position' : 'absolute',
+										  'left' : '0',
+										  'top' : '0%',
+										  'background-color' : '#E9EBEC',
+										  'margin-top' : $(this).offset().top + $(this).outerHeight(true),
+										  'margin-left' : left});
+			if ($(window).width() < 600) {
+				$('#roundNav_list').css({'margin-left' : left - 5});
+			}
+		}	
+	});
+	$('#ranking_sel select').on('change', function() {
+		var value = $(this).val();
+		$('#ranking').load('https://globalsportsarchive.com/widgets/ranking.php?sp=basketball&s=77205&widget_client_id=1&ev='+value, function() {
+			footer();
+		});
+	});	
+});
+function changeWeek(val) {
+	var maxweek = $('#maxweek').val();
+	if (val == 'prev') { var tempval = parseInt($('#curweek').val()) - 1; }
+	else if (val == 'next') { var tempval = parseInt($('#curweek').val()) + 1; }
+	else { var tempval = val;}
+	
+	if (tempval > 0 && tempval <= maxweek) {
+	$('#curweek').val(tempval);
+	var round = $('#round').val();	
+	$('#week_sel').text('Gameweek ' + tempval);
+	$('.week_num').css({'background-color' : '#E9EBEC', 'font-weight' : 'initial'});
+	$('.week_'+tempval).css({'background-color' : 'grey', 'font-weight' : 'bold'});
+	
+	$.ajax({
+		url: "https://globalsportsarchive.com/comp_ajax.php",
+		dataType: "json",
+		type: "POST",
+		data: {week: tempval, round: "130983", sport: "basketball", widget_client_id: "1"},
+		success: function(data) {
+			$('#week_container').html(data.result);
+		}
+	});
+	}
+}
+function changePage(val,maxpage) {
+	var curpage = $('#cur_page').val();
+	if (val == 'prev') { var tempval = parseInt(curpage) - 1; }
+	else if (val == 'next') { var tempval = parseInt(curpage) + 1; }
+	else { var tempval = val;}
+	
+	
+	if (parseInt(tempval + 1) > 0 && parseInt(tempval + 1) <= maxpage) {
+		$.ajax({
+			url: "https://globalsportsarchive.com/comp_ajax_page.php",
+			dataType: "json",
+			type: "POST",
+			data: {page: tempval, r: "130983", lang: "en"},
+			success: function(data) {
+				$('#week_sel').text('Page ' + parseInt(tempval + 1));
+				$('.week_num').css({'background-color' : '#E9EBEC', 'font-weight' : 'initial'});
+				$('.week_'+parseInt(tempval + 1)).css({'background-color' : 'grey', 'font-weight' : 'bold'});
+				$('#cur_page').val(tempval);
+				$('#week_container').html(data.result);
+			}
+		});
+	}
+}
+function gotoUrl(url,slug) {
+	$("a").on("click", function (e) {
+		e.preventDefault();
+		if (slug == '') {
+			var link = "https://globalsportsarchive.com/team/basketball/-/"+url+"/";
+		}
+		else {
+			var link = "https://globalsportsarchive.com/team/basketball/"+slug+"/"+url+"/";
+		}		
+		window.location.href = link;
+	});	
+}
+function gotoPeopleUrl(url) {
+	$("a").on("click", function (e) {
+		e.preventDefault();
+		var link = "https://globalsportsarchive.com/people.php?p=" + url + "&sp=basketball";
+		window.location.href = link;
+	});	
+}
+function expandSeasonList() {
+	if ($('#seasonlist').css('display') == 'block') {
+		$('#seasonlist').slideUp( "slow" );
+		$('#seasonlist_cursor').css({'border-width': '16px 10px 0 10px', 'border-color': '#000000 transparent transparent transparent'});
+	}
+	else {
+		$('#seasonlist').slideDown( "slow" );
+		$('#seasonlist_cursor').css({'border-width': '0 10px 16px 10px', 'border-color': 'transparent transparent #000000 transparent'});
+	}
+}
+</script>
+<style>
+
+#week_header {
+	width: 100%;
+	height:40px;
+	background-color: #c3c5c5;
+	float: left;
+	display: flex;
+    align-items: center;
+}
+
+#ranking {
+	width: 100%;
+	float: left;
+	//min-height: 50px;
+}
+.ranking {
+	display: flex;
+    align-items: center;
+}
+.ranking span:nth-child(1) {
+	display: inline-block;
+	width: 50%;
+	padding: 0px 10px;	
+	box-sizing: border-box;
+	text-align: left;
+	float: left;
+}
+.ranking span:nth-child(2) {
+	display: inline-block;
+	width: 50%;
+	padding: 2.5px 10px;	
+	box-sizing: border-box;
+	text-align: right;
+	float: left;
+}
+.ranking #ranking_sel {
+   height: 24px;
+   overflow: hidden;
+   width: 120px;
+   background-color: #848484;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+   float:right;
+}
+.ranking #ranking_sel select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 24px;
+   width: 120px;
+   color: #fff;
+   font-family: notosans;
+   font-size: 16px;
+}
+.ranking #ranking_sel select option {
+	color: #848484;
+}
+
+#season_sel {
+   height: 24px;
+   overflow: hidden;
+   width: 140px;
+   background-color: #fff;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+   float:right;
+}
+#season_sel select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 24px;
+   width: 140px;
+   background-color: white;
+   color: #848484;
+   font-family: notosans;
+   font-size: 16px;
+}
+#season_sel select option {
+	color: #848484;
+}
+
+
+#round_header {
+	box-sizing: border-box;
+	font-size: 20px;
+	font-weight: bold;
+	padding-left: 10px;
+	width: 100%;
+	height:40px;
+	background-color: #c3c5c5;
+	display: flex;
+    align-items: center;
+	float: left;
+}
+#week_prev {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10px 15px 10px 0;
+	border-color: transparent #000000 transparent transparent;
+}
+#week_next { 
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10px 0 10px 15px;
+	border-color: transparent transparent transparent #000000;
+}	
+
+#week_prev, #week_next {
+	box-sizing: border-box;
+	width: 30%;
+	padding: 0px 10px;
+	text-align: center;
+	display: inline-block;
+	cursor:pointer;
+	font-weight: bold;
+}
+
+#week_sel, #page_sel {
+	box-sizing: border-box;
+	width: 40%;
+	padding: 0px 10px;
+	text-align: center;
+	height:40px;
+	line-height:40px;
+	display: inline-block;
+	cursor:pointer;
+	font-weight: bold;
+}
+#weeks {
+	display: none;
+	background-color: white;
+	min-width: 300px;
+}
+.week_num {
+	display:inline-block;
+	width:33%;
+	min-width: 100px;
+	line-height:25px;
+	cursor: pointer;
+	text-align: center;
+	background-color: #E9EBEC;
+}
+@media screen AND (min-width: 601px) {
+	span.team_short { display: none; }
+	span.team_full { display: inline; }
+}
+@media screen AND (max-width: 600px) {
+	span.team_short { display: inline;  font-size: 3vw; }
+	span.team_full { display: none; }
+	span.comp_name { font-size: 4.5vw !important; }
+}
+@media screen AND (max-width: 500px) { 
+	span.kickoff_time { font-size: 3.5vw ; }
+}
+
+#roundNav_header {
+	width: 100%;
+	height:40px;
+	background-color: #514E4E;
+	float: left;
+	color: white;
+}
+#roundNav_prev {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10px 15px 10px 0;
+	border-color: transparent #000000 transparent transparent;
+}
+#roundNav_next { 
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10px 0 10px 15px;
+	border-color: transparent transparent transparent #000000;
+}	
+#roundNav_sel {
+	box-sizing: border-box;
+	width: auto;
+	min-width: 75px;
+	padding: 0px 10px;
+	text-align: center;
+	height:40.5px;
+	line-height:40.5px;
+	display: inline-block;
+	cursor:pointer;
+	font-weight: bold;
+	color: white;
+}
+#roundNav_list {
+	display: none;
+	background-color: white;
+}
+#roundNav_list td {
+	padding: 3px 8px;
+	text-align: left;
+}
+.match_date { min-width: 85px;display: inline-block;}
+@media screen AND (min-width: 551px) {
+	#roster_1 {
+		display: inline-block;
+		width: 30%;
+		float: left;
+		height: 32px;
+	}
+	#roster_2 {
+		display: inline-block;
+		float: left;
+		width: 40%;
+		text-align: center;
+	}
+	#roster_3 {
+		display: inline-block;
+		width: 30%;
+		text-align: right;
+		padding-right: 10px;
+	}
+}
+@media screen AND (max-width: 550px) {
+	#roster_1 {
+		display: inline-block;
+		width: 0%;
+		float: left;
+		height: 32px;
+	}
+	#roster_2 {
+		display: inline-block;
+		float: left;
+		width: 50%;
+		text-align: left;
+	}
+	#roster_3 {
+		display: inline-block;
+		width: 50%;
+		text-align: right;
+		padding-right: 10px;
+	}
+}
+.period_score {
+	font-size: 16px;
+	color: black;
+}
+
+#season_nav {
+	display: flex;
+	height: 55px;
+	background-color: #514E4E; 
+}
+#season_nav_img {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	min-width: 85px;
+	max-width: 85px;
+	width: 10%;	
+	background: linear-gradient(to right bottom, #e2e2e2 50%, transparent 50%); 
+	background-color: #e2e2e2;
+}
+#season_nav_img img {
+	width: 50px;
+	height: 50px;
+}
+#season_nav_mid {
+	min-width: 200px;
+	width: 80%;
+	display: flex;
+	align-items: center;
+	padding-left: 17px;
+	text-align: left;
+	font-weight: bold;
+	font-size: 21px;
+	color: white;
+	text-shadow: 3px 3px 3px rgba(0, 0, 0, 1);
+}
+#season_nav_mid h1 {
+	font-size: inherit;
+	margin: 0;
+}
+#season_nav_seasonlist {
+	min-width: 150px;
+	width: 10%;
+	text-align: right;
+	padding-top: 15px;
+	padding-right: 10px;
+}
+#season_nav_seasonlist select {
+	width: 140px;
+}
+#season_nav_compname {
+	display: flex;
+	align-items: center;
+	height: 50%;
+	width: 100%;
+	padding-left: 17px;
+	text-align: left;
+	font-weight: bold;
+	font-size: 21px;
+	color: white;
+	text-shadow: 3px 3px 3px rgba(0, 0, 0, 1);
+}
+#season_nav_roundnav {
+	height: 50%;
+	width: 100%;
+	color: white;
+	display: flex;
+    align-items: center;
+}
+#season_nav_roundnav a {
+	float: left;
+}
+#roundNav_prev {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 8px 10px 8px 0;
+	border-color: transparent #ffffff transparent transparent;
+	float: left;
+}
+#roundNav_next {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 8px 0 8px 10px;
+	border-color: transparent transparent transparent #ffffff;
+	float: right;
+}
+@media screen AND (min-width: 751px) {
+	.season_nav_compname_1 { display: inline; }
+	.season_nav_compname_2 { display: none; }
+}
+@media screen AND (max-width: 750px) {
+	.season_nav_compname_2 { display: inline; }
+	.season_nav_compname_1 { display: none; }
+}
+
+@media screen AND (min-width: 611px) {
+	#seasonlist_select { display: none; }
+	#season_nav_seasonlist { display: block; }
+}
+@media screen AND (max-width: 610px) {
+	#seasonlist_select { display: flex; }
+	#season_nav_seasonlist { display: none; }
+}
+
+.col_6 { 
+	display:flex; 
+	justify-content:center; 
+}
+.col_2 { display:flex; }
+
+		@media screen AND (max-width: 670px) { .col_8 { display: none; } }
+	
+@media screen AND (max-width: 580px) {
+	.col_7 { display: none; }
+}
+@media screen AND (max-width: 550px) {
+	.col_6 { display: none; }
+}
+@media screen AND (max-width: 500px) {
+	.col_4 { display: none; }
+}
+@media screen AND (max-width: 450px) {
+	.col_3 { display: none; }
+}
+@media screen AND (max-width: 430px) {
+	.col_1 { display: none; }
+}
+@media screen AND (max-width: 385px) {
+	.col_2 { display: none; }
+}
+.tennis_period_scores {
+	display: block;
+	width: 5%;
+	min-width: 20px;
+	font-size: calc(14px + 0.1vw);
+	padding-left: 5px;
+}
+
+.tennis_nationality {
+	display: block;
+	width: 10%;
+	min-width: 30px;
+	max-width: 30px;
+	padding-left: 5px;
+}
+.tennis_nationality_double {
+	display: block;
+	width: 10%;
+	min-width: 60px;
+	max-width: 60px;
+	padding-left: 5px;
+}
+.tennis_period_scores > div {
+	position: relative;
+}
+.tennis_period_scores sup {
+	line-height: 5px;
+    position: absolute;
+    top: 5px;
+}
+.disc_round_header {
+	display:flex;
+	align-items:center;
+	height:35px;
+	font-size: 20px;
+	background:#514E4E;
+	color:white;font-weight:bold;
+	background-image: url(//globalsportsarchive.com/images/bg-title.png); 
+	background-size: 100% 100%;
+	justify-content: center;
+	width: 100%;
+}
+@media screen AND (max-width: 450px) {
+	.tennis_period_scores {
+		display: none;
+	}
+}
+@media screen AND (max-width: 400px) {
+	.tennis_nationality_double {
+		display: none;
+	}
+}
+@media screen AND (max-width: 340px) {
+	.tennis_nationality {
+		display: none;
+	}
+}
+@media screen AND (min-width: 701px) {
+	.tennis_name_double_full { display: inline; }
+	.tennis_name_double_short, .tennis_name_double_last { display: none; }
+}
+@media screen AND (max-width: 700px) {
+	.tennis_name_double_short { display: inline; }
+	.tennis_name_double_full, .tennis_name_double_last { display: none; }
+}
+@media screen AND (max-width: 400px) {
+	.tennis_name_double_last { display: inline; }
+	.tennis_name_double_short, .tennis_name_double_full { display: none; }
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #cb2124;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  margin: 15px auto;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>	
+</head>
+<div id="body" style="position: relative;overflow:visible;">
+	
+	<script src="//globalsportsarchive.com/js/timezone.js?ts=2"></script>	
+	<script>	
+	$(function() {	
+		var tzname = getTzName();	
+			
+		$.ajax({	
+			url: '//globalsportsarchive.com/timezone.php?v=6',	
+			dataType: 'json',	
+			type: 'post',	
+			data: {tz: tzname},	
+			success: function(data) {	
+				if (data.res) {	
+					window.location.href = window.location.href;	
+				}	
+			} 	
+		});	
+			
+	});	
+	</script>	
+	<style>
+* {
+	font-family: notosans;
+}
+#gsa_header_2_2 a div {
+	color: white;
+}
+#header_resp {
+	display: flex;
+	height: 40px;
+	align-items: center;
+	justify-content: space-between;
+	background-image: url(https://globalsportsarchive.com/images/nav-bg.jpg);
+	background-color: #adadad;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: 200%;
+}
+#header_menu_icon {
+	font-size: 30px;
+    font-weight: bold;
+    color: #b00917;
+    width: 80px;
+    text-align: center;
+	cursor: pointer;
+	display: flex;
+    align-items: center;
+	padding-left: 5px;
+}
+#header_menu_resp {
+	display: none;
+	height: auto;
+	width: 100%;
+	background-color: black;
+}
+.hmr_list {
+	display: flex;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    border-bottom: 1px solid white;
+    padding-left: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+#header_menu_sports {
+	display: none;
+	height: auto;
+	width: 100%;
+	background-color: #5f5f5f;
+}
+.header_menu_sports_div {
+	display: flex;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    border-bottom: 1px solid white;
+    padding-left: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+	cursor: pointer;
+}
+.header_menu_comps {
+	display: none;
+	height: auto;
+	width: 100%;
+	background-color: #989898;
+}
+.header_menu_comps div {
+	display: flex;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    border-bottom: 1px solid white;
+    padding-left: 60px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+#gsa_header_2_1 {
+	display: flex;
+	align-items: center;
+	width:100%;
+	height:40px;
+	background-image:url('https://globalsportsarchive.com/images/nav-bg.jpg');
+	background-color: #adadad;
+	background-position-x: center;
+	background-repeat: no-repeat;
+	background-size: 200%;
+}
+
+#gsa_header_2_2 {
+	display: flex;
+	align-items: center;
+	width:100%;
+	height:40px;
+	background-color: black;
+	color:white;
+	font-size:16px;
+	position: relative;
+}
+#gsa_header_2_2 a span {
+	color: white;
+}
+
+#comp_sel {
+   height: 24px;
+   overflow: hidden;
+   width: 170px;
+   background-color: #fff;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+   float:right;
+}
+#comp_sel select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 24px;
+   width: 170px;
+   color: #848484;
+   font-family: notosans;
+   font-size: 16px;
+   position: absolute;
+}
+#comp_sel select option {
+	color: #848484;
+}
+
+
+
+#header_resp2 {
+	background-color: black;
+	display: flex;
+	align-items: center;
+	height: 40px;
+}
+
+@media screen AND (min-width: 621px) { 
+	#header_resp2 {
+		display: none;
+	}
+}
+
+@media screen AND (min-width: 751px) {
+	#header_resp {
+		display: none;
+	}
+	#sport_icon_resp { display: none; }
+}
+@media screen AND (max-width: 750px) {
+	#gsa_header_2_1,#gsa_header_2_2_ {
+		display: none;
+	}
+	#sport_icon_resp { display: inline; }
+}
+
+
+#comp_dropdown {
+	width:205px;
+	position:absolute;
+	right:10px;
+	display: flex;
+	align-items:center;
+}
+	@media screen AND (max-width: 970px) { 
+		#players_abroad { display: none; }
+	}
+	@media screen AND (max-width: 850px) { 
+		#hot_comp_7 { display: none; }
+	}
+	@media screen AND (max-width: 800px) { 
+		#hot_comp_6 { display: none; }
+	}
+	@media screen AND (max-width: 715px) { 
+		#hot_comp_5 { display: none; }
+	}
+	@media screen AND (max-width: 645px) { 
+		#hot_comp_4 { display: none; }
+	}
+	@media screen AND (max-width: 585px) { 
+		#hot_comp_3 { display: none; }
+	}
+	@media screen AND (max-width: 493px) { 
+		#hot_comp_2 { display: none; }
+	}
+	@media screen AND (max-width: 430px) { 
+		#hot_comp_1 { display: none; }
+	}
+	@media screen AND (max-width: 385px) { 
+		.all_comps { display: none; }
+		#comp_dropdown { left: 40; }
+	}
+
+.ui-menu .live_search_container {
+	position: relative;
+	display: flex;
+	height: 100%;
+	width: 100%;
+	align-items: center;
+}
+.ui-menu .live_search_img_flag {
+	width: 30px;
+	height: 30px;
+	margin: 0px 5px;
+}
+.ui-menu .live_search_img_image {
+	width: 30px;
+	height: 30px;
+	margin: 5px 10px 0px 0px;
+}
+.ui-menu .live_search_sport_image {
+	width: 16px;
+	margin-right: 5px;
+}
+.ui-menu .live_search_title {
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	font-weight: bold;
+}
+.ui-menu .live_search_country {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	line-height: 20px;
+	height: 20px;
+	font-size: 12px;
+}
+.ui-menu .live_search_sport {
+	position: absolute;
+    right: 5px;
+    bottom: 5px;
+    font-size: 14px;
+	height: 30px;
+}
+.ui-menu .live_search_header {
+	background-color: black !important;
+    line-height: 30px;
+    padding-left: 5px !important;
+	color: white !important;
+}
+.ui-menu .live_search_footer {
+	background-color: #9e9d9d;
+	line-height: 30px;
+	color: black;
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+}
+.ui-menu {
+	padding: 0 !important;
+}
+.ui-menu li {
+	border-bottom: 1px solid #dfdfdf !important;
+}
+.ui-menu > a {
+	text-decoration: none;
+}
+.ui-menu .ui-menu-item a {
+	padding: 0px !important;
+}
+.ui-state-focus {
+	background: none !important;
+	border: none !important;
+	margin: 0px !important;
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Ads: 962715676 -->
+<!--<script async src="https://www.googletagmanager.com/gtag/js?id=AW-962715676"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-962715676');
+</script>
+-->
+<!-- Event snippet for Page View GSA conversion page -->
+<!--<script>
+  gtag('event', 'conversion', {
+      'send_to': 'AW-962715676/kocACIb6zp0BEJzAh8sD',
+      'value': 0.01,
+      'currency': 'EUR'
+  });
+</script>
+-->
+<link rel="stylesheet" href="https://globalsportsarchive.com/css/jquery-ui.min.css" />
+<link rel="icon" type="image/png" sizes="127x127" href="/gsa_logo.png">
+<link rel="apple-touch-icon" href="/gsa_logo.png" />
+<script>
+
+$(function() {
+
+	var temp;
+	$('.auto').autocomplete({
+		source: function(req, response) {
+			$.ajax({
+				url: 'https://stats4cash.com/elastic/rest_autosearch.php?v=5',
+				dataType: 'json',
+				type: 'post',
+				data: {term: req.term},
+				success: function(data) {
+					response(data);
+				}
+			});
+		},
+		minLength: 2,
+		position: {
+			my : "right top",
+			at: "right bottom"
+		},
+		response: function(a, b) {
+			temp = '';
+			_f = -1;
+			//term = $('.ui-autocomplete-input').val();
+			term = a.target.value;
+		},
+		open: function (event) {
+			var el = event.target;
+			var el_id = event.target.id;		
+			if (el_id == 'search') {
+				$('.ui-autocomplete').css({left: 0, width: '100%', 'border' : 'none'});
+			}
+			else {
+				var wsize = $(window).width();
+				var top = $(el).offset().top + 25;
+				var right = wsize - $(el).offset().left - 201;		
+				$('.ui-autocomplete').css({width: '450px', left: 'auto', right: right});
+				$('.ui-autocomplete').position({my : "right top", at: "right bottom"});			
+			}		
+		}		
+	}).each(function () {
+		$(this).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+			var id = item[2];
+			var f = item['f'];
+			var area = item[5];
+			var sport = item[3];
+			var sport_name = item[4];
+			var sport_icon = '<img class=\"live_search_sport_image\" src=\"https://dsg-images.com/icons/sporticons/big/'+sport+'.png\" alt=\"Sport icon of '+sport_name+'\"/>';
+			if (item[10] == 'both') {
+				var gender = '<img class=\"live_search_sport_image\" src=\"https://globalsportsarchive.com/images/male.png\" alt=\"gender icon\"/><img class=\"live_search_sport_image\" src=\"https://globalsportsarchive.com/images/female.png\"/>';	
+			} else {
+				var gender = '<img class=\"live_search_sport_image\" src=\"https://globalsportsarchive.com/images/'+item[10]+'.png\" alt=\"gender icon\"/>';	
+			}
+			
+			if (temp != item[8]) { $("<div class=\"live_search_header\">"+item[8]+"</div>").appendTo(ul); }	
+			
+			
+			var comp_logo = item[1] < 8 ? "https://dsg-images.com/federations/30x30/"+sport+"/"+item[1]+".png" : "//dsg-images.com/flags/glossy_30x30/"+item[1]+".png";
+			
+			var image = '<img class=\"live_search_img_flag\" src=\"'+comp_logo+'\" alt=\"Logo of '+item[0]+'\"/>';
+			
+			if (item[8] == 'Athletes') {		
+				var item_image = '<img class=\"live_search_img_image\" src=\"https://dsg-images.com/players/50x50/'+id+'.png\" alt=\"Player image of '+item[0]+'\"/>';
+			}
+			else if (item[8] == 'Teams') {		
+				var item_image = '<img class=\"live_search_img_image\" src=\"https://dsg-images.com/clubs/50x50/'+item[9]+'.png\" alt=\"Team logo of '+item[0]+'\"/>';
+			}
+			else {
+				if (item[9]) {
+					var item_image = '<img class=\"live_search_img_image\" src=\"'+item[9]+'\" alt=\"Logo of '+item[0]+'\"/>';
+				}
+				else {
+					var item_image = '';
+				}			
+			}
+			
+			var el = "<a href=\""+item[7]+"\" style=\"display: contents;\"><div class=\"live_search_container\">"+image+"<div><div class=\"live_search_title\">"+item[0]+"</div><div class=\"live_search_country\">"+gender+" "+sport_icon+" "+sport_name+", "+area+"</div></div><div class=\"live_search_sport\">"+item_image+"</div></div></a>"
+
+			temp = item[8];
+			_f++;
+			
+			if (f == _f) { 
+				$("<li style=\"height:40px;\"></li>" ).data( "item.autocomplete", item ).append(el).appendTo( ul );
+				return $("<a href=\"https://globalsportsarchive.com/search/"+term+"/\" style=\"display:contents;\"><div class=\"live_search_footer\">More</div></a>").appendTo(ul); 
+			}
+			else {
+				return $("<li style=\"height:40px;\"></li>" ).data( "item.autocomplete", item ).append(el).appendTo( ul );
+			}
+		};		
+	});
+
+});
+
+</script>
+<script>
+$(function() {
+	$('#toggle_search').on('click', function() {
+		var width = $(window).width();
+		if (width <= 400) {
+			$('#gsa_logo').animate({width: 'toggle'});
+		}
+		$('#search').animate({width: 'toggle'});
+	});
+	$('#header_menu_icon span').on('click', function() {
+		var target = $('#header_menu_resp');
+		$('.header_dd_1').after(target);
+		if (target.css('display') == 'block') {
+			target.slideUp();
+			$('#header_resp').css('border-bottom', 'none');
+		}
+		else {
+			target.slideDown();			
+			$('#header_resp').css('border-bottom', '1px solid white')
+		}
+		footer();
+	});
+	$('.hmr_comp').on('click', function() {
+		var target = $('#header_menu_sports');
+		$('.hmr_comp').after(target);
+		if (target.css('display') == 'block') {
+			target.slideUp();
+		}
+		else {
+			target.slideDown();
+		}
+		footer();
+	});
+	$('.header_menu_sports_div').on('click', function() {
+
+		target = $('.' + $(this).attr('id'));
+		$(this).after(target);
+		$('.header_menu_comps').slideUp();
+		if (target.css('display') == 'block') {
+			target.slideUp();
+		}
+		else {
+			target.slideDown();
+		}
+		footer();
+	});
+})
+</script>
+<div id="header_resp"><div id="header_menu_icon"><span>&#9776;</span><img id="toggle_search" src="//globalsportsarchive.com/images/icons/search.png" alt="search icon" style="margin-left:5px;height: 26px;"/></div><div style="width:80%;"><input id="search" class="auto" type="text" name="competition" style="border:none;height:25px;font-size:16px;width:200px;margin-right: 10px;display:none;" placeholder="Search" /></div><a href="https://globalsportsarchive.com" title="Home - Global Sports Archive">
+		<img id="gsa_logo" src="https://globalsportsarchive.com/images/gsa_logo4.png" alt="Global Sports Archive Logo" style="padding-right: 13px;padding-top: 2px;height:36px;"/>
+	  </a></div><div id="header_menu_resp"><a href="https://globalsportsarchive.com"><div class="hmr_list">Home</div></a><div class="hmr_list hmr_comp" style="cursor:pointer;">Sports</div><a href="https://www.facebook.com/globalsportsarchive/" target="_blank"><div class="hmr_list">Facebook</div></a><a href="https://twitter.com/glsportsarchive" target="_blank"><div class="hmr_list">Twitter</div></a><a href="https://www.instagram.com/globalsportsarchive/" target="_blank"><div class="hmr_list">Instagram</div></a></div><div id="header_menu_sports"><div id="sport_alpine_skiing" class="header_menu_sports_div">Alpine Skiing</div><div class="sport_alpine_skiing header_menu_comps"><a href="https://globalsportsarchive.com/competitions/alpine_skiing/"><div>Home</div></a><a href="https://globalsportsarchive.com/competitions/alpine_skiing/" title="schedule & standings of World Cup"><div>World Cup</div></a><a href="https://globalsportsarchive.com/competitions/alpine_skiing/"><div>World Rankings</div></a></div><div id="sport_american_football" class="header_menu_sports_div">American Football</div><div class="sport_american_football header_menu_comps"><a href="https://globalsportsarchive.com/sport/american_football/-/"><div>Home</div></a><a href="https://globalsportsarchive.com/competition/american_football/nfl-2023-2024/regular-season/79679/" title="schedule & standings of NFL"><div>NFL</div></a><a href="https://globalsportsarchive.com/competition/american_football/ncaa-division-i-2022-2023/bowls/74593/" title="schedule & standings of NCAA FBS I"><div>NCAA FBS I</div></a><a href="https://globalsportsarchive.com/competition/american_football/cfl-2023/regular-season/77825/" title="schedule & standings of CFL"><div>CFL</div></a><a href="https://globalsportsarchive.com/competition/american_football/european-league-of-football-2023/regular-season/76200/" title="schedule & standings of ELF"><div>ELF</div></a><a class="all_comps" href="https://globalsportsarchive.com/competitions/american_football/"><div>All Competitions</div></a></div><div id="sport_australian_football" class="header_menu_sports_div">Australian Football</div><div class="sport_australian_football header_menu_comps"><a href="https://globalsportsarchive.com/sport/australian_football/-/"><div>Home</div></a><a href="https://globalsportsarchive.com/competition/australian_football/toyota-afl-premiership-2024/regular-season/93134/" title="schedule & standings of AFL"><div>AFL</div></a><a class="all_comps" href="https://globalsportsarchive.com/competitions/australian_football/"><div>All Competitions</div></a></div><div id="sport_badminton" class="header_menu_sports_div">Badminton</div><div class="sport_badminton header_menu_comps"><a href="https://globalsportsarchive.com/sport/badminton/-/"><div>Home</div></a><a href="https://globalsportsarchive.com" title="schedule & standings of Olympics"><div>Olympics</div></a><a href="https://globalsportsarchive.com" title="schedule & standings of CW Games"><div>CW Games</div></a><a class="all_comps" href="https://globalsportsarchive.com/competitions/badminton/"><div>All Competitions</div></a><a href="https://globalsportsarchive.com/competitions/badminton/"><div>World Rankings</div></a></div><div id="sport_baseball" class="header_menu_sports_div">Baseball</div><div class="sport_baseball header_menu_comps"><a href="https://globalsportsarchive.com/sport/baseball/-/"><div>Home</div></a><a href="https://globalsportsarchive.com/competition/baseball/mlb-2023/regular-season/76291/" title="schedule & standings of MLB"><div>MLB</div></a><a href="https://globalsportsarchive.com/competition/baseball/npb-2023/regular-season/76582/" title="schedule & standings of NPB"><div>NPB</div></a><a href="https://globalsportsarchive.com/competition/baseball/shinhan-bank-sol-kbo-league-2021/regular-season/52904/" title="schedule & standings of KBO League"><div>KBO League</div></a><a href="https://globalsportsarchive.com/competition/baseball/shinhan-bank-sol-kbo-league-2023/regular-season/76913/" title="schedule & standings of KBO"><div>KBO</div></a><a href="https://globalsportsarchive.com/competition/baseball/cpbl-2023/1st-phase/77884/" title="schedule & standings of CPBL"><div>CPBL</div></a><a class="all_comps" href="https://globalsportsarchive.com/competitions/baseball/"><div>All Competitions</div></a></div><div id="sport_basketball" class="header_menu_sports_div">Basketball</div><div class="sport_basketball header_menu_comps"><a href="https://globalsportsarchive.com/sport/basketball/-/"><div>Home</div></a><a href="https://globalsportsarchive.com/competition/basketball/nba-2023-2024/nba-finals/84505/" title="schedule & standings of NBA"><div>NBA</div></a><a href="https://globalsportsarchive.com/competition/basketball/turkish-airlines-euroleague-2024-2025/regular-season/103955/" title="schedule & standings of EuroLeague"><div>EuroLeague</div></a><a href="https://globalsportsarchive.com/competition/basketball/bkt-eurocup-2024-2025/regular-season/103602/" title="schedule & standings of EuroCup"><div>EuroCup</div></a><a href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2023-2024/final/83726/" title="schedule & standings of Liga Endesa"><div>Liga Endesa</div></a><a class="all_comps" href="https://globalsportsarchive.com/competitions/basketball/"><div>All Competitions</div></a></div><div id="sport_counterstrikego" class="header_menu_sports_div">Counter Strike GO</div><div class="sport_counterstrikego header_menu_comps"><a href="https://globalsportsarchive.com/sport/counterstrikego/-/"><div>Home</div></a><a class="all_comps" href="https://globalsportsarchive.com/competitions/counterstrikego/"><div>All Competitions</div></a></div><div id="sport_cricket" class="header_menu_sports_div">Cricket</div><div class="sport_cricket header_menu_comps"><a href="https://globalsportsarchive.com/sport/cricket/-/"><div>Home</div></a><a href="https://globalsportsarchive.com/competition/cricket/dream11-ipl-2023/regular-season/78541/" title="schedule & standings of IPL"><div>IPL</div></a><a href="https://globalsportsarchive.com/competition/cricket/kfc-big-bash-league-2022-2023/regular-season/72455/" title="schedule & standings of Big Bash"><div>Big Bash</div></a><a href="https://globalsportsarchive.com/competition/cricket/icc-odi-championship-2023/regular-round/75940/" title="schedule & standings of ICC ODI"><div>ICC ODI</div></a><a href="https://globalsportsarchive.com/competition/cricket/twenty20-internationals-2021/regular-round/51664//competition/cricket/twenty20-internationals-2023/regular-round/75939/" title="schedule & standings of Twenty20"><div>Twenty20</div></a><a href="https://globalsportsarchive.com/competition/cricket/icc-test-championship-2023/regular-round/75943/" title="schedule & standings of ICC Test"><div>ICC Test</div></a><a class="all_comps" href="https://globalsportsarchive.com/competitions/cricket/"><div>All Competitions</div></a></div><div id="sport_dota2" class="header_menu_sports_div">Dota 2</div><div class="sport_dota2 header_menu_comps"><a href="https://globalsportsarchive.com/sport/dota2/-/"><div>Home</div></a><a class="all_comps" href="https://globalsportsarchive.com/competitions/dota2/"><div>All Competitions</div></a></div><div id="sport_field_hockey" class="header_menu_sports_div">Field Hockey</div><div class="sport_field_hockey header_menu_comps"><a href="https://globalsportsarchive.com/sport/field_hockey/-/"><div>Home</div></a><a href="https://globalsportsarchive.com/competition/field_hockey/odisha-hockey-world-cup-2023-india/group-stage/71932/" title="schedule & standings of Hockey World Cup"><div>Hockey World Cup</div></a><a href="https://globalsportsarchive.com/competition/field_hockey/fih-pro-league-2022-2023/regular-season/72175/" title="schedule & standings of FIH Pro League"><div>FIH Pro League</div></a><a href="https://globalsportsarchive.com/competition/field_hockey/euro-hockey-league-2022-2023/round-1/70667/" title="schedule & standings of EHL"><div>EHL</div></a><a href="https://globalsportsarchive.com/competition/field_hockey/eurohockey-championship-2023-monchengladbach/regular-season/77922/" title="schedule & standings of Euros"><div>Euros</div></a><a class="all_comps" href="https://globalsportsarchive.com/competitions/field_hockey/"><div>All Competitions</div></a></div><div id="sport_handball" class="header_menu_sports_div">Handball</div><div class="sport_handball header_menu_comps"><a href="https://globalsportsarchive.com/sport/handball/-/"><div>Home</div></a><a href="https://globalsportsarchive.com/competition/handball/liqui-moly-handball-bundesliga-2022-2023/regular-season/71343/" title="schedule & standings of Bundesliga"><div>Bundesliga</div></a><a href="https://globalsportsarchive.com/competition/handball/machineseeker-ehf-champions-league-2022-2023/group-stage/69911/" title="schedule & standings of EHF CL"><div>EHF CL</div></a><a href="https://globalsportsarchive.com/competition/handball/ehf-euro-2022-hungary-slovakia/preliminary-round/53709/" title="schedule & standings of EHF Euro"><div>EHF Euro</div></a><a href="https://globalsportsarchive.com/competition/handball/ehf-champions-league-women-2022-2023/group-stage/70002/" title="schedule & standings of EHF Women CL"><div>EHF Women CL</div></a><a href="https://globalsportsarchive.com/competition/handball/world-mens-handball-championship-2023-poland-sweden/group-stage/68257/" title="schedule & standings of World Cup"><div>World Cup</div></a><a class="all_comps" href="https://globalsportsarchive.com/competitions/handball/"><div>All Competitions</div></a></div><div id="sport_ice_hockey" class="header_menu_sports_div">Ice Hockey</div><div class="sport_ice_hockey header_menu_comps"><a href="https://globalsportsarchive.com/sport/ice_hockey/-/"><div>Home</div></a><a href="https://globalsportsarchive.com/competition/ice_hockey/nhl-2023-2024/regular-season/84308/" title="schedule & standings of NHL"><div>NHL</div></a><a href="https://globalsportsarchive.com/competition/ice_hockey/khl-2023-2024/regular-season/80966/" title="schedule & standings of KHL"><div>KHL</div></a><a href="https://globalsportsarchive.com/competition/ice_hockey/iihf-world-championship-2024-czechia/group-stage/84612/" title="schedule & standings of World Cup"><div>World Cup</div></a><a href="https://globalsportsarchive.com/competition/ice_hockey/champions-hockey-league-2023-2024/group-stage/79028/" title="schedule & standings of CHL"><div>CHL</div></a><a href="https://globalsportsarchive.com/competition/ice_hockey/penny-del-2023-2024/regular-season/81492/" title="schedule & standings of DEL"><div>DEL</div></a><a class="all_comps" href="https://globalsportsarchive.com/competitions/ice_hockey/"><div>All Competitions</div></a></div><div id="sport_kabaddi" class="header_menu_sports_div">Kabaddi</div><div class="sport_kabaddi header_menu_comps"><a href="https://globalsportsarchive.com/sport/kabaddi/-/"><div>Home</div></a><a href="https://globalsportsarchive.com/competition/kabaddi/pro-kabaddi-season-10/regular-season/90106/" title="schedule & standings of Pro Kabaddi"><div>Pro Kabaddi</div></a><a class="all_comps" href="https://globalsportsarchive.com/competitions/kabaddi/"><div>All Competitions</div></a></div><div id="sport_leagueoflegends" class="header_menu_sports_div">League of Legends</div><div class="sport_leagueoflegends header_menu_comps"><a href="https://globalsportsarchive.com/sport/leagueoflegends/-/"><div>Home</div></a><a class="all_comps" href="https://globalsportsarchive.com/competitions/leagueoflegends/"><div>All Competitions</div></a></div><div id="sport_rugby" class="header_menu_sports_div">Rugby</div><div class="sport_rugby header_menu_comps"><a href="https://globalsportsarchive.com/sport/rugby/-/"><div>Home</div></a><a href="https://globalsportsarchive.com/competition/rugby/super-rugby-pacific-2024/regular-season/91571/" title="schedule & standings of Super Rugby"><div>Super Rugby</div></a><a href="https://globalsportsarchive.com/competition/rugby/guinness-six-nations-2024/final-round/81503/" title="schedule & standings of Six Nations"><div>Six Nations</div></a><a href="https://globalsportsarchive.com/competition/rugby/gallagher-premiership-rugby-2023-2024/regular-season/82594/" title="schedule & standings of Premiership"><div>Premiership</div></a><a href="https://globalsportsarchive.com/competition/rugby/bkt-united-rugby-championship-2023-2024/regular-season/81904/" title="schedule & standings of Pro 14"><div>Pro 14</div></a><a href="https://globalsportsarchive.com/competition/rugby/top-14-2023-2024/regular-season/81571/" title="schedule & standings of Top 14"><div>Top 14</div></a><a class="all_comps" href="https://globalsportsarchive.com/competitions/rugby/"><div>All Competitions</div></a></div><div id="sport_soccer" class="header_menu_sports_div">Soccer</div><div class="sport_soccer header_menu_comps"><a href="https://globalsportsarchive.com/sport/soccer/-/"><div>Home</div></a><a href="https://globalsportsarchive.com/competition/soccer/fifa-world-cup-2022-qatar/group-stage/60744/" title="schedule & standings of FIFA WC"><div>FIFA WC</div></a><a href="https://globalsportsarchive.com/competition/soccer/premier-league-2024-2025/regular-season/101336/" title="schedule & standings of EPL"><div>EPL</div></a><a href="https://globalsportsarchive.com/competition/soccer/la-liga-ea-sports-2024-2025/regular-season/102469/" title="schedule & standings of La Liga"><div>La Liga</div></a><a href="https://globalsportsarchive.com/competition/soccer/bundesliga-2024-2025/regular-season/101335/" title="schedule & standings of Bundesliga"><div>Bundesliga</div></a><a href="https://globalsportsarchive.com/competition/soccer/serie-a-enilive-2024-2025/regular-season/102470/" title="schedule & standings of Serie A"><div>Serie A</div></a><a href="https://globalsportsarchive.com/competition/soccer/uefa-champions-league-2024-2025/league-phase/102138/" title="schedule & standings of UEFA CL"><div>UEFA CL</div></a><a class="all_comps" href="https://globalsportsarchive.com/competitions/soccer/"><div>All Competitions</div></a><a id="players_abroad" href="https://globalsportsarchive.com/players_abroad/soccer/"><div>Players Abroad</div></a></div><div id="sport_tennis" class="header_menu_sports_div">Tennis</div><div class="sport_tennis header_menu_comps"><a href="https://globalsportsarchive.com/sport/tennis/-/"><div>Home</div></a><a href="https://globalsportsarchive.com/competitions/tennis/" title="schedule & standings of ATP Tour"><div>ATP Tour</div></a><a href="https://globalsportsarchive.com/competitions/tennis/" title="schedule & standings of WTA Tour"><div>WTA Tour</div></a><a href="https://globalsportsarchive.com/competitions/tennis/" title="schedule & standings of ATP Challenger"><div>ATP Challenger</div></a><a href="https://globalsportsarchive.com/competitions/tennis/"><div>World Rankings</div></a></div><div id="sport_volleyball" class="header_menu_sports_div">Volleyball</div><div class="sport_volleyball header_menu_comps"><a href="https://globalsportsarchive.com/sport/volleyball/-/"><div>Home</div></a><a href="https://globalsportsarchive.com/competition/volleyball/fivb-volleyball-mens-nations-league-2023/regular-season/79126/" title="schedule & standings of VMNL"><div>VMNL</div></a><a href="https://globalsportsarchive.com/competition/volleyball/fivb-volleyball-womens-nations-league-2023/regular-season/79082/" title="schedule & standings of VWNL"><div>VWNL</div></a><a href="https://globalsportsarchive.com/competition/volleyball/cev-champions-league-2022-2023/1st-qualifying-round/72243/" title="schedule & standings of CEV CL"><div>CEV CL</div></a><a href="https://globalsportsarchive.com/competition/volleyball/superlega-credem-banca-2022-2023/regular-season/72654/" title="schedule & standings of Superlega"><div>Superlega</div></a><a class="all_comps" href="https://globalsportsarchive.com/competitions/volleyball/"><div>All Competitions</div></a></div><div id="sport_water_polo" class="header_menu_sports_div">Water Polo</div><div class="sport_water_polo header_menu_comps"><a href="https://globalsportsarchive.com/sport/water_polo/-/"><div>Home</div></a><a href="https://globalsportsarchive.com/competition/water_polo/fina-world-cup-2023/division-1-group-stage/78194/" title="schedule & standings of World Cup"><div>World Cup</div></a><a href="https://globalsportsarchive.com/competition/water_polo/fina-water-polo-world-league-2022/european-preliminaries/62843/" title="schedule & standings of World League"><div>World League</div></a><a href="https://globalsportsarchive.com/competition/water_polo/european-water-polo-championship-2022-croatia/group-stage/67398/" title="schedule & standings of Euros (M)"><div>Euros (M)</div></a><a href="https://globalsportsarchive.com/competition/water_polo/len-champions-league-2022-2023/1st-qualifying-round/73027/" title="schedule & standings of LEN CL"><div>LEN CL</div></a><a href="https://globalsportsarchive.com/competition/water_polo/womens-european-water-polo-championship-2022-croatia/group-stage/71974/" title="schedule & standings of Euros (W)"><div>Euros (W)</div></a><a class="all_comps" href="https://globalsportsarchive.com/competitions/water_polo/"><div>All Competitions</div></a></div></div><div id="gsa_header_2_1"><div style="width:15%;padding-left:10px;"><a href="https://globalsportsarchive.com/"><img src="https://globalsportsarchive.com/images/gsa_logo4.png" style="height:36px;padding-top:2px"  alt="Global Sports Archive Logo"></a></div><div style="width:85%"><span id="client_tz"></span><input class="auto" type="text" name="competition" style="float:right;border:none;height:25px;font-size:16px;width:200px;margin-right: 10px;" placeholder="Search" /></div></div><div class="header_dd_1"></div><div id="gsa_header_2_2" style="flex-flow: wrap row;line-height:40px;overflow:hidden"><a href="https://globalsportsarchive.com/sport/basketball/-/"><img src="https://dsg-images.com/icons/sporticons/big/basketball.png" style="margin:0px 5px;" alt="Basketball icon"></a><a id="hot_comp_1" href="https://globalsportsarchive.com/competition/basketball/nba-2023-2024/nba-finals/84505/" title="schedule & standings of NBA"><span style="border-right: 1px solid white;padding: 0px 10px;">NBA</span></a><a id="hot_comp_2" href="https://globalsportsarchive.com/competition/basketball/turkish-airlines-euroleague-2024-2025/regular-season/103955/" title="schedule & standings of EuroLeague"><span style="border-right: 1px solid white;padding: 0px 10px;">EuroLeague</span></a><a id="hot_comp_3" href="https://globalsportsarchive.com/competition/basketball/bkt-eurocup-2024-2025/regular-season/103602/" title="schedule & standings of EuroCup"><span style="border-right: 1px solid white;padding: 0px 10px;">EuroCup</span></a><a id="hot_comp_4" href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2023-2024/final/83726/" title="schedule & standings of Liga Endesa"><span style="border-right: 1px solid white;padding: 0px 10px;">Liga Endesa</span></a><a class="all_comps" href="https://globalsportsarchive.com/competitions/basketball/"><span style="padding: 0px 10px;">All Competitions</span></a><div id="comp_dropdown"><img src="https://dsg-images.com/flags/glossy_30x30/176.png" style="margin-right:5px;" alt="Area Icon of Competition"/><div id="comp_sel"><select style="width:170px;" onChange="location.href = this.value" ><option>More Competitions</option><option value="https://globalsportsarchive.com/competition/basketball/caceres-challenger-2026/final/170449/">Càceres Challenger</option><option value="https://globalsportsarchive.com/competition/basketball/madrid-challenger-2026/final/170577/">Madrid Challenger</option><option value="https://globalsportsarchive.com/competition/basketball/mataro-challenger-2026/final/170568/">Mataró Challenger</option><option value="https://globalsportsarchive.com/competition/basketball/copa-del-rey-de-baloncesto-2025-2026/final/142157/">Copa del Rey de Baloncesto</option><option value="https://globalsportsarchive.com/competition/basketball/supercopa-2026/final/162013/">Supercopa</option><option value="https://globalsportsarchive.com/competition/basketball/liga-femenina-endesa-2026-2027/regular-season/158238/">Liga Femenina Endesa</option><option value="https://globalsportsarchive.com/competition/basketball/supercopa-2024/final/107413/">Supercopa</option></select></div></div></div><div class="loader"></div><div id="body_content" style="display:none;"><div id="season_nav"><div id="season_nav_img"><img src="https://dsg-images.com/comps/75x75/1601.png" title="Logo of Liga Endesa " alt="Logo of Liga Endesa "/></div><div style="width: 0;height: 0;border-left: 0px solid;border-top: 55px solid #e2e2e2;border-right: 3vw solid transparent;border-bottom: 0px solid;"></div><div id="season_nav_mid"><h1><span class="season_nav_compname_1">Liga Endesa</span><span class="season_nav_compname_2 dsa">Liga Endesa</span></h1></div><div id="season_nav_seasonlist"><div id="season_sel" style=""><select style="  " onChange="window.location.href = this.value"><option value="https://globalsportsarchive.com/competition/basketball/liga-endesa-2026-2027/regular-season/161965/" >2026/2027</option><option value="https://globalsportsarchive.com/competition/basketball/liga-endesa-2025-2026/regular-season/130983/" selected>2025/2026</option><option value="https://globalsportsarchive.com/competition/basketball/liga-endesa-2024-2025/regular-season/104812/" >2024/2025</option><option value="https://globalsportsarchive.com/competition/basketball/liga-endesa-2023-2024/regular-season/83723/" >2023/2024</option><option value="https://globalsportsarchive.com/competition/basketball/liga-endesa-2022-2023/regular-season/71926/" >2022/2023</option><option value="https://globalsportsarchive.com/competition/basketball/liga-endesa-2021-2022/regular-season/56909/" >2021/2022</option><option value="https://globalsportsarchive.com/competition/basketball/liga-endesa-2020-2021/regular-season/48319/" >2020/2021</option><option value="https://globalsportsarchive.com/competition/basketball/liga-endesa-2019-2020/regular-season/34843/" >2019/2020</option><option value="https://globalsportsarchive.com/competition/basketball/liga-endesa-2018-2019/regular-season/23765/" >2018/2019</option><option value="https://globalsportsarchive.com/competition/basketball/liga-endesa-2017-2018/regular-season/16110/" >2017/2018</option><option value="https://globalsportsarchive.com/competition/basketball/liga-endesa-2016-2017/regular-season/46365/" >2016/2017</option><option value="https://globalsportsarchive.com/competition/basketball/liga-endesa-2015-2016/regular-season/46369/" >2015/2016</option><option value="https://globalsportsarchive.com/competition/basketball/liga-endesa-2014-2015/regular-season/46373/" >2014/2015</option><option value="https://globalsportsarchive.com/competition/basketball/liga-endesa-2013-2014/regular-season/46377/" >2013/2014</option><option value="https://globalsportsarchive.com/competition/basketball/liga-endesa-2012-2013/regular-season/46381/" >2012/2013</option><option value="https://globalsportsarchive.com/competition/basketball/liga-endesa-2011-2012/regular-season/46385/" >2011/2012</option><option value="https://globalsportsarchive.com/competition/basketball/liga-acb-2010-2011/regular-season/46389/" >2010/2011</option><option value="https://globalsportsarchive.com/competition/basketball/liga-acb-2009-2010/regular-season/46393/" >2009/2010</option><option value="https://globalsportsarchive.com/competition/basketball/liga-acb-2008-2009/regular-season/46397/" >2008/2009</option></select></div></div></div><div id="seasonlist_select" style="width:100%;height:40px;line-height:40px;text-align:center;background-color:#c3c5c5;font-size:15px;font-weight:bold;cursor:pointer;justify-content: center;
+    align-items: center;" onClick="expandSeasonList();">2025/2026<div id="seasonlist_cursor" style="display:inline-block;width: 0;height: 0;border-style: solid;border-width: 16px 10px 0 10px;border-color: #000000 transparent transparent transparent;margin-left: 5px;"></div></div><ul id="seasonlist" style="display:none;list-style-type: none;margin:0;padding: 0;"><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2026-2027/regular-season/161965/">2026/2027</a></li><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2025-2026/regular-season/130983/">2025/2026</a></li><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2024-2025/regular-season/104812/">2024/2025</a></li><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2023-2024/regular-season/83723/">2023/2024</a></li><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2022-2023/regular-season/71926/">2022/2023</a></li><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2021-2022/regular-season/56909/">2021/2022</a></li><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2020-2021/regular-season/48319/">2020/2021</a></li><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2019-2020/regular-season/34843/">2019/2020</a></li><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2018-2019/regular-season/23765/">2018/2019</a></li><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2017-2018/regular-season/16110/">2017/2018</a></li><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2016-2017/regular-season/46365/">2016/2017</a></li><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2015-2016/regular-season/46369/">2015/2016</a></li><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2014-2015/regular-season/46373/">2014/2015</a></li><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2013-2014/regular-season/46377/">2013/2014</a></li><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2012-2013/regular-season/46381/">2012/2013</a></li><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2011-2012/regular-season/46385/">2011/2012</a></li><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-acb-2010-2011/regular-season/46389/">2010/2011</a></li><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-acb-2009-2010/regular-season/46393/">2009/2010</a></li><li style="border-bottom:1px solid #dfdfdf;text-align: center;padding: 5px 0px;"><a style="font-weight:bold;" href="https://globalsportsarchive.com/competition/basketball/liga-acb-2008-2009/regular-season/46397/">2008/2009</a></li></ul><div style="height: 42px;width: 100%;display: flex;align-items: center;background-color: #777777;color: #ffffff;font-weight: bold;"><a href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2025-2026/regular-season/130983/"><div style="width:42px;line-height:42px;text-align:center;font-size: 28px;color: white;"><</div></a><div id="round_select_2" style="width: 100%;line-height: 28px;text-align: center;cursor: pointer;border-left: 1px dotted #ffffff;border-right: 1px dotted #ffffff;height: 65%;">Regular Season</div><a href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2025-2026/quarter-finals/130984/"><div style="width:42px;line-height:42px;text-align:center;font-size: 28px;color: white;">></div></a></div><div id="round_menu_2" style="z-index: 1;width:100%;padding: 0px 42px;display:none;position:absolute;"><a href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2025-2026/regular-season/130983/"><div style="line-height:30px;text-align:center;background-color:#B0B0B0;color:white;border-bottom:1px solid white;">Regular Season</div></a><a href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2025-2026/quarter-finals/130984/"><div style="line-height:30px;text-align:center;background-color:#B0B0B0;color:white;border-bottom:1px solid white;">Quarter-finals</div></a><a href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2025-2026/semi-finals/130986/"><div style="line-height:30px;text-align:center;background-color:#B0B0B0;color:white;border-bottom:1px solid white;">Semi-finals</div></a><a href="https://globalsportsarchive.com/competition/basketball/liga-endesa-2025-2026/final/130985/"><div style="line-height:30px;text-align:center;background-color:#B0B0B0;color:white;border-bottom:1px solid white;">Final</div></a></div><div id="" class="gsa_subheader_2">Matches</div><input type="hidden" id="curweek" value="33"/><div id="week_header"><div id="week_prev" onClick=" changeWeek('prev'); "></div><div id="week_sel">Gameweek 33</div><div id="week_next" onClick=" changeWeek('next'); "></div></div><input type="hidden" id="maxweek" value="34"/><div id="week_container"><div style="float:left;width:100%;height:26px;padding:3px 0px;vertical-align:middle;border:1px solid #dfdfdf;background-color:#E9EBEC;font-weight:bold;padding-left:10px;box-sizing:border-box;">2026-05-23</div><a href="https://globalsportsarchive.com/match/basketball/2026-05-23/unicaja-vs-cb-breogan/3885646/" title="match report of Unicaja vs Rio Breogán - 2026-05-23"><div class="gsa-c-match-row"><div class="gsa-c-match-c1">18:00</div><div class="gsa-c-match-c2" onClick="gotoUrl(25783,'unicaja');"><span class="gsa-c-team_full">Unicaja</span><span class="gsa-c-team_short">Unicaja</span><span class="gsa-c-team_tla">UNI</span></div><img src="https://www.dsg-images.com/clubs/200x200/25783.png"><div class="gsa-c-match-c3">101 : 83 </div><img src="https://www.dsg-images.com/clubs/200x200/37470.png"><div class="gsa-c-match-c4" onClick="gotoUrl(37470,'cb-breogan');"><span class="gsa-c-team_full">Rio Breogán</span><span class="gsa-c-team_short">CB Breogán</span><span class="gsa-c-team_tla">CBB</span></div></div></a><a href="https://globalsportsarchive.com/match/basketball/2026-05-23/herbalife-gran-canaria-vs-icl-manresa/3885642/" title="match report of Dreamland Gran Canaria vs BAXI Manresa - 2026-05-23"><div class="gsa-c-match-row"><div class="gsa-c-match-c1">20:00</div><div class="gsa-c-match-c2" onClick="gotoUrl(25782,'herbalife-gran-canaria');"><span class="gsa-c-team_full">Dreamland Gran Canaria</span><span class="gsa-c-team_short">Gran Canaria</span><span class="gsa-c-team_tla">HGC</span></div><img src="https://www.dsg-images.com/clubs/200x200/25782.png"><div class="gsa-c-match-c3">80 : 87 </div><img src="https://www.dsg-images.com/clubs/200x200/25791.png"><div class="gsa-c-match-c4" onClick="gotoUrl(25791,'icl-manresa');"><span class="gsa-c-team_full">BAXI Manresa</span><span class="gsa-c-team_short">Manresa</span><span class="gsa-c-team_tla">MAN</span></div></div></a><a href="https://globalsportsarchive.com/match/basketball/2026-05-23/cb-granada-vs-cb-canarias/3885643/" title="match report of Coviran Granada vs La Laguna Tenerife - 2026-05-23"><div class="gsa-c-match-row"><div class="gsa-c-match-c1">21:00</div><div class="gsa-c-match-c2" onClick="gotoUrl(56354,'cb-granada');"><span class="gsa-c-team_full">Coviran Granada</span><span class="gsa-c-team_short">CB Granada</span><span class="gsa-c-team_tla">GRA</span></div><img src="https://www.dsg-images.com/clubs/200x200/56354.png"><div class="gsa-c-match-c3">96 : 109 </div><img src="https://www.dsg-images.com/clubs/200x200/25789.png"><div class="gsa-c-match-c4" onClick="gotoUrl(25789,'cb-canarias');"><span class="gsa-c-team_full">La Laguna Tenerife</span><span class="gsa-c-team_short">CB Canarias</span><span class="gsa-c-team_tla">TEN</span></div></div></a><div style="float:left;width:100%;height:26px;padding:3px 0px;vertical-align:middle;border:1px solid #dfdfdf;background-color:#E9EBEC;font-weight:bold;padding-left:10px;box-sizing:border-box;">2026-05-24</div><a href="https://globalsportsarchive.com/match/basketball/2026-05-24/retabet-bilbao-basket-vs-basquet-girona/3885640/" title="match report of Surne Bilbao Basket vs Bàsquet Girona - 2026-05-24"><div class="gsa-c-match-row"><div class="gsa-c-match-c1">12:00</div><div class="gsa-c-match-c2" onClick="gotoUrl(25785,'retabet-bilbao-basket');"><span class="gsa-c-team_full">Surne Bilbao Basket</span><span class="gsa-c-team_short">Bilbao</span><span class="gsa-c-team_tla">BIL</span></div><img src="https://www.dsg-images.com/sport_entity/200x200/2327.png"><div class="gsa-c-match-c3">86 : 80 </div><img src="https://www.dsg-images.com/clubs/200x200/56356.png"><div class="gsa-c-match-c4" onClick="gotoUrl(56356,'basquet-girona');"><span class="gsa-c-team_full">Bàsquet Girona</span><span class="gsa-c-team_short">Bàsquet Girona</span><span class="gsa-c-team_tla">GIR</span></div></div></a><a href="https://globalsportsarchive.com/match/basketball/2026-05-24/basket-zaragoza-2002-vs-ucam-murcia/3885639/" title="match report of Casademont Zaragoza vs UCAM Murcia - 2026-05-24"><div class="gsa-c-match-row"><div class="gsa-c-match-c1">12:30</div><div class="gsa-c-match-c2" onClick="gotoUrl(25792,'basket-zaragoza-2002');"><span class="gsa-c-team_full">Casademont Zaragoza</span><span class="gsa-c-team_short">Zaragoza</span><span class="gsa-c-team_tla">ZAR</span></div><img src="https://www.dsg-images.com/clubs/200x200/25792.png"><div class="gsa-c-match-c3">90 : 100 </div><img src="https://www.dsg-images.com/clubs/200x200/25787.png"><div class="gsa-c-match-c4" onClick="gotoUrl(25787,'ucam-murcia');"><span class="gsa-c-team_full">UCAM Murcia</span><span class="gsa-c-team_short">UCAM Murcia</span><span class="gsa-c-team_tla">MUR</span></div></div></a><a href="https://globalsportsarchive.com/match/basketball/2026-05-24/ce-lleida-basquet-vs-morabanc-andorra/3885641/" title="match report of Hiopos Lleida vs MoraBanc Andorra - 2026-05-24"><div class="gsa-c-match-row"><div class="gsa-c-match-c1">12:30</div><div class="gsa-c-match-c2" onClick="gotoUrl(64070,'ce-lleida-basquet');"><span class="gsa-c-team_full">Hiopos Lleida</span><span class="gsa-c-team_short">Lleida Bàsquet</span><span class="gsa-c-team_tla">LLE</span></div><img src="https://www.dsg-images.com/clubs/200x200/64070.png"><div class="gsa-c-match-c3">88 : 116 </div><img src="https://www.dsg-images.com/clubs/200x200/25784.png"><div class="gsa-c-match-c4" onClick="gotoUrl(25784,'morabanc-andorra');"><span class="gsa-c-team_full">MoraBanc Andorra</span><span class="gsa-c-team_short">Andorra</span><span class="gsa-c-team_tla">AND</span></div></div></a><a href="https://globalsportsarchive.com/match/basketball/2026-05-24/joventut-badalona-vs-cb-miraflores/3885644/" title="match report of Joventut Badalona vs San Pablo Burgos - 2026-05-24"><div class="gsa-c-match-row"><div class="gsa-c-match-c1">18:00</div><div class="gsa-c-match-c2" onClick="gotoUrl(25790,'joventut-badalona');"><span class="gsa-c-team_full">Joventut Badalona</span><span class="gsa-c-team_short">Badalona</span><span class="gsa-c-team_tla">BAD</span></div><img src="https://www.dsg-images.com/clubs/200x200/25790.png"><div class="gsa-c-match-c3">86 : 79 </div><img src="https://www.dsg-images.com/clubs/200x200/33985.png"><div class="gsa-c-match-c4" onClick="gotoUrl(33985,'cb-miraflores');"><span class="gsa-c-team_full">San Pablo Burgos</span><span class="gsa-c-team_short">CB Miraflores</span><span class="gsa-c-team_tla">CBM</span></div></div></a><div style="float:left;width:100%;height:26px;padding:3px 0px;vertical-align:middle;border:1px solid #dfdfdf;background-color:#E9EBEC;font-weight:bold;padding-left:10px;box-sizing:border-box;">2026-05-27</div><a href="https://globalsportsarchive.com/match/basketball/2026-05-27/real-madrid-vs-td-systems-baskonia/3885645/" title="match report of Real Madrid vs Baskonia - 2026-05-27"><div class="gsa-c-match-row"><div class="gsa-c-match-c1">21:00</div><div class="gsa-c-match-c2" onClick="gotoUrl(25781,'real-madrid');"><span class="gsa-c-team_full">Real Madrid</span><span class="gsa-c-team_short">Real Madrid</span><span class="gsa-c-team_tla">RMB</span></div><img src="https://www.dsg-images.com/clubs/200x200/25781.png"><div class="gsa-c-match-c3">83 : 88 </div><img src="https://www.dsg-images.com/clubs/200x200/25780.png"><div class="gsa-c-match-c4" onClick="gotoUrl(25780,'td-systems-baskonia');"><span class="gsa-c-team_full">Baskonia</span><span class="gsa-c-team_short">Baskonia</span><span class="gsa-c-team_tla">BAS</span></div></div></a><div style="float:left;width:100%;height:26px;padding:3px 0px;vertical-align:middle;border:1px solid #dfdfdf;background-color:#E9EBEC;font-weight:bold;padding-left:10px;box-sizing:border-box;">2026-05-31</div><a href="https://globalsportsarchive.com/match/basketball/2026-05-31/fc-barcelona-vs-valencia-basket/3885638/" title="match report of Barça vs Valencia Basket - 2026-05-31"><div class="gsa-c-match-row"><div class="gsa-c-match-c1">19:00</div><div class="gsa-c-match-c2" onClick="gotoUrl(28604,'fc-barcelona');"><span class="gsa-c-team_full">Barça</span><span class="gsa-c-team_short">Barça</span><span class="gsa-c-team_tla">FCB</span></div><img src="https://www.dsg-images.com/clubs/200x200/28604.png"><div class="gsa-c-match-c3">77 : 102 </div><img src="https://www.dsg-images.com/sport_entity/200x200/2290.png"><div class="gsa-c-match-c4" onClick="gotoUrl(25778,'valencia-basket');"><span class="gsa-c-team_full">Valencia Basket</span><span class="gsa-c-team_short">Valencia</span><span class="gsa-c-team_tla">VBC</span></div></div></a></div><input type="hidden" id="round" value="130983"/><div id="weeks"><div class="week_num week_1" onClick="changeWeek(1);">GW 1</div><div class="week_num week_2" onClick="changeWeek(2);">GW 2</div><div class="week_num week_3" onClick="changeWeek(3);">GW 3</div><div class="week_num week_4" onClick="changeWeek(4);">GW 4</div><div class="week_num week_5" onClick="changeWeek(5);">GW 5</div><div class="week_num week_6" onClick="changeWeek(6);">GW 6</div><div class="week_num week_7" onClick="changeWeek(7);">GW 7</div><div class="week_num week_8" onClick="changeWeek(8);">GW 8</div><div class="week_num week_9" onClick="changeWeek(9);">GW 9</div><div class="week_num week_10" onClick="changeWeek(10);">GW 10</div><div class="week_num week_11" onClick="changeWeek(11);">GW 11</div><div class="week_num week_12" onClick="changeWeek(12);">GW 12</div><div class="week_num week_13" onClick="changeWeek(13);">GW 13</div><div class="week_num week_14" onClick="changeWeek(14);">GW 14</div><div class="week_num week_15" onClick="changeWeek(15);">GW 15</div><div class="week_num week_16" onClick="changeWeek(16);">GW 16</div><div class="week_num week_17" onClick="changeWeek(17);">GW 17</div><div class="week_num week_18" onClick="changeWeek(18);">GW 18</div><div class="week_num week_19" onClick="changeWeek(19);">GW 19</div><div class="week_num week_20" onClick="changeWeek(20);">GW 20</div><div class="week_num week_21" onClick="changeWeek(21);">GW 21</div><div class="week_num week_22" onClick="changeWeek(22);">GW 22</div><div class="week_num week_23" onClick="changeWeek(23);">GW 23</div><div class="week_num week_24" onClick="changeWeek(24);">GW 24</div><div class="week_num week_25" onClick="changeWeek(25);">GW 25</div><div class="week_num week_26" onClick="changeWeek(26);">GW 26</div><div class="week_num week_27" onClick="changeWeek(27);">GW 27</div><div class="week_num week_28" onClick="changeWeek(28);">GW 28</div><div class="week_num week_29" onClick="changeWeek(29);">GW 29</div><div class="week_num week_30" onClick="changeWeek(30);">GW 30</div><div class="week_num week_31" onClick="changeWeek(31);">GW 31</div><div class="week_num week_32" onClick="changeWeek(32);">GW 32</div><div class="week_num week_33" onClick="changeWeek(33);">GW 33</div><div class="week_num week_34" onClick="changeWeek(34);">GW 34</div></div><style>
+body {
+	margin: 0;
+}
+.pos_header {
+	box-sizing: border-box;
+	width: 100%;
+	line-height: 32px;
+	background-color: #848484;
+	color: white;
+	padding-left: 5px;
+	vertical-align: middle;
+	font-weight: bold;
+}
+.pos_header_inner {
+	box-sizing: border-box;
+	width: 100%;
+	line-height: 32px;
+	background-color: #c3c5c5;
+	color: white;
+	padding-left: 5px;
+	vertical-align: middle;
+	font-weight: bold;
+}
+.player_header {
+	box-sizing: border-box;
+	width: 100%;
+	line-height: 27px;
+	height: 27px;
+	border-bottom: 1px solid #dfdfdf;
+	background-color:#E9EBEC;
+}
+.player_header div {
+	display: inline-block;
+	text-align: center;
+	font-weight: bold;
+	float: left;
+}
+.player_row {
+	box-sizing: border-box;
+	width: 100%;
+	line-height: 44px;
+	height: 44px;
+	border-bottom: 1px solid #dfdfdf
+}
+.player_row div {
+	display: inline-block;
+	text-align: center;
+	height: 100%;
+	float: left;
+}
+.player_row img {
+	height: 40px;
+	width: 40px;
+	margin: 3.5px auto;
+	display: block;
+}
+@font-face {
+	font-family: 'economica';  
+	src: url('https://globalsportsarchive.com/fonts/Economica-Regular-OTF.otf');
+}
+.col_shirt {
+	width: 2.5%;
+	font-family: 'economica';
+}
+.col_logo {
+	height:100%;
+	width: 3.5%;
+}
+.col_name {
+	box-sizing: border-box;
+	//text-align:left !important;
+	padding-left:5px;
+	width: 34%;
+}
+.col_data {
+	width: 8.5714285714286%;
+}
+
+@media screen AND (min-width: 801px) {
+	.fullname {
+		display: inline-block;
+	}
+	.shortname {
+		display: none;
+	}
+}
+@media screen AND (max-width: 800px) {
+	.fullname {
+		display: none;
+	}
+	.shortname {
+		display: inline-block;
+	}
+}
+@media screen AND (max-width: 600px) {
+	.col_shirt { width: 6%; }
+	.col_logo { width: 6%; }
+	.col_name { width: 34%; }
+	div.col_data.col_p7, div.col_data.col_p9, div.col_data.col_p10, div.col_data.col_p11 { display: none; }
+	.col_data { width: 7.7142857142857%; }
+}
+@media screen AND (max-width: 560px) {
+	div.col_data.col_p6, div.col_data.col_p7, div.col_data.col_p9, div.col_data.col_p10, div.col_data.col_p11 { display: none; }
+	.col_data { width: 9%; }
+}
+@media screen AND (max-width: 520px) {
+	div.col_data.col_p5, div.col_data.col_p6, div.col_data.col_p7, div.col_data.col_p9, div.col_data.col_p10, div.col_data.col_p11 { display: none; }
+	.col_data { width: 10.8%; }
+}
+@media screen AND (max-width: 480px) {
+	div.col_data.col_p4, div.col_data.col_p5, div.col_data.col_p6, div.col_data.col_p7, div.col_data.col_p9, div.col_data.col_p10, div.col_data.col_p11 { display: none; }
+	.col_data { width: 13.5%; }
+}
+@media screen AND (max-width: 440px) {
+	div.col_data.col_p3, div.col_data.col_p4, div.col_data.col_p5, div.col_data.col_p6, div.col_data.col_p7, div.col_data.col_p9, div.col_data.col_p10, div.col_data.col_p11 { display: none; }
+	.col_data { width: 18%; }
+}
+@media screen AND (max-width: 400px) {
+	div.col_data.col_p2, div.col_data.col_p3, div.col_data.col_p4, div.col_data.col_p5, div.col_data.col_p6, div.col_data.col_p7, div.col_data.col_p9, div.col_data.col_p10, div.col_data.col_p11 { display: none; }
+	.col_data { width: 27%; }
+}
+
+@media screen AND (min-width: 701px) { 
+	.mobile { display: none; }
+	//.desktop { display: inline; }
+}
+@media screen AND (max-width: 700px) { 
+	.mobile { display: block; }
+	.desktop { visibility: hidden; }
+}
+
+</style>
+<div class="gsa_subheader_2">Standings</div><div class="player_header mobile" style="font-weight:bold;text-align:center;background-color:#b2b5b7;">Regular Season</div><div class="player_header"><div class="col_shirt">#</div>	
+						<div class="col_logo"></div>			
+					<div class="col_name desktop" style="text-align:lrft;"><span class="desktop">&nbsp;</span></div><div class="col_data col_p1">M</div><div class="col_data col_p2">W</div><div class="col_data col_p3">L</div><div class="col_data col_p4">PF</div><div class="col_data col_p5">PA</div><div class="col_data col_p6">DIF</div><div class="col_data col_p7">PTS</div></div><div class="player_row" style=""><div class="col_shirt shirt" style="font-weight:bold;font-size:20px;"><div style="display:inline-block;width:3px;height:100%;background-color:#F7BE81;"></div>1</div>
+								<div class="col_logo" style="background-image: url(https://www.dsg-images.com/clubs/200x200/25781.png); background-position:center;background-repeat:no-repeat;background-size: 18px;" title="Club logo of Real Madrid" alt="Club logo of Real Madrid"></div>
+								<div class="col_name" style="text-align:left;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/" style=""><span class="fullname">Real Madrid</span><span class="shortname">Real Madrid</span></a></div><div class="col_data col_p1">34</div><div class="col_data col_p2">26</div><div class="col_data col_p3">8</div><div class="col_data col_p4">3160</div><div class="col_data col_p5">2906</div><div class="col_data col_p6">254</div><div class="col_data col_p7">52</div></div><div class="player_row" style=""><div class="col_shirt shirt" style="font-weight:bold;font-size:20px;"><div style="display:inline-block;width:3px;height:100%;background-color:#F7BE81;"></div>2</div>
+								<div class="col_logo" style="background-image: url(https://www.dsg-images.com/sport_entity/200x200/2290.png); background-position:center;background-repeat:no-repeat;background-size: 18px;" title="Club logo of Valencia Basket" alt="Club logo of Valencia Basket"></div>
+								<div class="col_name" style="text-align:left;"><a href="https://globalsportsarchive.com/team/basketball/valencia-basket/25778/" style=""><span class="fullname">Valencia Basket</span><span class="shortname">Valencia</span></a></div><div class="col_data col_p1">34</div><div class="col_data col_p2">25</div><div class="col_data col_p3">9</div><div class="col_data col_p4">3218</div><div class="col_data col_p5">2829</div><div class="col_data col_p6">389</div><div class="col_data col_p7">50</div></div><div class="player_row" style=""><div class="col_shirt shirt" style="font-weight:bold;font-size:20px;"><div style="display:inline-block;width:3px;height:100%;background-color:#F7BE81;"></div>3</div>
+								<div class="col_logo" style="background-image: url(https://www.dsg-images.com/clubs/200x200/25780.png); background-position:center;background-repeat:no-repeat;background-size: 18px;" title="Club logo of Baskonia" alt="Club logo of Baskonia"></div>
+								<div class="col_name" style="text-align:left;"><a href="https://globalsportsarchive.com/team/basketball/td-systems-baskonia/25780/" style=""><span class="fullname">Baskonia</span><span class="shortname">Baskonia</span></a></div><div class="col_data col_p1">34</div><div class="col_data col_p2">25</div><div class="col_data col_p3">9</div><div class="col_data col_p4">3177</div><div class="col_data col_p5">2950</div><div class="col_data col_p6">227</div><div class="col_data col_p7">50</div></div><div class="player_row" style=""><div class="col_shirt shirt" style="font-weight:bold;font-size:20px;"><div style="display:inline-block;width:3px;height:100%;background-color:#F7BE81;"></div>4</div>
+								<div class="col_logo" style="background-image: url(https://www.dsg-images.com/clubs/200x200/25787.png); background-position:center;background-repeat:no-repeat;background-size: 18px;" title="Club logo of UCAM Murcia" alt="Club logo of UCAM Murcia"></div>
+								<div class="col_name" style="text-align:left;"><a href="https://globalsportsarchive.com/team/basketball/ucam-murcia/25787/" style=""><span class="fullname">UCAM Murcia</span><span class="shortname">UCAM Murcia</span></a></div><div class="col_data col_p1">34</div><div class="col_data col_p2">25</div><div class="col_data col_p3">9</div><div class="col_data col_p4">3113</div><div class="col_data col_p5">2876</div><div class="col_data col_p6">237</div><div class="col_data col_p7">52</div></div><div class="player_row" style=""><div class="col_shirt shirt" style="font-weight:bold;font-size:20px;"><div style="display:inline-block;width:3px;height:100%;background-color:#F7BE81;"></div>5</div>
+								<div class="col_logo" style="background-image: url(https://www.dsg-images.com/clubs/200x200/28604.png); background-position:center;background-repeat:no-repeat;background-size: 18px;" title="Club logo of Barça" alt="Club logo of Barça"></div>
+								<div class="col_name" style="text-align:left;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/" style=""><span class="fullname">Barça</span><span class="shortname">Barça</span></a></div><div class="col_data col_p1">34</div><div class="col_data col_p2">24</div><div class="col_data col_p3">10</div><div class="col_data col_p4">3046</div><div class="col_data col_p5">2815</div><div class="col_data col_p6">231</div><div class="col_data col_p7">48</div></div><div class="player_row" style=""><div class="col_shirt shirt" style="font-weight:bold;font-size:20px;"><div style="display:inline-block;width:3px;height:100%;background-color:#F7BE81;"></div>6</div>
+								<div class="col_logo" style="background-image: url(https://www.dsg-images.com/clubs/200x200/25790.png); background-position:center;background-repeat:no-repeat;background-size: 18px;" title="Club logo of Joventut Badalona" alt="Club logo of Joventut Badalona"></div>
+								<div class="col_name" style="text-align:left;"><a href="https://globalsportsarchive.com/team/basketball/joventut-badalona/25790/" style=""><span class="fullname">Joventut Badalona</span><span class="shortname">Badalona</span></a></div><div class="col_data col_p1">34</div><div class="col_data col_p2">22</div><div class="col_data col_p3">12</div><div class="col_data col_p4">2906</div><div class="col_data col_p5">2766</div><div class="col_data col_p6">140</div><div class="col_data col_p7">44</div></div><div class="player_row" style=""><div class="col_shirt shirt" style="font-weight:bold;font-size:20px;"><div style="display:inline-block;width:3px;height:100%;background-color:#F7BE81;"></div>7</div>
+								<div class="col_logo" style="background-image: url(https://www.dsg-images.com/sport_entity/200x200/2327.png); background-position:center;background-repeat:no-repeat;background-size: 18px;" title="Club logo of Surne Bilbao Basket" alt="Club logo of Surne Bilbao Basket"></div>
+								<div class="col_name" style="text-align:left;"><a href="https://globalsportsarchive.com/team/basketball/retabet-bilbao-basket/25785/" style=""><span class="fullname">Surne Bilbao Basket</span><span class="shortname">Bilbao</span></a></div><div class="col_data col_p1">34</div><div class="col_data col_p2">19</div><div class="col_data col_p3">15</div><div class="col_data col_p4">2884</div><div class="col_data col_p5">2924</div><div class="col_data col_p6">-40</div><div class="col_data col_p7">38</div></div><div class="player_row" style=""><div class="col_shirt shirt" style="font-weight:bold;font-size:20px;"><div style="display:inline-block;width:3px;height:100%;background-color:#F7BE81;"></div>8</div>
+								<div class="col_logo" style="background-image: url(https://www.dsg-images.com/clubs/200x200/25789.png); background-position:center;background-repeat:no-repeat;background-size: 18px;" title="Club logo of La Laguna Tenerife" alt="Club logo of La Laguna Tenerife"></div>
+								<div class="col_name" style="text-align:left;"><a href="https://globalsportsarchive.com/team/basketball/cb-canarias/25789/" style=""><span class="fullname">La Laguna Tenerife</span><span class="shortname">CB Canarias</span></a></div><div class="col_data col_p1">34</div><div class="col_data col_p2">18</div><div class="col_data col_p3">16</div><div class="col_data col_p4">3040</div><div class="col_data col_p5">2940</div><div class="col_data col_p6">100</div><div class="col_data col_p7">37</div></div><div class="player_row" style=""><div class="col_shirt shirt" style="font-weight:bold;font-size:20px;"><div style="display:inline-block;width:3px;height:100%;background-color:;"></div>9</div>
+								<div class="col_logo" style="background-image: url(https://www.dsg-images.com/clubs/200x200/25783.png); background-position:center;background-repeat:no-repeat;background-size: 18px;" title="Club logo of Unicaja" alt="Club logo of Unicaja"></div>
+								<div class="col_name" style="text-align:left;"><a href="https://globalsportsarchive.com/team/basketball/unicaja/25783/" style=""><span class="fullname">Unicaja</span><span class="shortname">Unicaja</span></a></div><div class="col_data col_p1">34</div><div class="col_data col_p2">17</div><div class="col_data col_p3">17</div><div class="col_data col_p4">2978</div><div class="col_data col_p5">2956</div><div class="col_data col_p6">22</div><div class="col_data col_p7">35</div></div><div class="player_row" style=""><div class="col_shirt shirt" style="font-weight:bold;font-size:20px;"><div style="display:inline-block;width:3px;height:100%;background-color:;"></div>10</div>
+								<div class="col_logo" style="background-image: url(https://www.dsg-images.com/clubs/200x200/25791.png); background-position:center;background-repeat:no-repeat;background-size: 18px;" title="Club logo of BAXI Manresa" alt="Club logo of BAXI Manresa"></div>
+								<div class="col_name" style="text-align:left;"><a href="https://globalsportsarchive.com/team/basketball/icl-manresa/25791/" style=""><span class="fullname">BAXI Manresa</span><span class="shortname">Manresa</span></a></div><div class="col_data col_p1">34</div><div class="col_data col_p2">16</div><div class="col_data col_p3">18</div><div class="col_data col_p4">2932</div><div class="col_data col_p5">3080</div><div class="col_data col_p6">-148</div><div class="col_data col_p7">32</div></div><div class="player_row" style=""><div class="col_shirt shirt" style="font-weight:bold;font-size:20px;"><div style="display:inline-block;width:3px;height:100%;background-color:;"></div>11</div>
+								<div class="col_logo" style="background-image: url(https://www.dsg-images.com/clubs/200x200/37470.png); background-position:center;background-repeat:no-repeat;background-size: 18px;" title="Club logo of Rio Breogán" alt="Club logo of Rio Breogán"></div>
+								<div class="col_name" style="text-align:left;"><a href="https://globalsportsarchive.com/team/basketball/cb-breogan/37470/" style=""><span class="fullname">Rio Breogán</span><span class="shortname">CB Breogán</span></a></div><div class="col_data col_p1">34</div><div class="col_data col_p2">15</div><div class="col_data col_p3">19</div><div class="col_data col_p4">3094</div><div class="col_data col_p5">3171</div><div class="col_data col_p6">-77</div><div class="col_data col_p7">30</div></div><div class="player_row" style=""><div class="col_shirt shirt" style="font-weight:bold;font-size:20px;"><div style="display:inline-block;width:3px;height:100%;background-color:;"></div>12</div>
+								<div class="col_logo" style="background-image: url(https://www.dsg-images.com/clubs/200x200/56356.png); background-position:center;background-repeat:no-repeat;background-size: 18px;" title="Club logo of Bàsquet Girona" alt="Club logo of Bàsquet Girona"></div>
+								<div class="col_name" style="text-align:left;"><a href="https://globalsportsarchive.com/team/basketball/basquet-girona/56356/" style=""><span class="fullname">Bàsquet Girona</span><span class="shortname">Bàsquet Girona</span></a></div><div class="col_data col_p1">34</div><div class="col_data col_p2">14</div><div class="col_data col_p3">20</div><div class="col_data col_p4">2913</div><div class="col_data col_p5">3024</div><div class="col_data col_p6">-111</div><div class="col_data col_p7">29</div></div><div class="player_row" style=""><div class="col_shirt shirt" style="font-weight:bold;font-size:20px;"><div style="display:inline-block;width:3px;height:100%;background-color:;"></div>13</div>
+								<div class="col_logo" style="background-image: url(https://www.dsg-images.com/clubs/200x200/33985.png); background-position:center;background-repeat:no-repeat;background-size: 18px;" title="Club logo of San Pablo Burgos" alt="Club logo of San Pablo Burgos"></div>
+								<div class="col_name" style="text-align:left;"><a href="https://globalsportsarchive.com/team/basketball/cb-miraflores/33985/" style=""><span class="fullname">San Pablo Burgos</span><span class="shortname">CB Miraflores</span></a></div><div class="col_data col_p1">34</div><div class="col_data col_p2">12</div><div class="col_data col_p3">22</div><div class="col_data col_p4">3049</div><div class="col_data col_p5">3152</div><div class="col_data col_p6">-103</div><div class="col_data col_p7">25</div></div><div class="player_row" style=""><div class="col_shirt shirt" style="font-weight:bold;font-size:20px;"><div style="display:inline-block;width:3px;height:100%;background-color:;"></div>14</div>
+								<div class="col_logo" style="background-image: url(https://www.dsg-images.com/clubs/200x200/64070.png); background-position:center;background-repeat:no-repeat;background-size: 18px;" title="Club logo of Hiopos Lleida" alt="Club logo of Hiopos Lleida"></div>
+								<div class="col_name" style="text-align:left;"><a href="https://globalsportsarchive.com/team/basketball/ce-lleida-basquet/64070/" style=""><span class="fullname">Hiopos Lleida</span><span class="shortname">Lleida Bàsquet</span></a></div><div class="col_data col_p1">34</div><div class="col_data col_p2">12</div><div class="col_data col_p3">22</div><div class="col_data col_p4">2856</div><div class="col_data col_p5">3097</div><div class="col_data col_p6">-241</div><div class="col_data col_p7">24</div></div><div class="player_row" style=""><div class="col_shirt shirt" style="font-weight:bold;font-size:20px;"><div style="display:inline-block;width:3px;height:100%;background-color:;"></div>15</div>
+								<div class="col_logo" style="background-image: url(https://www.dsg-images.com/clubs/200x200/25792.png); background-position:center;background-repeat:no-repeat;background-size: 18px;" title="Club logo of Casademont Zaragoza" alt="Club logo of Casademont Zaragoza"></div>
+								<div class="col_name" style="text-align:left;"><a href="https://globalsportsarchive.com/team/basketball/basket-zaragoza-2002/25792/" style=""><span class="fullname">Casademont Zaragoza</span><span class="shortname">Zaragoza</span></a></div><div class="col_data col_p1">34</div><div class="col_data col_p2">10</div><div class="col_data col_p3">24</div><div class="col_data col_p4">2962</div><div class="col_data col_p5">3176</div><div class="col_data col_p6">-214</div><div class="col_data col_p7">21</div></div><div class="player_row" style=""><div class="col_shirt shirt" style="font-weight:bold;font-size:20px;"><div style="display:inline-block;width:3px;height:100%;background-color:;"></div>16</div>
+								<div class="col_logo" style="background-image: url(https://www.dsg-images.com/clubs/200x200/25784.png); background-position:center;background-repeat:no-repeat;background-size: 18px;" title="Club logo of MoraBanc Andorra" alt="Club logo of MoraBanc Andorra"></div>
+								<div class="col_name" style="text-align:left;"><a href="https://globalsportsarchive.com/team/basketball/morabanc-andorra/25784/" style=""><span class="fullname">MoraBanc Andorra</span><span class="shortname">Andorra</span></a></div><div class="col_data col_p1">34</div><div class="col_data col_p2">10</div><div class="col_data col_p3">24</div><div class="col_data col_p4">2976</div><div class="col_data col_p5">3169</div><div class="col_data col_p6">-193</div><div class="col_data col_p7">22</div></div><div class="player_row" style=""><div class="col_shirt shirt" style="font-weight:bold;font-size:20px;"><div style="display:inline-block;width:3px;height:100%;background-color:;"></div>17</div>
+								<div class="col_logo" style="background-image: url(https://www.dsg-images.com/clubs/200x200/25782.png); background-position:center;background-repeat:no-repeat;background-size: 18px;" title="Club logo of Dreamland Gran Canaria" alt="Club logo of Dreamland Gran Canaria"></div>
+								<div class="col_name" style="text-align:left;"><a href="https://globalsportsarchive.com/team/basketball/herbalife-gran-canaria/25782/" style=""><span class="fullname">Dreamland Gran Canaria</span><span class="shortname">Gran Canaria</span></a></div><div class="col_data col_p1">34</div><div class="col_data col_p2">10</div><div class="col_data col_p3">24</div><div class="col_data col_p4">2764</div><div class="col_data col_p5">2932</div><div class="col_data col_p6">-168</div><div class="col_data col_p7">21</div></div><div class="player_row" style=""><div class="col_shirt shirt" style="font-weight:bold;font-size:20px;"><div style="display:inline-block;width:3px;height:100%;background-color:;"></div>18</div>
+								<div class="col_logo" style="background-image: url(https://www.dsg-images.com/clubs/200x200/56354.png); background-position:center;background-repeat:no-repeat;background-size: 18px;" title="Club logo of Coviran Granada" alt="Club logo of Coviran Granada"></div>
+								<div class="col_name" style="text-align:left;"><a href="https://globalsportsarchive.com/team/basketball/cb-granada/56354/" style=""><span class="fullname">Coviran Granada</span><span class="shortname">CB Granada</span></a></div><div class="col_data col_p1">34</div><div class="col_data col_p2">6</div><div class="col_data col_p3">28</div><div class="col_data col_p4">2848</div><div class="col_data col_p5">3153</div><div class="col_data col_p6">-305</div><div class="col_data col_p7">13</div></div><div id="ranking"><link rel="stylesheet" type="text/css" href="//globalsportsarchive.com/css/main.css?Tuesday 10th of November 2026 08:43:41 PM" />
+<link rel="stylesheet" type="text/css" href="//globalsportsarchive.com/css/gsa.css?Tuesday 10th of November 2026 08:43:41 PM" />
+<style>
+#week_header {
+	width: 100%;
+	height:40px;
+	background-color: #c3c5c5;
+	float: left;
+}
+.ranking_player_row {
+	overflow: hidden;
+	box-sizing: border-box;
+	width: 100%;
+	line-height: 44px;
+	height: 44px;
+	border-bottom: 1px solid #dfdfdf
+}
+.ranking_player_row_header {
+	line-height: 30px;
+	height: 30px;
+}
+.ranking_player_row div {
+	height: 100%;
+	float: left;
+}
+.ranking_player_row img {
+	height: 40px;
+	width: 40px;
+	margin: 3.5px auto;
+	display: block;
+}
+.ranking_pos {
+	font-weight: bold;
+	font-size: 18px;
+	min-width: 20px;
+	text-align: center;
+}
+.ranking_img {
+	min-width: 55px;
+	max-width: 55px;
+	text-align: center;
+}
+.ranking_player_row .ranking_value img {
+	width: 20px;
+	height: 20px;
+}
+.ranking_name {
+	min-width: 150px;
+	text-align: left;
+	padding-left: 5px;
+}
+.ranking_logo {
+	min-width: 55px;
+	text-align: center;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.ranking_team {
+	min-width: 180px;
+	text-align: left;
+	padding-left: 5px;	
+}
+.ranking_value {
+	font-size: 15px;
+	min-width: 40px;
+	max-width: 40px;
+	text-align: center;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bold {
+	font-weight: bold;
+}
+
+
+
+@media screen AND (min-width: 651px) {
+	.ranking_fullname { display: inline; }
+	.ranking_shortname { display: none; }
+	.ranking_team { min-width: 70px; width: 30%; }	
+	.ranking_pos { width: 5%; }
+	.ranking_img { width: 10%; }
+	.ranking_name { width: 30%; }
+	.ranking_logo { width: 7%; background-size: auto; }
+	.ranking_value { width: 10%; }
+}
+@media screen AND (max-width: 650px) {
+	.ranking_fullname { display: none; }
+	.ranking_shortname { display: inline; }
+	.ranking_team { min-width: 70px; width: 10%; }	
+	.ranking_pos { width: 5%; }
+	.ranking_img { width: 10%; }
+	.ranking_name { width: 45%; }
+	.ranking_logo { width: 7%; background-size: auto; }
+	div.ranking_value { width: 10%;  float: right; }
+}
+@media screen AND (max-width: 500px) {
+	.ranking_team { display: none; }
+	.ranking_pos { width: 5%; }
+	.ranking_img { width: 10%; }
+	.ranking_name { width: 45%; }
+	.ranking_logo { width: 7%; background-size: auto; }
+	div.ranking_value { width: 10%; min-width: 30px; max-width: 30px;}
+}
+@media screen AND (max-width: 400px) {
+	.ranking_name { width: 40%; min-width: 130px; }
+	.ranking_logo { min-width: 40px; }
+}
+
+
+</style>	
+</div><link rel="stylesheet" type="text/css" href="//globalsportsarchive.com/css/main.css?" />
+<link rel="stylesheet" type="text/css" href="//globalsportsarchive.com/css/hurkan_style.css"/>
+<link rel="stylesheet" type="text/css" href="//globalsportsarchive.com/css/gsa.css" />
+<script src="//globalsportsarchive.com/js/hurkanSwitch.js"></script>
+<style>
+.hurkanSwitch {
+	margin-top: 5px;
+}
+.winners, .runnerups {
+	width: 40%;
+}
+.winner_team {
+	width: 40%;
+}
+.winner_value, .last_title {
+	width: 20%;
+	text-align: center;
+}
+.win-season {
+	min-width:75px;
+	width:20%;
+	padding-left:5px;
+	font-weight:bold;
+}
+
+@media screen AND (min-width: 551px) {
+	#roster_1 {
+		display: inline-block;
+		width: 30%;
+		float: left;
+		height: 32px;
+	}
+	#roster_2 {
+		display: inline-block;
+		float: left;
+		width: 40%;
+		text-align: center;
+	}
+	#roster_3 {
+		display: inline-block;
+		width: 30%;
+		text-align: right;
+		padding-right: 10px;
+	}
+}
+@media screen AND (max-width: 550px) {
+	#roster_1 {
+		display: inline-block;
+		width: 0%;
+		float: left;
+		height: 32px;
+	}
+	#roster_2 {
+		display: inline-block;
+		float: left;
+		width: 50%;
+		text-align: left;
+	}
+	#roster_3 {
+		display: inline-block;
+		width: 50%;
+		text-align: right;
+		padding-right: 10px;
+	}
+	.winners {
+		width: 80%;
+	}
+	.winner_team {
+		width: 60%;
+	}
+	.win-season {
+		min-width: 150px;
+	}
+	.runnerups { display: none; }
+}
+.lbl {
+	font-size: 13px;
+}
+
+#winners_teams {
+	display: none;
+}
+
+@media screen AND (max-width: 440px) {
+	.last_title { display: none; }
+}
+
+
+.w_short { display: none; }
+@media screen AND (max-width: 370px) {
+	.w_short { display: inline; }
+	.w_full { display: none; }
+}
+
+
+</style>	
+<script>
+$(function() {
+	$('[data-toggle="hurkanSwitch"]').hurkanSwitch({
+		'on' :function(r) { $('#winners_teams').toggle(); $('#winners_season').toggle(); },
+		'off' :function(r) { $('#winners_season').toggle(); $('#winners_teams').toggle(); },
+		'onTitle':'Teams',
+		'offTitle':'Seasons'
+	});
+});
+
+</script>
+<div class="gsa_subheader_2">
+			<div id="roster_1" style=""></div>
+			<div id="roster_2" style="">Previous Winners</div><div id="roster_3"><div style="float:right;" data-toggle="hurkanSwitch"><input type="checkbox" name="demo1"></div><div></div></div></div><div id="winners_season" style="width:100%;float:left;"><div style="display:flex;height:25px;align-items:center;background-color:#848484;color:white;padding-left:5px;font-weight:bold;">Liga Endesa</div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2025/2026</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/valencia-basket/25778/">Valencia Basket</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">Barça</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2024/2025</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/valencia-basket/25778/">Valencia Basket</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2023/2024</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/ucam-murcia/25787/">UCAM Murcia</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2022/2023</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2021/2022</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">Barça</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2020/2021</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">Barça</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2019/2020</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/td-systems-baskonia/25780/">KIROLBET Baskonia</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">Barça</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2018/2019</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">Barça Lassa</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2017/2018</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/td-systems-baskonia/25780/">Kirolbet Baskonia</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2016/2017</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/valencia-basket/25778/">Valencia Basket</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2015/2016</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona Lassa</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2014/2015</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona Lassa</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2013/2014</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2012/2013</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona Regal</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2011/2012</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona Regal</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div></div><div style="display:flex;height:25px;align-items:center;background-color:#848484;color:white;padding-left:5px;font-weight:bold;">Liga ACB</div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2010/2011</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">Regal FC Barcelona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/retabet-bilbao-basket/25785/">Bizkaia Bilbao Basket</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2009/2010</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/td-systems-baskonia/25780/">Caja Laboral</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">Regal FC Barcelona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2008/2009</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">Regal FC Barcelona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/td-systems-baskonia/25780/">Tau Cerámica</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2007/2008</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/td-systems-baskonia/25780/">TD Systems Baskonia</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2006/2007</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2005/2006</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/unicaja/25783/">Unicaja</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/td-systems-baskonia/25780/">TD Systems Baskonia</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2004/2005</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/td-systems-baskonia/25780/">TD Systems Baskonia</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2003/2004</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/movistar-estudiantes/25794/">Movistar Estudiantes</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2002/2003</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/valencia-basket/25778/">Valencia Basket</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2001/2002</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/td-systems-baskonia/25780/">TD Systems Baskonia</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/unicaja/25783/">Unicaja</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">2000/2001</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1999/2000</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1998/1999</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/baloncesto-sevilla/25793/">Baloncesto Sevilla</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1997/1998</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/icl-manresa/25791/">ICL Manresa</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/td-systems-baskonia/25780/">TD Systems Baskonia</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1996/1997</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1995/1996</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/baloncesto-sevilla/25793/">Baloncesto Sevilla</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1994/1995</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/unicaja/25783/">Unicaja</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1993/1994</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1992/1993</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/joventut-badalona/25790/">Joventut Badalona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1991/1992</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/joventut-badalona/25790/">Joventut Badalona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1990/1991</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/joventut-badalona/25790/">Joventut Badalona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1989/1990</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/joventut-badalona/25790/">Joventut Badalona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1988/1989</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div></div><div style="display:flex;height:25px;align-items:center;background-color:#848484;color:white;padding-left:5px;font-weight:bold;">ACB Primera División</div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1987/1988</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1986/1989</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/joventut-badalona/25790/">Joventut Badalona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1985/1986</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1984/1985</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/joventut-badalona/25790/">Joventut Badalona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1983/1984</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div></div><div style="display:flex;height:25px;align-items:center;background-color:#848484;color:white;padding-left:5px;font-weight:bold;">Liga Española de Baloncesto</div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1982/1983</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1981/1982</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1980/1981</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1979/1980</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1978/1979</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1977/1978</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/joventut-badalona/25790/">Joventut Badalona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1976/1977</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1975/1976</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1974/1975</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1973/1974</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1972/1973</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/joventut-badalona/25790/">Joventut Badalona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1971/1972</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1970/1971</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/joventut-badalona/25790/">Joventut Badalona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1969/1970</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/picadero-jc/46900/">Picadero JC</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1968/1969</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/joventut-badalona/25790/">Joventut Badalona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1967/1968</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/movistar-estudiantes/25794/">Movistar Estudiantes</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1966/1967</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/joventut-badalona/25790/">Joventut Badalona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1965/1966</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/picadero-jc/46900/">Picadero JC</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1964/1965</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/picadero-jc/46900/">Picadero JC</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1963/1964</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/picadero-jc/46900/">Picadero JC</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1962/1963</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/movistar-estudiantes/25794/">Movistar Estudiantes</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1961/1962</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/joventut-badalona/25790/">Joventut Badalona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1960/1961</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/orillo-verde/46901/">Orillo Verde</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1959/1960</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/joventut-badalona/25790/">Joventut Badalona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1958/1959</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1958</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/joventut-badalona/25790/">Joventut Badalona</a></div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div class="win-season">1957</div><div class="winners" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/">Real Madrid</a></div><div class="runnerups" style="min-width:150px;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/">FC Barcelona</a></div></div></div><div id="winners_teams" style="width:100%;float:left;"><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div style="min-width:20px;max-width:20px;width:5%;padding-left:5px;font-weight:bold;text-align:center;">1</div><div style="min-width:40px;max-width:40px;width:5%;padding-left:5px;font-weight:bold;text-align:center;">
+					<img src="https://dsg-images.com/clubs/50x50/25781.png" style="width:25px;" title="Team icon of Real Madrid" alt="Team icon of Real Madrid"/>
+				  </div><div class="winner_team" style="min-width:200px;padding-left:5px;font-weight:bold;"><a href="https://globalsportsarchive.com/team/basketball/real-madrid/25781/"><span class="w_full">Real Madrid</span><span class="w_short">Real Madrid</span></a></div><div class="winner_value" style="min-width:50px;">38</div><div class="last_title" style="min-width:50px;">2024/2025</div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div style="min-width:20px;max-width:20px;width:5%;padding-left:5px;font-weight:bold;text-align:center;">2</div><div style="min-width:40px;max-width:40px;width:5%;padding-left:5px;font-weight:bold;text-align:center;">
+					<img src="https://dsg-images.com/clubs/50x50/28604.png" style="width:25px;" title="Team icon of FC Barcelona" alt="Team icon of FC Barcelona"/>
+				  </div><div class="winner_team" style="min-width:200px;padding-left:5px;font-weight:bold;"><a href="https://globalsportsarchive.com/team/basketball/fc-barcelona/28604/"><span class="w_full">FC Barcelona</span><span class="w_short">Barça</span></a></div><div class="winner_value" style="min-width:50px;">20</div><div class="last_title" style="min-width:50px;">2022/2023</div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div style="min-width:20px;max-width:20px;width:5%;padding-left:5px;font-weight:bold;text-align:center;">3</div><div style="min-width:40px;max-width:40px;width:5%;padding-left:5px;font-weight:bold;text-align:center;">
+					<img src="https://dsg-images.com/clubs/50x50/25790.png" style="width:25px;" title="Team icon of Joventut Badalona" alt="Team icon of Joventut Badalona"/>
+				  </div><div class="winner_team" style="min-width:200px;padding-left:5px;font-weight:bold;"><a href="https://globalsportsarchive.com/team/basketball/joventut-badalona/25790/"><span class="w_full">Joventut Badalona</span><span class="w_short">Badalona</span></a></div><div class="winner_value" style="min-width:50px;">4</div><div class="last_title" style="min-width:50px;">1991/1992</div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div style="min-width:20px;max-width:20px;width:5%;padding-left:5px;font-weight:bold;text-align:center;">4</div><div style="min-width:40px;max-width:40px;width:5%;padding-left:5px;font-weight:bold;text-align:center;">
+					<img src="https://dsg-images.com/clubs/50x50/25780.png" style="width:25px;" title="Team icon of TD Systems Baskonia" alt="Team icon of TD Systems Baskonia"/>
+				  </div><div class="winner_team" style="min-width:200px;padding-left:5px;font-weight:bold;"><a href="https://globalsportsarchive.com/team/basketball/td-systems-baskonia/25780/"><span class="w_full">TD Systems Baskonia</span><span class="w_short">Baskonia</span></a></div><div class="winner_value" style="min-width:50px;">4</div><div class="last_title" style="min-width:50px;">2019/2020</div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div style="min-width:20px;max-width:20px;width:5%;padding-left:5px;font-weight:bold;text-align:center;">5</div><div style="min-width:40px;max-width:40px;width:5%;padding-left:5px;font-weight:bold;text-align:center;">
+					<img src="https://dsg-images.com/clubs/50x50/25778.png" style="width:25px;" title="Team icon of Valencia Basket" alt="Team icon of Valencia Basket"/>
+				  </div><div class="winner_team" style="min-width:200px;padding-left:5px;font-weight:bold;"><a href="https://globalsportsarchive.com/team/basketball/valencia-basket/25778/"><span class="w_full">Valencia Basket</span><span class="w_short">Valencia</span></a></div><div class="winner_value" style="min-width:50px;">2</div><div class="last_title" style="min-width:50px;">2025/2026</div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div style="min-width:20px;max-width:20px;width:5%;padding-left:5px;font-weight:bold;text-align:center;">6</div><div style="min-width:40px;max-width:40px;width:5%;padding-left:5px;font-weight:bold;text-align:center;">
+					<img src="https://dsg-images.com/clubs/50x50/25783.png" style="width:25px;" title="Team icon of Unicaja" alt="Team icon of Unicaja"/>
+				  </div><div class="winner_team" style="min-width:200px;padding-left:5px;font-weight:bold;"><a href="https://globalsportsarchive.com/team/basketball/unicaja/25783/"><span class="w_full">Unicaja</span><span class="w_short">Unicaja</span></a></div><div class="winner_value" style="min-width:50px;">1</div><div class="last_title" style="min-width:50px;">2005/2006</div></div><div style="display:flex;height:30px;align-items:center;border-bottom:1px solid #dfdfdf;"><div style="min-width:20px;max-width:20px;width:5%;padding-left:5px;font-weight:bold;text-align:center;">7</div><div style="min-width:40px;max-width:40px;width:5%;padding-left:5px;font-weight:bold;text-align:center;">
+					<img src="https://dsg-images.com/clubs/50x50/25791.png" style="width:25px;" title="Team icon of ICL Manresa" alt="Team icon of ICL Manresa"/>
+				  </div><div class="winner_team" style="min-width:200px;padding-left:5px;font-weight:bold;"><a href="https://globalsportsarchive.com/team/basketball/icl-manresa/25791/"><span class="w_full">ICL Manresa</span><span class="w_short">Manresa</span></a></div><div class="winner_value" style="min-width:50px;">1</div><div class="last_title" style="min-width:50px;">1997/1998</div></div></div><div style="clear: both;"></div></div></div><script>
+function footer() {
+	var h = $(document).height();
+	var h_footer = $('#footer').height();
+	var h_body = $('#body').height();
+	if (h_footer + h_body + 5 < h ) {
+		$('#footer_cont').css({'position':'absolute','right':'0','bottom':'0','left':'0'});
+		$('#body').css('position','unset');
+	}
+	else {
+		$('#footer_cont').css({'position':'relative'});
+	}
+}
+$(function() {
+	footer();
+	$(window).resize(function() {
+		footer();
+	});
+	
+});
+</script>
+<style>
+#footer_cont {
+	width:100%;
+	float: left;
+}
+#footer {
+	background-color: #dfdfdf;
+	border-top: 1px solid #949494;	
+	max-width: 948px;
+	margin: 0 auto;
+}
+#footer_menu {
+	
+}
+#footer_menu_1 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#footer_table {
+	width: 80%;
+	margin: 5px auto;
+	table-layout:fixed;
+}
+#footer_table th {
+	color: #e91f46;
+	text-align: left;
+	padding-left: 12%;
+}
+#footer_table td {
+	vertical-align: top;
+	padding-left: 12%;
+}
+#footer_table ul {
+	list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+	padding-left: 0;
+}
+#footer_table ul li {
+	height: 22px;
+	display: flex;
+    align-items: center;
+    justify-content: left;
+}
+#footer_table a {
+	text-decoration: none;
+}
+#footer_table a:hover {
+	text-decoration: underline;
+}
+#footer_logo {
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+}
+#footer_logo img {
+	margin: 10px auto;
+	width: 120px;
+	height: 50px;
+}
+#footer_copyright {
+	width: 50%;
+	margin: 0px auto;
+	text-align: center;
+	line-height: 24px;
+	font-size: 14px;
+}
+#footer_text {
+	width: 70%;
+	margin: 10px auto;
+	margin-bottom: 0px;
+	padding-bottom: 10px;
+	text-align: center;
+	font-size: 14px;
+}
+li.footer_media {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+li.footer_media img {
+	margin-right: 5px;
+}
+@media screen AND (max-width: 500px) {
+	#footer_table, #footer_copyright, #footer_text {
+		width: 100%;
+	}
+	#footer_text {
+		padding: 0px 3px;
+	}
+	#footer_table th {
+		padding-left: 15px;
+	}
+	#footer_table td {
+		padding-left: 15px;
+	}
+}
+</style>
+<div id="footer_cont"><div id="footer"><table id="footer_table"><tr>
+		<th>General</th>
+		<th>Contact Us</th>
+		<th>Social Media</th>
+	  </tr><tr>
+		<td>
+			<ul>
+				<li><a href="https://www.datasportsgroup.com" title="About Us - Global Sports Archive">About Us</a></li>
+				<li><a href="#" title="Jobs - Global Sports Archive">Jobs</a></li>
+				<li><a href="#" title="Statistics - Global Sports Archive">Statistics</a></li>
+			</ul>
+		</td>
+		<td>
+			<ul>
+				<li><a href="mailto:sales@datasportsgroup.com" title="Sales - Global Sports Archive">Sales</a></li>
+				<li><a href="mailto:support@datasportsgroup.com" title="Support - Global Sports Archive">Support</a></li>
+				<li><a href="mailto:support@datasportsgroup.com" title="Data Issues - Global Sports Archive">Data Issues</a></li>
+			</ul>
+		</td>
+		<td>
+			<ul>
+				<li class="footer_media"><img src="https://globalsportsarchive.com/images/icons/twitter.png" title="Twitter feed of Data Sports Group" alt="Twitter feed of Data Sports Group" /><a href="https://twitter.com/DataSportsGroup" title="Twitter - Global Sports Archive">Twitter</a></li>
+				<li class="footer_media"><img src="https://globalsportsarchive.com/images/icons/facebook.png" title="Facebook page of Data Sports Group" alt="Facebook page of Data Sports Group"/><a href=""  title="Facebook - Global Sports Archive">Facebook</a></li>
+				<li class="footer_media"><img src="https://globalsportsarchive.com/images/icons/linkedin.png" title="Linkedin page of Data Sports Group" alt="Linkedin page of Data Sports Group"/><a href="https://www.linkedin.com/company/data-sports-group" title="LinkedIn - Global Sports Archive">LinkedIn</a></li>
+				<li class="footer_media"><img src="https://dsg-images.com/icons/discord.png" title="Discord page of Data Sports Group" alt="Discord page of Data Sports Group"/><a href="https://discord.gg/nYyvYNvN" title="Discord - Global Sports Archive">Discord</a></li>
+			</ul>
+		</td>
+	  </tr></table><div id="footer_logo"><a href="https://datasportsgroup.com"><img src="https://globalsportsarchive.com/images/dsglogo.png" title="Logo of Data Sports Group" alt="Logo of Data Sports Group"/></a></div><div id="footer_copyright">Copyright ©2022 Data Sports Group. All rights reserved.</div><div id="footer_text">globalsportsarchive.com provides you with unrivaled spectrum of sport results, statistics and rankings from competitions all over the world. Our live, in-depth sport statistics from 17 sports supplies unique and original insights for sport fans, journalists, football managers and players.
+</div></div></div><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48486136-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5B1GVWCN09"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5B1GVWCN09');
+</script>
