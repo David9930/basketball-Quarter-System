@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import datetime
 import json
+import re
 from pathlib import Path
 
 from . import parse
@@ -17,6 +18,10 @@ from .fetch import PageError
 from .harvest import AJAX_PATH, collect_one, upsert_game, update_league_totals
 
 LISTING_CACHE_HOURS = 24
+DAILY_LIST_PATH = "/sport_ajax_v3.php?d={day}&widget_client_id=1&sp=basketball"
+DAILY_EXPAND_PATH = "/comp_expand_ajax.php"
+PROBE_CLASSES = ["bas_match", "bas_scoreboard", "bas_scores", "bas_team_name", "period_score",
+                 "inning_container", "innin_col", "comp_cont"]
 
 
 # ------------------------------------------------------- step 1: competitions
@@ -56,7 +61,7 @@ def crawl_listings(fetcher, store, cfg, log):
         except PageError as exc:
             log(f"  listing page skipped ({exc}): {path}")
             continue
-        area = parse.listing_area(path) if path.startswith("/sport/") else ""
+        area = parse.listing_area(path) if path.startswith("/competitions/") else ""
         note_links(store, parse.competition_links(text), area)
         for link in parse.listing_links(text):
             if link not in seen:
@@ -248,7 +253,11 @@ def refresh(fetcher, store, cfg, log=print):
 def probe(fetcher, cfg, root, log=print):
     """Fetch a handful of pages and save them, so the page readers can be checked.
 
-    Writes probe/*.html and probe/report.json. About ten requests.
+    Writes probe/*.html and probe/report.json. About a dozen requests.
+
+    Besides the competition and match pages, it saves one day's match list (the
+    page the site's own daily view loads). If that list carries period scores,
+    whole days can be collected with one request instead of one per game.
     """
     folder = Path(root) / "probe"
     folder.mkdir(exist_ok=True)
@@ -274,6 +283,8 @@ def probe(fetcher, cfg, root, log=print):
             "sample_competition_links": [c["path"] for c in comps[:8]],
             "sample_listing_links": parse.listing_links(body)[:8],
             "sample_match_links": [g["path"] for g in games[:4]],
+            "class_counts": {c: len(re.findall(rf'class="[^"]*\b{c}', body)) for c in PROBE_CLASSES},
+            "expand_ids": len(set(re.findall(r"expandComp\((\d+)", body))),
         })
         log(f"{name}: {len(text)} bytes, {len(comps)} competition links, {len(games)} match links")
         return body
@@ -295,6 +306,12 @@ def probe(fetcher, cfg, root, log=print):
         listings = [l for l in parse.listing_links(index) if l != cfg["site"]["index_path"]]
         if listings:
             step("listing", listings[0])
+        day = (st.today() - datetime.timedelta(days=3)).isoformat()
+        daily = step("daily_list", DAILY_LIST_PATH.format(day=day))
+        collapsed = re.findall(r"expandComp\((\d+)", daily)
+        if collapsed:
+            step("daily_expand", DAILY_EXPAND_PATH,
+                 data={"compid": collapsed[-1], "d": day, "widget_client_id": "1"})
         season_page = step("season_page", cfg["probe"]["season_page"])
         this = next(iter(parse.competition_links(cfg["probe"]["season_page"])), None)
         if this:

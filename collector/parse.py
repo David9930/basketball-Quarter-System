@@ -14,7 +14,7 @@ from lxml import html
 _SEG = r"""[^/"'\s<>\\?#]+"""
 COMP_RE = re.compile(rf"/competition/basketball/({_SEG})/({_SEG})/(\d+)/?")
 MATCH_RE = re.compile(rf"/match/basketball/(\d{{4}}-\d{{2}}-\d{{2}})/({_SEG})/(\d+)/?")
-LISTING_RE = re.compile(r"""/sport/basketball/[^"'\s<>\\?#]*""")
+LISTING_RE = re.compile(r"""/competitions/basketball/[^"'\s<>\\?#]*""")
 SLUG_SEASON_RE = re.compile(r"^(.*?)-(\d{4})(?:-(\d{4}))?$")
 QUARTER_LABEL_RE = re.compile(r"^(?:Q[1-4]|[1-4]Q|[1-4])$", re.I)
 TITLE_RE = re.compile(r"Match Report of (.*?) vs (.*?) - \d{4}-\d{2}-\d{2}")
@@ -65,7 +65,7 @@ def match_links(text):
 
 
 def listing_links(text):
-    """Links to basketball listing pages (index, countries, competition lists)."""
+    """Links to basketball competition-list pages (the index and any sub-lists)."""
     seen = []
     for m in LISTING_RE.finditer(_clean(text)):
         path = m.group(0)
@@ -77,7 +77,7 @@ def listing_links(text):
 
 
 def listing_area(path):
-    """Best-effort area name from a listing address such as /sport/basketball/spain/12/."""
+    """Best-effort area name from a listing address such as /competitions/basketball/spain/."""
     parts = [p for p in path.split("/") if p][2:]
     for part in parts:
         if re.search(r"[a-zA-Z]", part):

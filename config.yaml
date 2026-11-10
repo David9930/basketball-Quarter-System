@@ -2,7 +2,9 @@
 
 site:
   base_url: https://globalsportsarchive.com
-  index_path: /sport/basketball/-/
+  # The "All Competitions" page. (/sport/basketball/-/ is the daily match
+  # page; its content is loaded by script, so it is no use as an index.)
+  index_path: /competitions/basketball/
   # Extra starting points for league discovery, in case the index page does
   # not link to everything directly.
   seed_paths:
