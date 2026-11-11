@@ -10,9 +10,11 @@ odds, no wagering.
 1. **Daily lists.** The site has one list of every basketball game per date.
    The collector reads one list per day (one request each). That gives every
    game, its league, teams and final score.
-2. **Quarter-score test.** For each league and season it opens up to three
-   finished games. A Q1-Q4 scoreboard marks the league `yes`; halves or no
-   scoreboard mark it `no`.
+2. **Quarter-score test.** For each league and season it opens a few finished
+   games. A filled Q1-Q4 scoreboard marks the league `yes`. Halves mark it
+   `no` after three games. Blank scoreboards mark it `no` after three games,
+   or eight for a league with 40 or more games, because the site's coverage
+   is patchy.
 3. **Match reports.** For leagues marked `yes`, it opens each finished game's
    match report (one request each) and records the quarters.
 
@@ -45,7 +47,9 @@ python run.py export --sheets
 ```
 
 After `discover`, review `data/leagues.csv`. Set `include` to `no` on any
-league you do not want before running `harvest`.
+league you do not want before running `harvest`. To collect a league the test
+ruled out, set its `has_quarters` to `yes`; games with blank scoreboards are
+then tried once and skipped.
 
 Every command saves progress as it goes. Ctrl+C is safe; running it again
 continues where it stopped.
@@ -92,9 +96,13 @@ Notes on the data:
 
 - Dates and kickoff times are the site's, which are UTC. A North American
   evening game is filed under the following day.
-- Quarter scores are per quarter, not cumulative. Overtime is held
-  separately: `home_ot` / `away_ot` are overtime totals and `ot_detail` lists
-  each period (`11-11 12-10`).
+- Quarter scores are per quarter, not cumulative. Regulation score is the sum
+  of the four quarters.
+- Overtime is held separately. `overtime` is `yes` or `no`; `home_ot` /
+  `away_ot` are overtime points; `ot_detail` lists each period the site shows
+  (`11-11 10-9`) and `overtime_periods` counts them. Where regulation ended
+  level and the site does not list every overtime period, overtime points are
+  taken as final minus regulation and the game is flagged `OT_NOT_ITEMISED`.
 - `comp_id` is the site's own league number. It stays the same when a league
   changes sponsor name, so use it to group a league across seasons.
 - `season` is the label the site gives the competition (`2025/2026`, or a
@@ -104,12 +112,13 @@ Notes on the data:
 
 ## Check flags
 
-Flagged games are kept and listed for review. Nothing is corrected
-automatically.
+Flagged games are kept and listed for review. Quarter scores are never
+altered.
 
 | Flag | Meaning |
 | --- | --- |
-| `PERIOD_SUM_MISMATCH` | Quarters plus overtime do not add up to the final. The site sometimes omits a second overtime; Q1-Q4 are still usable |
+| `OT_NOT_ITEMISED` | Overtime was played but the site does not list all of its periods. Quarters are complete; overtime points are final minus regulation |
+| `PERIOD_SUM_MISMATCH` | Quarters plus overtime do not add up to the final and regulation was not level, so the figures cannot be reconciled |
 | `LIST_SCORE_MISMATCH` | The match report's final differs from the daily list's final |
 | `OT_WITHOUT_TIE` | Overtime is listed but regulation was not tied |
 | `TIED_FINAL` | Final score is level (possible in two-leg ties) |

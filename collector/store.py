@@ -25,7 +25,7 @@ SCHEDULE_FIELDS = ["game_id", "date", "kickoff", "comp_id", "season", "stage", "
 GAME_FIELDS = ["game_id", "date", "kickoff", "comp_id", "competition", "season", "stage",
                "home_team", "away_team", "home_team_id", "away_team_id",
                "home_q1", "away_q1", "home_q2", "away_q2", "home_q3", "away_q3", "home_q4", "away_q4",
-               "overtime_periods", "home_ot", "away_ot", "ot_detail",
+               "overtime", "overtime_periods", "home_ot", "away_ot", "ot_detail",
                "home_final", "away_final", "winner", "result_note", "check", "source_url", "retrieved"]
 
 # Collection statuses for a listed game.

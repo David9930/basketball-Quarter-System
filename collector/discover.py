@@ -27,17 +27,41 @@ def _spread(rows, count):
     return [rows[round(i * step)] for i in range(count)]
 
 
-def sample_league(fetcher, store, cfg, league, rows):
+def evidence_needed(cfg, played, outcomes, sibling_yes):
+    """How many finished games must show no quarters before a league is marked 'no'.
+
+    Halves are decisive after the basic sample. Blank scoreboards are not: the
+    site's coverage is patchy, so a sizeable league, or one whose other season
+    does have quarters, gets a larger sample first.
+    """
+    basic = int(cfg["discovery"]["sample_games"])
+    halves = outcomes and all(o == st.OTHER_PERIODS for o in outcomes)
+    sizeable = len(played) >= int(cfg["discovery"]["confirm_from_games"])
+    if (sizeable or sibling_yes) and not halves:
+        return int(cfg["discovery"]["confirm_games"])
+    return basic
+
+
+def sample_league(fetcher, store, cfg, league, rows, sibling_yes=False):
     """Decide whether this league-season shows quarter scores. `rows` are its listed games."""
-    wanted = int(cfg["discovery"]["sample_games"])
     played = sorted((r for r in rows if r["list_status"] == st.PLAYED), key=st.by_date)
-    outcomes = [r["status"] for r in played if r["status"] in EVIDENCE][:wanted]
-    for row in _spread([r for r in played if is_due(r, cfg)], wanted):
-        if st.DONE in outcomes or len(outcomes) >= wanted:
+    outcomes = [r["status"] for r in played if r["status"] in EVIDENCE]
+    basic = int(cfg["discovery"]["sample_games"])
+    while st.DONE not in outcomes:
+        wanted = evidence_needed(cfg, played, outcomes, sibling_yes)
+        if len(outcomes) >= wanted:
             break
-        status = collect_one(fetcher, store, row, league, cfg)
-        if status in EVIDENCE:
-            outcomes.append(status)
+        target = basic if len(outcomes) < basic else wanted     # basic sample first, then decide on more
+        todo = _spread([r for r in played if is_due(r, cfg)], target - len(outcomes))
+        if not todo:
+            break
+        for row in todo:
+            status = collect_one(fetcher, store, row, league, cfg)
+            if status in EVIDENCE:
+                outcomes.append(status)
+            if status == st.DONE:
+                break
+    wanted = evidence_needed(cfg, played, outcomes, sibling_yes)
     league["sampled"] = st.stamp()
     kinds = ", ".join(sorted(set(outcomes)))
     untested = [r for r in played if r["status"] not in EVIDENCE]
@@ -47,7 +71,7 @@ def sample_league(fetcher, store, cfg, league, rows):
         league["has_quarters"] = "no"
         detail = next((r["detail"] for r in played if r["status"] == st.OTHER_PERIODS and r["detail"]), "")
         league["note"] = f"{len(outcomes)} finished games tested: {kinds}" + (f" ({detail})" if detail else "")
-    else:
+    elif league["has_quarters"] != "no":
         league["note"] = (f"only {len(outcomes)} finished games tested so far: {kinds}" if outcomes
                           else "no finished games ready to test yet")
 
@@ -56,14 +80,27 @@ def sample_all(fetcher, store, cfg, log=print):
     by_league = {}
     for row in store.schedule.values():
         by_league.setdefault((row["comp_id"], row["season"]), []).append(row)
-    todo = [l for l in store.leagues.values()
-            if l["has_quarters"] == "unknown" and l["include"].strip().lower() != "no"
-            and st.hours_since(l["sampled"]) > 72]
+    def sibling_yes(league):
+        return any(l["comp_id"] == league["comp_id"] and l["has_quarters"] == "yes"
+                   for l in store.leagues.values())
+
+    def under_tested(league):
+        """A 'no' that rests on fewer blank scoreboards than is now required."""
+        rows = by_league.get((league["comp_id"], league["season"]), [])
+        played = [r for r in rows if r["list_status"] == st.PLAYED]
+        outcomes = [r["status"] for r in played if r["status"] in EVIDENCE]
+        return (len(outcomes) < evidence_needed(cfg, played, outcomes, sibling_yes(league))
+                and any(is_due(r, cfg) for r in played))
+
+    todo = [l for l in store.leagues.values() if l["include"].strip().lower() != "no"
+            and ((l["has_quarters"] == "unknown" and st.hours_since(l["sampled"]) > 72)
+                 or (l["has_quarters"] == "no" and under_tested(l)))]
     todo.sort(key=lambda l: (l["name"].lower(), l["season"]))
     log(f"Testing {len(todo)} league-seasons for quarter scores.")
     try:
         for n, league in enumerate(todo, 1):
-            sample_league(fetcher, store, cfg, league, by_league.get((league["comp_id"], league["season"]), []))
+            sample_league(fetcher, store, cfg, league, by_league.get((league["comp_id"], league["season"]), []),
+                          sibling_yes(league))
             if n % 10 == 0:
                 store.save()
                 log(f"  tested {n}/{len(todo)}")

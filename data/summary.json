@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-10T22:11:46Z",
+  "generated": "2026-11-11T00:26:47Z",
   "days_read": 677,
   "first_day": "2025-01-01",
   "last_day": "2026-11-08",
@@ -25,7 +25,7 @@
   "quarter_records": 752,
   "games_flagged": 3,
   "flags": {
-    "PERIOD_SUM_MISMATCH": 3
+    "OT_NOT_ITEMISED": 3
   },
   "requeued_missing_records": 0,
   "seasons": {
@@ -38,14 +38,14 @@
     },
     "2025/2026": {
       "games": 65,
-      "overtime_games": 4,
+      "overtime_games": 6,
       "flagged": 2,
       "first_game": "2025-09-12",
       "last_game": "2026-05-16"
     },
     "2026": {
       "games": 33,
-      "overtime_games": 1,
+      "overtime_games": 2,
       "flagged": 1,
       "first_game": "2026-01-24",
       "last_game": "2026-10-06"
@@ -59,6 +59,7 @@
     }
   },
   "flag_meanings": {
+    "OT_NOT_ITEMISED": "overtime was played but the site does not list all of its periods; quarters are complete and overtime points are final minus regulation",
     "PERIOD_SUM_MISMATCH": "quarters plus overtime do not add up to the final score",
     "LIST_SCORE_MISMATCH": "the match report's final differs from the daily list's final",
     "OT_WITHOUT_TIE": "overtime is listed but regulation was not tied",

@@ -33,6 +33,8 @@ seasons:
 
 discovery:
   sample_games: 3                 # finished games tested per league-season for a Q1-Q4 scoreboard
+  confirm_games: 8                # larger sample before a sizeable league is marked "no"
+  confirm_from_games: 40          # "sizeable" means at least this many finished games
 
 harvest:
   settle_days: 2                  # wait this long after a date before reading its games

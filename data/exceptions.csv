@@ -1,4 +1,4 @@
 ﻿game_id,date,competition,season,home_team,away_team,check,detail,source_url
-3868186,2025-10-08,East Asia Super League,2025/2026,Taipei Fubon Braves,Utsunomiya Brex,PERIOD_SUM_MISMATCH,"unlisted points home +14, away +12",https://globalsportsarchive.com/match/basketball/2025-10-08/taipei-fubon-braves-vs-utsunomiya-brex/3868186/
-4177908,2026-04-02,Copa Súper 20,2025/2026,Independiente de Oliva,CA Obras Sanitarias,PERIOD_SUM_MISMATCH,"unlisted points home +18, away +27",https://globalsportsarchive.com/match/basketball/2026-04-02/independiente-de-oliva-vs-ca-obras-sanitarias/4177908/
-4294878,2026-07-25,Eurobasket U18,2026,Israel U18,Greece U18,PERIOD_SUM_MISMATCH,"unlisted points home +16, away +7",https://globalsportsarchive.com/match/basketball/2026-07-25/israel-u18-vs-greece-u18/4294878/
+3868186,2025-10-08,East Asia Super League,2025/2026,Taipei Fubon Braves,Utsunomiya Brex,OT_NOT_ITEMISED,"regulation 95-95, overtime 14-12",https://globalsportsarchive.com/match/basketball/2025-10-08/taipei-fubon-braves-vs-utsunomiya-brex/3868186/
+4177908,2026-04-02,Copa Súper 20,2025/2026,Independiente de Oliva,CA Obras Sanitarias,OT_NOT_ITEMISED,"regulation 95-95, overtime 18-27",https://globalsportsarchive.com/match/basketball/2026-04-02/independiente-de-oliva-vs-ca-obras-sanitarias/4177908/
+4294878,2026-07-25,Eurobasket U18,2026,Israel U18,Greece U18,OT_NOT_ITEMISED,"regulation 77-77, overtime 16-7",https://globalsportsarchive.com/match/basketball/2026-07-25/israel-u18-vs-greece-u18/4294878/

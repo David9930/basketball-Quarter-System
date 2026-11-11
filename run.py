@@ -61,7 +61,8 @@ def status(store, cfg):
     print(f"Match reports ready to fetch: {len(rows)} in {len(leagues)} league-seasons"
           + (" (" + ", ".join(f"{k}: {v}" for k, v in sorted(by_season.items())) + ")" if rows else ""))
     if rows:
-        print(f"That is about {len(rows) * (delay + 1.5) / 3600:.1f} hours at one request every {delay:g}s.")
+        print(f"That is about {len(rows) * (delay + 1.2) / 3600:.0f} hours of running "
+              f"(a {delay:g}s pause plus about a second per page).")
     untested = sum(1 for l in store.leagues.values() if l["has_quarters"] == "unknown")
     if untested:
         print(f"League-seasons not yet tested for quarter scores: {untested}")

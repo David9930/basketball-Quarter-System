@@ -10,6 +10,8 @@ EXCEPTION_FIELDS = ["game_id", "date", "competition", "season", "home_team", "aw
                     "check", "detail", "source_url"]
 
 FLAGS = {
+    "OT_NOT_ITEMISED": "overtime was played but the site does not list all of its periods; "
+                       "quarters are complete and overtime points are final minus regulation",
     "PERIOD_SUM_MISMATCH": "quarters plus overtime do not add up to the final score",
     "LIST_SCORE_MISMATCH": "the match report's final differs from the daily list's final",
     "OT_WITHOUT_TIE": "overtime is listed but regulation was not tied",
@@ -23,19 +25,57 @@ def _ints(game, keys):
     return [int(game[k]) for k in keys]
 
 
+def overtime_state(hq, aq, itemised, h_final, a_final, label=""):
+    """Classify a game's overtime from its scoreboard.
+
+    `itemised` is the list of (home, away) overtime periods the site shows.
+    Returns (kind, home_ot, away_ot) where kind is:
+      none          no overtime; quarters add up to the final
+      itemised      overtime periods are listed and everything adds up
+      not_itemised  regulation ended level and the final is higher, but the
+                    site lists no overtime periods, or fewer than were played.
+                    Overtime points are then final minus regulation.
+      mismatch      the figures do not reconcile
+    """
+    reg_h, reg_a = sum(hq), sum(aq)
+    rem_h, rem_a = h_final - reg_h, a_final - reg_a
+    it_h, it_a = sum(h for h, _ in itemised), sum(a for _, a in itemised)
+    if (rem_h, rem_a) == (it_h, it_a):
+        return ("itemised" if itemised else "none"), it_h, it_a
+    level_so_far = reg_h == reg_a and it_h == it_a
+    if level_so_far and rem_h >= it_h and rem_a >= it_a:
+        return "not_itemised", rem_h, rem_a
+    return "mismatch", it_h, it_a
+
+
+def read_ot_detail(text):
+    """'11-11 12-10' -> [(11, 11), (12, 10)]"""
+    pairs = []
+    for part in (text or "").split():
+        h, _, a = part.partition("-")
+        if h.isdigit() and a.isdigit():
+            pairs.append((int(h), int(a)))
+    return pairs
+
+
 def check_game(game, listed=None):
     """Return (flags, detail) for one game row. `listed` is its schedule row."""
     try:
         hq = _ints(game, [f"home_q{i}" for i in range(1, 5)])
         aq = _ints(game, [f"away_q{i}" for i in range(1, 5)])
-        h_ot, a_ot = int(game["home_ot"] or 0), int(game["away_ot"] or 0)
         h_final, a_final = int(game["home_final"]), int(game["away_final"])
-        ot_periods = int(game["overtime_periods"] or 0)
     except (KeyError, TypeError, ValueError):
         return ["BAD_VALUE"], "a score could not be read as a number"
+    itemised = read_ot_detail(game.get("ot_detail", ""))
+    ot_periods = len(itemised)
+    kind, h_ot, a_ot = overtime_state(hq, aq, itemised, h_final, a_final)
     flags, notes = [], []
-    h_gap, a_gap = h_final - sum(hq) - h_ot, a_final - sum(aq) - a_ot
-    if h_gap or a_gap:
+    if kind == "not_itemised":
+        flags.append("OT_NOT_ITEMISED")
+        notes.append(f"regulation {sum(hq)}-{sum(aq)}, overtime {h_ot}-{a_ot}"
+                     + (f", of which listed {game['ot_detail']}" if itemised else ""))
+    elif kind == "mismatch":
+        h_gap, a_gap = h_final - sum(hq) - h_ot, a_final - sum(aq) - a_ot
         flags.append("PERIOD_SUM_MISMATCH")
         notes.append(f"unlisted points home {h_gap:+d}, away {a_gap:+d}")
     if listed and listed.get("list_home", "").isdigit() and listed.get("list_away", "").isdigit():
@@ -56,6 +96,19 @@ def check_game(game, listed=None):
 def check_text(game, listed=None):
     flags, _ = check_game(game, listed)
     return ";".join(flags) if flags else "OK"
+
+
+def set_overtime(game, label=""):
+    """Fill the overtime columns from the quarters, listed overtime periods and finals."""
+    hq = _ints(game, [f"home_q{i}" for i in range(1, 5)])
+    aq = _ints(game, [f"away_q{i}" for i in range(1, 5)])
+    itemised = read_ot_detail(game.get("ot_detail", ""))
+    kind, h_ot, a_ot = overtime_state(hq, aq, itemised, int(game["home_final"]), int(game["away_final"]))
+    played = kind in ("itemised", "not_itemised") or bool(itemised) or "OT" in label.upper().split()
+    game["overtime"] = "yes" if played else "no"
+    game["overtime_periods"] = str(len(itemised))
+    game["home_ot"], game["away_ot"] = str(h_ot), str(a_ot)
+    game["result_note"] = "" if label.strip().lower().startswith("final") else label.strip()
 
 
 def league_totals(store):
@@ -84,15 +137,20 @@ def validate(store, log=print):
     seasons = {}
     for game in store.games.values():
         listed = store.schedule.get(game["game_id"])
+        before = dict(game)
+        try:
+            set_overtime(game, game.get("result_note", "") or ("FINAL OT" if game.get("overtime") == "yes" else ""))
+        except (KeyError, TypeError, ValueError):
+            pass
         flags, detail = check_game(game, listed)
         text = ";".join(flags) if flags else "OK"
-        if game["check"] != text:
-            game["check"] = text
+        game["check"] = text
+        if game != before:
             store.touch("games", game["date"])
         s = seasons.setdefault(game["season"], {"games": 0, "overtime_games": 0, "flagged": 0,
                                                 "first_game": game["date"], "last_game": game["date"]})
         s["games"] += 1
-        s["overtime_games"] += int(game["overtime_periods"] or 0) > 0
+        s["overtime_games"] += game["overtime"] == "yes"
         s["first_game"], s["last_game"] = min(s["first_game"], game["date"]), max(s["last_game"], game["date"])
         for flag in flags:
             flagged[flag] += 1

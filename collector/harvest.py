@@ -11,7 +11,7 @@ from pathlib import Path
 from . import parse
 from . import store as st
 from .fetch import PageError
-from .validate import check_text, league_totals
+from .validate import check_text, league_totals, set_overtime
 
 DAILY_LIST_PATH = "/sport_ajax_v3.php?d={day}&widget_client_id=1&sp=basketball"
 EXAMPLES_PER_KIND = 3
@@ -109,7 +109,6 @@ def scan_days(fetcher, store, cfg, log):
 def build_game(row, league, result, base_url=""):
     home_q, away_q, overtime = result["home_q"], result["away_q"], result["overtime"]
     h_final, a_final = result["home_final"], result["away_final"]
-    label = result.get("label", "")
     game = {
         "game_id": row["game_id"], "date": row["date"], "kickoff": row["kickoff"],
         "comp_id": row["comp_id"], "competition": league["name"], "season": row["season"],
@@ -117,16 +116,14 @@ def build_game(row, league, result, base_url=""):
         "home_team": row["home_team"] or result["home_team"],
         "away_team": row["away_team"] or result["away_team"],
         "home_team_id": row["home_team_id"], "away_team_id": row["away_team_id"],
-        "overtime_periods": str(len(overtime)),
-        "home_ot": str(sum(h for h, _ in overtime)), "away_ot": str(sum(a for _, a in overtime)),
         "ot_detail": " ".join(f"{h}-{a}" for h, a in overtime),
         "home_final": str(h_final), "away_final": str(a_final),
         "winner": "home" if h_final > a_final else "away" if a_final > h_final else "tie",
-        "result_note": "" if label.strip().lower() == "final" else label,
         "source_url": base_url + row["url"], "retrieved": st.today().isoformat(),
     }
     for i in range(4):
         game[f"home_q{i + 1}"], game[f"away_q{i + 1}"] = str(home_q[i]), str(away_q[i])
+    set_overtime(game, result.get("label", ""))
     game["check"] = check_text(game, row)
     return game
 
@@ -175,7 +172,9 @@ def collect_one(fetcher, store, row, league, cfg):
         keep_example(fetcher.cache_dir.parent, result["status"], row, text)
     elif "PERIOD_SUM_MISMATCH" in game["check"]:
         keep_example(fetcher.cache_dir.parent, "sum_mismatch", row, text)
-    elif game["overtime_periods"] != "0":
+    elif "OT_NOT_ITEMISED" in game["check"]:
+        keep_example(fetcher.cache_dir.parent, "ot_not_itemised", row, text)
+    elif game["overtime"] == "yes":
         keep_example(fetcher.cache_dir.parent, "overtime", row, text)
     return status
 
