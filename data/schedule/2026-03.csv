@@ -241,7 +241,7 @@
 4067068,2026-03-03,15:30,2875,2025/2026,regular-season,165303,/match/basketball/2026-03-03/bk-grodno-93-vs-bk-tsmoki-minsk/4067068/,Played,BK Grodno-93,BK Tsmoki-Minsk,48112,43499,70,66,pending,0,,
 4079065,2026-03-03,19:00,2823,2025/2026,regular-season,159682,/match/basketball/2026-03-03/kk-split-vs-kd-ilirija/4079065/,Played,KK Split,KD Ilirija,36457,60931,107,112,pending,0,,
 4116052,2026-03-03,11:00,2888,2025/2026,regular-season,160919,/match/basketball/2026-03-03/kayseri-basketbol-sk-vs-fenerbahce-sk/4116052/,Played,Kayseri Basketbol SK,Fenerbahçe SK,43947,43897,59,95,pending,0,,
-4449513,2026-03-03,01:00,5493,2026,metropolitana-triangular,161257,/match/basketball/2026-03-03/ccyd-santa-sylvina-vs-capri/4449513/,Played,CC Cultural,CAPRI,76611,76601,79,82,no_scoreboard,1,2026-11-10T21:57:16Z,blank quarter or total
+4449513,2026-03-03,01:00,5493,2026,metropolitana-triangular,161257,/match/basketball/2026-03-03/ccyd-santa-sylvina-vs-capri/4449513/,Played,CC Cultural,CAPRI,76611,76601,79,82,gave_up,1,2026-11-10T21:57:16Z,blank quarter or total
 3742127,2026-03-04,19:04,4521,2025/2026,regular-season,153624,/match/basketball/2026-03-04/uppsala-basket-vs-sodertalje-kings/3742127/,Played,Uppsala Basket,Södertälje Kings,63431,43502,60,77,pending,0,,
 3837409,2026-03-04,20:30,2887,2025/2026,regular-season,160942,/match/basketball/2026-03-04/panthers-roseto-vs-brixia-basket/3837409/,Played,Panthers Roseto,RMB Brixia Basket,71815,56348,76,65,pending,0,,
 3837411,2026-03-04,20:30,2887,2025/2026,regular-season,160942,/match/basketball/2026-03-04/bc-castelnuovo-scrivia-vs-pallacanestro-broni-93/3837411/,Played,Autosped BCC Derthona Basket,Logiman Broni,67111,48356,76,51,pending,0,,
@@ -523,7 +523,7 @@
 4060335,2026-03-05,19:00,2822,2025/2026,regular-season,158052,/match/basketball/2026-03-05/kralovsti-sokoli-hradec-kralove-vs-bk-olomoucko/4060335/,Played,Královští sokoli Hradec Králové,BK Olomoucko,47283,47281,92,77,pending,0,,
 4103512,2026-03-05,19:00,2828,2025/2026,regular-season,158060,/match/basketball/2026-03-05/team-fog-naestved-vs-horsens-ic/4103512/,Played,Team FOG Næstved,Horsens IC,47322,47321,100,77,pending,0,,
 4103925,2026-03-05,09:30,2807,2025/2026,regular-season,156838,/match/basketball/2026-03-05/melbourne-united-vs-tasmania-jackjumpers/4103925/,Played,Melbourne United,Tasmania JackJumpers,26442,51899,82,68,pending,0,,
-4449514,2026-03-05,00:30,5493,2026,metropolitana-triangular,161257,/match/basketball/2026-03-05/club-ateneo-pv-vs-cs-alejandro-korn/4449514/,Played,Club Ateneo PV,CS Alejandro Korn,76588,76584,74,53,pending,0,,
+4449514,2026-03-05,00:30,5493,2026,metropolitana-triangular,161257,/match/basketball/2026-03-05/club-ateneo-pv-vs-cs-alejandro-korn/4449514/,Played,Club Ateneo PV,CS Alejandro Korn,76588,76584,74,53,gave_up,1,2026-11-11T02:21:48Z,blank quarter or total
 4449515,2026-03-05,01:00,5493,2026,metropolitana-triangular,161257,/match/basketball/2026-03-05/cs-clarida-de-fomento-vs-ca-san-antonio-de-padua/4449515/,Played,CS Claridad,CA San Antonio de Padua,76607,76602,74,62,pending,0,,
 4449516,2026-03-05,01:30,5493,2026,metropolitana-triangular,161257,/match/basketball/2026-03-05/cscyd-espanol-vs-ca-regina/4449516/,Played,CSCyD Español,CA Regina,76604,76595,68,63,pending,0,,
 3742128,2026-03-06,19:04,4521,2025/2026,regular-season,153624,/match/basketball/2026-03-06/bc-lulea-vs-nassjo-basket/3742128/,Played,BC Luleå,Nässjö Basket,63429,63430,93,100,pending,0,,
@@ -1241,7 +1241,7 @@
 4130239,2026-03-08,23:00,5502,2026,final,151100,/match/basketball/2026-03-08/brillantes-del-zulia-vs-heroes-de-falcon/4130239/,Played,Brillantes del Zulia,Héroes de Falcón,74675,74684,78,76,pending,0,,
 4130240,2026-03-08,23:00,5502,2026,final,151100,/match/basketball/2026-03-08/cocodrilos-de-caracas-vs-centauros-de-bolivar/4130240/,Played,Cocodrilos de Caracas,Centauros de Bolívar,74680,74677,91,82,pending,0,,
 4130241,2026-03-08,23:00,5502,2026,final,151100,/match/basketball/2026-03-08/pioneros-del-avila-vs-piratas-de-la-guaira/4130241/,Played,Pioneros del Ávila,Piratas de La Guaira,74687,60860,81,68,pending,0,,
-4131840,2026-03-08,20:00,5503,2026,final,139448,/match/basketball/2026-03-08/hidrocarburos-de-caracas-vs-pastoras-de-lara/4131840/,Played,Hidrocarburos de Caracas,Pastoras de Lara,74702,74699,79,56,no_scoreboard,1,2026-11-10T22:08:03Z,blank quarter or total
+4131840,2026-03-08,20:00,5503,2026,final,139448,/match/basketball/2026-03-08/hidrocarburos-de-caracas-vs-pastoras-de-lara/4131840/,Played,Hidrocarburos de Caracas,Pastoras de Lara,74702,74699,79,56,gave_up,1,2026-11-10T22:08:03Z,blank quarter or total
 4290077,2026-03-08,17:00,5660,2025/2026,regular-season,166105,/match/basketball/2026-03-08/kk-vojvodina-vs-kk-tamis-pancevo/4290077/,Played,KK Vojvodina,KK Tamiš Pančevo,60933,75006,81,72,pending,0,,
 4290078,2026-03-08,18:00,5660,2025/2026,regular-season,166105,/match/basketball/2026-03-08/kk-zlatibor-vs-kk-vrsac/4290078/,Played,KK Zlatibor,KK Vršac,60932,35036,91,84,pending,0,,
 4334110,2026-03-08,10:00,5722,2025/2026,regular-season,169676,/match/basketball/2026-03-08/tsg-ghosthawks-vs-yankey-ark-pbt/4334110/,Played,TSG GhostHawks,Yankey Ark PBT,75460,75461,92,107,pending,0,,
@@ -1783,7 +1783,7 @@
 4130248,2026-03-13,00:00,5502,2026,final,151100,/match/basketball/2026-03-13/centauros-de-bolivar-vs-pioneros-del-avila/4130248/,Played,Centauros de Bolívar,Pioneros del Ávila,74677,74687,77,81,pending,0,,
 4130249,2026-03-13,00:00,5502,2026,final,151100,/match/basketball/2026-03-13/panteras-de-miranda-vs-gaiteros-del-zulia/4130249/,Played,Panteras de Miranda,Gaiteros del Zulia,74686,74683,77,90,pending,0,,
 4130250,2026-03-13,00:00,5502,2026,final,151100,/match/basketball/2026-03-13/piratas-de-la-guaira-vs-diablos-de-miranda/4130250/,Played,Piratas de La Guaira,Diablos de Miranda,60860,74682,67,78,pending,0,,
-4131841,2026-03-13,21:00,5503,2026,final,139448,/match/basketball/2026-03-13/pastoras-de-lara-vs-costaneras-de-puerto-cabello/4131841/,Played,Pastoras de Lara,Costaneras de Puerto Cabello,74699,74701,58,64,pending,0,,
+4131841,2026-03-13,21:00,5503,2026,final,139448,/match/basketball/2026-03-13/pastoras-de-lara-vs-costaneras-de-puerto-cabello/4131841/,Played,Pastoras de Lara,Costaneras de Puerto Cabello,74699,74701,58,64,gave_up,1,2026-11-11T02:23:11Z,blank quarter or total
 4131842,2026-03-13,21:00,5503,2026,final,139448,/match/basketball/2026-03-13/marineras-de-anzoategui-vs-atletico-sucre/4131842/,Played,Marineras de Anzoátegui,Atleticas Sucre,74695,74697,54,51,pending,0,,
 4131843,2026-03-13,20:00,5503,2026,final,139448,/match/basketball/2026-03-13/caribenas-de-caracas-vs-gemelas-de-miranda/4131843/,Played,Caribeñas de Caracas,Gemelas de Miranda,74698,74696,71,74,pending,0,,
 4131844,2026-03-13,23:00,5503,2026,final,139448,/match/basketball/2026-03-13/hidrocarburos-de-caracas-vs-indias-de-miranda/4131844/,Played,Hidrocarburos de Caracas,Indias de Miranda,74702,74700,74,61,pending,0,,
@@ -1994,8 +1994,8 @@
 4131888,2026-03-14,21:00,5503,2026,final,139448,/match/basketball/2026-03-14/gemelas-de-miranda-vs-caribenas-de-caracas/4131888/,Played,Gemelas de Miranda,Caribeñas de Caracas,74696,74698,64,67,pending,0,,
 4290083,2026-03-14,17:00,5660,2025/2026,regular-season,166105,/match/basketball/2026-03-14/kkk-radnicki-kragujevac-vs-kk-cacak94-quantox/4290083/,Played,KKK Radnički Kragujevac,KK Čačak94 Quantox,75003,75014,85,90,pending,0,,
 4290084,2026-03-14,18:00,5660,2025/2026,regular-season,166105,/match/basketball/2026-03-14/kk-vrsac-vs-kk-sloga-kraljevo/4290084/,Played,KK Vršac,KK Sloga Kraljevo,35036,75011,107,86,pending,0,,
-4290085,2026-03-14,18:30,5660,2025/2026,regular-season,166105,/match/basketball/2026-03-14/kk-joker-sombor-vs-okk-beograd/4290085/,Played,KK Joker Sombor,OKK Beograd,75004,75009,85,115,pending,0,,
-4334112,2026-03-14,10:00,5722,2025/2026,regular-season,169676,/match/basketball/2026-03-14/taipei-fubon-braves-vs-yankey-ark-pbt/4334112/,Played,Taipei Fubon Braves,Yankey Ark PBT,60831,75461,94,102,no_scoreboard,1,2026-11-10T22:04:00Z,blank quarter or total
+4290085,2026-03-14,18:30,5660,2025/2026,regular-season,166105,/match/basketball/2026-03-14/kk-joker-sombor-vs-okk-beograd/4290085/,Played,KK Joker Sombor,OKK Beograd,75004,75009,85,115,gave_up,1,2026-11-11T02:22:36Z,blank quarter or total
+4334112,2026-03-14,10:00,5722,2025/2026,regular-season,169676,/match/basketball/2026-03-14/taipei-fubon-braves-vs-yankey-ark-pbt/4334112/,Played,Taipei Fubon Braves,Yankey Ark PBT,60831,75461,94,102,gave_up,1,2026-11-10T22:04:00Z,blank quarter or total
 4449523,2026-03-14,02:00,5493,2026,metropolitana-triangular,161257,/match/basketball/2026-03-14/ccyd-santa-sylvina-vs-cb-cordoba/4449523/,Played,CC Cultural,CB Cordoba,76611,76609,91,67,pending,0,,
 3774878,2026-03-15,16:00,2950,2025/2026,regular-season,156587,/match/basketball/2026-03-15/phoenix-hagen-vs-nurnberg-falcons-bc/3774878/,Played,Phoenix Hagen,Nürnberg Falcons BC,25699,36958,90,77,pending,0,,
 3774879,2026-03-15,17:00,2950,2025/2026,regular-season,156587,/match/basketball/2026-03-15/artland-dragons-vs-epg-baskets-koblenz/3774879/,Played,Artland Dragons,EPG Baskets Koblenz,29157,62126,96,90,pending,0,,
@@ -2149,7 +2149,7 @@
 4290086,2026-03-15,16:00,5660,2025/2026,regular-season,166105,/match/basketball/2026-03-15/kk-dynamic-beograd-vs-kk-sloboda-uzice/4290086/,Played,KK Dynamic Beograd,KK Sloboda Užice,75005,75007,84,96,pending,0,,
 4290087,2026-03-15,16:30,5660,2025/2026,regular-season,166105,/match/basketball/2026-03-15/kk-mladost-admiral-zemun-vs-kk-vojvodina/4290087/,Played,KK Mladost Admiral Zemun,KK Vojvodina,75013,60933,76,72,pending,0,,
 4290088,2026-03-15,20:00,5660,2025/2026,regular-season,166105,/match/basketball/2026-03-15/bkk-radnicki-beograd-vs-kk-borac-zemun/4290088/,Played,BKK Radnički Beograd,KK Borac Zemun,75001,75012,92,98,pending,0,,
-4334113,2026-03-15,10:00,5722,2025/2026,regular-season,169676,/match/basketball/2026-03-15/taipei-fubon-braves-vs-tsg-ghosthawks/4334113/,Played,Taipei Fubon Braves,TSG GhostHawks,60831,75460,114,89,pending,0,,
+4334113,2026-03-15,10:00,5722,2025/2026,regular-season,169676,/match/basketball/2026-03-15/taipei-fubon-braves-vs-tsg-ghosthawks/4334113/,Played,Taipei Fubon Braves,TSG GhostHawks,60831,75460,114,89,gave_up,1,2026-11-11T02:22:56Z,blank quarter or total
 3754278,2026-03-16,18:00,4796,2025/2026,regular-season,158232,/match/basketball/2026-03-16/bkm-lucenec-vs-bc-prievidza/3754278/,Played,BKM Lučenec,BC Prievidza,65142,63952,86,90,pending,0,,
 3829813,2026-03-16,18:00,2818,2025/2026,regular-season,158222,/match/basketball/2026-03-16/wilki-morskie-szczecin-vs-wks-slask-wroclaw/3829813/,Played,Wilki Morskie Szczecin,WKS Śląsk Wrocław,47231,47230,90,81,pending,0,,
 3829814,2026-03-16,20:15,2818,2025/2026,regular-season,158222,/match/basketball/2026-03-16/arka-gdynia-vs-trefl-sopot/3829814/,Played,Arka Gdynia,Trefl Sopot,37375,47229,80,77,pending,0,,
@@ -3120,7 +3120,7 @@
 4122433,2026-03-26,20:45,2887,2025/2026,regular-season,160942,/match/basketball/2026-03-26/panthers-roseto-vs-magnolia-basket-campobasso/4122433/,Played,Panthers Roseto,La Molisana Magnolia Campobasso,71815,48366,59,54,pending,0,,
 4131857,2026-03-26,22:00,5503,2026,final,139448,/match/basketball/2026-03-26/marineras-de-anzoategui-vs-caribenas-de-caracas/4131857/,Played,Marineras de Anzoátegui,Caribeñas de Caracas,74695,74698,87,77,pending,0,,
 4131858,2026-03-26,22:00,5503,2026,final,139448,/match/basketball/2026-03-26/atletico-sucre-vs-gemelas-de-miranda/4131858/,Played,Atleticas Sucre,Gemelas de Miranda,74697,74696,73,72,pending,0,,
-4131859,2026-03-26,23:30,5503,2026,final,139448,/match/basketball/2026-03-26/costaneras-de-puerto-cabello-vs-indias-de-miranda/4131859/,Played,Costaneras de Puerto Cabello,Indias de Miranda,74701,74700,62,68,pending,0,,
+4131859,2026-03-26,23:30,5503,2026,final,139448,/match/basketball/2026-03-26/costaneras-de-puerto-cabello-vs-indias-de-miranda/4131859/,Played,Costaneras de Puerto Cabello,Indias de Miranda,74701,74700,62,68,gave_up,1,2026-11-11T02:23:15Z,blank quarter or total
 4131860,2026-03-26,21:00,5503,2026,final,139448,/match/basketball/2026-03-26/pastoras-de-lara-vs-hidrocarburos-de-caracas/4131860/,Played,Pastoras de Lara,Hidrocarburos de Caracas,74699,74702,63,68,pending,0,,
 4133220,2026-03-26,00:00,5502,2026,final,151100,/match/basketball/2026-03-26/centauros-de-bolivar-vs-diablos-de-miranda/4133220/,Played,Centauros de Bolívar,Diablos de Miranda,74677,74682,67,66,pending,0,,
 4133221,2026-03-26,00:00,5502,2026,final,151100,/match/basketball/2026-03-26/heroes-de-falcon-vs-panteras-de-miranda/4133221/,Played,Héroes de Falcón,Panteras de Miranda,74684,74686,90,75,pending,0,,
@@ -3391,7 +3391,7 @@
 4295192,2026-03-28,14:00,4738,2026,final,150370,/match/basketball/2026-03-28/nairobi-city-thunder-vs-dar-city-bc/4295192/,Played,Nairobi City Thunder,Dar City BC,69317,75071,85,90,pending,0,,
 4295193,2026-03-28,17:00,4738,2026,final,150370,/match/basketball/2026-03-28/al-ahly-sc-benghazi-vs-atletico-petroleos-de-luanda/4295193/,Played,Al Ahly SC Benghazi,Atlético Petróleos de Luanda,64330,38429,90,104,pending,0,,
 4334115,2026-03-28,10:00,5722,2025/2026,regular-season,169676,/match/basketball/2026-03-28/yankey-ark-pbt-vs-tsg-ghosthawks/4334115/,Played,Yankey Ark PBT,TSG GhostHawks,75461,75460,87,129,pending,0,,
-4449529,2026-03-28,01:00,5493,2026,metropolitana-triangular,161257,/match/basketball/2026-03-28/ca-pilar-vs-club-atenas-la-plata/4449529/,Played,CA Pilar,Club Atenas La Plata,76593,76592,62,69,pending,0,,
+4449529,2026-03-28,01:00,5493,2026,metropolitana-triangular,161257,/match/basketball/2026-03-28/ca-pilar-vs-club-atenas-la-plata/4449529/,Played,CA Pilar,Club Atenas La Plata,76593,76592,62,69,gave_up,1,2026-11-11T02:21:53Z,blank quarter or total
 3774896,2026-03-29,17:00,2950,2025/2026,regular-season,156587,/match/basketball/2026-03-29/artland-dragons-vs-medi-bayreuth/3774896/,Played,Artland Dragons,medi Bayreuth,29157,25701,89,82,pending,0,,
 3774897,2026-03-29,17:00,2950,2025/2026,regular-season,156587,/match/basketball/2026-03-29/rheinstars-koln-vs-bg-gottingen/3774897/,Played,RheinStars Köln,BG Göttingen,60825,25706,88,80,pending,0,,
 3774898,2026-03-29,17:00,2950,2025/2026,regular-season,156587,/match/basketball/2026-03-29/epg-baskets-koblenz-vs-eisbaren-bremerhaven/3774898/,Played,EPG Baskets Koblenz,Eisbären Bremerhaven,62126,25705,59,75,pending,0,,

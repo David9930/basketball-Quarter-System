@@ -102,7 +102,7 @@
 3921947,2025-10-03,01:35,2831,2025/2026,regular-season,156847,/match/basketball/2025-10-03/ca-obras-sanitarias-vs-cr-corrientes/3921947/,Played,CA Obras Sanitarias,CR Corrientes,47356,47348,85,75,pending,0,,
 3921948,2025-10-03,02:00,2831,2025/2026,regular-season,156847,/match/basketball/2025-10-03/independiente-de-oliva-vs-instituto-acc/3921948/,Played,Independiente de Oliva,Instituto ACC,56723,47353,93,86,pending,0,,
 3921949,2025-10-03,02:30,2831,2025/2026,regular-season,156847,/match/basketball/2025-10-03/la-union-de-formosa-vs-ca-san-lorenzo-de-almagro/3921949/,Played,La Unión de Formosa,CA San Lorenzo de Almagro,47361,44056,89,79,pending,0,,
-4289897,2025-10-03,19:00,5660,2025/2026,regular-season,166105,/match/basketball/2025-10-03/kk-tamis-pancevo-vs-kk-dynamic-beograd/4289897/,Played,KK Tamiš Pančevo,KK Dynamic Beograd,75006,75005,109,73,no_scoreboard,1,2026-11-10T22:01:05Z,blank quarter or total
+4289897,2025-10-03,19:00,5660,2025/2026,regular-season,166105,/match/basketball/2025-10-03/kk-tamis-pancevo-vs-kk-dynamic-beograd/4289897/,Played,KK Tamiš Pančevo,KK Dynamic Beograd,75006,75005,109,73,gave_up,1,2026-11-10T22:01:05Z,blank quarter or total
 3747279,2025-10-04,09:30,2807,2025/2026,regular-season,156838,/match/basketball/2025-10-04/sydney-kings-vs-new-zealand-breakers/3747279/,Played,Sydney Kings,New Zealand Breakers,26449,26444,97,75,pending,0,,
 3747280,2025-10-04,12:00,2807,2025/2026,regular-season,156838,/match/basketball/2025-10-04/brisbane-bullets-vs-tasmania-jackjumpers/3747280/,Played,Brisbane Bullets,Tasmania JackJumpers,47143,51899,82,84,pending,0,,
 3754188,2025-10-04,18:00,4796,2025/2026,regular-season,158232,/match/basketball/2025-10-04/bkm-lucenec-vs-bc-prievidza/3754188/,Played,BKM Lučenec,BC Prievidza,65142,63952,88,80,pending,0,,
@@ -219,7 +219,7 @@
 3921266,2025-10-04,04:05,2876,2025,final,168280,/match/basketball/2025-10-04/mineros-de-zacatecas-vs-santos-de-san-luis/3921266/,Played,Mineros de Zacatecas,Santos de San Luis,48131,61902,109,86,pending,0,,
 3921950,2025-10-04,01:30,2831,2025/2026,regular-season,156847,/match/basketball/2025-10-04/club-gimnasia-y-esgrima-vs-club-san-martin/3921950/,Played,Club Gimnasia y Esgrima,Club San Martín,47346,47355,81,65,pending,0,,
 3928358,2025-10-04,02:00,2341,2025,final,165700,/match/basketball/2025-10-04/las-vegas-aces-vs-phoenix-mercury/3928358/,Played,Las Vegas Aces,Phoenix Mercury,40824,40827,89,86,pending,0,,
-4289898,2025-10-04,17:30,5660,2025/2026,regular-season,166105,/match/basketball/2025-10-04/kkk-radnicki-kragujevac-vs-kk-metalac-valjevo/4289898/,Played,KKK Radnički Kragujevac,KK Metalac Valjevo,75003,75002,91,71,pending,0,,
+4289898,2025-10-04,17:30,5660,2025/2026,regular-season,166105,/match/basketball/2025-10-04/kkk-radnicki-kragujevac-vs-kk-metalac-valjevo/4289898/,Played,KKK Radnički Kragujevac,KK Metalac Valjevo,75003,75002,91,71,gave_up,1,2026-11-11T02:22:21Z,blank quarter or total
 4289899,2025-10-04,18:00,5660,2025/2026,regular-season,166105,/match/basketball/2025-10-04/bkk-radnicki-beograd-vs-kk-mladost-admiral-zemun/4289899/,Played,BKK Radnički Beograd,KK Mladost Admiral Zemun,75001,75013,81,70,pending,0,,
 4289900,2025-10-04,18:00,5660,2025/2026,regular-season,166105,/match/basketball/2025-10-04/kk-vrsac-vs-kk-joker-sombor/4289900/,Played,KK Vršac,KK Joker Sombor,35036,75004,96,87,pending,0,,
 4289901,2025-10-04,18:00,5660,2025/2026,regular-season,166105,/match/basketball/2025-10-04/kk-zlatibor-vs-okk-beograd/4289901/,Played,KK Zlatibor,OKK Beograd,60932,75009,112,94,pending,0,,
@@ -1807,7 +1807,7 @@
 3937024,2025-10-26,15:00,4794,2025/2026,final,134740,/match/basketball/2025-10-26/san-miguel-beermen-vs-barangay-ginebra-san-miguel/3937024/,Played,San Miguel Beermen,Barangay Ginebra San Miguel,60847,60824,83,81,pending,0,,
 4289926,2025-10-26,17:00,5660,2025/2026,regular-season,166105,/match/basketball/2025-10-26/kk-mladost-admiral-zemun-vs-kk-hercegovac/4289926/,Played,KK Mladost Admiral Zemun,KK Hercegovac,75013,75010,59,81,pending,0,,
 4289927,2025-10-26,18:00,5660,2025/2026,regular-season,166105,/match/basketball/2025-10-26/bkk-radnicki-beograd-vs-kk-tamis-pancevo/4289927/,Played,BKK Radnički Beograd,KK Tamiš Pančevo,75001,75006,97,90,pending,0,,
-4334083,2025-10-26,10:00,5722,2025/2026,regular-season,169676,/match/basketball/2025-10-26/taoyuan-pauian-pilots-vs-taipei-fubon-braves/4334083/,Played,Taoyuan Pauian Pilots,Taipei Fubon Braves,60810,60831,112,96,no_scoreboard,1,2026-11-10T22:03:55Z,blank quarter or total
+4334083,2025-10-26,10:00,5722,2025/2026,regular-season,169676,/match/basketball/2025-10-26/taoyuan-pauian-pilots-vs-taipei-fubon-braves/4334083/,Played,Taoyuan Pauian Pilots,Taipei Fubon Braves,60810,60831,112,96,gave_up,1,2026-11-10T22:03:55Z,blank quarter or total
 3742023,2025-10-27,19:04,4521,2025/2026,regular-season,153624,/match/basketball/2025-10-27/sloga-uppsala-vs-sodertalje-kings/3742023/,Played,Sloga Uppsala,Södertälje Kings,70841,43502,80,95,pending,0,,
 3833545,2025-10-27,12:00,2511,2025/2026,regular-season,161550,/match/basketball/2025-10-27/changwon-lg-sakers-vs-busan-kcc-egis/3833545/,Played,Changwon LG Sakers,Busan KCC Egis,42811,42814,81,72,pending,0,,
 3873515,2025-10-27,18:00,2826,2025/2026,regular-season,161984,/match/basketball/2025-10-27/kk-zadar-vs-kk-dubrava/3873515/,Played,KK Zadar,KK Dubrava,47286,47306,105,74,pending,0,,
@@ -1981,7 +1981,7 @@
 3935391,2025-10-29,00:30,4799,2025,clausura-final,170619,/match/basketball/2025-10-29/cd-campoalto-vs-ca-ciudad-nueva/3935391/,Played,CD Campoalto,CA Ciudad Nueva,65168,65309,81,45,pending,0,,
 3937025,2025-10-29,10:15,4794,2025/2026,final,134740,/match/basketball/2025-10-29/blackwater-bossing-vs-nlex-road-warriors/3937025/,Played,Blackwater Bossing,NLEX Road Warriors,60848,55056,88,99,pending,0,,
 3937026,2025-10-29,12:30,4794,2025/2026,final,134740,/match/basketball/2025-10-29/meralco-bolts-vs-tnt-tropang-giga/3937026/,Played,Meralco Bolts,TNT Tropang Giga,55058,55057,98,100,pending,0,,
-4334084,2025-10-29,12:00,5722,2025/2026,regular-season,169676,/match/basketball/2025-10-29/taoyuan-pauian-pilots-vs-tsg-ghosthawks/4334084/,Played,Taoyuan Pauian Pilots,TSG GhostHawks,60810,75460,101,89,pending,0,,
+4334084,2025-10-29,12:00,5722,2025/2026,regular-season,169676,/match/basketball/2025-10-29/taoyuan-pauian-pilots-vs-tsg-ghosthawks/4334084/,Played,Taoyuan Pauian Pilots,TSG GhostHawks,60810,75460,101,89,gave_up,1,2026-11-11T02:22:46Z,blank quarter or total
 3747307,2025-10-30,09:30,2807,2025/2026,regular-season,156838,/match/basketball/2025-10-30/brisbane-bullets-vs-cairns-taipans/3747307/,Played,Brisbane Bullets,Cairns Taipans,47143,26448,113,85,pending,0,,
 3777886,2025-10-30,18:00,2822,2025/2026,regular-season,158052,/match/basketball/2025-10-30/bk-olomoucko-vs-era-nymburk/3777886/,Played,BK Olomoucko,ERA Nymburk,47281,43486,65,87,pending,0,,
 3801401,2025-10-30,19:00,1012,2025/2026,regular-season,156050,/match/basketball/2025-10-30/kk-zalgiris-vs-asvel-basket/3801401/,Played,Žalgiris Kaunas,LDLC ASVEL Villeurbanne,294,25740,96,59,pending,0,,

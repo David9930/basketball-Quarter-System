@@ -18,7 +18,7 @@
 4121596,2026-07-04,01:30,4788,2026,final,143148,/match/basketball/2026-07-04/montreal-alliance-vs-scarborough-shooting-stars/4121596/,Played,Montreal Alliance,Scarborough Shooting Stars,65036,65035,84,97,pending,0,,
 4121597,2026-07-04,03:30,4788,2026,final,143148,/match/basketball/2026-07-04/saskatoon-mamba-vs-calgary-surge/4121597/,Played,Saskatoon Mamba,Calgary Surge,65032,65029,96,92,pending,0,,
 4121598,2026-07-04,04:00,4788,2026,final,143148,/match/basketball/2026-07-04/vancouver-bandits-vs-edmonton-stingers/4121598/,Played,Vancouver Bandits,Edmonton Stingers,65031,52100,93,94,pending,0,,
-4573387,2026-07-04,11:45,6052,2026,final,170289,/match/basketball/2026-07-04/raudondvaris-hoptrans-vs-elancourt/4573387/,Played,Raudondvaris Hoptrans,Élancourt,78660,78693,18,17,no_scoreboard,1,2026-11-10T22:00:31Z,blank quarter or total
+4573387,2026-07-04,11:45,6052,2026,final,170289,/match/basketball/2026-07-04/raudondvaris-hoptrans-vs-elancourt/4573387/,Played,Raudondvaris Hoptrans,Élancourt,78660,78693,18,17,gave_up,1,2026-11-10T22:00:31Z,blank quarter or total
 4573388,2026-07-04,12:10,6052,2026,final,170289,/match/basketball/2026-07-04/antwerp-vs-zvornik/4573388/,Played,Antwerp,Zvornik,78659,78694,22,7,pending,0,,
 4573389,2026-07-04,12:35,6052,2026,final,170289,/match/basketball/2026-07-04/liman-vs-los-angeles/4573389/,Played,Liman,Los Angeles,78658,78677,18,11,pending,0,,
 4573390,2026-07-04,13:00,6052,2026,final,170289,/match/basketball/2026-07-04/ub-vs-marijampole-mantinga-ltu/4573390/,Played,Ub,Marijampolė Mantinga LTU,78642,78683,21,8,pending,0,,
@@ -27,7 +27,7 @@
 4573393,2026-07-04,14:25,6052,2026,final,170289,/match/basketball/2026-07-04/liman-vs-fuengirola/4573393/,Played,Liman,Fuengirola,78658,78676,18,21,pending,0,,
 4573394,2026-07-04,14:50,6052,2026,final,170289,/match/basketball/2026-07-04/ub-vs-barcelona/4573394/,Played,Ub,Barcelona,78642,78692,18,19,pending,0,,
 4573395,2026-07-04,15:25,6052,2026,final,170289,/match/basketball/2026-07-04/hangzhou-jingwei-vs-elancourt/4573395/,Played,Hangzhou Jingwei,Élancourt,78679,78693,12,15,pending,0,,
-4573396,2026-07-04,15:50,6052,2026,final,170289,/match/basketball/2026-07-04/toulouse-vs-zvornik/4573396/,Played,Toulouse,Zvornik,78661,78694,19,12,no_scoreboard,1,2026-11-10T22:00:36Z,blank quarter or total
+4573396,2026-07-04,15:50,6052,2026,final,170289,/match/basketball/2026-07-04/toulouse-vs-zvornik/4573396/,Played,Toulouse,Zvornik,78661,78694,19,12,gave_up,1,2026-11-10T22:00:36Z,blank quarter or total
 4573397,2026-07-04,16:15,6052,2026,final,170289,/match/basketball/2026-07-04/fuengirola-vs-los-angeles/4573397/,Played,Fuengirola,Los Angeles,78676,78677,21,13,pending,0,,
 4573398,2026-07-04,16:40,6052,2026,final,170289,/match/basketball/2026-07-04/barcelona-vs-marijampole-mantinga-ltu/4573398/,Played,Barcelona,Marijampolė Mantinga LTU,78692,78683,19,16,pending,0,,
 4024908,2026-07-05,05:00,4797,2026,final,139043,/match/basketball/2026-07-05/nelson-giants-vs-franklin-bulls/4024908/,Played,Nelson Giants,Franklin Bulls,65148,65145,88,85,pending,0,,
@@ -44,7 +44,7 @@
 4573402,2026-07-05,15:00,6052,2026,final,170289,/match/basketball/2026-07-05/toulouse-vs-ub/4573402/,Played,Toulouse,Ub,78661,78642,15,21,pending,0,,
 4573403,2026-07-05,16:35,6052,2026,final,170289,/match/basketball/2026-07-05/barcelona-vs-raudondvaris-hoptrans/4573403/,Played,Barcelona,Raudondvaris Hoptrans,78692,78660,16,17,pending,0,,
 4573404,2026-07-05,17:05,6052,2026,final,170289,/match/basketball/2026-07-05/fuengirola-vs-ub/4573404/,Played,Fuengirola,Ub,78676,78642,13,21,pending,0,,
-4573405,2026-07-05,18:05,6052,2026,final,170289,/match/basketball/2026-07-05/raudondvaris-hoptrans-vs-ub/4573405/,Played,Raudondvaris Hoptrans,Ub,78660,78642,16,21,no_scoreboard,1,2026-11-10T22:00:40Z,blank quarter or total
+4573405,2026-07-05,18:05,6052,2026,final,170289,/match/basketball/2026-07-05/raudondvaris-hoptrans-vs-ub/4573405/,Played,Raudondvaris Hoptrans,Ub,78660,78642,16,21,gave_up,1,2026-11-10T22:00:40Z,blank quarter or total
 4073450,2026-07-06,01:00,2341,2026,final,165700,/match/basketball/2026-07-06/las-vegas-aces-vs-indiana-fever/4073450/,Played,Las Vegas Aces,Indiana Fever,40824,40820,68,84,pending,0,,
 4121602,2026-07-06,00:00,4788,2026,final,143148,/match/basketball/2026-07-06/edmonton-stingers-vs-winnipeg-sea-bears/4121602/,Played,Edmonton Stingers,Winnipeg Sea Bears,52100,65030,98,100,pending,0,,
 4345872,2026-07-06,01:00,5499,2026,final,144021,/match/basketball/2026-07-06/cd-omega-vs-ude-temuco/4345872/,Played,CD Omega,UDE Temuco,74668,75091,76,71,pending,0,,
@@ -96,7 +96,7 @@
 4356203,2026-07-11,02:00,5487,2026,final,144331,/match/basketball/2026-07-11/criollos-de-caguas-vs-cangrejeros-santurce/4356203/,Played,Criollos de Caguas,Cangrejeros Santurce,74734,52099,98,92,pending,0,,
 4356204,2026-07-11,02:00,5487,2026,final,144331,/match/basketball/2026-07-11/atleticos-de-san-german-vs-leones-de-ponce/4356204/,Played,Atléticos de San Germán,Leones de Ponce,55062,55065,88,75,pending,0,,
 4402576,2026-07-11,17:00,5498,2026,clausura-quarter-finals,161961,/match/basketball/2026-07-11/cd-espanol-de-talca-vs-cd-universidad-catolica/4402576/,Played,CD Español de Talca,CD Universidad Católica,74728,73719,81,93,pending,0,,
-4573964,2026-07-11,09:00,6053,2026,final,170449,/match/basketball/2026-07-11/toronto-vs-athina-ΔΕΗ/4573964/,Played,Toronto,Athina ΔΕΗ,78673,78749,21,12,no_scoreboard,1,2026-11-10T21:47:57Z,blank quarter or total
+4573964,2026-07-11,09:00,6053,2026,final,170449,/match/basketball/2026-07-11/toronto-vs-athina-ΔΕΗ/4573964/,Played,Toronto,Athina ΔΕΗ,78673,78749,21,12,gave_up,1,2026-11-10T21:47:57Z,blank quarter or total
 4573965,2026-07-11,09:25,6053,2026,final,170449,/match/basketball/2026-07-11/prague-vs-mataro/4573965/,Played,Prague,Mataró,78750,78748,6,13,pending,0,,
 4573966,2026-07-11,09:50,6053,2026,final,170449,/match/basketball/2026-07-11/milan-vs-athina-ΔΕΗ/4573966/,Played,Milan,Athina ΔΕΗ,78747,78749,19,11,pending,0,,
 4573967,2026-07-11,10:15,6053,2026,final,170449,/match/basketball/2026-07-11/warsaw-vs-mataro/4573967/,Played,Warsaw,Mataró,78654,78748,18,17,pending,0,,
@@ -108,7 +108,7 @@
 4573973,2026-07-11,20:05,6053,2026,final,170449,/match/basketball/2026-07-11/ub-vs-cibona-phclassic/4573973/,Played,Ub,Cibona Ph.Classic,78642,78675,19,17,pending,0,,
 4573974,2026-07-11,20:35,6053,2026,final,170449,/match/basketball/2026-07-11/baskets-bonn-vs-ulaanbaatar/4573974/,Played,Baskets Bonn,Ulaanbaatar MMC Energy,78650,78652,21,8,pending,0,,
 4573975,2026-07-11,21:00,6053,2026,final,170449,/match/basketball/2026-07-11/vienna-vs-deqing/4573975/,Played,Vienna,DeQing,78651,78648,14,21,pending,0,,
-4573976,2026-07-11,21:25,6053,2026,final,170449,/match/basketball/2026-07-11/amsterdam-rabobank-vs-fuengirola/4573976/,Played,Amsterdam RABOBANK,Fuengirola,78646,78676,20,21,no_scoreboard,1,2026-11-10T21:48:02Z,blank quarter or total
+4573976,2026-07-11,21:25,6053,2026,final,170449,/match/basketball/2026-07-11/amsterdam-rabobank-vs-fuengirola/4573976/,Played,Amsterdam RABOBANK,Fuengirola,78646,78676,20,21,gave_up,1,2026-11-10T21:48:02Z,blank quarter or total
 4573977,2026-07-11,21:50,6053,2026,final,170449,/match/basketball/2026-07-11/ub-vs-valencia/4573977/,Played,Ub,Valencia,78642,78695,17,13,pending,0,,
 4573978,2026-07-11,22:20,6053,2026,final,170449,/match/basketball/2026-07-11/ulaanbaatar-vs-warsaw/4573978/,Played,Ulaanbaatar MMC Energy,Warsaw,78652,78654,21,19,pending,0,,
 4573979,2026-07-11,22:45,6053,2026,final,170449,/match/basketball/2026-07-11/deqing-vs-toronto/4573979/,Played,DeQing,Toronto,78648,78673,15,21,pending,0,,
@@ -147,7 +147,7 @@
 4573985,2026-07-12,20:30,6053,2026,final,170449,/match/basketball/2026-07-12/toronto-vs-cibona-phclassic/4573985/,Played,Toronto,Cibona Ph.Classic,78673,78675,15,21,pending,0,,
 4573986,2026-07-12,21:10,6053,2026,final,170449,/match/basketball/2026-07-12/ub-vs-baskets-bonn/4573986/,Played,Ub,Baskets Bonn,78642,78650,18,12,pending,0,,
 4573987,2026-07-12,21:40,6053,2026,final,170449,/match/basketball/2026-07-12/ulaanbaatar-vs-cibona-phclassic/4573987/,Played,Ulaanbaatar MMC Energy,Cibona Ph.Classic,78652,78675,11,22,pending,0,,
-4573988,2026-07-12,22:40,6053,2026,final,170449,/match/basketball/2026-07-12/ub-vs-cibona-phclassic/4573988/,Played,Ub,Cibona Ph.Classic,78642,78675,21,12,no_scoreboard,1,2026-11-10T21:48:07Z,blank quarter or total
+4573988,2026-07-12,22:40,6053,2026,final,170449,/match/basketball/2026-07-12/ub-vs-cibona-phclassic/4573988/,Played,Ub,Cibona Ph.Classic,78642,78675,21,12,gave_up,1,2026-11-10T21:48:07Z,blank quarter or total
 4024916,2026-07-13,09:00,4797,2026,final,139043,/match/basketball/2026-07-13/manawatu-jets-vs-nelson-giants/4024916/,Played,Manawatu Jets,Nelson Giants,65147,65148,120,113,pending,0,,
 4073470,2026-07-13,01:00,2341,2026,final,165700,/match/basketball/2026-07-13/dallas-wings-vs-chicago-sky/4073470/,Played,Dallas Wings,Chicago Sky,40823,40818,96,91,pending,0,,
 4073471,2026-07-13,03:00,2341,2026,final,165700,/match/basketball/2026-07-13/las-vegas-aces-vs-indiana-fever/4073471/,Played,Las Vegas Aces,Indiana Fever,40824,40820,75,109,pending,0,,
@@ -245,7 +245,7 @@
 4402589,2026-07-18,02:00,5498,2026,clausura-quarter-finals,161961,/match/basketball/2026-07-18/cd-universidad-de-concepcion-vs-csd-colo-colo/4402589/,Played,CD Universidad de Concepción,CSD Colo-Colo,50005,73720,109,76,pending,0,,
 4405472,2026-07-18,20:00,5747,2026,final,158142,/match/basketball/2026-07-18/el-salvador-vs-bahamas/4405472/,Played,El Salvador,Bahamas,64312,75983,65,80,pending,0,,
 4405473,2026-07-18,22:30,5747,2026,final,158142,/match/basketball/2026-07-18/nicaragua-vs-guyana/4405473/,Played,Nicaragua,Guyana,75984,75985,92,87,pending,0,,
-4573989,2026-07-18,14:00,6054,2026,final,170459,/match/basketball/2026-07-18/crvena-zvezda-vs-zagreb-nitiui/4573989/,Played,Crvena Zvezda,Zagreb Nitiui,78680,78754,21,7,no_scoreboard,1,2026-11-10T22:03:26Z,blank quarter or total
+4573989,2026-07-18,14:00,6054,2026,final,170459,/match/basketball/2026-07-18/crvena-zvezda-vs-zagreb-nitiui/4573989/,Played,Crvena Zvezda,Zagreb Nitiui,78680,78754,21,7,gave_up,1,2026-11-10T22:03:26Z,blank quarter or total
 4573990,2026-07-18,14:25,6054,2026,final,170459,/match/basketball/2026-07-18/stockholm-vs-novi-sad/4573990/,Played,Stockholm,Novi Sad,78752,78753,17,15,pending,0,,
 4573991,2026-07-18,14:50,6054,2026,final,170459,/match/basketball/2026-07-18/jurmala-vs-zagreb-nitiui/4573991/,Played,Jūrmala,Zagreb Nitiui,78755,78754,15,21,pending,0,,
 4573992,2026-07-18,15:15,6054,2026,final,170459,/match/basketball/2026-07-18/singapore-vs-novi-sad/4573992/,Played,Singapore,Novi Sad,78682,78753,20,21,pending,0,,
@@ -257,7 +257,7 @@
 4573998,2026-07-18,18:45,6054,2026,final,170459,/match/basketball/2026-07-18/ub-vs-ny-harlem/4573998/,Played,Ub,NY Harlem,78642,78730,21,17,pending,0,,
 4573999,2026-07-18,19:10,6054,2026,final,170459,/match/basketball/2026-07-18/antwerp-vs-vienna/4573999/,Played,Antwerp,Vienna,78659,78651,21,19,pending,0,,
 4574000,2026-07-18,19:35,6054,2026,final,170459,/match/basketball/2026-07-18/amsterdam-rabobank-vs-fuengirola/4574000/,Played,Amsterdam RABOBANK,Fuengirola,78646,78676,15,19,pending,0,,
-4574001,2026-07-18,20:30,6054,2026,final,170459,/match/basketball/2026-07-18/liman-vs-valencia/4574001/,Played,Liman,Valencia,78658,78695,21,14,no_scoreboard,1,2026-11-10T22:03:30Z,blank quarter or total
+4574001,2026-07-18,20:30,6054,2026,final,170459,/match/basketball/2026-07-18/liman-vs-valencia/4574001/,Played,Liman,Valencia,78658,78695,21,14,gave_up,1,2026-11-10T22:03:30Z,blank quarter or total
 4574002,2026-07-18,20:55,6054,2026,final,170459,/match/basketball/2026-07-18/ub-vs-taipei-wanbao/4574002/,Played,Ub,Taipei WanBao,78642,78647,21,19,pending,0,,
 4574003,2026-07-18,21:20,6054,2026,final,170459,/match/basketball/2026-07-18/vienna-vs-stockholm/4574003/,Played,Vienna,Stockholm,78651,78752,21,7,pending,0,,
 4574004,2026-07-18,21:45,6054,2026,final,170459,/match/basketball/2026-07-18/fuengirola-vs-crvena-zvezda/4574004/,Played,Fuengirola,Crvena Zvezda,78676,78680,18,16,pending,0,,
@@ -293,7 +293,7 @@
 4574010,2026-07-19,18:00,6054,2026,final,170459,/match/basketball/2026-07-19/fuengirola-vs-taipei-wanbao/4574010/,Played,Fuengirola,Taipei WanBao,78676,78647,21,15,pending,0,,
 4574011,2026-07-19,19:00,6054,2026,final,170459,/match/basketball/2026-07-19/ub-vs-antwerp/4574011/,Played,Ub,Antwerp,78642,78659,18,16,pending,0,,
 4574012,2026-07-19,19:30,6054,2026,final,170459,/match/basketball/2026-07-19/liman-vs-fuengirola/4574012/,Played,Liman,Fuengirola,78658,78676,15,14,pending,0,,
-4574013,2026-07-19,20:30,6054,2026,final,170459,/match/basketball/2026-07-19/ub-vs-liman/4574013/,Played,Ub,Liman,78642,78658,20,19,no_scoreboard,1,2026-11-10T22:03:36Z,blank quarter or total
+4574013,2026-07-19,20:30,6054,2026,final,170459,/match/basketball/2026-07-19/ub-vs-liman/4574013/,Played,Ub,Liman,78642,78658,20,19,gave_up,1,2026-11-10T22:03:36Z,blank quarter or total
 4073490,2026-07-20,01:00,2341,2026,final,165700,/match/basketball/2026-07-20/phoenix-mercury-vs-connecticut-sun/4073490/,Played,Phoenix Mercury,Connecticut Sun,40827,40819,72,63,pending,0,,
 4121621,2026-07-20,00:00,4788,2026,final,143148,/match/basketball/2026-07-20/winnipeg-sea-bears-vs-montreal-alliance/4121621/,Played,Winnipeg Sea Bears,Montreal Alliance,65030,65036,109,80,pending,0,,
 4121622,2026-07-20,00:00,4788,2026,final,143148,/match/basketball/2026-07-20/calgary-surge-vs-saskatoon-mamba/4121622/,Played,Calgary Surge,Saskatoon Mamba,65029,65032,99,116,pending,0,,
@@ -326,7 +326,7 @@
 4294683,2026-07-24,04:00,2876,2026,final,168280,/match/basketball/2026-07-24/abejas-de-leon-vs-correcaminos-uat-victoria/4294683/,Played,Abejas de León,Correcaminos UAT Victoria,48133,48128,95,88,pending,0,,
 4294684,2026-07-24,04:00,2876,2026,final,168280,/match/basketball/2026-07-24/santos-de-san-luis-vs-mineros-de-zacatecas/4294684/,Played,Santos de San Luis,Mineros de Zacatecas,61902,48131,87,86,pending,0,,
 4294685,2026-07-24,04:15,2876,2026,final,168280,/match/basketball/2026-07-24/diablos-rojos-del-mexico-vs-panteras-de-aguascalientes/4294685/,Played,Diablos Rojos del México,Panteras de Aguascalientes,66204,48137,80,91,pending,0,,
-4367484,2026-07-24,11:25,3698,2026,gold-medal,152782,/match/basketball/2026-07-24/australia-vs-kenya/4367484/,Played,Australia,Kenya,50035,54812,21,5,no_scoreboard,1,2026-11-10T21:46:36Z,blank quarter or total
+4367484,2026-07-24,11:25,3698,2026,gold-medal,152782,/match/basketball/2026-07-24/australia-vs-kenya/4367484/,Played,Australia,Kenya,50035,54812,21,5,gave_up,1,2026-11-10T21:46:36Z,blank quarter or total
 4367485,2026-07-24,12:15,3698,2026,gold-medal,152782,/match/basketball/2026-07-24/fiji-vs-cayman-islands/4367485/,Played,Fiji,Cayman Islands,75803,75802,16,6,pending,0,,
 4367486,2026-07-24,13:55,3698,2026,gold-medal,152782,/match/basketball/2026-07-24/uganda-vs-jamaica/4367486/,Played,Uganda,Jamaica,70460,75804,18,17,pending,0,,
 4367487,2026-07-24,15:30,3698,2026,gold-medal,152782,/match/basketball/2026-07-24/australia-vs-jamaica/4367487/,Played,Australia,Jamaica,50035,75804,21,13,pending,0,,
@@ -335,7 +335,7 @@
 4367490,2026-07-24,20:25,3698,2026,gold-medal,152782,/match/basketball/2026-07-24/cayman-islands-vs-jamaica/4367490/,Played,Cayman Islands,Jamaica,75802,75804,5,21,pending,0,,
 4367491,2026-07-24,21:15,3698,2026,gold-medal,152782,/match/basketball/2026-07-24/uganda-vs-kenya/4367491/,Played,Uganda,Kenya,70460,54812,21,5,pending,0,,
 4367492,2026-07-24,22:05,3698,2026,gold-medal,152782,/match/basketball/2026-07-24/australia-vs-fiji/4367492/,Played,Australia,Fiji,50035,75803,21,3,pending,0,,
-4367520,2026-07-24,11:00,3697,2026,gold-medal,152776,/match/basketball/2026-07-24/new-zealand-vs-australia/4367520/,Played,New Zealand,Australia,54805,54802,15,21,no_scoreboard,1,2026-11-10T21:46:25Z,blank quarter or total
+4367520,2026-07-24,11:00,3697,2026,gold-medal,152776,/match/basketball/2026-07-24/new-zealand-vs-australia/4367520/,Played,New Zealand,Australia,54805,54802,15,21,gave_up,1,2026-11-10T21:46:25Z,blank quarter or total
 4367521,2026-07-24,11:50,3697,2026,gold-medal,152776,/match/basketball/2026-07-24/nigeria-vs-cayman-islands/4367521/,Played,Nigeria,Cayman Islands,70451,75797,21,17,pending,0,,
 4367522,2026-07-24,13:30,3697,2026,gold-medal,152776,/match/basketball/2026-07-24/scotland-vs-guyana/4367522/,Played,Scotland,Guyana,54806,75798,21,14,pending,0,,
 4367523,2026-07-24,15:55,3697,2026,gold-medal,152776,/match/basketball/2026-07-24/new-zealand-vs-guyana/4367523/,Played,New Zealand,Guyana,54805,75798,21,3,pending,0,,
@@ -344,9 +344,9 @@
 4367526,2026-07-24,20:00,3697,2026,gold-medal,152776,/match/basketball/2026-07-24/new-zealand-vs-nigeria/4367526/,Played,New Zealand,Nigeria,54805,70451,21,10,pending,0,,
 4367527,2026-07-24,20:50,3697,2026,gold-medal,152776,/match/basketball/2026-07-24/cayman-islands-vs-guyana/4367527/,Played,Cayman Islands,Guyana,75797,75798,17,21,pending,0,,
 4367528,2026-07-24,21:40,3697,2026,gold-medal,152776,/match/basketball/2026-07-24/scotland-vs-australia/4367528/,Played,Scotland,Australia,54806,54802,14,21,pending,0,,
-4384875,2026-07-24,12:40,3700,2026,gold-medal,152786,/match/basketball/2026-07-24/canada-vs-kenya/4384875/,Played,Canada,Kenya,55594,75941,16,3,no_scoreboard,1,2026-11-10T21:46:47Z,blank quarter or total
+4384875,2026-07-24,12:40,3700,2026,gold-medal,152786,/match/basketball/2026-07-24/canada-vs-kenya/4384875/,Played,Canada,Kenya,55594,75941,16,3,gave_up,1,2026-11-10T21:46:47Z,blank quarter or total
 4384876,2026-07-24,17:35,3700,2026,gold-medal,152786,/match/basketball/2026-07-24/england-vs-australia/4384876/,Played,England,Australia,54821,55595,16,13,pending,0,,
-4384893,2026-07-24,13:05,3699,2026,gold-medal,152791,/match/basketball/2026-07-24/england-vs-australia/4384893/,Played,England,Australia,54816,55596,16,6,no_scoreboard,1,2026-11-10T21:46:58Z,blank quarter or total
+4384893,2026-07-24,13:05,3699,2026,gold-medal,152791,/match/basketball/2026-07-24/england-vs-australia/4384893/,Played,England,Australia,54816,55596,16,6,gave_up,1,2026-11-10T21:46:58Z,blank quarter or total
 4384894,2026-07-24,17:10,3699,2026,gold-medal,152791,/match/basketball/2026-07-24/canada-vs-south-africa/4384894/,Played,Canada,South Africa,55597,54819,19,3,pending,0,,
 4402591,2026-07-24,02:30,5498,2026,clausura-quarter-finals,161961,/match/basketball/2026-07-24/csd-colo-colo-vs-municipal-puente-alto/4402591/,Played,CSD Colo-Colo,Municipal Puente Alto,73720,74619,96,84,pending,0,,
 4024927,2026-07-25,06:00,4797,2026,final,139043,/match/basketball/2026-07-25/wellington-saints-vs-southland-sharks/4024927/,Played,Wellington Saints,Southland Sharks,65151,65149,119,94,pending,0,,
@@ -394,7 +394,7 @@
 4402594,2026-07-25,02:00,5498,2026,clausura-quarter-finals,161961,/match/basketball/2026-07-25/cd-universidad-de-concepcion-vs-cd-espanol-de-talca/4402594/,Played,CD Universidad de Concepción,CD Español de Talca,50005,74728,136,77,pending,0,,
 4416753,2026-07-25,02:00,5487,2026,final,144331,/match/basketball/2026-07-25/vaqueros-de-bayamon-vs-criollos-de-caguas/4416753/,Played,Vaqueros de Bayamón,Criollos de Caguas,55060,74734,78,74,pending,0,,
 4423942,2026-07-25,02:30,5498,2026,clausura-quarter-finals,161961,/match/basketball/2026-07-25/puerto-montt-basquetbol-vs-cd-aba-ancud/4423942/,Played,Puerto Montt Básquetbol,CD ABA Ancud,74730,73721,71,86,pending,0,,
-4574029,2026-07-25,06:30,6055,2026,final,170464,/match/basketball/2026-07-25/deqing-vs-tokyo/4574029/,Played,DeQing,Tokyo,78648,78735,21,13,no_scoreboard,1,2026-11-10T21:44:13Z,blank quarter or total
+4574029,2026-07-25,06:30,6055,2026,final,170464,/match/basketball/2026-07-25/deqing-vs-tokyo/4574029/,Played,DeQing,Tokyo,78648,78735,21,13,gave_up,1,2026-11-10T21:44:13Z,blank quarter or total
 4574030,2026-07-25,06:55,6055,2026,final,170464,/match/basketball/2026-07-25/taipei-wanbao-vs-ambon/4574030/,Played,Taipei WanBao,Ambon,78647,78759,21,12,pending,0,,
 4574031,2026-07-25,07:20,6055,2026,final,170464,/match/basketball/2026-07-25/minakami-vs-tokyo/4574031/,Played,Minakami,Tokyo,78758,78735,21,13,pending,0,,
 4574032,2026-07-25,07:45,6055,2026,final,170464,/match/basketball/2026-07-25/kharkhorum-vs-ambon/4574032/,Played,Kharkhorum,Ambon,78739,78759,21,14,pending,0,,
@@ -406,7 +406,7 @@
 4574038,2026-07-25,11:35,6055,2026,final,170464,/match/basketball/2026-07-25/ulaanbaatar-vs-taipei-wanbao/4574038/,Played,Ulaanbaatar MMC Energy,Taipei WanBao,78652,78647,16,13,pending,0,,
 4574039,2026-07-25,12:00,6055,2026,final,170464,/match/basketball/2026-07-25/antwerp-vs-shinjuku-ss/4574039/,Played,Antwerp,Shinjuku SS,78659,78690,21,11,pending,0,,
 4574040,2026-07-25,12:25,6055,2026,final,170464,/match/basketball/2026-07-25/miami-vs-liberec-dekstone/4574040/,Played,Miami,Liberec Dekstone,78644,78700,21,7,pending,0,,
-4574041,2026-07-25,13:00,6055,2026,final,170464,/match/basketball/2026-07-25/ub-vs-kaunas/4574041/,Played,Ub,Kaunas VDU LTU,78642,78678,18,19,no_scoreboard,1,2026-11-10T21:44:16Z,blank quarter or total
+4574041,2026-07-25,13:00,6055,2026,final,170464,/match/basketball/2026-07-25/ub-vs-kaunas/4574041/,Played,Ub,Kaunas VDU LTU,78642,78678,18,19,gave_up,1,2026-11-10T21:44:16Z,blank quarter or total
 4574042,2026-07-25,13:25,6055,2026,final,170464,/match/basketball/2026-07-25/ulaanbaatar-vs-valencia/4574042/,Played,Ulaanbaatar MMC Energy,Valencia,78652,78695,14,19,pending,0,,
 4574043,2026-07-25,13:50,6055,2026,final,170464,/match/basketball/2026-07-25/shinjuku-ss-vs-deqing/4574043/,Played,Shinjuku SS,DeQing,78690,78648,17,21,pending,0,,
 4574044,2026-07-25,14:45,6055,2026,final,170464,/match/basketball/2026-07-25/liberec-dekstone-vs-balige/4574044/,Played,Liberec Dekstone,Balige,78700,78757,21,9,pending,0,,
@@ -428,13 +428,13 @@
 4294891,2026-07-26,20:30,2819,2026,final,149834,/match/basketball/2026-07-26/lithuania-u18-vs-bulgaria-u18/4294891/,Played,Lithuania U18,Bulgaria U18,47263,69711,90,69,pending,0,,
 4294892,2026-07-26,18:00,2819,2026,final,149834,/match/basketball/2026-07-26/spain-u18-vs-italy-u18/4294892/,Played,Spain U18,Italy U18,47269,47261,68,61,pending,0,,
 4294893,2026-07-26,15:30,2819,2026,final,149834,/match/basketball/2026-07-26/latvia-u18-vs-estonia-u18/4294893/,Played,Latvia U18,Estonia U18,47262,75065,64,58,pending,0,,
-4367493,2026-07-26,12:30,3698,2026,gold-medal,152782,/match/basketball/2026-07-26/australia-vs-cayman-islands/4367493/,Played,Australia,Cayman Islands,50035,75802,21,3,no_scoreboard,1,2026-11-10T21:46:40Z,blank quarter or total
+4367493,2026-07-26,12:30,3698,2026,gold-medal,152782,/match/basketball/2026-07-26/australia-vs-cayman-islands/4367493/,Played,Australia,Cayman Islands,50035,75802,21,3,gave_up,1,2026-11-10T21:46:40Z,blank quarter or total
 4367494,2026-07-26,12:30,3698,2026,gold-medal,152782,/match/basketball/2026-07-26/uganda-vs-fiji/4367494/,Played,Uganda,Fiji,70460,75803,21,8,pending,0,,
 4367495,2026-07-26,12:30,3698,2026,gold-medal,152782,/match/basketball/2026-07-26/kenya-vs-jamaica/4367495/,Played,Kenya,Jamaica,54812,75804,16,21,pending,0,,
 4367496,2026-07-26,18:25,3698,2026,gold-medal,152782,/match/basketball/2026-07-26/fiji-vs-jamaica/4367496/,Played,Fiji,Jamaica,75803,75804,15,17,pending,0,,
 4367497,2026-07-26,20:05,3698,2026,gold-medal,152782,/match/basketball/2026-07-26/kenya-vs-cayman-islands/4367497/,Played,Kenya,Cayman Islands,54812,75802,22,8,pending,0,,
 4367498,2026-07-26,21:45,3698,2026,gold-medal,152782,/match/basketball/2026-07-26/australia-vs-uganda/4367498/,Played,Australia,Uganda,50035,70460,21,9,pending,0,,
-4367529,2026-07-26,12:30,3697,2026,gold-medal,152776,/match/basketball/2026-07-26/new-zealand-vs-cayman-islands/4367529/,Played,New Zealand,Cayman Islands,54805,75797,21,9,no_scoreboard,1,2026-11-10T21:46:29Z,blank quarter or total
+4367529,2026-07-26,12:30,3697,2026,gold-medal,152776,/match/basketball/2026-07-26/new-zealand-vs-cayman-islands/4367529/,Played,New Zealand,Cayman Islands,54805,75797,21,9,gave_up,1,2026-11-10T21:46:29Z,blank quarter or total
 4367530,2026-07-26,12:30,3697,2026,gold-medal,152776,/match/basketball/2026-07-26/scotland-vs-nigeria/4367530/,Played,Scotland,Nigeria,54806,70451,21,16,pending,0,,
 4367531,2026-07-26,12:30,3697,2026,gold-medal,152776,/match/basketball/2026-07-26/australia-vs-guyana/4367531/,Played,Australia,Guyana,54802,75798,21,11,pending,0,,
 4367532,2026-07-26,18:30,3697,2026,gold-medal,152776,/match/basketball/2026-07-26/new-zealand-vs-scotland/4367532/,Played,New Zealand,Scotland,54805,54806,21,13,pending,0,,
@@ -460,7 +460,7 @@
 4574050,2026-07-26,12:40,6055,2026,final,170464,/match/basketball/2026-07-26/antwerp-vs-ub/4574050/,Played,Antwerp,Ub,78659,78642,21,20,pending,0,,
 4574051,2026-07-26,13:20,6055,2026,final,170464,/match/basketball/2026-07-26/kaunas-vs-taipei-wanbao/4574051/,Played,Kaunas VDU LTU,Taipei WanBao,78678,78647,21,17,pending,0,,
 4574052,2026-07-26,13:50,6055,2026,final,170464,/match/basketball/2026-07-26/miami-vs-antwerp/4574052/,Played,Miami,Antwerp,78644,78659,14,21,pending,0,,
-4574053,2026-07-26,14:50,6055,2026,final,170464,/match/basketball/2026-07-26/kaunas-vs-antwerp/4574053/,Played,Kaunas VDU LTU,Antwerp,78678,78659,17,21,no_scoreboard,1,2026-11-10T21:44:20Z,blank quarter or total
+4574053,2026-07-26,14:50,6055,2026,final,170464,/match/basketball/2026-07-26/kaunas-vs-antwerp/4574053/,Played,Kaunas VDU LTU,Antwerp,78678,78659,17,21,gave_up,1,2026-11-10T21:44:20Z,blank quarter or total
 4121635,2026-07-27,00:00,4788,2026,final,143148,/match/basketball/2026-07-27/edmonton-stingers-vs-calgary-surge/4121635/,Played,Edmonton Stingers,Calgary Surge,52100,65029,100,89,pending,0,,
 4294695,2026-07-27,00:15,2876,2026,final,168280,/match/basketball/2026-07-27/fuerza-regia-vs-soles-de-mexicali/4294695/,Played,Fuerza Regia,Soles de Mexicali,47367,48138,95,89,pending,0,,
 4294894,2026-07-27,13:00,2819,2026,final,149834,/match/basketball/2026-07-27/israel-u18-vs-austria-u18/4294894/,Played,Israel U18,Austria U18,55029,69710,84,80,pending,0,,
@@ -483,11 +483,11 @@
 4367547,2026-07-27,18:25,3697,2026,gold-medal,152776,/match/basketball/2026-07-27/singapore-vs-england/4367547/,Played,Singapore,England,75801,54803,13,21,pending,0,,
 4367548,2026-07-27,20:05,3697,2026,gold-medal,152776,/match/basketball/2026-07-27/kenya-vs-fiji/4367548/,Played,Kenya,Fiji,54804,75799,22,9,pending,0,,
 4367549,2026-07-27,21:45,3697,2026,gold-medal,152776,/match/basketball/2026-07-27/malaysia-vs-jamaica/4367549/,Played,Malaysia,Jamaica,50918,75800,21,15,pending,0,,
-4384879,2026-07-27,11:30,3700,2026,gold-medal,152786,/match/basketball/2026-07-27/australia-vs-canada/4384879/,Played,Australia,Canada,55595,55594,20,12,no_scoreboard,1,2026-11-10T21:46:51Z,blank quarter or total
+4384879,2026-07-27,11:30,3700,2026,gold-medal,152786,/match/basketball/2026-07-27/australia-vs-canada/4384879/,Played,Australia,Canada,55595,55594,20,12,gave_up,1,2026-11-10T21:46:51Z,blank quarter or total
 4384880,2026-07-27,11:30,3700,2026,gold-medal,152786,/match/basketball/2026-07-27/england-vs-kenya/4384880/,Played,England,Kenya,54821,75941,21,0,pending,0,,
 4384885,2026-07-27,19:15,3700,2026,gold-medal,152786,/match/basketball/2026-07-27/malaysia-vs-south-africa/4384885/,Played,Malaysia,South Africa,55593,54822,10,13,pending,0,,
 4384886,2026-07-27,21:00,3700,2026,gold-medal,152786,/match/basketball/2026-07-27/wales-vs-scotland/4384886/,Played,Wales,Scotland,75943,75942,10,21,pending,0,,
-4384897,2026-07-27,11:30,3699,2026,gold-medal,152791,/match/basketball/2026-07-27/south-africa-vs-england/4384897/,Played,South Africa,England,54819,54816,2,21,no_scoreboard,1,2026-11-10T21:47:01Z,blank quarter or total
+4384897,2026-07-27,11:30,3699,2026,gold-medal,152791,/match/basketball/2026-07-27/south-africa-vs-england/4384897/,Played,South Africa,England,54819,54816,2,21,gave_up,1,2026-11-10T21:47:01Z,blank quarter or total
 4384898,2026-07-27,11:30,3699,2026,gold-medal,152791,/match/basketball/2026-07-27/australia-vs-canada/4384898/,Played,Australia,Canada,55596,55597,12,10,pending,0,,
 4384903,2026-07-27,18:30,3699,2026,gold-medal,152791,/match/basketball/2026-07-27/wales-vs-scotland/4384903/,Played,Wales,Scotland,75946,54818,2,16,pending,0,,
 4384904,2026-07-27,20:30,3699,2026,gold-medal,152791,/match/basketball/2026-07-27/india-vs-nigeria/4384904/,Played,India,Nigeria,75944,75945,6,7,pending,0,,
@@ -524,19 +524,19 @@
 4367516,2026-07-29,14:30,3698,2026,gold-medal,152782,/match/basketball/2026-07-29/australia-vs-jamaica/4367516/,Played,Australia,Jamaica,50035,75804,21,8,pending,0,,
 4367517,2026-07-29,15:00,3698,2026,gold-medal,152782,/match/basketball/2026-07-29/new-zealand-vs-uganda/4367517/,Played,New Zealand,Uganda,54813,70460,9,21,pending,0,,
 4367518,2026-07-29,16:30,3698,2026,gold-medal,152782,/match/basketball/2026-07-29/new-zealand-vs-jamaica/4367518/,Played,New Zealand,Jamaica,54813,75804,18,13,pending,0,,
-4367519,2026-07-29,16:30,3698,2026,gold-medal,152782,/match/basketball/2026-07-29/uganda-vs-australia/4367519/,Played,Uganda,Australia,70460,50035,11,21,no_scoreboard,1,2026-11-10T21:46:43Z,blank quarter or total
+4367519,2026-07-29,16:30,3698,2026,gold-medal,152782,/match/basketball/2026-07-29/uganda-vs-australia/4367519/,Played,Uganda,Australia,70460,50035,11,21,gave_up,1,2026-11-10T21:46:43Z,blank quarter or total
 4367552,2026-07-29,12:30,3697,2026,gold-medal,152776,/match/basketball/2026-07-29/australia-vs-scotland/4367552/,Played,Australia,Scotland,54802,54806,21,14,pending,0,,
 4367553,2026-07-29,13:00,3697,2026,gold-medal,152776,/match/basketball/2026-07-29/england-vs-new-zealand/4367553/,Played,England,New Zealand,54803,54805,21,16,pending,0,,
 4367554,2026-07-29,18:00,3697,2026,gold-medal,152776,/match/basketball/2026-07-29/new-zealand-vs-scotland/4367554/,Played,New Zealand,Scotland,54805,54806,16,18,pending,0,,
-4367555,2026-07-29,18:00,3697,2026,gold-medal,152776,/match/basketball/2026-07-29/england-vs-australia/4367555/,Played,England,Australia,54803,54802,19,17,no_scoreboard,1,2026-11-10T21:46:32Z,blank quarter or total
+4367555,2026-07-29,18:00,3697,2026,gold-medal,152776,/match/basketball/2026-07-29/england-vs-australia/4367555/,Played,England,Australia,54803,54802,19,17,gave_up,1,2026-11-10T21:46:32Z,blank quarter or total
 4384889,2026-07-29,13:30,3700,2026,gold-medal,152786,/match/basketball/2026-07-29/scotland-vs-australia/4384889/,Played,Scotland,Australia,75942,55595,12,19,pending,0,,
 4384890,2026-07-29,14:00,3700,2026,gold-medal,152786,/match/basketball/2026-07-29/england-vs-canada/4384890/,Played,England,Canada,54821,55594,18,13,pending,0,,
 4384891,2026-07-29,16:00,3700,2026,gold-medal,152786,/match/basketball/2026-07-29/scotland-vs-canada/4384891/,Played,Scotland,Canada,75942,55594,9,19,pending,0,,
-4384892,2026-07-29,16:00,3700,2026,gold-medal,152786,/match/basketball/2026-07-29/australia-vs-england/4384892/,Played,Australia,England,55595,54821,19,13,no_scoreboard,1,2026-11-10T21:46:54Z,blank quarter or total
+4384892,2026-07-29,16:00,3700,2026,gold-medal,152786,/match/basketball/2026-07-29/australia-vs-england/4384892/,Played,Australia,England,55595,54821,19,13,gave_up,1,2026-11-10T21:46:54Z,blank quarter or total
 4384907,2026-07-29,15:30,3699,2026,gold-medal,152791,/match/basketball/2026-07-29/england-vs-canada/4384907/,Played,England,Canada,54816,55597,18,10,pending,0,,
 4384908,2026-07-29,16:00,3699,2026,gold-medal,152791,/match/basketball/2026-07-29/scotland-vs-australia/4384908/,Played,Scotland,Australia,54818,55596,15,12,pending,0,,
 4384909,2026-07-29,16:00,3699,2026,gold-medal,152791,/match/basketball/2026-07-29/australia-vs-canada/4384909/,Played,Australia,Canada,55596,55597,19,17,pending,0,,
-4384910,2026-07-29,16:00,3699,2026,gold-medal,152791,/match/basketball/2026-07-29/scotland-vs-england/4384910/,Played,Scotland,England,54818,54816,10,18,no_scoreboard,1,2026-11-10T21:47:05Z,blank quarter or total
+4384910,2026-07-29,16:00,3699,2026,gold-medal,152791,/match/basketball/2026-07-29/scotland-vs-england/4384910/,Played,Scotland,England,54818,54816,10,18,gave_up,1,2026-11-10T21:47:05Z,blank quarter or total
 4416755,2026-07-29,02:00,5487,2026,final,144331,/match/basketball/2026-07-29/vaqueros-de-bayamon-vs-criollos-de-caguas/4416755/,Played,Vaqueros de Bayamón,Criollos de Caguas,55060,74734,106,83,pending,0,,
 4428897,2026-07-29,09:00,4797,2026,final,139043,/match/basketball/2026-07-29/southland-sharks-vs-whai/4428897/,Played,Southland Sharks,Whai,65149,65152,96,81,pending,0,,
 4073505,2026-07-30,02:00,2341,2026,final,165700,/match/basketball/2026-07-30/dallas-wings-vs-atlanta-dream/4073505/,Played,Dallas Wings,Atlanta Dream,40823,40817,81,82,pending,0,,
@@ -564,7 +564,7 @@
 4402596,2026-07-31,02:00,5498,2026,clausura-quarter-finals,161961,/match/basketball/2026-07-31/cd-universidad-de-concepcion-vs-municipal-puente-alto/4402596/,Played,CD Universidad de Concepción,Municipal Puente Alto,50005,74619,97,89,pending,0,,
 4402597,2026-07-31,02:30,5498,2026,clausura-quarter-finals,161961,/match/basketball/2026-07-31/csd-colo-colo-vs-cd-universidad-catolica/4402597/,Played,CSD Colo-Colo,CD Universidad Católica,73720,73719,70,81,pending,0,,
 4416756,2026-07-31,02:00,5487,2026,final,144331,/match/basketball/2026-07-31/criollos-de-caguas-vs-vaqueros-de-bayamon/4416756/,Played,Criollos de Caguas,Vaqueros de Bayamón,74734,55060,111,97,pending,0,,
-4574054,2026-07-31,08:30,6056,2026,final,170469,/match/basketball/2026-07-31/kandava-turiba-vs-tel-aviv-royce/4574054/,Played,Kandava Turība,Tel Aviv Royce,78706,78764,20,14,no_scoreboard,1,2026-11-10T21:42:57Z,blank quarter or total
+4574054,2026-07-31,08:30,6056,2026,final,170469,/match/basketball/2026-07-31/kandava-turiba-vs-tel-aviv-royce/4574054/,Played,Kandava Turība,Tel Aviv Royce,78706,78764,20,14,gave_up,1,2026-11-10T21:42:57Z,blank quarter or total
 4574055,2026-07-31,08:55,6056,2026,final,170469,/match/basketball/2026-07-31/akademija-vs-kutaisi/4574055/,Played,Akademija,Kutaisi,78760,78763,20,17,pending,0,,
 4574056,2026-07-31,09:20,6056,2026,final,170469,/match/basketball/2026-07-31/pirot-vs-tel-aviv-royce/4574056/,Played,Pirot,Tel Aviv Royce,78761,78764,21,10,pending,0,,
 4574057,2026-07-31,09:45,6056,2026,final,170469,/match/basketball/2026-07-31/kuala-lumpur-vs-kutaisi/4574057/,Played,Kuala Lumpur,Kutaisi,78762,78763,19,18,pending,0,,
@@ -576,7 +576,7 @@
 4574063,2026-07-31,17:15,6056,2026,final,170469,/match/basketball/2026-07-31/ub-vs-rio/4574063/,Played,Ub,Rio,78642,78751,21,9,pending,0,,
 4574064,2026-07-31,17:40,6056,2026,final,170469,/match/basketball/2026-07-31/toulouse-vs-fuengirola/4574064/,Played,Toulouse,Fuengirola,78661,78676,15,16,pending,0,,
 4574065,2026-07-31,18:05,6056,2026,final,170469,/match/basketball/2026-07-31/amsterdam-rabobank-vs-london/4574065/,Played,Amsterdam RABOBANK,London,78646,78711,20,8,pending,0,,
-4574066,2026-07-31,18:30,6056,2026,final,170469,/match/basketball/2026-07-31/miami-vs-shinjuku-ss/4574066/,Played,Miami,Shinjuku SS,78644,78690,19,16,no_scoreboard,1,2026-11-10T21:43:01Z,blank quarter or total
+4574066,2026-07-31,18:30,6056,2026,final,170469,/match/basketball/2026-07-31/miami-vs-shinjuku-ss/4574066/,Played,Miami,Shinjuku SS,78644,78690,19,16,gave_up,1,2026-11-10T21:43:01Z,blank quarter or total
 4574067,2026-07-31,19:15,6056,2026,final,170469,/match/basketball/2026-07-31/ub-vs-warsaw/4574067/,Played,Ub,Warsaw,78642,78654,21,14,pending,0,,
 4574068,2026-07-31,19:40,6056,2026,final,170469,/match/basketball/2026-07-31/fuengirola-vs-akademija/4574068/,Played,Fuengirola,Akademija,78676,78760,21,15,pending,0,,
 4574069,2026-07-31,20:05,6056,2026,final,170469,/match/basketball/2026-07-31/london-vs-kandava-turiba/4574069/,Played,London,Kandava Turība,78711,78706,12,15,pending,0,,

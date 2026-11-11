@@ -1,26 +1,26 @@
 ﻿game_id,date,kickoff,comp_id,season,stage,round_id,url,list_status,home_team,away_team,home_team_id,away_team_id,list_home,list_away,status,attempts,last_try,detail
-3583459,2025-06-01,05:00,4797,2025,final,139043,/match/basketball/2025-06-01/franklin-bulls-vs-auckland-tuatara/3583459/,Played,Franklin Bulls,Auckland Tuatara,65145,55055,83,84,pending,0,,
+3583459,2025-06-01,05:00,4797,2025,final,139043,/match/basketball/2025-06-01/franklin-bulls-vs-auckland-tuatara/3583459/,Played,Franklin Bulls,Auckland Tuatara,65145,55055,83,84,done,1,2026-11-11T02:58:27Z,
 3583460,2025-06-01,08:30,4797,2025,final,139043,/match/basketball/2025-06-01/taranaki-airs-vs-indian-panthers/3583460/,Cancelled,Taranaki Airs,Indian Panthers,65150,68142,,,pending,0,,
-3591309,2025-06-01,02:30,4788,2025,final,143148,/match/basketball/2025-06-01/winnipeg-sea-bears-vs-ottawa-blackjacks/3591309/,Played,Winnipeg Sea Bears,Ottawa BlackJacks,65030,65034,73,88,pending,0,,
-3685108,2025-06-01,02:00,2341,2025,final,165700,/match/basketball/2025-06-01/dallas-wings-vs-chicago-sky/3685108/,Played,Dallas Wings,Chicago Sky,40823,40818,83,94,pending,0,,
-3685109,2025-06-01,21:00,2341,2025,final,165700,/match/basketball/2025-06-01/new-york-liberty-vs-connecticut-sun/3685109/,Played,New York Liberty,Connecticut Sun,40821,40819,100,52,pending,0,,
-3700179,2025-06-01,11:00,4794,2025,final,134740,/match/basketball/2025-06-01/nlex-road-warriors-vs-phoenix-fuel-masters/3700179/,Played,NLEX Road Warriors,Phoenix Fuel Masters,55056,65107,110,95,pending,0,,
-3700180,2025-06-01,13:30,4794,2025,final,134740,/match/basketball/2025-06-01/barangay-ginebra-san-miguel-vs-magnolia-chicken-timplados-hotshots/3700180/,Played,Barangay Ginebra San Miguel,Magnolia Chicken Timplados Hotshots,60824,65106,85,81,pending,0,,
-3583461,2025-06-02,04:00,4797,2025,final,139043,/match/basketball/2025-06-02/nelson-giants-vs-hawkes-bay-hawks/3583461/,Played,Nelson Giants,Hawke's Bay Hawks,65148,65146,117,81,pending,0,,
-3591310,2025-06-02,02:00,4788,2025,final,143148,/match/basketball/2025-06-02/vancouver-bandits-vs-calgary-surge/3591310/,Played,Vancouver Bandits,Calgary Surge,65031,65029,80,95,pending,0,,
-3685110,2025-06-02,00:00,2341,2025,final,165700,/match/basketball/2025-06-02/los-angeles-sparks-vs-phoenix-mercury/3685110/,Played,Los Angeles Sparks,Phoenix Mercury,40825,40827,80,85,pending,0,,
-3685111,2025-06-02,00:00,2341,2025,final,165700,/match/basketball/2025-06-02/seattle-storm-vs-las-vegas-aces/3685111/,Played,Seattle Storm,Las Vegas Aces,40828,40824,70,75,pending,0,,
-3685112,2025-06-02,02:30,2341,2025,final,165700,/match/basketball/2025-06-02/golden-state-valkyries-vs-minnesota-lynx/3685112/,Played,Golden State Valkyries,Minnesota Lynx,69982,40826,75,86,pending,0,,
-3723842,2025-06-03,00:30,4799,2025,clausura-final,170619,/match/basketball/2025-06-03/deportivo-san-jose-vs-cs-luqueno/3723842/,Played,Deportivo San José,CS Luqueño,65166,70068,118,45,pending,0,,
-3723843,2025-06-03,01:30,4799,2025,clausura-final,170619,/match/basketball/2025-06-03/ca-ciudad-nueva-vs-olimpia-kings/3723843/,Played,CA Ciudad Nueva,Olimpia Kings,65309,65163,68,87,pending,0,,
-3723844,2025-06-03,01:30,4799,2025,clausura-final,170619,/match/basketball/2025-06-03/cscd-feliz-perez-cardozo-vs-cd-campoalto/3723844/,Played,CSCD Féliz Pérez Cardozo,CD Campoalto,65165,65168,100,61,pending,0,,
-3583462,2025-06-04,09:00,4797,2025,final,139043,/match/basketball/2025-06-04/franklin-bulls-vs-wellington-saints/3583462/,Played,Franklin Bulls,Wellington Saints,65145,65151,77,93,pending,0,,
-3591311,2025-06-04,17:00,4788,2025,final,143148,/match/basketball/2025-06-04/brampton-honey-badgers-vs-montreal-alliance/3591311/,Played,Brampton Honey Badgers,Montreal Alliance,57000,65036,71,92,pending,0,,
-3685113,2025-06-04,01:00,2341,2025,final,165700,/match/basketball/2025-06-04/indiana-fever-vs-washington-mystics/3685113/,Played,Indiana Fever,Washington Mystics,40820,40822,85,76,pending,0,,
-3685114,2025-06-04,02:00,2341,2025,final,165700,/match/basketball/2025-06-04/minnesota-lynx-vs-phoenix-mercury/3685114/,Played,Minnesota Lynx,Phoenix Mercury,40826,40827,88,65,pending,0,,
-3685115,2025-06-04,03:30,2341,2025,final,165700,/match/basketball/2025-06-04/seattle-storm-vs-dallas-wings/3685115/,Played,Seattle Storm,Dallas Wings,40828,40823,83,77,pending,0,,
-3700181,2025-06-04,13:30,4794,2025,final,134740,/match/basketball/2025-06-04/phoenix-fuel-masters-vs-northport-batang-pier/3700181/,Played,Phoenix Fuel Masters,NorthPort Batang Pier,65107,65109,118,107,pending,0,,
-3700182,2025-06-04,11:00,4794,2025,final,134740,/match/basketball/2025-06-04/terrafirma-dyip-vs-rain-or-shine-elasto-painters/3700182/,Played,Terrafirma Dyip,Rain or Shine Elasto Painters,65111,65110,85,94,pending,0,,
+3591309,2025-06-01,02:30,4788,2025,final,143148,/match/basketball/2025-06-01/winnipeg-sea-bears-vs-ottawa-blackjacks/3591309/,Played,Winnipeg Sea Bears,Ottawa BlackJacks,65030,65034,73,88,done,1,2026-11-11T02:58:31Z,
+3685108,2025-06-01,02:00,2341,2025,final,165700,/match/basketball/2025-06-01/dallas-wings-vs-chicago-sky/3685108/,Played,Dallas Wings,Chicago Sky,40823,40818,83,94,done,1,2026-11-11T02:58:36Z,
+3685109,2025-06-01,21:00,2341,2025,final,165700,/match/basketball/2025-06-01/new-york-liberty-vs-connecticut-sun/3685109/,Played,New York Liberty,Connecticut Sun,40821,40819,100,52,done,1,2026-11-11T02:58:41Z,
+3700179,2025-06-01,11:00,4794,2025,final,134740,/match/basketball/2025-06-01/nlex-road-warriors-vs-phoenix-fuel-masters/3700179/,Played,NLEX Road Warriors,Phoenix Fuel Masters,55056,65107,110,95,done,1,2026-11-11T02:58:46Z,
+3700180,2025-06-01,13:30,4794,2025,final,134740,/match/basketball/2025-06-01/barangay-ginebra-san-miguel-vs-magnolia-chicken-timplados-hotshots/3700180/,Played,Barangay Ginebra San Miguel,Magnolia Chicken Timplados Hotshots,60824,65106,85,81,done,1,2026-11-11T02:58:51Z,
+3583461,2025-06-02,04:00,4797,2025,final,139043,/match/basketball/2025-06-02/nelson-giants-vs-hawkes-bay-hawks/3583461/,Played,Nelson Giants,Hawke's Bay Hawks,65148,65146,117,81,done,1,2026-11-11T02:58:56Z,
+3591310,2025-06-02,02:00,4788,2025,final,143148,/match/basketball/2025-06-02/vancouver-bandits-vs-calgary-surge/3591310/,Played,Vancouver Bandits,Calgary Surge,65031,65029,80,95,done,1,2026-11-11T02:59:01Z,
+3685110,2025-06-02,00:00,2341,2025,final,165700,/match/basketball/2025-06-02/los-angeles-sparks-vs-phoenix-mercury/3685110/,Played,Los Angeles Sparks,Phoenix Mercury,40825,40827,80,85,done,1,2026-11-11T02:59:06Z,
+3685111,2025-06-02,00:00,2341,2025,final,165700,/match/basketball/2025-06-02/seattle-storm-vs-las-vegas-aces/3685111/,Played,Seattle Storm,Las Vegas Aces,40828,40824,70,75,done,1,2026-11-11T02:59:11Z,
+3685112,2025-06-02,02:30,2341,2025,final,165700,/match/basketball/2025-06-02/golden-state-valkyries-vs-minnesota-lynx/3685112/,Played,Golden State Valkyries,Minnesota Lynx,69982,40826,75,86,done,1,2026-11-11T02:59:17Z,
+3723842,2025-06-03,00:30,4799,2025,clausura-final,170619,/match/basketball/2025-06-03/deportivo-san-jose-vs-cs-luqueno/3723842/,Played,Deportivo San José,CS Luqueño,65166,70068,118,45,done,1,2026-11-11T02:59:22Z,
+3723843,2025-06-03,01:30,4799,2025,clausura-final,170619,/match/basketball/2025-06-03/ca-ciudad-nueva-vs-olimpia-kings/3723843/,Played,CA Ciudad Nueva,Olimpia Kings,65309,65163,68,87,done,1,2026-11-11T02:59:27Z,
+3723844,2025-06-03,01:30,4799,2025,clausura-final,170619,/match/basketball/2025-06-03/cscd-feliz-perez-cardozo-vs-cd-campoalto/3723844/,Played,CSCD Féliz Pérez Cardozo,CD Campoalto,65165,65168,100,61,done,1,2026-11-11T02:59:32Z,
+3583462,2025-06-04,09:00,4797,2025,final,139043,/match/basketball/2025-06-04/franklin-bulls-vs-wellington-saints/3583462/,Played,Franklin Bulls,Wellington Saints,65145,65151,77,93,done,1,2026-11-11T02:59:37Z,
+3591311,2025-06-04,17:00,4788,2025,final,143148,/match/basketball/2025-06-04/brampton-honey-badgers-vs-montreal-alliance/3591311/,Played,Brampton Honey Badgers,Montreal Alliance,57000,65036,71,92,done,1,2026-11-11T02:59:42Z,
+3685113,2025-06-04,01:00,2341,2025,final,165700,/match/basketball/2025-06-04/indiana-fever-vs-washington-mystics/3685113/,Played,Indiana Fever,Washington Mystics,40820,40822,85,76,done,1,2026-11-11T02:59:47Z,
+3685114,2025-06-04,02:00,2341,2025,final,165700,/match/basketball/2025-06-04/minnesota-lynx-vs-phoenix-mercury/3685114/,Played,Minnesota Lynx,Phoenix Mercury,40826,40827,88,65,done,1,2026-11-11T02:59:52Z,
+3685115,2025-06-04,03:30,2341,2025,final,165700,/match/basketball/2025-06-04/seattle-storm-vs-dallas-wings/3685115/,Played,Seattle Storm,Dallas Wings,40828,40823,83,77,done,1,2026-11-11T02:59:57Z,
+3700181,2025-06-04,13:30,4794,2025,final,134740,/match/basketball/2025-06-04/phoenix-fuel-masters-vs-northport-batang-pier/3700181/,Played,Phoenix Fuel Masters,NorthPort Batang Pier,65107,65109,118,107,done,1,2026-11-11T03:00:01Z,
+3700182,2025-06-04,11:00,4794,2025,final,134740,/match/basketball/2025-06-04/terrafirma-dyip-vs-rain-or-shine-elasto-painters/3700182/,Played,Terrafirma Dyip,Rain or Shine Elasto Painters,65111,65110,85,94,done,1,2026-11-11T03:00:06Z,
 3723845,2025-06-04,01:00,4799,2025,clausura-final,170619,/match/basketball/2025-06-04/colonias-gold-vs-deportivo-amambay/3723845/,Played,Colonias Gold,Deportivo Amambay,65167,70065,74,64,pending,0,,
 3583463,2025-06-05,09:00,4797,2025,final,139043,/match/basketball/2025-06-05/southland-sharks-vs-taranaki-airs/3583463/,Played,Southland Sharks,Taranaki Airs,65149,65150,99,90,pending,0,,
 3583464,2025-06-06,09:30,4797,2025,final,139043,/match/basketball/2025-06-06/whai-vs-nelson-giants/3583464/,Played,Whai,Nelson Giants,65152,65148,102,84,pending,0,,
@@ -184,8 +184,8 @@
 3591343,2025-06-23,00:00,4788,2025,final,143148,/match/basketball/2025-06-23/edmonton-stingers-vs-winnipeg-sea-bears/3591343/,Played,Edmonton Stingers,Winnipeg Sea Bears,52100,65030,98,85,pending,0,,
 3685156,2025-06-23,01:00,2341,2025,final,165700,/match/basketball/2025-06-23/seattle-storm-vs-new-york-liberty/3685156/,Played,Seattle Storm,New York Liberty,40828,40821,89,79,pending,0,,
 3685157,2025-06-23,02:30,2341,2025,final,165700,/match/basketball/2025-06-23/golden-state-valkyries-vs-connecticut-sun/3685157/,Played,Golden State Valkyries,Connecticut Sun,69982,40819,87,63,pending,0,,
-3721991,2025-06-23,05:50,3833,2025,final,150086,/match/basketball/2025-06-23/spain-vs-switzerland/3721991/,Played,Spain,Switzerland,61851,61852,21,12,no_scoreboard,1,2026-11-10T21:50:58Z,blank quarter or total
-3721992,2025-06-23,06:15,3833,2025,final,150086,/match/basketball/2025-06-23/great-britain-vs-netherlands/3721992/,Played,Great Britain,Netherlands,70437,50021,19,20,pending,0,,
+3721991,2025-06-23,05:50,3833,2025,final,150086,/match/basketball/2025-06-23/spain-vs-switzerland/3721991/,Played,Spain,Switzerland,61851,61852,21,12,gave_up,1,2026-11-10T21:50:58Z,blank quarter or total
+3721992,2025-06-23,06:15,3833,2025,final,150086,/match/basketball/2025-06-23/great-britain-vs-netherlands/3721992/,Played,Great Britain,Netherlands,70437,50021,19,20,gave_up,1,2026-11-11T02:20:13Z,blank quarter or total
 3721993,2025-06-23,07:40,3833,2025,final,150086,/match/basketball/2025-06-23/lithuania-vs-spain/3721993/,Played,Lithuania,Spain,50012,61851,14,21,pending,0,,
 3721994,2025-06-23,08:05,3833,2025,final,150086,/match/basketball/2025-06-23/switzerland-vs-great-britain/3721994/,Played,Switzerland,Great Britain,61852,70437,21,16,pending,0,,
 3721995,2025-06-23,10:20,3833,2025,final,150086,/match/basketball/2025-06-23/netherlands-vs-lithuania/3721995/,Played,Netherlands,Lithuania,50021,50012,21,19,pending,0,,
@@ -194,8 +194,8 @@
 3721998,2025-06-23,15:35,3833,2025,final,150086,/match/basketball/2025-06-23/mongolia-vs-united-states/3721998/,Played,Mongolia,United States,50006,50011,18,21,pending,0,,
 3721999,2025-06-23,13:50,3833,2025,final,150086,/match/basketball/2025-06-23/japan-vs-montenegro/3721999/,Played,Japan,Montenegro,50248,70436,21,15,pending,0,,
 3722000,2025-06-23,14:15,3833,2025,final,150086,/match/basketball/2025-06-23/latvia-vs-mongolia/3722000/,Played,Latvia,Mongolia,50022,50006,21,16,pending,0,,
-3722045,2025-06-23,05:00,3834,2025,final,150080,/match/basketball/2025-06-23/china-pr-vs-australia/3722045/,Played,China PR,Australia,50252,50035,12,21,no_scoreboard,1,2026-11-10T21:51:13Z,blank quarter or total
-3722046,2025-06-23,05:25,3834,2025,final,150080,/match/basketball/2025-06-23/madagascar-vs-italy/3722046/,Played,Madagascar,Italy,70452,50041,11,21,pending,0,,
+3722045,2025-06-23,05:00,3834,2025,final,150080,/match/basketball/2025-06-23/china-pr-vs-australia/3722045/,Played,China PR,Australia,50252,50035,12,21,gave_up,1,2026-11-10T21:51:13Z,blank quarter or total
+3722046,2025-06-23,05:25,3834,2025,final,150080,/match/basketball/2025-06-23/madagascar-vs-italy/3722046/,Played,Madagascar,Italy,70452,50041,11,21,gave_up,1,2026-11-11T02:20:37Z,blank quarter or total
 3722047,2025-06-23,06:40,3834,2025,final,150080,/match/basketball/2025-06-23/australia-vs-poland/3722047/,Played,Australia,Poland,50035,55213,21,18,pending,0,,
 3722048,2025-06-23,07:05,3834,2025,final,150080,/match/basketball/2025-06-23/italy-vs-china-pr/3722048/,Played,Italy,China PR,50041,50252,11,20,pending,0,,
 3722049,2025-06-23,08:30,3834,2025,final,150080,/match/basketball/2025-06-23/poland-vs-madagascar/3722049/,Played,Poland,Madagascar,55213,70452,21,13,pending,0,,
@@ -209,7 +209,7 @@
 3722001,2025-06-24,05:00,3833,2025,final,150086,/match/basketball/2025-06-24/madagascar-vs-belgium/3722001/,Played,Madagascar,Belgium,64648,50013,11,21,pending,0,,
 3722002,2025-06-24,05:25,3833,2025,final,150086,/match/basketball/2025-06-24/australia-vs-germany/3722002/,Played,Australia,Germany,54802,55194,17,21,pending,0,,
 3722003,2025-06-24,06:40,3833,2025,final,150086,/match/basketball/2025-06-24/belgium-vs-serbia/3722003/,Played,Belgium,Serbia,50013,50245,20,21,pending,0,,
-3722004,2025-06-24,07:05,3833,2025,final,150086,/match/basketball/2025-06-24/germany-vs-madagascar/3722004/,Played,Germany,Madagascar,55194,64648,21,13,pending,0,,
+3722004,2025-06-24,07:05,3833,2025,final,150086,/match/basketball/2025-06-24/germany-vs-madagascar/3722004/,Played,Germany,Madagascar,55194,64648,21,13,gave_up,1,2026-11-11T02:20:18Z,blank quarter or total
 3722005,2025-06-24,08:30,3833,2025,final,150086,/match/basketball/2025-06-24/serbia-vs-australia/3722005/,Played,Serbia,Australia,50245,54802,17,21,pending,0,,
 3722006,2025-06-24,08:55,3833,2025,final,150086,/match/basketball/2025-06-24/austria-vs-canada/3722006/,Played,Austria,Canada,50025,50023,19,22,pending,0,,
 3722007,2025-06-24,11:10,3833,2025,final,150086,/match/basketball/2025-06-24/china-pr-vs-puerto-rico/3722007/,Played,China PR,Puerto Rico,50247,55209,21,17,pending,0,,
@@ -219,7 +219,7 @@
 3722055,2025-06-24,05:50,3834,2025,final,150080,/match/basketball/2025-06-24/chile-vs-czechia/3722055/,Played,Chile,Czechia,55210,61853,16,21,pending,0,,
 3722056,2025-06-24,06:15,3834,2025,final,150080,/match/basketball/2025-06-24/netherlands-vs-japan/3722056/,Played,Netherlands,Japan,50036,50032,16,21,pending,0,,
 3722057,2025-06-24,07:40,3834,2025,final,150080,/match/basketball/2025-06-24/united-states-vs-czechia/3722057/,Played,United States,Czechia,50027,61853,21,12,pending,0,,
-3722058,2025-06-24,08:05,3834,2025,final,150080,/match/basketball/2025-06-24/japan-vs-chile/3722058/,Played,Japan,Chile,50032,55210,21,12,pending,0,,
+3722058,2025-06-24,08:05,3834,2025,final,150080,/match/basketball/2025-06-24/japan-vs-chile/3722058/,Played,Japan,Chile,50032,55210,21,12,gave_up,1,2026-11-11T02:20:42Z,blank quarter or total
 3722059,2025-06-24,10:20,3834,2025,final,150080,/match/basketball/2025-06-24/netherlands-vs-united-states/3722059/,Played,Netherlands,United States,50036,50027,11,15,pending,0,,
 3722060,2025-06-24,10:45,3834,2025,final,150080,/match/basketball/2025-06-24/germany-vs-brazil/3722060/,Played,Germany,Brazil,50028,55212,18,16,pending,0,,
 3722061,2025-06-24,12:00,3834,2025,final,150080,/match/basketball/2025-06-24/spain-vs-ukraine/3722061/,Played,Spain,Ukraine,50044,50033,21,10,pending,0,,
@@ -240,8 +240,8 @@
 3722015,2025-06-25,07:40,3833,2025,final,150086,/match/basketball/2025-06-25/great-britain-vs-spain/3722015/,Played,Great Britain,Spain,70437,61851,21,19,pending,0,,
 3722016,2025-06-25,08:05,3833,2025,final,150086,/match/basketball/2025-06-25/switzerland-vs-lithuania/3722016/,Played,Switzerland,Lithuania,61852,50012,16,15,pending,0,,
 3722017,2025-06-25,10:20,3833,2025,final,150086,/match/basketball/2025-06-25/spain-vs-netherlands/3722017/,Played,Spain,Netherlands,61851,50021,16,21,pending,0,,
-3722018,2025-06-25,10:45,3833,2025,final,150086,/match/basketball/2025-06-25/united-states-vs-latvia/3722018/,Played,United States,Latvia,50011,50022,21,18,pending,0,,
-3722019,2025-06-25,12:00,3833,2025,final,150086,/match/basketball/2025-06-25/montenegro-vs-mongolia/3722019/,Played,Montenegro,Mongolia,70436,50006,18,15,no_scoreboard,1,2026-11-10T21:51:03Z,blank quarter or total
+3722018,2025-06-25,10:45,3833,2025,final,150086,/match/basketball/2025-06-25/united-states-vs-latvia/3722018/,Played,United States,Latvia,50011,50022,21,18,gave_up,1,2026-11-11T02:20:23Z,blank quarter or total
+3722019,2025-06-25,12:00,3833,2025,final,150086,/match/basketball/2025-06-25/montenegro-vs-mongolia/3722019/,Played,Montenegro,Mongolia,70436,50006,18,15,gave_up,1,2026-11-10T21:51:03Z,blank quarter or total
 3722020,2025-06-25,12:25,3833,2025,final,150086,/match/basketball/2025-06-25/japan-vs-latvia/3722020/,Played,Japan,Latvia,50248,50022,14,21,pending,0,,
 3722021,2025-06-25,13:50,3833,2025,final,150086,/match/basketball/2025-06-25/montenegro-vs-united-states/3722021/,Played,Montenegro,United States,70436,50011,12,21,pending,0,,
 3722022,2025-06-25,14:15,3833,2025,final,150086,/match/basketball/2025-06-25/mongolia-vs-japan/3722022/,Played,Mongolia,Japan,50006,50248,20,21,pending,0,,
@@ -250,8 +250,8 @@
 3722067,2025-06-25,06:40,3834,2025,final,150080,/match/basketball/2025-06-25/italy-vs-australia/3722067/,Played,Italy,Australia,50041,50035,19,21,pending,0,,
 3722068,2025-06-25,07:05,3834,2025,final,150080,/match/basketball/2025-06-25/madagascar-vs-china-pr/3722068/,Played,Madagascar,China PR,70452,50252,15,22,pending,0,,
 3722069,2025-06-25,08:30,3834,2025,final,150080,/match/basketball/2025-06-25/poland-vs-italy/3722069/,Played,Poland,Italy,55213,50041,21,9,pending,0,,
-3722070,2025-06-25,08:55,3834,2025,final,150080,/match/basketball/2025-06-25/hungary-vs-austria/3722070/,Played,Hungary,Austria,50039,55215,12,11,pending,0,,
-3722071,2025-06-25,11:10,3834,2025,final,150080,/match/basketball/2025-06-25/france-vs-canada/3722071/,Played,France,Canada,50026,54810,14,13,no_scoreboard,1,2026-11-10T21:51:17Z,blank quarter or total
+3722070,2025-06-25,08:55,3834,2025,final,150080,/match/basketball/2025-06-25/hungary-vs-austria/3722070/,Played,Hungary,Austria,50039,55215,12,11,gave_up,1,2026-11-11T02:20:46Z,blank quarter or total
+3722071,2025-06-25,11:10,3834,2025,final,150080,/match/basketball/2025-06-25/france-vs-canada/3722071/,Played,France,Canada,50026,54810,14,13,gave_up,1,2026-11-10T21:51:17Z,blank quarter or total
 3722072,2025-06-25,11:35,3834,2025,final,150080,/match/basketball/2025-06-25/austria-vs-latvia/3722072/,Played,Austria,Latvia,55215,61854,17,14,pending,0,,
 3722073,2025-06-25,13:00,3834,2025,final,150080,/match/basketball/2025-06-25/canada-vs-hungary/3722073/,Played,Canada,Hungary,54810,50039,14,16,pending,0,,
 3722074,2025-06-25,13:25,3834,2025,final,150080,/match/basketball/2025-06-25/latvia-vs-france/3722074/,Played,Latvia,France,61854,50026,14,18,pending,0,,
@@ -271,7 +271,7 @@
 3722028,2025-06-26,08:55,3833,2025,final,150086,/match/basketball/2025-06-26/puerto-rico-vs-austria/3722028/,Played,Puerto Rico,Austria,55209,50025,21,12,pending,0,,
 3722029,2025-06-26,11:10,3833,2025,final,150086,/match/basketball/2025-06-26/canada-vs-france/3722029/,Played,Canada,France,50023,50017,18,21,pending,0,,
 3722030,2025-06-26,11:35,3833,2025,final,150086,/match/basketball/2025-06-26/austria-vs-china-pr/3722030/,Played,Austria,China PR,50025,50247,21,17,pending,0,,
-3722031,2025-06-26,13:00,3833,2025,final,150086,/match/basketball/2025-06-26/puerto-rico-vs-canada/3722031/,Played,Puerto Rico,Canada,55209,50023,21,17,pending,0,,
+3722031,2025-06-26,13:00,3833,2025,final,150086,/match/basketball/2025-06-26/puerto-rico-vs-canada/3722031/,Played,Puerto Rico,Canada,55209,50023,21,17,gave_up,1,2026-11-11T02:20:27Z,blank quarter or total
 3722032,2025-06-26,13:25,3833,2025,final,150086,/match/basketball/2025-06-26/china-pr-vs-france/3722032/,Played,China PR,France,50247,50017,18,16,pending,0,,
 3722075,2025-06-26,05:50,3834,2025,final,150080,/match/basketball/2025-06-26/japan-vs-united-states/3722075/,Played,Japan,United States,50032,50027,8,21,pending,0,,
 3722076,2025-06-26,06:15,3834,2025,final,150080,/match/basketball/2025-06-26/chile-vs-netherlands/3722076/,Played,Chile,Netherlands,55210,50036,13,21,pending,0,,
@@ -281,7 +281,7 @@
 3722080,2025-06-26,11:15,3834,2025,final,150080,/match/basketball/2025-06-26/brazil-vs-spain/3722080/,Played,Brazil,Spain,55212,50044,14,20,pending,0,,
 3722081,2025-06-26,12:30,3834,2025,final,150080,/match/basketball/2025-06-26/germany-vs-mongolia/3722081/,Played,Germany,Mongolia,50028,50249,14,18,pending,0,,
 3722082,2025-06-26,12:55,3834,2025,final,150080,/match/basketball/2025-06-26/ukraine-vs-brazil/3722082/,Played,Ukraine,Brazil,50033,55212,20,21,pending,0,,
-3722083,2025-06-26,14:25,3834,2025,final,150080,/match/basketball/2025-06-26/spain-vs-germany/3722083/,Played,Spain,Germany,50044,50028,15,13,pending,0,,
+3722083,2025-06-26,14:25,3834,2025,final,150080,/match/basketball/2025-06-26/spain-vs-germany/3722083/,Played,Spain,Germany,50044,50028,15,13,gave_up,1,2026-11-11T02:20:51Z,blank quarter or total
 3722084,2025-06-26,14:50,3834,2025,final,150080,/match/basketball/2025-06-26/mongolia-vs-ukraine/3722084/,Played,Mongolia,Ukraine,50249,50033,18,16,pending,0,,
 3583487,2025-06-27,09:30,4797,2025,final,139043,/match/basketball/2025-06-27/otago-nuggets-vs-whai/3583487/,Played,Otago Nuggets,Whai,53101,65152,82,88,pending,0,,
 3591344,2025-06-27,03:30,4788,2025,final,143148,/match/basketball/2025-06-27/saskatoon-mamba-vs-calgary-surge/3591344/,Played,Saskatchewan Rattlers,Calgary Surge,65032,65029,96,89,pending,0,,
@@ -358,12 +358,12 @@
 3685173,2025-06-29,22:00,2341,2025,final,165700,/match/basketball/2025-06-29/los-angeles-sparks-vs-chicago-sky/3685173/,Played,Los Angeles Sparks,Chicago Sky,40825,40818,85,92,pending,0,,
 3722041,2025-06-29,12:00,3833,2025,final,150086,/match/basketball/2025-06-29/serbia-vs-switzerland/3722041/,Played,Serbia,Switzerland,50245,61852,11,21,pending,0,,
 3722042,2025-06-29,12:25,3833,2025,final,150086,/match/basketball/2025-06-29/spain-vs-germany/3722042/,Played,Spain,Germany,61851,55194,21,15,pending,0,,
-3722043,2025-06-29,13:25,3833,2025,final,150086,/match/basketball/2025-06-29/serbia-vs-germany/3722043/,Played,Serbia,Germany,50245,55194,21,16,pending,0,,
-3722044,2025-06-29,14:25,3833,2025,final,150086,/match/basketball/2025-06-29/switzerland-vs-spain/3722044/,Played,Switzerland,Spain,61852,61851,17,21,no_scoreboard,1,2026-11-10T21:51:08Z,blank quarter or total
+3722043,2025-06-29,13:25,3833,2025,final,150086,/match/basketball/2025-06-29/serbia-vs-germany/3722043/,Played,Serbia,Germany,50245,55194,21,16,gave_up,1,2026-11-11T02:20:32Z,blank quarter or total
+3722044,2025-06-29,14:25,3833,2025,final,150086,/match/basketball/2025-06-29/switzerland-vs-spain/3722044/,Played,Switzerland,Spain,61852,61851,17,21,gave_up,1,2026-11-10T21:51:08Z,blank quarter or total
 3722093,2025-06-29,11:00,3834,2025,final,150080,/match/basketball/2025-06-29/netherlands-vs-canada/3722093/,Played,Netherlands,Canada,50036,54810,21,15,pending,0,,
 3722094,2025-06-29,11:25,3834,2025,final,150080,/match/basketball/2025-06-29/poland-vs-mongolia/3722094/,Played,Poland,Mongolia,55213,50249,17,18,pending,0,,
-3722095,2025-06-29,13:00,3834,2025,final,150080,/match/basketball/2025-06-29/canada-vs-poland/3722095/,Played,Canada,Poland,54810,55213,21,9,pending,0,,
-3722096,2025-06-29,14:00,3834,2025,final,150080,/match/basketball/2025-06-29/netherlands-vs-mongolia/3722096/,Played,Netherlands,Mongolia,50036,50249,15,9,no_scoreboard,1,2026-11-10T21:51:22Z,blank quarter or total
+3722095,2025-06-29,13:00,3834,2025,final,150080,/match/basketball/2025-06-29/canada-vs-poland/3722095/,Played,Canada,Poland,54810,55213,21,9,gave_up,1,2026-11-11T02:20:56Z,blank quarter or total
+3722096,2025-06-29,14:00,3834,2025,final,150080,/match/basketball/2025-06-29/netherlands-vs-mongolia/3722096/,Played,Netherlands,Mongolia,50036,50249,15,9,gave_up,1,2026-11-10T21:51:22Z,blank quarter or total
 3746410,2025-06-29,11:00,4794,2025,final,134740,/match/basketball/2025-06-29/tnt-tropang-giga-vs-rain-or-shine-elasto-painters/3746410/,Played,TNT Tropang Giga,Rain or Shine Elasto Painters,55057,65110,86,107,pending,0,,
 3746411,2025-06-29,13:30,4794,2025,final,134740,/match/basketball/2025-06-29/san-miguel-beermen-vs-barangay-ginebra-san-miguel/3746411/,Played,San Miguel Beermen,Barangay Ginebra San Miguel,60847,60824,90,100,pending,0,,
 3749172,2025-06-29,10:45,2605,2025,final,119645,/match/basketball/2025-06-29/lithuania-vs-turkiye/3749172/,Played,Lithuania,Türkiye,43876,43524,87,99,pending,0,,

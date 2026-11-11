@@ -10,7 +10,7 @@
 4435633,2026-10-01,20:30,1012,2026/2027,regular-season,156050,/match/basketball/2026-10-01/virtus-bologna-vs-olympiacos-sfp/4435633/,Played,Virtus Bologna,Olympiacos SFP,29059,292,96,94,pending,0,,
 4435634,2026-10-01,20:45,1012,2026/2027,regular-season,156050,/match/basketball/2026-10-01/paris-basketball-vs-kk-zalgiris/4435634/,Played,Paris Basketball,KK Žalgiris,48227,294,82,78,pending,0,,
 4446354,2026-10-01,20:00,1074,2026/2027,regular-season,156829,/match/basketball/2026-10-01/science-city-jena-vs-sc-rasta-vechta/4446354/,Played,Science City Jena,SC Rasta Vechta,29922,29163,79,71,pending,0,,
-4515844,2026-10-01,15:00,2814,2026/2027,regular-season,164070,/match/basketball/2026-10-01/temp-sumz-ugmk-revda-vs-bk-novosibirsk/4515844/,Played,Temp-SUMZ-UGMK Revda,Novosibirsk,47163,47201,105,77,no_scoreboard,1,2026-11-10T22:07:14Z,blank quarter or total
+4515844,2026-10-01,15:00,2814,2026/2027,regular-season,164070,/match/basketball/2026-10-01/temp-sumz-ugmk-revda-vs-bk-novosibirsk/4515844/,Played,Temp-SUMZ-UGMK Revda,Novosibirsk,47163,47201,105,77,gave_up,1,2026-11-10T22:07:14Z,blank quarter or total
 4515845,2026-10-01,16:15,2814,2026/2027,regular-season,164070,/match/basketball/2026-10-01/dinamo-ufa-vs-bk-barnaul/4515845/,Played,Dinamo Ufa,Barnaul,67781,51938,92,79,pending,0,,
 4515846,2026-10-01,18:00,2814,2026/2027,regular-season,164070,/match/basketball/2026-10-01/dynamo-grozny-vs-bk-kupol-rodniki/4515846/,Played,Dynamo Grozny,Kupol-Rodniki,67438,47165,87,75,pending,0,,
 4515847,2026-10-01,18:00,2814,2026/2027,regular-season,164070,/match/basketball/2026-10-01/pbk-cska-2-moskva-vs-bk-tambov/4515847/,Played,CSKA-2 Moskva,ambov,47202,56725,60,56,pending,0,,
@@ -206,7 +206,7 @@
 4532338,2026-10-03,16:30,2825,2026/2027,regular-season,164914,/match/basketball/2026-10-03/ask-karditsas-vs-aris-bc/4532338/,Played,Karditsas Iaponiki,Aris,56694,36482,74,68,pending,0,,
 4535867,2026-10-03,01:00,5498,2026,clausura-quarter-finals,161961,/match/basketball/2026-10-03/csd-colo-colo-vs-cd-espanol-de-talca/4535867/,Played,CSD Colo-Colo,CD Español de Talca,73720,74728,115,76,pending,0,,
 4536456,2026-10-03,03:00,2341,2026,final,165700,/match/basketball/2026-10-03/golden-state-valkyries-vs-dallas-wings/4536456/,Played,Golden State Valkyries,Dallas Wings,69982,40823,77,73,pending,0,,
-4543715,2026-10-03,20:30,5660,2026/2027,regular-season,166105,/match/basketball/2026-10-03/kk-dynamic-beograd-vs-okk-beograd/4543715/,Played,KK Dynamic Beograd,OKK Beograd,75005,75009,90,88,no_scoreboard,1,2026-11-10T22:01:19Z,blank quarter or total
+4543715,2026-10-03,20:30,5660,2026/2027,regular-season,166105,/match/basketball/2026-10-03/kk-dynamic-beograd-vs-okk-beograd/4543715/,Played,KK Dynamic Beograd,OKK Beograd,75005,75009,90,88,gave_up,1,2026-11-10T22:01:19Z,blank quarter or total
 4543939,2026-10-03,01:30,5488,2026,semi-finals,170430,/match/basketball/2026-10-03/caribbean-storm-vs-toros-del-valle/4543939/,Played,Caribbean Storm,Toros del Valle,74957,68169,50,107,pending,0,,
 4543941,2026-10-03,03:30,5488,2026,semi-finals,170430,/match/basketball/2026-10-03/sabios-de-manizales-vs-paisas-basketball/4543941/,Played,Sabios de Manizales,Paisas Basketball,74962,68170,43,93,pending,0,,
 4543942,2026-10-03,23:00,5488,2026,semi-finals,170430,/match/basketball/2026-10-03/caribbean-storm-vs-toros-del-valle/4543942/,Played,Caribbean Storm,Toros del Valle,74957,68169,68,88,pending,0,,
@@ -216,7 +216,7 @@
 4550476,2026-10-03,01:30,5504,2026,quarter-finals,169511,/match/basketball/2026-10-03/club-sol-de-america-vs-olimpia-queens/4550476/,Played,Club Sol de América,Olimpia Queens,78207,78208,47,69,pending,0,,
 4553144,2026-10-03,13:00,4947,2026/2027,group-stage,167446,/match/basketball/2026-10-03/abra-weavers-vs-eastern-sc/4553144/,Played,Abra Weavers,Hong Kong Eastern,61354,67845,79,72,done,1,2026-11-10T21:49:19Z,
 4553145,2026-10-03,10:00,4947,2026/2027,group-stage,167446,/match/basketball/2026-10-03/hou-chon-bc-vs-taipei-fubon-braves/4553145/,Played,Hou Chon BC,Taipei Fubon Braves,70041,60831,89,103,pending,0,,
-4574484,2026-10-03,09:00,6072,2026,final,170577,/match/basketball/2026-10-03/ulaanbaatar-vs-alexandria/4574484/,Played,Ulaanbaatar MMC Energy,Alexandria,78652,78795,22,11,no_scoreboard,1,2026-11-10T22:00:01Z,blank quarter or total
+4574484,2026-10-03,09:00,6072,2026,final,170577,/match/basketball/2026-10-03/ulaanbaatar-vs-alexandria/4574484/,Played,Ulaanbaatar MMC Energy,Alexandria,78652,78795,22,11,gave_up,1,2026-11-10T22:00:01Z,blank quarter or total
 4574485,2026-10-03,09:25,6072,2026,final,170577,/match/basketball/2026-10-03/barcelona-vs-san-salvador/4574485/,Played,Barcelona,San Salvador,78692,78793,21,13,pending,0,,
 4574486,2026-10-03,09:50,6072,2026,final,170577,/match/basketball/2026-10-03/warsaw-vs-alexandria/4574486/,Played,Warsaw,Alexandria,78654,78795,21,7,pending,0,,
 4574487,2026-10-03,10:15,6072,2026,final,170577,/match/basketball/2026-10-03/bordeaux-vs-san-salvador/4574487/,Played,Bordeaux,San Salvador,78656,78793,21,17,pending,0,,
@@ -228,7 +228,7 @@
 4574493,2026-10-03,13:45,6072,2026,final,170577,/match/basketball/2026-10-03/ub-vs-diadema/4574493/,Played,Ub,Diadema,78642,78728,21,16,pending,0,,
 4574494,2026-10-03,14:10,6072,2026,final,170577,/match/basketball/2026-10-03/skyliners-vs-deqing/4574494/,Played,Skyliners,DeQing,78645,78648,21,14,pending,0,,
 4574495,2026-10-03,14:35,6072,2026,final,170577,/match/basketball/2026-10-03/baskets-bonn-vs-fuengirola/4574495/,Played,Baskets Bonn,Fuengirola,78650,78676,21,19,pending,0,,
-4574496,2026-10-03,15:30,6072,2026,final,170577,/match/basketball/2026-10-03/liman-vs-taipei-wanbao/4574496/,Played,Liman,Taipei WanBao,78658,78647,21,10,no_scoreboard,1,2026-11-10T22:00:06Z,blank quarter or total
+4574496,2026-10-03,15:30,6072,2026,final,170577,/match/basketball/2026-10-03/liman-vs-taipei-wanbao/4574496/,Played,Liman,Taipei WanBao,78658,78647,21,10,gave_up,1,2026-11-10T22:00:06Z,blank quarter or total
 4574497,2026-10-03,15:55,6072,2026,final,170577,/match/basketball/2026-10-03/ub-vs-liberec-dekstone/4574497/,Played,Ub,Liberec Dekstone,78642,78700,21,16,pending,0,,
 4574498,2026-10-03,16:20,6072,2026,final,170577,/match/basketball/2026-10-03/deqing-vs-barcelona/4574498/,Played,DeQing,Barcelona,78648,78692,13,21,pending,0,,
 4574499,2026-10-03,16:45,6072,2026,final,170577,/match/basketball/2026-10-03/fuengirola-vs-ulaanbaatar/4574499/,Played,Fuengirola,Ulaanbaatar MMC Energy,78676,78652,19,21,pending,0,,
@@ -358,7 +358,7 @@
 4529191,2026-10-04,18:00,2884,2026,final,165023,/match/basketball/2026-10-04/maccabi-playtika-tel-aviv-vs-hapoel-jerusalem/4529191/,Played,Maccabi Playtika Tel Aviv,Hapoel Jerusalem,28721,30372,88,71,pending,0,,
 4531315,2026-10-04,18:00,1078,2026/2027,regular-season,165065,/match/basketball/2026-10-04/maccabi-ashdod-vs-hapoel-petah-tikva/4531315/,Played,Maccabi Ashdod,Hapoel Petah Tikva,30388,30397,76,54,pending,0,,
 4531316,2026-10-04,18:00,1078,2026/2027,regular-season,165065,/match/basketball/2026-10-04/maccabi-ramat-gan-vs-bnei-yehuda/4531316/,Played,Maccabi Ramat Gan,Bnei Yehuda,30398,33993,66,79,pending,0,,
-4531317,2026-10-04,18:00,1078,2026/2027,regular-season,165065,/match/basketball/2026-10-04/hapoel-rishon-lezion-vs-elitzur-holon/4531317/,Played,Hapoel Rishon LeZion,Elitzur Holon,30396,30399,72,71,pending,0,,
+4531317,2026-10-04,18:00,1078,2026/2027,regular-season,165065,/match/basketball/2026-10-04/hapoel-rishon-lezion-vs-elitzur-holon/4531317/,Played,Hapoel Rishon LeZion,Elitzur Holon,30396,30399,72,71,done,1,2026-11-11T02:22:17Z,
 4531318,2026-10-04,18:30,1078,2026/2027,regular-season,165065,/match/basketball/2026-10-04/elitzur-ramla-vs-maccabi-haifa/4531318/,Played,Elitzur Ramla,Maccabi Haifa,33994,42628,89,59,pending,0,,
 4531319,2026-10-04,18:00,1078,2026/2027,regular-season,165065,/match/basketball/2026-10-04/hapoel-jerusalem-vs-maccabi-karmiel-ironi/4531319/,Played,Hapoel Jerusalem,Maccabi Karmiel Ironi,62987,30394,85,66,pending,0,,
 4532080,2026-10-04,11:00,2875,2026/2027,regular-season,165303,/match/basketball/2026-10-04/bk-brest-ii-vs-cop-mgu-borisfen/4532080/,Played,Brest II,COP-MGU Borisfen,77278,56736,46,84,pending,0,,
@@ -383,7 +383,7 @@
 4574505,2026-10-04,10:30,6072,2026,final,170577,/match/basketball/2026-10-04/baskets-bonn-vs-liberec-dekstone/4574505/,Played,Baskets Bonn,Liberec Dekstone,78650,78700,22,15,pending,0,,
 4574506,2026-10-04,11:10,6072,2026,final,170577,/match/basketball/2026-10-04/ub-vs-skyliners/4574506/,Played,Ub,Skyliners,78642,78645,21,9,pending,0,,
 4574507,2026-10-04,11:40,6072,2026,final,170577,/match/basketball/2026-10-04/barcelona-vs-baskets-bonn/4574507/,Played,Barcelona,Baskets Bonn,78692,78650,18,21,pending,0,,
-4574508,2026-10-04,12:40,6072,2026,final,170577,/match/basketball/2026-10-04/ub-vs-baskets-bonn/4574508/,Played,Ub,Baskets Bonn,78642,78650,17,13,no_scoreboard,1,2026-11-10T22:00:12Z,blank quarter or total
+4574508,2026-10-04,12:40,6072,2026,final,170577,/match/basketball/2026-10-04/ub-vs-baskets-bonn/4574508/,Played,Ub,Baskets Bonn,78642,78650,17,13,gave_up,1,2026-11-10T22:00:12Z,blank quarter or total
 4405410,2026-10-05,19:00,2818,2026/2027,regular-season,158222,/match/basketball/2026-10-05/kk-wloclawek-vs-gornik-walbrzych/4405410/,Played,Włocławek,Górnik Wałbrzych,43491,67135,88,87,pending,0,,
 4424474,2026-10-05,12:00,4932,2026/2027,regular-season,159059,/match/basketball/2026-10-05/bc-barcelos-vs-cab-madeira/4424474/,Played,Barcelos,CAB Madeira,67696,67690,71,81,pending,0,,
 4424477,2026-10-05,12:30,4932,2026/2027,regular-season,159059,/match/basketball/2026-10-05/gdessa-basquetebol-vs-crc-quinta-dos-lombos/4424477/,Played,GDESSA Barreiro,Quinta Dos Lombos,62667,67694,65,79,pending,0,,
@@ -672,7 +672,7 @@
 4424479,2026-10-10,22:15,4932,2026/2027,regular-season,159059,/match/basketball/2026-10-10/clube-uniao-sportiva-vs-cab-madeira/4424479/,Played,Uniao Sportiva,CAB Madeira,51350,67690,71,78,pending,0,,
 4424481,2026-10-10,19:00,4932,2026/2027,regular-season,159059,/match/basketball/2026-10-10/basquetebol-evora-vs-sporting-cp/4424481/,Played,Evora,Sporting CP,76255,72375,50,86,pending,0,,
 4424482,2026-10-10,16:00,4932,2026/2027,regular-season,159059,/match/basketball/2026-10-10/sport-lisboa-e-benfica-vs-ad-sanjoanense/4424482/,Played,Benfica,Sanjoanense,55940,67691,97,50,pending,0,,
-4431841,2026-10-10,18:00,2827,2026/2027,regular-season,158157,/match/basketball/2026-10-10/bk-minyor-2015-vs-bk-shumen/4431841/,Played,BK Minyor 2015,BK Shumen,63116,51950,123,101,no_scoreboard,1,2026-11-10T22:02:17Z,blank quarter or total
+4431841,2026-10-10,18:00,2827,2026/2027,regular-season,158157,/match/basketball/2026-10-10/bk-minyor-2015-vs-bk-shumen/4431841/,Played,BK Minyor 2015,BK Shumen,63116,51950,123,101,gave_up,1,2026-11-10T22:02:17Z,blank quarter or total
 4431842,2026-10-10,17:00,2827,2026/2027,regular-season,158157,/match/basketball/2026-10-10/botev-2012-vs-bk-balkan-botevgrad/4431842/,Played,Botev 2012,BK Balkan Botevgrad,72033,43503,66,91,pending,0,,
 4431844,2026-10-10,18:00,2827,2026/2027,regular-season,158157,/match/basketball/2026-10-10/bk-cska-sofia-vs-bk-polytechnika/4431844/,Played,BK CSKA Sofia,BK Polytechnika,56724,76040,100,95,pending,0,,
 4432079,2026-10-10,07:05,1844,2026/2027,regular-season,158171,/match/basketball/2026-10-10/levanga-hokkaido-vs-chiba-jets-funabashi/4432079/,Played,Levanga Hokkaido,Chiba Jets Funabashi,35556,35554,103,109,pending,0,,
@@ -750,7 +750,7 @@
 4513827,2026-10-10,20:30,1597,2026/2027,regular-season,163958,/match/basketball/2026-10-10/boulazac-basket-dordogne-vs-jl-bourg-basket/4513827/,Played,Boulazac,JL Bourg-en-Bresse,33957,33959,84,73,pending,0,,
 4521181,2026-10-10,01:30,2831,2026/2027,regular-season,156847,/match/basketball/2026-10-10/ca-lanus-vs-obera-tenis-club/4521181/,Played,CA Lanús,Oberá Tenis Club,73632,48618,67,58,pending,0,,
 4521183,2026-10-10,16:30,2831,2026/2027,regular-season,156847,/match/basketball/2026-10-10/instituto-acc-vs-club-ferro-carril-oeste/4521183/,Played,Instituto AC Córdoba,Club Ferro Carril Oeste,47353,47351,97,94,pending,0,,
-4527836,2026-10-10,23:00,5492,2026/2027,apertura,164932,/match/basketball/2026-10-10/ca-obras-sanitarias-vs-club-union-florida/4527836/,Played,CA Obras Sanitarias,Club Unión Florida,73675,73690,74,70,no_scoreboard,1,2026-11-10T21:55:33Z,blank quarter or total
+4527836,2026-10-10,23:00,5492,2026/2027,apertura,164932,/match/basketball/2026-10-10/ca-obras-sanitarias-vs-club-union-florida/4527836/,Played,CA Obras Sanitarias,Club Unión Florida,73675,73690,74,70,gave_up,1,2026-11-10T21:55:33Z,blank quarter or total
 4527840,2026-10-10,23:00,5492,2026/2027,apertura,164932,/match/basketball/2026-10-10/ca-boca-juniors-vs-ca-velez-sarsfield/4527840/,Played,CA Boca Juniors,CA Vélez Sarsfield,77249,77247,95,72,pending,0,,
 4532083,2026-10-10,12:00,2875,2026/2027,regular-season,165303,/match/basketball/2026-10-10/bk-grodno-93-vs-bk-tsmoki-minsk/4532083/,Played,Grodno-93,Tsmoki-Minsk,48112,43499,90,88,pending,0,,
 4532084,2026-10-10,13:00,2875,2026/2027,regular-season,165303,/match/basketball/2026-10-10/bk-rubon-vs-bk-gomel/4532084/,Played,Rubon,Gomel,48115,48119,74,77,pending,0,,
@@ -774,7 +774,7 @@
 4554415,2026-10-10,01:20,5504,2026,quarter-finals,169511,/match/basketball/2026-10-10/feliz-perez-cardozo-vs-club-sol-de-america/4554415/,Played,Féliz Pérez Cardozo,Club Sol de América,78205,78207,59,42,pending,0,,
 4554416,2026-10-10,03:00,5504,2026,quarter-finals,169511,/match/basketball/2026-10-10/international-womens-bc-vs-deportivo-gorillas/4554416/,Played,International Womens BC,Deportivo Gorillas,78279,78280,65,52,pending,0,,
 4554417,2026-10-10,03:15,5504,2026,quarter-finals,169511,/match/basketball/2026-10-10/ca-ciudad-nueva-vs-cd-campoalto/4554417/,Played,CA Ciudad Nueva,CD Campoalto,78281,78278,60,41,pending,0,,
-4573475,2026-10-10,09:50,6073,2026,final,170315,/match/basketball/2026-10-10/amsterdam-rabobank-vs-phoenix/4573475/,Played,Amsterdam RABOBANK,Phoenix,78646,78685,21,20,no_scoreboard,1,2026-11-10T21:45:37Z,blank quarter or total
+4573475,2026-10-10,09:50,6073,2026,final,170315,/match/basketball/2026-10-10/amsterdam-rabobank-vs-phoenix/4573475/,Played,Amsterdam RABOBANK,Phoenix,78646,78685,21,20,gave_up,1,2026-11-10T21:45:37Z,blank quarter or total
 4573476,2026-10-10,10:15,6073,2026,final,170315,/match/basketball/2026-10-10/fuengirola-vs-dubai/4573476/,Played,Fuengirola,Dubai,78676,78704,20,15,pending,0,,
 4573477,2026-10-10,10:40,6073,2026,final,170315,/match/basketball/2026-10-10/lausanne-vs-phoenix/4573477/,Played,Lausanne,Phoenix,78696,78685,18,16,pending,0,,
 4573478,2026-10-10,11:05,6073,2026,final,170315,/match/basketball/2026-10-10/taipei-wanbao-vs-dubai/4573478/,Played,Taipei WanBao,Dubai,78647,78704,19,15,pending,0,,
@@ -786,14 +786,14 @@
 4573484,2026-10-10,16:15,6073,2026,final,170315,/match/basketball/2026-10-10/ub-vs-kaunas/4573484/,Played,Ub,Kaunas VDU LTU,78642,78678,11,21,pending,0,,
 4573485,2026-10-10,16:50,6073,2026,final,170315,/match/basketball/2026-10-10/antwerp-vs-ulaanbaatar/4573485/,Played,Antwerp,Ulaanbaatar MMC Energy,78659,78652,21,19,pending,0,,
 4573486,2026-10-10,17:15,6073,2026,final,170315,/match/basketball/2026-10-10/baskets-bonn-vs-toulouse/4573486/,Played,Baskets Bonn,Toulouse,78650,78661,17,12,pending,0,,
-4573487,2026-10-10,17:50,6073,2026,final,170315,/match/basketball/2026-10-10/miami-vs-deqing/4573487/,Played,Miami,DeQing,78644,78648,21,19,no_scoreboard,1,2026-11-10T21:45:40Z,blank quarter or total
+4573487,2026-10-10,17:50,6073,2026,final,170315,/match/basketball/2026-10-10/miami-vs-deqing/4573487/,Played,Miami,DeQing,78644,78648,21,19,gave_up,1,2026-11-10T21:45:40Z,blank quarter or total
 4573488,2026-10-10,18:15,6073,2026,final,170315,/match/basketball/2026-10-10/ub-vs-hangzhou-jingwei/4573488/,Played,Ub,Hangzhou Jingwei,78642,78679,21,16,pending,0,,
 4573489,2026-10-10,18:50,6073,2026,final,170315,/match/basketball/2026-10-10/ulaanbaatar-vs-fuengirola/4573489/,Played,Ulaanbaatar MMC Energy,Fuengirola,78652,78676,13,21,pending,0,,
 4573490,2026-10-10,19:15,6073,2026,final,170315,/match/basketball/2026-10-10/toulouse-vs-amsterdam-rabobank/4573490/,Played,Toulouse,Amsterdam RABOBANK,78661,78646,15,20,pending,0,,
 4573491,2026-10-10,19:50,6073,2026,final,170315,/match/basketball/2026-10-10/deqing-vs-cluj/4573491/,Played,DeQing,Cluj,78648,78703,21,13,pending,0,,
 4573492,2026-10-10,20:15,6073,2026,final,170315,/match/basketball/2026-10-10/hangzhou-jingwei-vs-kaunas/4573492/,Played,Hangzhou Jingwei,Kaunas VDU LTU,78679,78678,21,20,pending,0,,
 4573909,2026-10-10,03:30,5488,2026,semi-finals,170430,/match/basketball/2026-10-10/caimanes-del-llano-vs-cd-motilones/4573909/,Played,Caimanes del Llano,CD Motilones,72621,74960,84,71,pending,0,,
-4574509,2026-10-10,03:15,6074,2026,final,170586,/match/basketball/2026-10-10/beijing-vs-balige/4574509/,Played,Beijing,Balige,78724,78757,21,12,no_scoreboard,1,2026-11-10T21:53:23Z,blank quarter or total
+4574509,2026-10-10,03:15,6074,2026,final,170586,/match/basketball/2026-10-10/beijing-vs-balige/4574509/,Played,Beijing,Balige,78724,78757,21,12,gave_up,1,2026-11-10T21:53:23Z,blank quarter or total
 4574510,2026-10-10,03:40,6074,2026,final,170586,/match/basketball/2026-10-10/seef-vs-nagoya/4574510/,Played,Seef,Nagoya,78734,78799,21,11,pending,0,,
 4574511,2026-10-10,04:05,6074,2026,final,170586,/match/basketball/2026-10-10/kinshasa-vs-balige/4574511/,Played,Kinshasa,Balige,78798,78757,14,12,pending,0,,
 4574512,2026-10-10,04:30,6074,2026,final,170586,/match/basketball/2026-10-10/melbourne-vs-nagoya/4574512/,Played,Melbourne,Nagoya,78797,78799,21,5,pending,0,,
@@ -805,7 +805,7 @@
 4574518,2026-10-10,08:00,6074,2026,final,170586,/match/basketball/2026-10-10/liman-vs-shinjuku-ss/4574518/,Played,Liman,Shinjuku SS,78658,78690,22,10,pending,0,,
 4574519,2026-10-10,08:25,6074,2026,final,170586,/match/basketball/2026-10-10/shanghai-vs-toronto/4574519/,Played,Shanghai,Toronto,78643,78673,22,18,pending,0,,
 4574520,2026-10-10,08:50,6074,2026,final,170586,/match/basketball/2026-10-10/raudondvaris-hoptrans-vs-cibona-phclassic/4574520/,Played,Raudondvaris Hoptrans,Cibona Ph.Classic,78660,78675,14,19,pending,0,,
-4574521,2026-10-10,09:45,6074,2026,final,170586,/match/basketball/2026-10-10/skyliners-vs-crvena-zvezda/4574521/,Played,Skyliners,Crvena Zvezda,78645,78680,22,11,no_scoreboard,1,2026-11-10T21:53:28Z,blank quarter or total
+4574521,2026-10-10,09:45,6074,2026,final,170586,/match/basketball/2026-10-10/skyliners-vs-crvena-zvezda/4574521/,Played,Skyliners,Crvena Zvezda,78645,78680,22,11,gave_up,1,2026-11-10T21:53:28Z,blank quarter or total
 4574522,2026-10-10,10:10,6074,2026,final,170586,/match/basketball/2026-10-10/liman-vs-shibuya/4574522/,Played,Liman,Shibuya,78658,78697,20,21,pending,0,,
 4574523,2026-10-10,10:35,6074,2026,final,170586,/match/basketball/2026-10-10/toronto-vs-seef/4574523/,Played,Toronto,Seef,78673,78734,14,13,pending,0,,
 4574524,2026-10-10,11:00,6074,2026,final,170586,/match/basketball/2026-10-10/cibona-phclassic-vs-beijing/4574524/,Played,Cibona Ph.Classic,Beijing,78675,78724,21,11,pending,0,,
@@ -958,14 +958,14 @@
 4573496,2026-10-11,15:40,6073,2026,final,170315,/match/basketball/2026-10-11/amsterdam-rabobank-vs-hangzhou-jingwei/4573496/,Played,Amsterdam RABOBANK,Hangzhou Jingwei,78646,78679,16,13,pending,0,,
 4573497,2026-10-11,16:40,6073,2026,final,170315,/match/basketball/2026-10-11/kaunas-vs-fuengirola/4573497/,Played,Kaunas VDU LTU,Fuengirola,78678,78676,18,21,pending,0,,
 4573498,2026-10-11,17:10,6073,2026,final,170315,/match/basketball/2026-10-11/miami-vs-amsterdam-rabobank/4573498/,Played,Miami,Amsterdam RABOBANK,78644,78646,18,21,pending,0,,
-4573499,2026-10-11,18:10,6073,2026,final,170315,/match/basketball/2026-10-11/fuengirola-vs-amsterdam-rabobank/4573499/,Played,Fuengirola,Amsterdam RABOBANK,78676,78646,17,19,no_scoreboard,1,2026-11-10T21:45:44Z,blank quarter or total
+4573499,2026-10-11,18:10,6073,2026,final,170315,/match/basketball/2026-10-11/fuengirola-vs-amsterdam-rabobank/4573499/,Played,Fuengirola,Amsterdam RABOBANK,78676,78646,17,19,gave_up,1,2026-11-10T21:45:44Z,blank quarter or total
 4574527,2026-10-11,05:45,6074,2026,final,170586,/match/basketball/2026-10-11/shibuya-vs-raudondvaris-hoptrans/4574527/,Played,Shibuya,Raudondvaris Hoptrans,78697,78660,21,20,pending,0,,
 4574528,2026-10-11,06:15,6074,2026,final,170586,/match/basketball/2026-10-11/shanghai-vs-crvena-zvezda/4574528/,Played,Shanghai,Crvena Zvezda,78643,78680,22,15,pending,0,,
 4574529,2026-10-11,06:55,6074,2026,final,170586,/match/basketball/2026-10-11/skyliners-vs-toronto/4574529/,Played,Skyliners,Toronto,78645,78673,10,17,pending,0,,
 4574530,2026-10-11,07:25,6074,2026,final,170586,/match/basketball/2026-10-11/cibona-phclassic-vs-liman/4574530/,Played,Cibona Ph.Classic,Liman,78675,78658,13,17,pending,0,,
 4574531,2026-10-11,08:35,6074,2026,final,170586,/match/basketball/2026-10-11/shibuya-vs-shanghai/4574531/,Played,Shibuya,Shanghai,78697,78643,17,21,pending,0,,
 4574532,2026-10-11,09:05,6074,2026,final,170586,/match/basketball/2026-10-11/toronto-vs-liman/4574532/,Played,Toronto,Liman,78673,78658,17,21,pending,0,,
-4574533,2026-10-11,10:05,6074,2026,final,170586,/match/basketball/2026-10-11/shanghai-vs-liman/4574533/,Played,Shanghai,Liman,78643,78658,17,21,no_scoreboard,1,2026-11-10T21:53:33Z,blank quarter or total
+4574533,2026-10-11,10:05,6074,2026,final,170586,/match/basketball/2026-10-11/shanghai-vs-liman/4574533/,Played,Shanghai,Liman,78643,78658,17,21,gave_up,1,2026-11-10T21:53:33Z,blank quarter or total
 4582809,2026-10-11,23:45,5505,2026,regular-season,139450,/match/basketball/2026-10-11/club-reducto-vs-ca-defensor-estudiantil-rochense/4582809/,Played,Club Reducto,CA Defensor Estudiantil Rochense,78209,78212,83,80,pending,0,,
 4582810,2026-10-11,23:45,5505,2026,regular-season,139450,/match/basketball/2026-10-11/ics-y-d-ateneo-vs-auriblanco-bc/4582810/,Played,ICS y D Ateneo,Auriblanco BC,78214,78210,77,83,pending,0,,
 4582811,2026-10-11,23:30,5505,2026,regular-season,139450,/match/basketball/2026-10-11/ca-bohemios-vs-ca-yale/4582811/,Played,CA Bohemios,CA Yale,78218,78219,72,65,pending,0,,
@@ -998,7 +998,7 @@
 4527841,2026-10-12,00:30,5492,2026/2027,apertura,164932,/match/basketball/2026-10-12/nautico-sportivo-avellanda-vs-club-de-regatas-san-nicolas/4527841/,Played,CNS Avellanda,Club de Regatas San Nicolás,73688,77245,82,44,pending,0,,
 4527842,2026-10-12,01:00,5492,2026/2027,apertura,164932,/match/basketball/2026-10-12/hindu-club-vs-instituto-ac-cordoba/4527842/,Played,Hindú Club,Instituto AC Córdoba,73678,73687,53,65,pending,0,,
 4531320,2026-10-12,18:00,1078,2026/2027,regular-season,165065,/match/basketball/2026-10-12/bnei-yehuda-vs-hapoel-jerusalem/4531320/,Played,Bnei Yehuda,Hapoel Jerusalem,33993,62987,60,77,pending,0,,
-4531321,2026-10-12,18:00,1078,2026/2027,regular-season,165065,/match/basketball/2026-10-12/maccabi-haifa-vs-maccabi-ashdod/4531321/,Played,Maccabi Haifa,Maccabi Ashdod,42628,30388,69,76,no_scoreboard,1,2026-11-10T21:58:29Z,blank quarter or total
+4531321,2026-10-12,18:00,1078,2026/2027,regular-season,165065,/match/basketball/2026-10-12/maccabi-haifa-vs-maccabi-ashdod/4531321/,Played,Maccabi Haifa,Maccabi Ashdod,42628,30388,69,76,gave_up,1,2026-11-10T21:58:29Z,blank quarter or total
 4531322,2026-10-12,18:00,1078,2026/2027,regular-season,165065,/match/basketball/2026-10-12/maccabi-karmiel-ironi-vs-elitzur-ramla/4531322/,Played,Maccabi Karmiel Ironi,Elitzur Ramla,30394,33994,59,81,pending,0,,
 4531323,2026-10-12,18:00,1078,2026/2027,regular-season,165065,/match/basketball/2026-10-12/elitzur-holon-vs-maccabi-ramat-gan/4531323/,Played,Elitzur Holon,Maccabi Ramat Gan,30399,30398,74,56,pending,0,,
 4543719,2026-10-12,18:00,5660,2026/2027,regular-season,166105,/match/basketball/2026-10-12/kk-cacak94-quantox-vs-kk-borac-zemun/4543719/,Played,KK Čačak94 Quantox,KK Borac Zemun,75014,75012,84,81,pending,0,,
@@ -1415,7 +1415,7 @@
 4554419,2026-10-17,01:30,5504,2026,quarter-finals,169511,/match/basketball/2026-10-17/club-sol-de-america-vs-deportivo-san-jose/4554419/,Played,Club Sol de América,Deportivo San José,78207,78206,55,52,pending,0,,
 4554420,2026-10-17,01:30,5504,2026,quarter-finals,169511,/match/basketball/2026-10-17/feliz-perez-cardozo-vs-olimpia-queens/4554420/,Played,Féliz Pérez Cardozo,Olimpia Queens,78205,78208,65,61,pending,0,,
 4554421,2026-10-17,02:45,5504,2026,quarter-finals,169511,/match/basketball/2026-10-17/international-womens-bc-vs-ca-ciudad-nueva/4554421/,Played,International Womens BC,CA Ciudad Nueva,78279,78281,51,88,pending,0,,
-4572206,2026-10-17,05:00,6035,2026,final,170217,/match/basketball/2026-10-17/deqing-vs-colosseum/4572206/,Played,DeQing,Colosseum,78648,78657,21,5,no_scoreboard,1,2026-11-10T21:59:47Z,blank quarter or total
+4572206,2026-10-17,05:00,6035,2026,final,170217,/match/basketball/2026-10-17/deqing-vs-colosseum/4572206/,Played,DeQing,Colosseum,78648,78657,21,5,gave_up,1,2026-11-10T21:59:47Z,blank quarter or total
 4572207,2026-10-17,05:25,6035,2026,final,170217,/match/basketball/2026-10-17/taipei-wanbao-vs-doha/4572207/,Played,Taipei WanBao,Doha,78647,78655,19,13,pending,0,,
 4572208,2026-10-17,05:50,6035,2026,final,170217,/match/basketball/2026-10-17/warsaw-vs-colosseum/4572208/,Played,Warsaw,Colosseum,78654,78657,16,13,pending,0,,
 4572209,2026-10-17,06:15,6035,2026,final,170217,/match/basketball/2026-10-17/bordeaux-vs-doha/4572209/,Played,Bordeaux,Doha,78656,78655,16,18,pending,0,,
@@ -1427,7 +1427,7 @@
 4572215,2026-10-17,09:45,6035,2026,final,170217,/match/basketball/2026-10-17/ub-vs-cotai-wolf-united/4572215/,Played,Ub,Cotai Wolf United,78642,78649,21,14,pending,0,,
 4572216,2026-10-17,10:20,6035,2026,final,170217,/match/basketball/2026-10-17/baskets-bonn-vs-skyliners/4572216/,Played,Baskets Bonn,Skyliners,78650,78645,13,21,pending,0,,
 4572217,2026-10-17,10:45,6035,2026,final,170217,/match/basketball/2026-10-17/miami-vs-ulaanbaatar/4572217/,Played,Miami,Ulaanbaatar MMC Energy,78644,78652,21,16,pending,0,,
-4572218,2026-10-17,11:10,6035,2026,final,170217,/match/basketball/2026-10-17/amsterdam-rabobank-vs-shanghai/4572218/,Played,Amsterdam RABOBANK,Shanghai,78646,78643,18,21,no_scoreboard,1,2026-11-10T21:59:52Z,blank quarter or total
+4572218,2026-10-17,11:10,6035,2026,final,170217,/match/basketball/2026-10-17/amsterdam-rabobank-vs-shanghai/4572218/,Played,Amsterdam RABOBANK,Shanghai,78646,78643,18,21,gave_up,1,2026-11-10T21:59:52Z,blank quarter or total
 4572219,2026-10-17,11:35,6035,2026,final,170217,/match/basketball/2026-10-17/ub-vs-vienna/4572219/,Played,Ub,Vienna,78642,78651,21,19,pending,0,,
 4572220,2026-10-17,12:40,6035,2026,final,170217,/match/basketball/2026-10-17/skyliners-vs-taipei-wanbao/4572220/,Played,Skyliners,Taipei WanBao,78645,78647,18,21,pending,0,,
 4572221,2026-10-17,13:05,6035,2026,final,170217,/match/basketball/2026-10-17/ulaanbaatar-vs-deqing/4572221/,Played,Ulaanbaatar MMC Energy,DeQing,78652,78648,20,21,pending,0,,
@@ -1574,7 +1574,7 @@
 4572227,2026-10-18,10:40,6035,2026,final,170217,/match/basketball/2026-10-18/miami-vs-cotai-wolf-united/4572227/,Played,Miami,Cotai Wolf United,78644,78649,21,11,pending,0,,
 4572228,2026-10-18,12:30,6035,2026,final,170217,/match/basketball/2026-10-18/ub-vs-skyliners/4572228/,Played,Ub,Skyliners,78642,78645,21,15,pending,0,,
 4572229,2026-10-18,13:00,6035,2026,final,170217,/match/basketball/2026-10-18/shanghai-vs-miami/4572229/,Played,Shanghai,Miami,78643,78644,21,18,pending,0,,
-4572230,2026-10-18,14:00,6035,2026,final,170217,/match/basketball/2026-10-18/ub-vs-shanghai/4572230/,Played,Ub,Shanghai,78642,78643,21,15,no_scoreboard,1,2026-11-10T21:59:56Z,blank quarter or total
+4572230,2026-10-18,14:00,6035,2026,final,170217,/match/basketball/2026-10-18/ub-vs-shanghai/4572230/,Played,Ub,Shanghai,78642,78643,21,15,gave_up,1,2026-11-10T21:59:56Z,blank quarter or total
 4326396,2026-10-19,19:04,4521,2026/2027,regular-season,153624,/match/basketball/2026-10-19/nassjo-basket-vs-umea-bskt/4326396/,Played,Nässjö Basket,Umeå BSKT,63430,63432,88,78,pending,0,,
 4400426,2026-10-19,19:00,2828,2026/2027,regular-season,158060,/match/basketball/2026-10-19/bk-vejen-vs-team-fog-naestved/4400426/,Played,BK Vejen,Team FOG Næstved,71439,47322,82,107,pending,0,,
 4405426,2026-10-19,19:00,2818,2026/2027,regular-season,158222,/match/basketball/2026-10-19/stk-czarni-slupsk-vs-ks-stal-ostrow-wielkopolski/4405426/,Played,Czarni Słupsk,Ostrów Wielkopolski,51498,47232,84,87,pending,0,,
