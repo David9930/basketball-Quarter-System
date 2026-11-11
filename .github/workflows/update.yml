@@ -2,7 +2,10 @@ name: Collector
 
 on:
   schedule:
-    - cron: "23 9 * * 2"          # Tuesdays 09:23 UTC
+    # BACKFILL SCHEDULE: every six hours until the first full harvest is done.
+    # Afterwards switch back to the weekly line below.
+    - cron: "17 1,7,13,19 * * *"
+    # - cron: "23 9 * * 2"        # weekly: Tuesdays 09:23 UTC
   workflow_dispatch:
     inputs:
       command:
@@ -28,12 +31,15 @@ jobs:
     env:
       COMMAND: ${{ inputs.command || 'update' }}
       MAX_MINUTES: ${{ inputs.max_minutes || '240' }}
+      CHUNK_MINUTES: "40"
       COLLECTOR_CONTACT: ${{ vars.COLLECTOR_CONTACT }}
       COLLECTOR_NO_CACHE: "1"
       SHEET_ID: ${{ secrets.SHEET_ID }}
       GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v7
         with:
@@ -43,28 +49,45 @@ jobs:
       - name: Install
         run: pip install -r requirements.txt
 
+      # The run is cut into chunks. Progress is validated and pushed after each
+      # one, so a failure costs at most one chunk. If the same file was edited
+      # on GitHub in the meantime (for example "include" in leagues.csv), that
+      # edit wins over the collector's copy.
       - name: Run collector
-        run: python run.py "$COMMAND" --max-minutes "$MAX_MINUTES"
-
-      - name: Validate and update the Google Sheet
-        if: always()
-        run: |
-          if [ -f data/leagues.csv ]; then
-            python run.py validate
-            python run.py export --sheets
-          fi
-
-      - name: Save results to the repository
-        if: always()
         run: |
           git config user.name "collector-bot"
           git config user.email "collector-bot@users.noreply.github.com"
+          save() {
+            if [ -f data/leagues.csv ]; then python run.py validate; fi
+            if [ -d data ]; then git add -A data; fi
+            if [ -d probe ]; then git add -A probe; fi
+            if git diff --cached --quiet; then echo "Nothing new to save."; return 0; fi
+            git commit -q -m "Collector $COMMAND: $(date -u +'%F %H:%M')"
+            git pull -q --rebase -X ours
+            git push -q
+            echo "Progress saved."
+          }
+          end=$(( $(date +%s) + MAX_MINUTES * 60 ))
+          status=0
+          while :; do
+            left=$(( (end - $(date +%s)) / 60 ))
+            if [ "$left" -lt 3 ]; then break; fi
+            chunk=$(( left < CHUNK_MINUTES ? left : CHUNK_MINUTES ))
+            python run.py "$COMMAND" --max-minutes "$chunk" || status=$?
+            save
+            if [ "$status" -ne 0 ]; then break; fi
+            # "paused" means the time ran out with work left; anything else means done.
+            grep -q '"outcome": "paused' data/last_run.json 2>/dev/null || break
+          done
+          if [ -f data/leagues.csv ]; then python run.py export --sheets; fi
+          exit "$status"
+
+      - name: Save anything left
+        if: always()
+        run: |
           if [ -d data ]; then git add -A data; fi
           if [ -d probe ]; then git add -A probe; fi
-          if git diff --cached --quiet; then
-            echo "Nothing new to save."
-            exit 0
-          fi
-          git commit -m "Collector $COMMAND: $(date -u +%F)"
-          git pull --rebase
-          git push
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -q -m "Collector $COMMAND: $(date -u +'%F %H:%M')"
+          git pull -q --rebase -X ours
+          git push -q

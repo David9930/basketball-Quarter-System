@@ -69,16 +69,21 @@ continues where it stopped.
 
 ## Where it runs
 
-**GitHub Actions** (`.github/workflows/update.yml`): a weekly top-up on
-Tuesdays at 09:23 UTC, up to 240 minutes. It can also be started by hand from
-the Actions tab with a choice of command. It does nothing on schedule until a
-first `discover` has been run.
+**GitHub Actions** (`.github/workflows/update.yml`): each run works for up to
+240 minutes in 40-minute chunks and pushes its progress after every chunk. It
+can also be started by hand from the Actions tab with a choice of command.
 
-**Your PC** suits the first full `harvest`, which is tens of thousands of
-match reports and runs for days. A private repository's free Actions
-allowance does not stretch that far in one month.
+- During the first full harvest the schedule is every six hours (01:17,
+  07:17, 13:17 and 19:17 UTC). About seven runs clear the backlog, using
+  roughly 1,600 Actions minutes.
+- After that the schedule goes back to weekly (Tuesdays 09:23 UTC). Both
+  lines are in the workflow file.
 
-Do not run both at once. Pull before a local run and push after it.
+You can edit `data/leagues.csv` on GitHub while a run is going; your edit
+wins and takes effect from the next chunk.
+
+**Your PC** works too: `python run.py harvest`. Do not run both at once. Pull
+before a local run and push after it.
 
 ## Data files
 
