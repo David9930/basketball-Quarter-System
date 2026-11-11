@@ -76,6 +76,8 @@ def main(argv=None):
     parser.add_argument("--max-minutes", type=float, default=0, help="stop cleanly after this long")
     parser.add_argument("--max-requests", type=int, default=0, help="stop cleanly after this many requests")
     parser.add_argument("--league", default="", help="harvest only this league (its comp_id, or part of its name)")
+    parser.add_argument("--recent-days", type=int, default=0,
+                        help="harvest/update: only fetch games from the last N days")
     parser.add_argument("--csv", action="store_true", help="export: write per-season CSV files to exports/")
     parser.add_argument("--sheets", action="store_true", help="export: update the Google Sheet")
     parser.add_argument("--force", action="store_true", help="export: rewrite every Sheet tab")
@@ -119,10 +121,10 @@ def main(argv=None):
         elif args.command == "discover":
             discover.discover(fetcher, store, cfg, log)
         elif args.command == "harvest":
-            harvest.collect(fetcher, store, cfg, log, only=args.league or None)
+            harvest.collect(fetcher, store, cfg, log, only=args.league or None, recent_days=args.recent_days)
         elif args.command == "update":
             discover.discover(fetcher, store, cfg, log)
-            harvest.collect(fetcher, store, cfg, log, only=args.league or None)
+            harvest.collect(fetcher, store, cfg, log, only=args.league or None, recent_days=args.recent_days)
     except BudgetReached as exc:
         outcome = f"paused: {exc}; run again to continue"
     except StopRun as exc:

@@ -40,6 +40,7 @@ harvest:
   settle_days: 2                  # wait this long after a date before reading its games
   retry_days: 21                  # keep retrying a game that shows no scoreboard for this long
   refresh_hours: 20               # minimum gap before anything is re-read
+  order: oldest_first             # which waiting games to fetch first: oldest_first or newest_first
   save_every: 50                  # write progress to disk after this many games
   cache_pages: true               # keep downloaded pages so they never need fetching twice
 

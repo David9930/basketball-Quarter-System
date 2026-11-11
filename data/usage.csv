@@ -1,0 +1,5 @@
+month,finished,event,command,mode,minutes
+2026-11,2026-11-10T20:44Z,workflow_dispatch,probe,manual,2
+2026-11,2026-11-10T22:11Z,workflow_dispatch,discover,manual,76
+2026-11,2026-11-11T06:19Z,push,update,backfill,242
+2026-11,2026-11-11T11:43Z,schedule,update,backfill,242

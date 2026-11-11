@@ -2,10 +2,10 @@ name: Collector
 
 on:
   schedule:
-    # BACKFILL SCHEDULE: every six hours until the first full harvest is done.
-    # Afterwards switch back to the weekly line below.
+    # Every six hours while the month's history budget lasts (see "Plan this
+    # run" below). Once the backlog is cleared or the budget is spent, only one
+    # run a day does any work; the other slots stop within seconds.
     - cron: "17 1,7,13,19 * * *"
-    # - cron: "23 9 * * 2"        # weekly: Tuesdays 09:23 UTC
   # A commit that changes .github/run-now starts a run (same as "update").
   push:
     branches: [main]
@@ -36,6 +36,12 @@ jobs:
       COMMAND: ${{ inputs.command || 'update' }}
       MAX_MINUTES: ${{ inputs.max_minutes || '240' }}
       CHUNK_MINUTES: "40"
+      # Minutes budget, per calendar month, by the collector's own count
+      # (data/usage.csv). Runs started by hand are counted but not limited.
+      HISTORY_BUDGET_MINUTES: "1500"    # full runs that work through the backlog
+      MONTH_LIMIT_MINUTES: "1950"       # nothing is planned past this
+      DAILY_MAX_MINUTES: "45"           # longest a current-games-only run may go
+      RECENT_DAYS: "14"                 # "current games" means the last this-many days
       COLLECTOR_CONTACT: ${{ vars.COLLECTOR_CONTACT }}
       COLLECTOR_NO_CACHE: "1"
       SHEET_ID: ${{ secrets.SHEET_ID }}
@@ -45,12 +51,61 @@ jobs:
         with:
           fetch-depth: 0
 
+      # Decide what this run may do before anything is installed.
+      #   backfill  the month's history budget has room: a full run
+      #   daily     the history budget is spent: current games only
+      #   manual    started by hand: as asked
+      - name: Plan this run
+        id: plan
+        run: |
+          month=$(date -u +%Y-%m)
+          today=$(date -u +%F)
+          used=0
+          if [ -f data/usage.csv ]; then
+            used=$(awk -F, -v m="$month" 'NR>1 && $1==m {s+=$6} END {print s+0}' data/usage.csv)
+          fi
+          ran_today=false
+          if grep -q "^$month,$today.*,\(schedule\|push\)," data/usage.csv 2>/dev/null; then ran_today=true; fi
+          backlog=false
+          if grep -q '"outcome": "paused' data/last_run.json 2>/dev/null; then backlog=true; fi
+          mode=manual; minutes=$MAX_MINUTES; skip=false; extra=""; reason=""
+          if [ "$GITHUB_EVENT_NAME" != "workflow_dispatch" ]; then
+            if [ "$used" -lt "$HISTORY_BUDGET_MINUTES" ]; then
+              mode=backfill
+              room=$(( HISTORY_BUDGET_MINUTES - used - 3 ))
+              if [ "$ran_today" = true ] && [ "$backlog" = false ]; then
+                skip=true; reason="Today's run is done and nothing is waiting."
+              fi
+            else
+              mode=daily
+              extra="--recent-days $RECENT_DAYS"
+              room=$(( MONTH_LIMIT_MINUTES - used - 3 ))
+              if [ "$room" -gt "$DAILY_MAX_MINUTES" ]; then room=$DAILY_MAX_MINUTES; fi
+              if grep -q "^$month,$today.*,daily," data/usage.csv 2>/dev/null; then
+                skip=true; reason="Today's current-games run is done."
+              fi
+            fi
+            if [ "$room" -lt "$minutes" ]; then minutes=$room; fi
+            if [ "$minutes" -lt 5 ]; then
+              skip=true; reason="This month's minutes budget is used."
+            fi
+          fi
+          echo "Minutes used this month (collector's count): $used. Mode: $mode. Planned: $minutes minutes. $reason"
+          {
+            echo "mode=$mode"
+            echo "minutes=$minutes"
+            echo "skip=$skip"
+            echo "extra=$extra"
+          } >> "$GITHUB_OUTPUT"
+
       - uses: actions/setup-python@v7
+        if: steps.plan.outputs.skip != 'true'
         with:
           python-version: "3.12"
           cache: pip
 
       - name: Install
+        if: steps.plan.outputs.skip != 'true'
         run: pip install -r requirements.txt
 
       # The run is cut into chunks. Progress is validated and pushed after each
@@ -58,7 +113,13 @@ jobs:
       # on GitHub in the meantime (for example "include" in leagues.csv), that
       # edit wins over the collector's copy.
       - name: Run collector
+        if: steps.plan.outputs.skip != 'true'
+        env:
+          RUN_MODE: ${{ steps.plan.outputs.mode }}
+          RUN_MINUTES: ${{ steps.plan.outputs.minutes }}
+          RUN_EXTRA: ${{ steps.plan.outputs.extra }}
         run: |
+          t0=$(date +%s)
           git config user.name "collector-bot"
           git config user.email "collector-bot@users.noreply.github.com"
           save() {
@@ -73,28 +134,34 @@ jobs:
           }
           # Mark the start, so it is visible in the repository that a run began.
           mkdir -p data
-          echo "Run started $(date -u +'%F %H:%M UTC') (${GITHUB_EVENT_NAME:-manual}): $COMMAND" > data/run_started.txt
+          echo "Run started $(date -u +'%F %H:%M UTC') (${GITHUB_EVENT_NAME:-manual}, $RUN_MODE, up to $RUN_MINUTES minutes): $COMMAND" > data/run_started.txt
           git add data/run_started.txt
           git commit -q -m "Collector started: $(date -u +'%F %H:%M')"
           git pull -q --rebase --autostash -X ours
           git push -q
-          end=$(( $(date +%s) + MAX_MINUTES * 60 ))
+          end=$(( $(date +%s) + RUN_MINUTES * 60 ))
           status=0
           while :; do
             left=$(( (end - $(date +%s)) / 60 ))
             if [ "$left" -lt 3 ]; then break; fi
             chunk=$(( left < CHUNK_MINUTES ? left : CHUNK_MINUTES ))
-            python run.py "$COMMAND" --max-minutes "$chunk" || status=$?
+            # RUN_EXTRA is left unquoted on purpose: it is empty or two words.
+            python run.py "$COMMAND" --max-minutes "$chunk" $RUN_EXTRA || status=$?
             save
             if [ "$status" -ne 0 ]; then break; fi
             # "paused" means the time ran out with work left; anything else means done.
             grep -q '"outcome": "paused' data/last_run.json 2>/dev/null || break
           done
           if [ -f data/leagues.csv ]; then python run.py export --sheets; fi
+          # Record the minutes this run used (rounded up, plus one for set-up).
+          if [ ! -f data/usage.csv ]; then echo "month,finished,event,command,mode,minutes" > data/usage.csv; fi
+          spent=$(( ( $(date +%s) - t0 + 59 ) / 60 + 1 ))
+          echo "$(date -u +%Y-%m),$(date -u +%FT%H:%MZ),${GITHUB_EVENT_NAME:-manual},$COMMAND,$RUN_MODE,$spent" >> data/usage.csv
+          save
           exit "$status"
 
       - name: Save anything left
-        if: always()
+        if: always() && steps.plan.outputs.skip != 'true'
         run: |
           if [ -d data ]; then git add -A data; fi
           if [ -d probe ]; then git add -A probe; fi

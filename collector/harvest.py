@@ -212,17 +212,26 @@ def matches(league, only):
     return not only or only == league["comp_id"] or only.lower() in league["name"].lower()
 
 
-def due_rows(store, cfg, only=None):
+def due_rows(store, cfg, only=None, recent_days=0):
+    """Games whose match report should be fetched now, in the configured order.
+
+    recent_days > 0 keeps only games from the last that-many days, which is
+    how a short daily run stays on current games and leaves older ones alone.
+    """
     leagues = {k: l for k, l in store.leagues.items() if wanted(l) and matches(l, only)}
     rows = [r for r in store.schedule.values() if (r["comp_id"], r["season"]) in leagues and is_due(r, cfg)]
-    rows.sort(key=st.by_date)
+    if recent_days:
+        floor = (st.today() - datetime.timedelta(days=int(recent_days))).isoformat()
+        rows = [r for r in rows if r["date"] >= floor]
+    rows.sort(key=st.by_date, reverse=cfg["harvest"].get("order", "oldest_first") == "newest_first")
     return rows, leagues
 
 
-def collect(fetcher, store, cfg, log=print, only=None):
-    """Fetch every due match report in wanted leagues, oldest first."""
-    rows, leagues = due_rows(store, cfg, only)
-    log(f"Match reports to fetch: {len(rows)} across {len(leagues)} league-seasons with quarter scores.")
+def collect(fetcher, store, cfg, log=print, only=None, recent_days=0):
+    """Fetch every due match report in wanted leagues."""
+    rows, leagues = due_rows(store, cfg, only, recent_days)
+    window = f" from the last {recent_days} days" if recent_days else ""
+    log(f"Match reports to fetch{window}: {len(rows)} across {len(leagues)} league-seasons with quarter scores.")
     done = 0
     try:
         for n, row in enumerate(rows, 1):

@@ -58,7 +58,7 @@ continues where it stopped.
 | --- | --- |
 | `probe` | Fetches one day's list and three match reports into `probe/`; a quick check that the site accepts the collector and the readers still work |
 | `discover` | Reads daily lists from `start_date` to two days ago, then tests each league-season for quarter scores |
-| `harvest` | Fetches match reports for leagues marked `yes`, oldest first (`--league 933` or `--league nba` for one league) |
+| `harvest` | Fetches match reports for leagues marked `yes` (`--league 933` or `--league nba` for one league; `--recent-days 14` for current games only). `harvest.order` in `config.yaml` sets oldest or newest first |
 | `update` | The scheduled run: `discover`, then `harvest` |
 | `validate` | Re-checks every game; writes `data/exceptions.csv` and `data/summary.json` |
 | `export` | `--csv` writes per-season files to `exports/` (one row per game, and four rows per game); `--sheets` updates the Google Sheet (`--force` rewrites every tab) |
@@ -69,15 +69,26 @@ continues where it stopped.
 
 ## Where it runs
 
-**GitHub Actions** (`.github/workflows/update.yml`): each run works for up to
-240 minutes in 40-minute chunks and pushes its progress after every chunk. It
-can also be started by hand from the Actions tab with a choice of command.
+**GitHub Actions** (`.github/workflows/update.yml`): the schedule fires every
+six hours (01:17, 07:17, 13:17 and 19:17 UTC) and each run first decides what
+it may do from a minutes budget.
 
-- During the first full harvest the schedule is every six hours (01:17,
-  07:17, 13:17 and 19:17 UTC). About seven runs clear the backlog, using
-  roughly 1,600 Actions minutes.
-- After that the schedule goes back to weekly (Tuesdays 09:23 UTC). Both
-  lines are in the workflow file.
+- **Full run:** while the month's history budget (1,500 minutes) has room, a
+  run works for up to 240 minutes through everything waiting, in 40-minute
+  chunks, pushing progress after each.
+- **Current games only:** once that budget is spent, one run a day fetches
+  only games from the last 14 days (`--recent-days 14`), for up to 45 minutes.
+  Older games wait for the next month's budget.
+- **Nothing:** a slot stops within seconds if the day's run is already done,
+  or if the month has reached 1,950 minutes.
+
+The budget is the collector's own count, kept in `data/usage.csv`. It is
+close to GitHub's meter but not the same thing; Settings, Billing shows the
+real figure. Runs started by hand are counted but not limited. The numbers
+are at the top of the workflow file.
+
+A run can be started three ways: the schedule, the Run workflow button on the
+Collector page, or a commit that changes `.github/run-now`.
 
 You can edit `data/leagues.csv` on GitHub while a run is going; your edit
 wins and takes effect from the next chunk.
@@ -95,6 +106,7 @@ before a local run and push after it.
 | `data/days.csv` | Which dates have been read |
 | `data/exceptions.csv` | Games flagged by a check |
 | `data/summary.json`, `data/last_run.json` | Totals, and how the last run ended |
+| `data/usage.csv`, `data/run_started.txt` | Actions minutes used by each run, and when the latest run began |
 | `probe/examples/` | A few unusual match pages (overtime, no scoreboard, halves) kept for checking the readers |
 
 Notes on the data:
