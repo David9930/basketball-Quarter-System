@@ -6,6 +6,10 @@ on:
     # Afterwards switch back to the weekly line below.
     - cron: "17 1,7,13,19 * * *"
     # - cron: "23 9 * * 2"        # weekly: Tuesdays 09:23 UTC
+  # A commit that changes .github/run-now starts a run (same as "update").
+  push:
+    branches: [main]
+    paths: [".github/run-now"]
   workflow_dispatch:
     inputs:
       command:
@@ -67,6 +71,13 @@ jobs:
             git push -q
             echo "Progress saved."
           }
+          # Mark the start, so it is visible in the repository that a run began.
+          mkdir -p data
+          echo "Run started $(date -u +'%F %H:%M UTC') (${GITHUB_EVENT_NAME:-manual}): $COMMAND" > data/run_started.txt
+          git add data/run_started.txt
+          git commit -q -m "Collector started: $(date -u +'%F %H:%M')"
+          git pull -q --rebase -X ours
+          git push -q
           end=$(( $(date +%s) + MAX_MINUTES * 60 ))
           status=0
           while :; do
