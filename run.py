@@ -9,11 +9,13 @@
   python run.py export     --csv (per-season files in exports/) and/or --sheets
   python run.py status     what has been collected and what is left
   python run.py reparse    rebuild games from match pages already saved locally
+  python run.py selftest   check the page readers against saved sample pages (no network)
 """
 from __future__ import annotations
 
 import argparse
 import datetime
+import gzip
 import json
 import os
 import sys
@@ -21,7 +23,7 @@ from pathlib import Path
 
 import yaml
 
-from collector import discover, export, harvest, validate
+from collector import discover, export, harvest, parse, validate
 from collector import store as st
 from collector.fetch import BudgetReached, Fetcher, StopRun
 
@@ -68,10 +70,42 @@ def status(store, cfg):
         print(f"League-seasons not yet tested for quarter scores: {untested}")
 
 
+def selftest():
+    """Read the saved sample pages in tests/fixtures and compare with tests/expected.json.
+
+    Catches a code change that breaks the readers. Uses no network.
+    """
+    expected = json.loads((ROOT / "tests" / "expected.json").read_text(encoding="utf-8"))
+    problems = []
+    for name, want in expected.items():
+        text = gzip.decompress((ROOT / "tests" / "fixtures" / f"{name}.html.gz").read_bytes()).decode("utf-8")
+        if name == "daily_list":
+            items = parse.parse_daily(text)
+            statuses = {}
+            for item in items:
+                statuses[item["list_status"]] = statuses.get(item["list_status"], 0) + 1
+            got = {"games": len(items), "competitions": len({i["comp_id"] for i in items}),
+                   "statuses": dict(sorted(statuses.items())),
+                   "first": {k: items[0][k] for k in want["first"]} if items else {}}
+        else:
+            result = parse.parse_scoreboard(text)
+            got = {k: result.get(k) for k in want}
+            if got.get("overtime") is not None:
+                got["overtime"] = [list(pair) for pair in got["overtime"]]
+        for key, value in want.items():
+            if got.get(key) != value:
+                problems.append(f"{name}: {key} read as {got.get(key)!r}, expected {value!r}")
+    for line in problems:
+        print("SELF-TEST FAILED  " + line)
+    if not problems:
+        print(f"Self-test passed: {len(expected)} saved pages read as expected.")
+    return 1 if problems else 0
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("command", choices=["probe", "discover", "harvest", "update", "validate",
-                                            "export", "status", "reparse"])
+                                            "export", "status", "reparse", "selftest"])
     parser.add_argument("--config", default=str(ROOT / "config.yaml"))
     parser.add_argument("--max-minutes", type=float, default=0, help="stop cleanly after this long")
     parser.add_argument("--max-requests", type=int, default=0, help="stop cleanly after this many requests")
@@ -83,6 +117,8 @@ def main(argv=None):
     parser.add_argument("--force", action="store_true", help="export: rewrite every Sheet tab")
     args = parser.parse_args(argv)
 
+    if args.command == "selftest":
+        return selftest()
     cfg = load_config(args.config)
     store = st.Store(ROOT).load()
 
@@ -116,6 +152,8 @@ def main(argv=None):
     started, outcome, code = st.stamp(), "completed", 0
     log(f"Identifying as: {fetcher.user_agent}")
     try:
+        if args.command != "probe":
+            harvest.reader_check(fetcher, store, log)
         if args.command == "probe":
             discover.probe(fetcher, cfg, ROOT, log)
         elif args.command == "discover":

@@ -64,6 +64,7 @@ continues where it stopped.
 | `export` | `--csv` writes per-season files to `exports/` (one row per game, and four rows per game); `--sheets` updates the Google Sheet (`--force` rewrites every tab) |
 | `status` | Counts and time remaining |
 | `reparse` | Rebuilds games from match pages already saved in `cache/`; downloads nothing |
+| `selftest` | Checks the page readers against the saved sample pages in `tests/`; no network |
 
 `--max-minutes N` and `--max-requests N` stop a run cleanly at a limit.
 
@@ -95,6 +96,39 @@ wins and takes effect from the next chunk.
 
 **Your PC** works too: `python run.py harvest`. Do not run both at once. Pull
 before a local run and push after it.
+
+## If it stops
+
+A run that stops raises a GitHub issue titled **Collector stopped**, with the
+reason and a link to the run log. GitHub notifies you of the issue in the
+usual way. Scheduled runs then do nothing until you close that issue, so a
+stop is never retried blindly. Runs started by hand ignore the hold.
+
+| Reason given | What it means | What to do |
+| --- | --- | --- |
+| The site refused the request (HTTP 401/403) | The site is turning the collector away | Leave it a day or more. If it persists, the site no longer accepts this; do not work around it |
+| The site is still asking us to slow down | Repeated 429/503 responses | Wait, then close the issue. Consider a longer `delay_seconds` |
+| robots.txt does not allow ... | The site's rules now exclude a page the collector needs | Stop collecting that page type |
+| Reader check failed | The site changed its page layout, so scores no longer read correctly | Run `probe` to save current pages, update `collector/parse.py` to match, refresh `tests/`, then close the issue |
+| Self-test failed | A code change broke the readers | Undo or fix the change until `python run.py selftest` passes |
+| N requests in a row failed | The site or the network was down | Close the issue to try again |
+
+The checks behind this:
+
+- **Self-test.** Before each run, the readers are tried on six real pages saved
+  in `tests/fixtures/`. If they no longer give the expected scores, nothing is
+  fetched.
+- **Known-game check.** Each run starts by re-reading a game already on file.
+  If two in a row read differently from what was recorded, the run stops
+  before recording anything.
+- **Running check.** If 24 of the last 40 match reports read as blank or
+  disagree with the daily list, across at least three leagues, the run stops
+  and puts those games back to be fetched again.
+- **Daily list check.** If a day's list links to games the reader cannot make
+  sense of, that day is not recorded and the run stops.
+
+What nothing here can detect is the schedule itself not firing. If
+`data/run_started.txt` is more than two days old, start a run by hand.
 
 ## Data files
 
@@ -175,4 +209,5 @@ collector/harvest.py    daily lists and match reports
 collector/validate.py   checks and summary
 collector/export.py     CSV exports and Google Sheets
 collector/store.py      the CSV records
+tests/                  saved sample pages and their expected readings
 ```

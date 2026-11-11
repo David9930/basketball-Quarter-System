@@ -21,6 +21,10 @@ class StopRun(Exception):
     """The run must end now: the site refused us or keeps failing."""
 
 
+class ReaderAlarm(StopRun):
+    """The site's pages no longer read the way they did; stop before bad data is recorded."""
+
+
 class BudgetReached(Exception):
     """This run's time or request allowance is used up."""
 

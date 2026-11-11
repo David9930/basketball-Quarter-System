@@ -23,6 +23,7 @@ on:
 
 permissions:
   contents: write
+  issues: write               # to raise a "Collector stopped" issue when a run fails
 
 concurrency:
   group: collector
@@ -42,6 +43,8 @@ jobs:
       MONTH_LIMIT_MINUTES: "1950"       # nothing is planned past this
       DAILY_MAX_MINUTES: "45"           # longest a current-games-only run may go
       RECENT_DAYS: "14"                 # "current games" means the last this-many days
+      ALERT_TITLE: "Collector stopped"
+      GH_TOKEN: ${{ github.token }}
       COLLECTOR_CONTACT: ${{ vars.COLLECTOR_CONTACT }}
       COLLECTOR_NO_CACHE: "1"
       SHEET_ID: ${{ secrets.SHEET_ID }}
@@ -55,6 +58,8 @@ jobs:
       #   backfill  the month's history budget has room: a full run
       #   daily     the history budget is spent: current games only
       #   manual    started by hand: as asked
+      # While a "Collector stopped" issue is open, scheduled runs do nothing:
+      # a stop is not retried until someone has looked and closed the issue.
       - name: Plan this run
         id: plan
         run: |
@@ -69,6 +74,8 @@ jobs:
           backlog=false
           if grep -q '"outcome": "paused' data/last_run.json 2>/dev/null; then backlog=true; fi
           mode=manual; minutes=$MAX_MINUTES; skip=false; extra=""; reason=""
+          held=$(gh issue list --state open --limit 100 --json number,title \
+                 --jq "[.[] | select(.title==\"$ALERT_TITLE\")][0].number // empty" 2>/dev/null || true)
           if [ "$GITHUB_EVENT_NAME" != "workflow_dispatch" ]; then
             if [ "$used" -lt "$HISTORY_BUDGET_MINUTES" ]; then
               mode=backfill
@@ -88,6 +95,9 @@ jobs:
             if [ "$room" -lt "$minutes" ]; then minutes=$room; fi
             if [ "$minutes" -lt 5 ]; then
               skip=true; reason="This month's minutes budget is used."
+            fi
+            if [ -n "$held" ]; then
+              skip=true; reason="On hold: issue #$held (\"$ALERT_TITLE\") is open. Close it to resume."
             fi
           fi
           echo "Minutes used this month (collector's count): $used. Mode: $mode. Planned: $minutes minutes. $reason"
@@ -136,12 +146,20 @@ jobs:
           mkdir -p data
           echo "Run started $(date -u +'%F %H:%M UTC') (${GITHUB_EVENT_NAME:-manual}, $RUN_MODE, up to $RUN_MINUTES minutes): $COMMAND" > data/run_started.txt
           git add data/run_started.txt
-          git commit -q -m "Collector started: $(date -u +'%F %H:%M')"
-          git pull -q --rebase --autostash -X ours
-          git push -q
+          if ! git diff --cached --quiet; then
+            git commit -q -m "Collector started: $(date -u +'%F %H:%M')"
+            git pull -q --rebase --autostash -X ours
+            git push -q
+          fi
           end=$(( $(date +%s) + RUN_MINUTES * 60 ))
           status=0
-          while :; do
+          why=""
+          # The readers must still give the right answers on the saved sample pages.
+          if ! python run.py selftest; then
+            status=1
+            why="Self-test failed: the page readers no longer give the expected results on the saved sample pages in tests/. A change to the code is the likely cause. Nothing was fetched."
+          fi
+          while [ "$status" -eq 0 ]; do
             left=$(( (end - $(date +%s)) / 60 ))
             if [ "$left" -lt 3 ]; then break; fi
             chunk=$(( left < CHUNK_MINUTES ? left : CHUNK_MINUTES ))
@@ -158,6 +176,24 @@ jobs:
           spent=$(( ( $(date +%s) - t0 + 59 ) / 60 + 1 ))
           echo "$(date -u +%Y-%m),$(date -u +%FT%H:%MZ),${GITHUB_EVENT_NAME:-manual},$COMMAND,$RUN_MODE,$spent" >> data/usage.csv
           save
+          # A run that stopped raises an issue, which notifies the repository owner
+          # and holds further scheduled runs until the issue is closed.
+          if [ "$status" -ne 0 ]; then
+            if [ -z "$why" ]; then
+              why=$(python -c "import json; print(json.load(open('data/last_run.json'))['outcome'])" 2>/dev/null || true)
+            fi
+            if [ -z "$why" ]; then why="The run failed before it could record why. See the run log."; fi
+            body=$(printf '%s\n\n%s\n\n%s\n' "$why" \
+              "Run log: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+              "Scheduled runs are on hold while this issue is open. Close it to let them resume. See the README section 'If it stops'.")
+            open=$(gh issue list --state open --limit 100 --json number,title \
+                   --jq "[.[] | select(.title==\"$ALERT_TITLE\")][0].number // empty" 2>/dev/null || true)
+            if [ -n "$open" ]; then
+              gh issue comment "$open" --body "$body" || true
+            else
+              gh issue create --title "$ALERT_TITLE" --body "$body" || true
+            fi
+          fi
           exit "$status"
 
       - name: Save anything left

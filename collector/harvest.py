@@ -5,16 +5,73 @@ again, so a run can be stopped and restarted at any point.
 """
 from __future__ import annotations
 
+import collections
 import datetime
 from pathlib import Path
 
 from . import parse
 from . import store as st
-from .fetch import PageError
+from .fetch import PageError, ReaderAlarm
 from .validate import check_text, league_totals, set_overtime
 
 DAILY_LIST_PATH = "/sport_ajax_v3.php?d={day}&widget_client_id=1&sp=basketball"
 EXAMPLES_PER_KIND = 3
+# Safeguards against the site changing its page layout (see reader_check and collect).
+CHECK_GAMES = 3               # at most this many known games are re-read at the start of a run
+WINDOW = 40                   # the last this-many match reports are watched...
+WINDOW_BAD_SHARE = 0.6        # ...and the run stops if this share of them read as blank or wrong
+WINDOW_MIN_LEAGUES = 3        # ...across at least this many leagues
+
+
+# ---------------------------------------------------------------- safeguards
+
+def reader_check(fetcher, store, log=print):
+    """Re-read a game already on file and confirm the page still gives the same scores.
+
+    Run once at the start of a run. If two known games in a row read
+    differently, the site's layout has probably changed, and the run stops
+    before anything is recorded. One differing game is tolerated, since the
+    site does correct scores. Returns True if confirmed, None if it could not
+    be checked (nothing on file, or the pages could not be fetched).
+    """
+    differed = tried = 0
+    for game in sorted(store.games.values(), key=st.by_date, reverse=True):
+        row = store.schedule.get(game["game_id"])
+        if row is None:
+            continue
+        if tried >= CHECK_GAMES:
+            break
+        tried += 1
+        try:
+            result = parse.parse_scoreboard(fetcher.get(row["url"]))
+        except PageError:
+            continue
+        same = (result["status"] == "ok"
+                and [str(x) for x in result["home_q"]] == [game[f"home_q{i}"] for i in range(1, 5)]
+                and [str(x) for x in result["away_q"]] == [game[f"away_q{i}"] for i in range(1, 5)]
+                and (str(result["home_final"]), str(result["away_final"])) == (game["home_final"], game["away_final"]))
+        if same:
+            return True
+        differed += 1
+        if differed >= 2:
+            raise ReaderAlarm(
+                "Reader check failed: two games already on file no longer read the same from the site "
+                f"(latest: game {game['game_id']}, scoreboard now reads as '{result['status']}'). "
+                "The match page layout has probably changed. Nothing was recorded.")
+    if tried:
+        log("Reader check could not be completed this time; carrying on.")
+    return None
+
+
+def check_daily_list(text, items, day):
+    """Stop if a day's list clearly holds games that the reader could not make sense of."""
+    linked = {m.group(3) for m in parse.MATCH_RE.finditer(text.replace("\\/", "/"))}
+    whole = [i for i in items if i["comp_id"] and i["home_team"] and i["away_team"] and i["list_status"]]
+    if len(linked) >= 5 and len(whole) < 0.75 * len(linked):
+        raise ReaderAlarm(
+            f"Reader check failed: the match list for {day} links to {len(linked)} games but only "
+            f"{len(whole)} could be read in full. The list layout has probably changed. "
+            "That day was not recorded.")
 
 
 # ---------------------------------------------------------------- daily lists
@@ -79,7 +136,9 @@ def scan_days(fetcher, store, cfg, log):
                     log(f"  {key}: list not read ({exc})")
                     day += datetime.timedelta(days=1)
                     continue
-                items = [i for i in parse.parse_daily(text) if i["comp_id"]]
+                items = parse.parse_daily(text)
+                check_daily_list(text, items, key)
+                items = [i for i in items if i["comp_id"]]
                 kept = 0
                 for item in items:
                     name, season = parse.split_title(item["title"], item["slug"])
@@ -233,10 +292,30 @@ def collect(fetcher, store, cfg, log=print, only=None, recent_days=0):
     window = f" from the last {recent_days} days" if recent_days else ""
     log(f"Match reports to fetch{window}: {len(rows)} across {len(leagues)} league-seasons with quarter scores.")
     done = 0
+    recent = collections.deque(maxlen=WINDOW)      # (row, its state before the fetch, read badly?)
     try:
         for n, row in enumerate(rows, 1):
-            if collect_one(fetcher, store, row, leagues[(row["comp_id"], row["season"])], cfg) == st.DONE:
+            before = dict(row)
+            status = collect_one(fetcher, store, row, leagues[(row["comp_id"], row["season"])], cfg)
+            if status == st.DONE:
                 done += 1
+            check = store.games[row["game_id"]]["check"] if status == st.DONE else ""
+            badly = (status in (st.NO_SCOREBOARD, st.OTHER_PERIODS)
+                     or "LIST_SCORE_MISMATCH" in check or "BAD_VALUE" in check)
+            recent.append((row, before, badly))
+            bad = [(r, b) for r, b, x in recent if x]
+            if (len(recent) == WINDOW and len(bad) >= WINDOW_BAD_SHARE * WINDOW
+                    and len({r["comp_id"] for r, _ in bad}) >= WINDOW_MIN_LEAGUES):
+                for r, b in bad:                   # put those games back as they were
+                    if store.games.pop(r["game_id"], None) is not None:
+                        store.touch("games", r["date"])
+                    r.clear()
+                    r.update(b)
+                    store.touch("schedule", r["date"])
+                raise ReaderAlarm(
+                    f"Reader check failed: {len(bad)} of the last {WINDOW} match reports read as blank or "
+                    "wrong, across several leagues that normally have quarter scores. The match page "
+                    "layout has probably changed. Those games were put back to be fetched again.")
             if n % int(cfg["harvest"]["save_every"]) == 0:
                 store.save()
             if n % 200 == 0:
