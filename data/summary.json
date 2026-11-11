@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-11T08:23:31Z",
+  "generated": "2026-11-11T09:03:37Z",
   "days_read": 678,
   "first_day": "2025-01-01",
   "last_day": "2026-11-09",
@@ -10,7 +10,7 @@
   },
   "games_listed": 38935,
   "schedule_status": {
-    "done": 3494,
+    "done": 3986,
     "gave_up": 237,
     "league without quarter scores": 15142,
     "no_scoreboard": 14,
@@ -20,30 +20,31 @@
     "not played (Playing)": 1,
     "not played (Postponed)": 50,
     "other_periods": 12,
-    "pending": 19794
+    "pending": 19302
   },
-  "games_collected": 3494,
-  "quarter_records": 13976,
-  "games_flagged": 57,
+  "games_collected": 3986,
+  "quarter_records": 15944,
+  "games_flagged": 61,
   "flags": {
-    "OT_NOT_ITEMISED": 46,
+    "OT_NOT_ITEMISED": 48,
     "OT_WITHOUT_TIE": 1,
-    "PERIOD_SUM_MISMATCH": 10,
+    "PERIOD_SUM_MISMATCH": 12,
+    "SUSPECT_VALUE": 1,
     "TIED_FINAL": 1
   },
   "requeued_missing_records": 0,
   "seasons": {
     "2025": {
-      "games": 1740,
-      "overtime_games": 51,
+      "games": 1751,
+      "overtime_games": 52,
       "flagged": 21,
       "first_game": "2025-01-25",
-      "last_game": "2025-10-22"
+      "last_game": "2025-10-28"
     },
     "2025/2026": {
-      "games": 1658,
-      "overtime_games": 64,
-      "flagged": 35,
+      "games": 2139,
+      "overtime_games": 82,
+      "flagged": 39,
       "first_game": "2025-09-12",
       "last_game": "2026-05-16"
     },
