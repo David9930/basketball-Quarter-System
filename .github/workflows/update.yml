@@ -126,7 +126,8 @@ jobs:
       - uses: actions/setup-python@v7
         if: steps.plan.outputs.skip != 'true'
         with:
-          python-version: "3.12"
+          # 3.13+: urllib.robotparser honours * and $ wildcards in robots.txt (3.12 ignores them)
+          python-version: "3.13"
           cache: pip
 
       - name: Install

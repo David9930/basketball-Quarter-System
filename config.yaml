@@ -30,6 +30,8 @@ seasons:
   - "2026/2027"
   - "2025"
   - "2026"
+  - "2027"
+  - "2027/2028"
 
 discovery:
   sample_games: 3                 # finished games tested per league-season for a Q1-Q4 scoreboard
