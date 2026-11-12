@@ -1,9 +1,9 @@
 {
   "command": "update",
-  "started": "2026-11-11T23:31:16Z",
-  "finished": "2026-11-12T00:10:19Z",
+  "started": "2026-11-12T08:17:27Z",
+  "finished": "2026-11-12T08:57:30Z",
   "outcome": "paused: time allowance used; run again to continue",
-  "requests": 624,
+  "requests": 485,
   "cache_hits": 0,
   "robots_refusals": 0,
   "delay_seconds": 3.0,
