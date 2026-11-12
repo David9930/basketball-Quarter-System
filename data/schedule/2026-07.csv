@@ -1,6 +1,6 @@
 ﻿game_id,date,kickoff,comp_id,season,stage,round_id,url,list_status,home_team,away_team,home_team_id,away_team_id,list_home,list_away,status,attempts,last_try,detail
-4024903,2026-07-01,09:00,4797,2026,final,139043,/match/basketball/2026-07-01/southland-sharks-vs-canterbury-rams/4024903/,Played,Southland Sharks,Canterbury Rams,65149,65144,103,98,pending,0,,
-4121592,2026-07-01,02:00,4788,2026,final,143148,/match/basketball/2026-07-01/winnipeg-sea-bears-vs-saskatoon-mamba/4121592/,Played,Winnipeg Sea Bears,Saskatoon Mamba,65030,65032,107,96,pending,0,,
+4024903,2026-07-01,09:00,4797,2026,final,139043,/match/basketball/2026-07-01/southland-sharks-vs-canterbury-rams/4024903/,Played,Southland Sharks,Canterbury Rams,65149,65144,103,98,done,1,2026-11-12T09:37:51Z,
+4121592,2026-07-01,02:00,4788,2026,final,143148,/match/basketball/2026-07-01/winnipeg-sea-bears-vs-saskatoon-mamba/4121592/,Played,Winnipeg Sea Bears,Saskatoon Mamba,65030,65032,107,96,done,1,2026-11-12T09:37:46Z,
 4121593,2026-07-01,22:00,4788,2026,final,143148,/match/basketball/2026-07-01/scarborough-shooting-stars-vs-montreal-alliance/4121593/,Played,Scarborough Shooting Stars,Montreal Alliance,65035,65036,80,78,done,1,2026-11-12T09:37:34Z,
 4024904,2026-07-02,09:00,4797,2026,final,139043,/match/basketball/2026-07-02/hawkes-bay-hawks-vs-taranaki-airs/4024904/,Played,Hawke's Bay Hawks,Taranaki Airs,65146,65150,74,96,done,1,2026-11-12T09:37:28Z,
 4121594,2026-07-02,00:00,4788,2026,final,143148,/match/basketball/2026-07-02/edmonton-stingers-vs-calgary-surge/4121594/,Played,Edmonton Stingers,Calgary Surge,52100,65029,95,87,done,1,2026-11-12T09:37:23Z,
