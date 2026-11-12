@@ -1,5 +1,5 @@
 ﻿comp_id,season,name,has_quarters,include,games_listed,games_played,games_collected,first_date,last_date,sampled,note,title,url
-2823,2025/2026,Admiral Bet ABA League,yes,yes,250,250,118,2025-10-03,2026-06-12,2026-11-10T21:42:09Z,,Admiral Bet ABA League 2025/2026,/competition/basketball/admiral-bet-aba-league-2026-2027/regular-season/159682/
+2823,2025/2026,Admiral Bet ABA League,yes,yes,250,250,127,2025-10-03,2026-06-12,2026-11-10T21:42:09Z,,Admiral Bet ABA League 2025/2026,/competition/basketball/admiral-bet-aba-league-2026-2027/regular-season/159682/
 2823,2026/2027,Admiral Bet ABA League,yes,yes,70,60,60,2026-10-02,2026-11-09,2026-11-10T21:42:13Z,,Admiral Bet ABA League 2026/2027,/competition/basketball/admiral-bet-aba-league-2026-2027/regular-season/159682/
 6047,2026,Amsterdam,no,yes,25,25,0,2026-06-19,2026-06-21,2026-11-10T21:42:24Z,3 finished games tested: no_scoreboard,Amsterdam 2026,/competition/basketball/amsterdam-2026/final/170281/
 2676,2026,Asian Games,yes,yes,26,26,26,2026-09-10,2026-09-20,2026-11-10T21:42:28Z,,Asian Games 2026 Aichi-Nagoya,/competition/basketball/asian-games-2026-aichi-nagoya/gold-medal/162090/
@@ -8,43 +8,43 @@
 3111,2026,Asian Games,no,yes,36,36,0,2026-09-21,2026-09-25,2026-11-10T21:42:54Z,3 finished games tested: no_scoreboard,Asian Games 2026 Aichi-Nagoya,/competition/basketball/asian-games-2026-aichi-nagoya/final/162108/
 6056,2026,Athens Challenger,no,yes,25,25,0,2026-07-31,2026-08-01,2026-11-10T21:43:04Z,3 finished games tested: no_scoreboard,Athens Challenger 2026,/competition/basketball/athens-challenger-2026/final/170469/
 2892,2026/2027,B. League One,yes,yes,188,187,187,2026-09-22,2026-11-08,2026-11-10T21:43:08Z,,B. League One 2026/2027,/competition/basketball/b-league-one-2026-2027/regular-season/158175/
-1844,2025/2026,B.League,yes,yes,796,796,419,2025-10-03,2026-05-26,2026-11-10T21:43:12Z,,B.League 2025/2026,/competition/basketball/bleague-premier-2026-2027/regular-season/158171/
+1844,2025/2026,B.League,yes,yes,796,796,445,2025-10-03,2026-05-26,2026-11-10T21:43:12Z,,B.League 2025/2026,/competition/basketball/bleague-premier-2026-2027/regular-season/158171/
 1844,2026/2027,B.League Premier,yes,yes,190,190,190,2026-09-22,2026-11-10,2026-11-10T21:43:16Z,,B.League Premier 2026/2027,/competition/basketball/bleague-premier-2026-2027/regular-season/158171/
-2892,2025/2026,B2.League,yes,yes,439,439,202,2025-10-02,2026-05-17,2026-11-10T21:43:20Z,,B2.League 2025/2026,/competition/basketball/b-league-one-2026-2027/regular-season/158175/
-2950,2025/2026,Barmer 2. Basketball Bundesliga ProA,yes,yes,331,331,159,2025-09-26,2026-06-07,2026-11-10T21:43:24Z,,Barmer 2. Basketball Bundesliga ProA 2025/2026,/competition/basketball/barmer-2-basketball-bundesliga-proa-2026-2027/regular-season/156587/
+2892,2025/2026,B2.League,yes,yes,439,439,216,2025-10-02,2026-05-17,2026-11-10T21:43:20Z,,B2.League 2025/2026,/competition/basketball/b-league-one-2026-2027/regular-season/158175/
+2950,2025/2026,Barmer 2. Basketball Bundesliga ProA,yes,yes,331,331,162,2025-09-26,2026-06-07,2026-11-10T21:43:24Z,,Barmer 2. Basketball Bundesliga ProA 2025/2026,/competition/basketball/barmer-2-basketball-bundesliga-proa-2026-2027/regular-season/156587/
 2950,2026/2027,Barmer 2. Basketball Bundesliga ProA,yes,yes,73,73,73,2026-09-25,2026-11-09,2026-11-10T21:43:27Z,,Barmer 2. Basketball Bundesliga ProA 2026/2027,/competition/basketball/barmer-2-basketball-bundesliga-proa-2026-2027/regular-season/156587/
-2825,2025/2026,Basket League,yes,yes,174,174,86,2025-10-04,2026-06-13,2026-11-10T21:43:31Z,,Basket League 2025/2026,/competition/basketball/basket-league-2026-2027/regular-season/164914/
+2825,2025/2026,Basket League,yes,yes,174,174,89,2025-10-04,2026-06-13,2026-11-10T21:43:31Z,,Basket League 2025/2026,/competition/basketball/basket-league-2026-2027/regular-season/164914/
 2825,2026/2027,Basket League,yes,yes,42,42,42,2026-10-03,2026-11-08,2026-11-10T21:43:35Z,,Basket League 2026/2027,/competition/basketball/basket-league-2026-2027/regular-season/164914/
 2889,2026/2027,Basket Liga Kobiet,yes,yes,42,42,42,2026-09-26,2026-11-05,2026-11-10T21:43:39Z,,Basket Liga Kobiet 2026/2027,/competition/basketball/basket-liga-kobiet-2026-2027/regular-season/160291/
 4738,2025,Basketball Africa League,yes,yes,48,48,48,2025-04-05,2025-06-14,2026-11-10T21:43:43Z,,Basketball Africa League 2025,/competition/basketball/basketball-africa-league-2026/final/150370/
-4738,2026,Basketball Africa League,yes,yes,42,42,34,2026-03-27,2026-05-31,2026-11-10T21:43:46Z,,Basketball Africa League 2026,/competition/basketball/basketball-africa-league-2026/final/150370/
+4738,2026,Basketball Africa League,yes,yes,42,42,41,2026-03-27,2026-05-31,2026-11-10T21:43:46Z,,Basketball Africa League 2026,/competition/basketball/basketball-africa-league-2026/final/150370/
 2883,2025/2026,Basketball Austria Cup,yes,yes,23,23,16,2025-09-20,2026-01-04,2026-11-10T21:43:50Z,,Basketball Austria Cup 2025/2026,/competition/basketball/basketball-austria-cup-2026-2027/round-1/159675/
 2883,2026/2027,Basketball Austria Cup,yes,yes,3,3,3,2026-09-26,2026-09-26,2026-11-10T21:43:54Z,,Basketball Austria Cup 2026/2027,/competition/basketball/basketball-austria-cup-2026-2027/round-1/159675/
-2568,2025/2026,Basketball Champions League,yes,yes,198,197,103,2025-09-19,2026-05-09,2026-11-10T21:43:57Z,,Basketball Champions League 2025/2026,/competition/basketball/basketball-champions-league-2026-2027/regular-season/156392/
+2568,2025/2026,Basketball Champions League,yes,yes,198,197,107,2025-09-19,2026-05-09,2026-11-10T21:43:57Z,,Basketball Champions League 2025/2026,/competition/basketball/basketball-champions-league-2026-2027/regular-season/156392/
 2568,2026/2027,Basketball Champions League,yes,yes,74,74,74,2026-09-14,2026-11-10,2026-11-10T21:44:01Z,,Basketball Champions League 2026/2027,/competition/basketball/basketball-champions-league-2026-2027/regular-season/156392/
-2828,2025/2026,Basketligaen,yes,yes,205,205,103,2025-09-18,2026-05-25,2026-11-10T21:44:05Z,,Basketligaen 2025/2026,/competition/basketball/basketligaen-2026-2027/regular-season/158060/
+2828,2025/2026,Basketligaen,yes,yes,205,205,113,2025-09-18,2026-05-25,2026-11-10T21:44:05Z,,Basketligaen 2025/2026,/competition/basketball/basketligaen-2026-2027/regular-season/158060/
 2828,2026/2027,Basketligaen,yes,yes,57,57,57,2026-09-17,2026-11-08,2026-11-10T21:44:09Z,,Basketligaen 2026/2027,/competition/basketball/basketligaen-2026-2027/regular-season/158060/
 6055,2026,Batam City Challenger,no,yes,25,25,0,2026-07-25,2026-07-26,2026-11-10T21:44:20Z,3 finished games tested: no_scoreboard,Batam City Challenger 2026,/competition/basketball/batam-city-challenger-2026/final/170464/
 2832,2025/2026,BCLA,yes,yes,49,49,5,2025-12-10,2026-04-19,2026-11-10T21:44:23Z,,BCLA 2025/2026,/competition/basketball/bcla-2026-2027/group-stage/165704/
 6064,2026,Beijing Challenger,no,yes,25,25,0,2026-08-22,2026-08-23,2026-11-10T21:44:34Z,3 finished games tested: no_scoreboard,Beijing Challenger 2026,/competition/basketball/beijing-challenger-2026/final/170530/
 6076,2026,Belo Horizonte Challenger,no,yes,25,25,0,2026-11-07,2026-11-08,2026-11-10T21:44:45Z,3 finished games tested: no_scoreboard,Belo Horizonte Challenger 2026,/competition/basketball/belo-horizonte-challenger-2026/final/170591/
-1597,2025/2026,Betclic Élite,yes,yes,266,266,148,2025-09-26,2026-06-23,2026-11-10T21:44:49Z,,Betclic Élite 2025/2026,/competition/basketball/betclic-elite-2026-2027/regular-season/163958/
+1597,2025/2026,Betclic Élite,yes,yes,266,266,150,2025-09-26,2026-06-23,2026-11-10T21:44:49Z,,Betclic Élite 2025/2026,/competition/basketball/betclic-elite-2026-2027/regular-season/163958/
 1597,2026/2027,Betclic Élite,yes,yes,58,58,58,2026-09-25,2026-11-08,2026-11-10T21:44:53Z,,Betclic Élite 2026/2027,/competition/basketball/betclic-elite-2026-2027/regular-season/163958/
-2813,2025/2026,Betsson LKL,yes,yes,166,166,110,2025-09-20,2026-06-13,2026-11-10T21:44:57Z,,Betsson LKL 2025/2026,/competition/basketball/betsson-lkl-2026-2027/regular-season/161054/
+2813,2025/2026,Betsson LKL,yes,yes,166,166,112,2025-09-20,2026-06-13,2026-11-10T21:44:57Z,,Betsson LKL 2025/2026,/competition/basketball/betsson-lkl-2026-2027/regular-season/161054/
 2813,2026/2027,Betsson LKL,yes,yes,44,44,44,2026-09-17,2026-11-08,2026-11-10T21:45:00Z,,Betsson LKL 2026/2027,/competition/basketball/betsson-lkl-2026-2027/regular-season/161054/
-1080,2025/2026,BKT EuroCup,yes,yes,195,195,85,2025-09-30,2026-04-28,2026-11-10T21:45:04Z,,BKT EuroCup 2025/2026,/competition/basketball/bkt-eurocup-2026-2027/regular-season/156578/
+1080,2025/2026,BKT EuroCup,yes,yes,195,195,87,2025-09-30,2026-04-28,2026-11-10T21:45:04Z,,BKT EuroCup 2025/2026,/competition/basketball/bkt-eurocup-2026-2027/regular-season/156578/
 1080,2026/2027,BKT EuroCup,yes,yes,104,104,104,2026-09-29,2026-11-10,2026-11-10T21:45:08Z,,BKT EuroCup 2026/2027,/competition/basketball/bkt-eurocup-2026-2027/regular-season/156578/
 6063,2026,Bordeaux Challenger,no,yes,25,25,0,2026-08-21,2026-08-22,2026-11-10T21:45:19Z,3 finished games tested: no_scoreboard,Bordeaux Challenger 2026,/competition/basketball/bordeaux-challenger-2026/final/170525/
 6045,2026,Brasília Challenger,no,yes,25,25,0,2026-05-27,2026-05-29,2026-11-10T21:45:29Z,3 finished games tested: no_scoreboard,Brasília Challenger 2026,/competition/basketball/brasilia-challenger-2026/final/170400/
-5487,2026,BSN,yes,yes,245,244,226,2026-03-22,2026-08-24,2026-11-10T21:45:33Z,,BSN 2026,/competition/basketball/bsn-2026/final/144331/
+5487,2026,BSN,yes,yes,245,244,239,2026-03-22,2026-08-24,2026-11-10T21:45:33Z,,BSN 2026,/competition/basketball/bsn-2026/final/144331/
 6073,2026,Bucharest,no,yes,25,25,0,2026-10-10,2026-10-11,2026-11-10T21:45:44Z,3 finished games tested: no_scoreboard,Bucharest 2026,/competition/basketball/bucharest-2026/final/170315/
 4788,2025,CEBL,yes,yes,127,127,127,2025-05-12,2025-08-25,2026-11-10T21:45:48Z,,CEBL 2025,/competition/basketball/cebl-2026/final/143148/
 4788,2026,CEBL,yes,yes,128,127,127,2026-05-09,2026-08-15,2026-11-10T21:45:52Z,,CEBL 2026,/competition/basketball/cebl-2026/final/143148/
 5747,2026,Centrobasket Women,yes,yes,22,22,22,2026-07-12,2026-07-19,2026-11-10T21:45:55Z,,Centrobasket Women 2026 Nicaragua,/competition/basketball/centrobasket-women-2026-nicaragua/final/158142/
-4696,2025/2026,Chance ŽBL,yes,yes,139,139,53,2025-09-26,2026-04-26,2026-11-10T21:45:59Z,,Chance ŽBL 2025/2026,/competition/basketball/chance-zbl-2026-2027/regular-season/157865/
+4696,2025/2026,Chance ŽBL,yes,yes,139,139,65,2025-09-26,2026-04-26,2026-11-10T21:45:59Z,,Chance ŽBL 2025/2026,/competition/basketball/chance-zbl-2026-2027/regular-season/157865/
 4696,2026/2027,Chance ŽBL,yes,yes,33,33,33,2026-09-25,2026-10-31,2026-11-10T21:46:03Z,,Chance ŽBL 2026/2027,/competition/basketball/chance-zbl-2026-2027/regular-season/157865/
 6039,2026,Chengdu,no,yes,19,19,0,2026-05-02,2026-05-03,2026-11-10T21:46:14Z,3 finished games tested: no_scoreboard,Chengdu 2026,/competition/basketball/chengdu-2026/final/170262/
-2784,2025/2026,Chinese Basketball Association,yes,yes,453,453,124,2025-12-12,2026-06-05,2026-11-10T21:46:18Z,,Chinese Basketball Association 2025/2026,/competition/basketball/chinese-basketball-association-2026-2027/regular-season/165059/
+2784,2025/2026,Chinese Basketball Association,yes,yes,453,453,146,2025-12-12,2026-06-05,2026-11-10T21:46:18Z,,Chinese Basketball Association 2025/2026,/competition/basketball/chinese-basketball-association-2026-2027/regular-season/165059/
 2784,2026/2027,Chinese Basketball Association,yes,yes,80,80,80,2026-10-16,2026-11-03,2026-11-10T21:46:21Z,,Chinese Basketball Association 2026/2027,/competition/basketball/chinese-basketball-association-2026-2027/regular-season/165059/
 3697,2026,Commonwealth Games,no,yes,36,36,0,2026-07-24,2026-07-29,2026-11-10T21:46:32Z,3 finished games tested: no_scoreboard,Commonwealth Games 2026 Glasgow,/competition/basketball/commonwealth-games-2026-glasgow/gold-medal/152776/
 3698,2026,Commonwealth Games,no,yes,36,36,0,2026-07-24,2026-07-29,2026-11-10T21:46:43Z,3 finished games tested: no_scoreboard,Commonwealth Games 2026 Glasgow,/competition/basketball/commonwealth-games-2026-glasgow/gold-medal/152782/
@@ -68,9 +68,9 @@
 6075,2026,Dubai,no,yes,22,22,0,2026-11-06,2026-11-07,2026-11-10T21:49:09Z,3 finished games tested: no_scoreboard,Dubai 2026,/competition/basketball/dubai-2026/final/170326/
 4947,2025/2026,East Asia Super League,yes,yes,42,42,14,2025-10-08,2026-03-22,2026-11-10T21:49:14Z,,East Asia Super League 2025/2026,/competition/basketball/east-asia-super-league-2026-2027/group-stage/167446/
 4947,2026/2027,East Asia Super League,yes,yes,10,10,10,2026-10-03,2026-11-05,2026-11-10T21:49:19Z,,East Asia Super League 2026/2027,/competition/basketball/east-asia-super-league-2026-2027/group-stage/167446/
-1074,2025/2026,easyCredit BBL,yes,yes,338,338,169,2025-09-26,2026-06-21,2026-11-10T21:49:24Z,,easyCredit BBL 2025/2026,/competition/basketball/easycredit-bbl-2026-2027/regular-season/156829/
+1074,2025/2026,easyCredit BBL,yes,yes,338,338,182,2025-09-26,2026-06-21,2026-11-10T21:49:24Z,,easyCredit BBL 2025/2026,/competition/basketball/easycredit-bbl-2026-2027/regular-season/156829/
 1074,2026/2027,easyCredit BBL,yes,yes,70,69,69,2026-09-18,2026-11-09,2026-11-10T21:49:29Z,,easyCredit BBL 2026/2027,/competition/basketball/easycredit-bbl-2026-2027/regular-season/156829/
-4679,2025/2026,ENBL,yes,yes,124,120,58,2025-09-23,2026-04-23,2026-11-10T21:49:34Z,,ENBL 2025/2026,/competition/basketball/enbl-2026-2027/regular-season/164247/
+4679,2025/2026,ENBL,yes,yes,124,120,60,2025-09-23,2026-04-23,2026-11-10T21:49:34Z,,ENBL 2025/2026,/competition/basketball/enbl-2026-2027/regular-season/164247/
 4679,2026/2027,ENBL,yes,yes,31,31,31,2026-09-23,2026-11-04,2026-11-10T21:49:39Z,,ENBL 2026/2027,/competition/basketball/enbl-2026-2027/regular-season/164247/
 1537,2025,Eurobasket,yes,yes,76,76,76,2025-08-27,2025-09-14,2026-11-10T21:49:44Z,,Eurobasket 2025,/competition/basketball/eurobasket-2025/final/120607/
 1542,2025,Eurobasket Qualifiers,yes,yes,32,32,32,2025-02-20,2025-02-24,2026-11-10T21:49:48Z,,Eurobasket Qualifiers 2025,/competition/basketball/eurobasket-qualifiers-2029/round-2/135762/
@@ -80,13 +80,13 @@
 2820,2026,Eurobasket U20,yes,yes,56,56,56,2026-07-11,2026-07-19,2026-11-10T21:50:08Z,,Eurobasket U20 2026 Slovenia,/competition/basketball/eurobasket-u20-2026-slovenia/final/149174/
 2605,2025,Eurobasket Women,yes,yes,36,36,36,2025-06-18,2025-06-29,2026-11-10T21:50:13Z,,Eurobasket Women 2025 Czechia/Germany/Italy/Greece,/competition/basketball/eurobasket-women-2025-czechia-germany-italy-greece/final/119645/
 2606,2025,EuroBasket Women Qualifiers,yes,yes,36,36,36,2025-02-06,2025-02-09,2026-11-10T21:50:18Z,,EuroBasket Women Qualifiers 2025 Czechia/Germany/Greece/Italy,/competition/basketball/eurobasket-women-qualifiers-2027-belgium-finland-sweden-lithuania/round-2/134654/
-2608,2025/2026,EuroCup Women,yes,yes,216,215,154,2025-09-18,2026-04-09,2026-11-10T21:50:23Z,,EuroCup Women 2025/2026,/competition/basketball/eurocup-women-2026-2027/regular-season/158302/
+2608,2025/2026,EuroCup Women,yes,yes,216,215,155,2025-09-18,2026-04-09,2026-11-10T21:50:23Z,,EuroCup Women 2025/2026,/competition/basketball/eurocup-women-2026-2027/regular-season/158302/
 2608,2026/2027,EuroCup Women,yes,yes,106,106,106,2026-09-23,2026-11-04,2026-11-10T21:50:28Z,,EuroCup Women 2026/2027,/competition/basketball/eurocup-women-2026-2027/regular-season/158302/
-1012,2025/2026,Euroleague,yes,yes,402,402,186,2025-09-30,2026-05-24,2026-11-10T21:50:33Z,,Euroleague 2025/2026,/competition/basketball/euroleague-2026-2027/regular-season/156050/
+1012,2025/2026,Euroleague,yes,yes,402,402,194,2025-09-30,2026-05-24,2026-11-10T21:50:33Z,,Euroleague 2025/2026,/competition/basketball/euroleague-2026-2027/regular-season/156050/
 1012,2026/2027,EuroLeague,yes,yes,100,100,100,2026-09-24,2026-11-06,2026-11-10T21:50:38Z,,EuroLeague 2026/2027,/competition/basketball/euroleague-2026-2027/regular-season/156050/
 2607,2025/2026,EuroLeague Women,yes,yes,110,110,64,2025-09-17,2026-04-19,2026-11-10T21:50:43Z,,EuroLeague Women 2025/2026,/competition/basketball/euroleague-women-2026-2027/regular-season/158266/
 2607,2026/2027,EuroLeague Women,yes,yes,40,40,40,2026-09-23,2026-11-04,2026-11-10T21:50:48Z,,EuroLeague Women 2026/2027,/competition/basketball/euroleague-women-2026-2027/regular-season/158266/
-2826,2025/2026,Favbet Premijer liga,yes,yes,217,217,116,2025-09-26,2026-06-10,2026-11-10T21:50:53Z,,Favbet Premijer liga 2025/2026,/competition/basketball/supersport-premijer-liga-2026-2027/regular-season/161984/
+2826,2025/2026,Favbet Premijer liga,yes,yes,217,217,122,2025-09-26,2026-06-10,2026-11-10T21:50:53Z,,Favbet Premijer liga 2025/2026,/competition/basketball/supersport-premijer-liga-2026-2027/regular-season/161984/
 3833,2025,FIBA 3x3 World Cup,no,yes,52,52,0,2025-06-23,2025-06-29,2026-11-11T02:20:32Z,8 finished games tested: no_scoreboard,FIBA 3x3 World Cup 2025 Mongolia,/competition/basketball/fiba-3x3-world-cup-2026-poland/final/150086/
 3834,2025,FIBA 3x3 World Cup,no,yes,52,52,0,2025-06-23,2025-06-29,2026-11-11T02:20:56Z,8 finished games tested: no_scoreboard,FIBA 3x3 World Cup 2025 Mongolia,/competition/basketball/fiba-3x3-world-cup-2026-poland/final/150080/
 3833,2026,FIBA 3x3 World Cup,no,yes,52,52,0,2026-06-01,2026-06-07,2026-11-11T02:21:19Z,8 finished games tested: no_scoreboard,FIBA 3x3 World Cup 2026 Poland,/competition/basketball/fiba-3x3-world-cup-2026-poland/final/150086/
@@ -112,42 +112,42 @@
 6057,2026,Hanchuan Challenger,no,yes,25,25,0,2026-08-01,2026-08-02,2026-11-10T21:54:02Z,3 finished games tested: no_scoreboard,Hanchuan Challenger 2026,/competition/basketball/hanchuan-challenger-2026/final/170474/
 6036,2026,Hengqin Challenger,no,yes,25,25,0,2026-04-11,2026-04-12,2026-11-10T21:54:15Z,3 finished games tested: no_scoreboard,Hengqin Challenger 2026,/competition/basketball/hengqin-challenger-2026/final/170345/
 6068,2026,Hongcheon Challenger,no,yes,25,25,0,2026-09-18,2026-09-19,2026-11-10T21:54:30Z,3 finished games tested: no_scoreboard,Hongcheon Challenger 2026,/competition/basketball/hongcheon-challenger-2026/final/170553/
-2807,2025/2026,Hungry Jack's NBL,yes,yes,178,178,72,2025-09-18,2026-04-05,2026-11-10T21:54:34Z,,Hungry Jack's NBL 2025/2026,/competition/basketball/hungry-jacks-nbl-2026-2027/regular-season/156838/
+2807,2025/2026,Hungry Jack's NBL,yes,yes,178,178,74,2025-09-18,2026-04-05,2026-11-10T21:54:34Z,,Hungry Jack's NBL 2025/2026,/competition/basketball/hungry-jacks-nbl-2026-2027/regular-season/156838/
 2807,2026/2027,Hungry Jack's NBL,yes,yes,59,59,59,2026-09-19,2026-11-08,2026-11-10T21:54:39Z,,Hungry Jack's NBL 2026/2027,/competition/basketball/hungry-jacks-nbl-2026-2027/regular-season/156838/
-2888,2025/2026,Kadınlar Basketbol Süper Ligi,yes,yes,125,105,32,2025-10-04,2026-04-04,2026-11-10T21:54:44Z,,Kadınlar Basketbol Süper Ligi 2025/2026,/competition/basketball/kadinlar-basketbol-super-ligi-2026-2027/regular-season/160919/
+2888,2025/2026,Kadınlar Basketbol Süper Ligi,yes,yes,125,105,34,2025-10-04,2026-04-04,2026-11-10T21:54:44Z,,Kadınlar Basketbol Süper Ligi 2025/2026,/competition/basketball/kadinlar-basketbol-super-ligi-2026-2027/regular-season/160919/
 2888,2026/2027,Kadınlar Basketbol Süper Ligi,yes,yes,35,35,35,2026-09-26,2026-11-07,2026-11-10T21:54:49Z,,Kadınlar Basketbol Süper Ligi 2026/2027,/competition/basketball/kadinlar-basketbol-super-ligi-2026-2027/regular-season/160919/
 6066,2026,Kaohsiung City Challenger,no,yes,25,25,0,2026-09-05,2026-09-06,2026-11-10T21:55:04Z,3 finished games tested: no_scoreboard,Kaohsiung City Challenger 2026,/competition/basketball/kaohsiung-city-challenger-2026/final/170535/
-2511,2025/2026,KBL,yes,yes,288,288,114,2025-10-03,2026-05-13,2026-11-10T21:55:08Z,,KBL 2025/2026,/competition/basketball/kbl-2026-2027/regular-season/161550/
+2511,2025/2026,KBL,yes,yes,288,288,121,2025-10-03,2026-05-13,2026-11-10T21:55:08Z,,KBL 2025/2026,/competition/basketball/kbl-2026-2027/regular-season/161550/
 2511,2026/2027,KBL,yes,yes,63,63,63,2026-10-03,2026-11-10,2026-11-10T21:55:13Z,,KBL 2026/2027,/competition/basketball/kbl-2026-2027/regular-season/161550/
-2822,2025/2026,Kooperativa NBL,yes,yes,257,257,140,2025-09-26,2026-06-15,2026-11-10T21:55:18Z,,Kooperativa NBL 2025/2026,/competition/basketball/maxa-nbl-2026-2027/regular-season/158052/
+2822,2025/2026,Kooperativa NBL,yes,yes,257,257,146,2025-09-26,2026-06-15,2026-11-10T21:55:18Z,,Kooperativa NBL 2025/2026,/competition/basketball/maxa-nbl-2026-2027/regular-season/158052/
 2882,2025/2026,La Boulangère Wonderligue,yes,yes,159,159,72,2025-10-01,2026-05-17,2026-11-10T21:55:23Z,,La Boulangère Wonderligue 2025/2026,/competition/basketball/la-boulangere-wonderligue-2026-2027/regular-season/160935/
 2882,2026/2027,La Boulangère Wonderligue,yes,yes,46,46,46,2026-09-26,2026-11-07,2026-11-10T21:55:28Z,,La Boulangère Wonderligue 2026/2027,/competition/basketball/la-boulangere-wonderligue-2026-2027/regular-season/160935/
 5492,2026/2027,La Liga Femenina,yes,yes,60,60,54,2026-10-10,2026-11-10,2026-11-10T21:55:38Z,,La Liga Femenina 2026/2027,/competition/basketball/la-liga-femenina-2026-2027/apertura/164932/
 6051,2026,La Réunion Challenger,no,yes,25,25,0,2026-06-27,2026-06-28,2026-11-10T21:55:52Z,3 finished games tested: no_scoreboard,La Réunion Challenger 2026,/competition/basketball/la-reunion-challenger-2026/final/170415/
 6061,2026,Lausanne,no,yes,22,22,0,2026-08-14,2026-08-15,2026-11-10T21:56:06Z,3 finished games tested: no_scoreboard,Lausanne 2026,/competition/basketball/lausanne-2026/final/170294/
-2887,2025/2026,Lega Basket Femminile,yes,yes,131,131,46,2025-10-04,2026-04-26,2026-11-10T21:56:11Z,,Lega Basket Femminile 2025/2026,/competition/basketball/lega-basket-femminile-2026-2027/regular-season/160942/
+2887,2025/2026,Lega Basket Femminile,yes,yes,131,131,50,2025-10-04,2026-04-26,2026-11-10T21:56:11Z,,Lega Basket Femminile 2025/2026,/competition/basketball/lega-basket-femminile-2026-2027/regular-season/160942/
 2887,2026/2027,Lega Basket Femminile,yes,yes,35,35,35,2026-10-03,2026-11-07,2026-11-10T21:56:16Z,,Lega Basket Femminile 2026/2027,/competition/basketball/lega-basket-femminile-2026-2027/regular-season/160942/
-2808,2025/2026,Lega Basket Serie A,yes,yes,270,240,135,2025-10-05,2026-06-18,2026-11-10T21:56:21Z,,Lega Basket Serie A 2025/2026,/competition/basketball/lega-basket-serie-a-2026-2027/regular-season/160873/
+2808,2025/2026,Lega Basket Serie A,yes,yes,270,240,141,2025-10-05,2026-06-18,2026-11-10T21:56:21Z,,Lega Basket Serie A 2025/2026,/competition/basketball/lega-basket-serie-a-2026-2027/regular-season/160873/
 2808,2026/2027,Lega Basket Serie A,yes,yes,56,56,56,2026-09-26,2026-11-09,2026-11-10T21:56:26Z,,Lega Basket Serie A 2026/2027,/competition/basketball/lega-basket-serie-a-2026-2027/regular-season/160873/
 4932,2025/2026,LFB,yes,yes,150,150,60,2025-10-04,2026-05-14,2026-11-10T21:56:31Z,,LFB 2025/2026,/competition/basketball/lfb-2026-2027/regular-season/159059/
 4932,2026/2027,LFB,yes,yes,36,35,35,2026-10-03,2026-11-07,2026-11-10T21:56:36Z,,LFB 2026/2027,/competition/basketball/lfb-2026-2027/regular-season/159059/
 5491,2026/2027,Liga Argentina,yes,yes,82,82,82,2026-10-16,2026-11-10,2026-11-10T21:56:41Z,,Liga Argentina 2026/2027,/competition/basketball/liga-argentina-2026-2027/conferencia-norte/164008/
 2876,2025,Liga caliente.mx LNBP,yes,yes,240,240,240,2025-07-04,2025-11-11,2026-11-10T21:56:46Z,,Liga caliente.mx LNBP 2025,/competition/basketball/liga-calientemx-lnbp-2026/final/168280/
 2876,2026,Liga caliente.mx LNBP,yes,yes,229,229,222,2026-07-24,2026-11-06,2026-11-10T21:56:51Z,,Liga caliente.mx LNBP 2026,/competition/basketball/liga-calientemx-lnbp-2026/final/168280/
-5506,2026,Liga Caliente.mx LNBPF,yes,yes,84,84,61,2026-03-13,2026-05-31,2026-11-10T21:56:56Z,,Liga Caliente.mx LNBPF 2026,/competition/basketball/liga-calientemx-lnbpf-2026/final/142640/
-5508,2026,Liga Chevron CIBACOPA,yes,yes,257,257,142,2026-02-15,2026-06-24,2026-11-10T21:57:01Z,,Liga Chevron CIBACOPA 2026,/competition/basketball/liga-chevron-cibacopa-2026/final/152400/
-1601,2025/2026,Liga Endesa,yes,yes,327,327,182,2025-10-04,2026-06-24,2026-11-10T21:57:06Z,,Liga Endesa 2025/2026,/competition/basketball/liga-endesa-2026-2027/regular-season/161965/
+5506,2026,Liga Caliente.mx LNBPF,yes,yes,84,84,66,2026-03-13,2026-05-31,2026-11-10T21:56:56Z,,Liga Caliente.mx LNBPF 2026,/competition/basketball/liga-calientemx-lnbpf-2026/final/142640/
+5508,2026,Liga Chevron CIBACOPA,yes,yes,257,257,162,2026-02-15,2026-06-24,2026-11-10T21:57:01Z,,Liga Chevron CIBACOPA 2026,/competition/basketball/liga-chevron-cibacopa-2026/final/152400/
+1601,2025/2026,Liga Endesa,yes,yes,327,327,188,2025-10-04,2026-06-24,2026-11-10T21:57:06Z,,Liga Endesa 2025/2026,/competition/basketball/liga-endesa-2026-2027/regular-season/161965/
 1601,2026/2027,Liga Endesa,yes,yes,63,63,63,2026-09-26,2026-11-08,2026-11-10T21:57:11Z,,Liga Endesa 2026/2027,/competition/basketball/liga-endesa-2026-2027/regular-season/161965/
 5493,2026,Liga Federal,no,yes,64,64,0,2026-03-03,2026-06-25,2026-11-11T02:22:07Z,8 finished games tested: no_scoreboard,Liga Federal 2026,/competition/basketball/liga-federal-2026/metropolitana-triangular/161257/
 2880,2025/2026,Liga Femenina Endesa,yes,yes,254,254,112,2025-10-04,2026-05-17,2026-11-10T21:57:30Z,,Liga Femenina Endesa 2025/2026,/competition/basketball/liga-femenina-endesa-2026-2027/regular-season/158238/
 2880,2026/2027,Liga Femenina Endesa,yes,yes,56,56,56,2026-10-03,2026-11-06,2026-11-10T21:57:35Z,,Liga Femenina Endesa 2026/2027,/competition/basketball/liga-femenina-endesa-2026-2027/regular-season/158238/
-1077,2025/2026,Liga Leumit,yes,yes,281,281,136,2025-10-08,2026-06-11,2026-11-10T21:57:40Z,,Liga Leumit 2025/2026,/competition/basketball/liga-leumit-2026-2027/regular-season/159644/
+1077,2025/2026,Liga Leumit,yes,yes,281,281,143,2025-10-08,2026-06-11,2026-11-10T21:57:40Z,,Liga Leumit 2025/2026,/competition/basketball/liga-leumit-2026-2027/regular-season/159644/
 1077,2026/2027,Liga Leumit,yes,yes,35,35,22,2026-10-13,2026-11-10,2026-11-10T21:57:44Z,,Liga Leumit 2026/2027,/competition/basketball/liga-leumit-2026-2027/regular-season/159644/
-4798,2025/2026,Liga OTP Banka,yes,yes,152,152,92,2025-09-26,2026-06-01,2026-11-10T21:57:49Z,,Liga OTP Banka 2025/2026,/competition/basketball/liga-otp-banka-2026-2027/regular-season/162829/
+4798,2025/2026,Liga OTP Banka,yes,yes,152,152,96,2025-09-26,2026-06-01,2026-11-10T21:57:49Z,,Liga OTP Banka 2025/2026,/competition/basketball/liga-otp-banka-2026-2027/regular-season/162829/
 4798,2026/2027,Liga OTP Banka,yes,yes,35,35,35,2026-09-22,2026-11-10,2026-11-10T21:57:54Z,,Liga OTP Banka 2026/2027,/competition/basketball/liga-otp-banka-2026-2027/regular-season/162829/
 5488,2026,Liga Señal Colombia de Baloncesto,yes,yes,60,59,59,2026-09-29,2026-11-09,2026-11-10T21:58:00Z,,Liga Señal Colombia de Baloncesto 2026 II,/competition/basketball/liga-senal-colombia-de-baloncesto-2026-ii/semi-finals/170430/
-5498,2026,Liga UNO,yes,yes,279,278,262,2026-03-25,2026-11-09,2026-11-10T21:58:05Z,,Liga UNO 2026,/competition/basketball/liga-uno-2026/clausura-quarter-finals/161961/
-4787,2025/2026,Liga Uruguaya de Básquetbol,yes,yes,212,205,99,2025-10-10,2026-06-23,2026-11-10T21:58:10Z,,Liga Uruguaya de Básquetbol 2025/2026,/competition/basketball/liga-uruguaya-de-basquetbol-2026-2027/regular-season/169427/
+5498,2026,Liga UNO,yes,yes,279,278,273,2026-03-25,2026-11-09,2026-11-10T21:58:05Z,,Liga UNO 2026,/competition/basketball/liga-uno-2026/clausura-quarter-finals/161961/
+4787,2025/2026,Liga Uruguaya de Básquetbol,yes,yes,212,205,101,2025-10-10,2026-06-23,2026-11-10T21:58:10Z,,Liga Uruguaya de Básquetbol 2025/2026,/competition/basketball/liga-uruguaya-de-basquetbol-2026-2027/regular-season/169427/
 4787,2026/2027,Liga Uruguaya de Básquetbol,yes,yes,31,31,31,2026-10-20,2026-11-10,2026-11-10T21:58:15Z,,Liga Uruguaya de Básquetbol 2026/2027,/competition/basketball/liga-uruguaya-de-basquetbol-2026-2027/regular-season/169427/
 1078,2025/2026,Ligat Athena Winner,yes,yes,133,133,16,2025-09-29,2026-04-30,2026-11-10T21:58:19Z,,Ligat Athena Winner 2025/2026,/competition/basketball/ligat-athena-winner-2026-2027/regular-season/165065/
 1078,2026/2027,Ligat Athena Winner,yes,yes,26,26,5,2026-09-27,2026-11-02,2026-11-11T02:22:17Z,,Ligat Athena Winner 2026/2027,/competition/basketball/ligat-athena-winner-2026-2027/regular-season/165065/
@@ -156,12 +156,12 @@
 6048,2026,Lion City Challenger,no,yes,25,25,0,2026-06-20,2026-06-21,2026-11-10T21:58:58Z,3 finished games tested: no_scoreboard,Lion City Challenger 2026,/competition/basketball/lion-city-challenger-2026/final/170405/
 5507,2026,LMBPF,yes,yes,44,28,1,2026-01-25,2026-03-25,2026-11-10T21:59:03Z,,LMBPF 2026,/competition/basketball/lmbpf-2026/regular-season/139452/
 4799,2025,LNB,yes,yes,176,175,175,2025-04-25,2025-10-29,2026-11-10T21:59:08Z,,LNB 2025,/competition/basketball/lnb-2026/clausura-final/170619/
-2831,2025/2026,LNB,yes,yes,395,395,201,2025-09-25,2026-06-21,2026-11-10T21:59:13Z,,LNB 2025/2026,/competition/basketball/lnb-2026-2027/regular-season/156847/
+2831,2025/2026,LNB,yes,yes,395,395,212,2025-09-25,2026-06-21,2026-11-10T21:59:13Z,,LNB 2025/2026,/competition/basketball/lnb-2026-2027/regular-season/156847/
 4799,2026,LNB,yes,yes,148,147,147,2026-04-14,2026-11-05,2026-11-10T21:59:18Z,,LNB 2026,/competition/basketball/lnb-2026/clausura-final/170619/
 2831,2026/2027,LNB,yes,yes,63,63,63,2026-09-29,2026-11-10,2026-11-10T21:59:23Z,,LNB 2026/2027,/competition/basketball/lnb-2026-2027/regular-season/156847/
-5499,2026,LNB2,yes,yes,159,159,148,2026-03-25,2026-08-15,2026-11-10T21:59:28Z,,LNB2 2026,/competition/basketball/lnb2-2026/final/144021/
+5499,2026,LNB2,yes,yes,159,159,159,2026-03-25,2026-08-15,2026-11-10T21:59:28Z,,LNB2 2026,/competition/basketball/lnb2-2026/final/144021/
 5504,2026,LNBF,yes,yes,20,19,19,2026-10-03,2026-10-24,2026-11-10T21:59:32Z,,LNBF 2026,/competition/basketball/lnbf-2026/quarter-finals/169511/
-4931,2025/2026,LPB,yes,yes,152,152,80,2025-10-04,2026-06-14,2026-11-10T21:59:37Z,,LPB 2025/2026,/competition/basketball/lpb-2026-2027/regular-season/159055/
+4931,2025/2026,LPB,yes,yes,152,152,81,2025-10-04,2026-06-14,2026-11-10T21:59:37Z,,LPB 2025/2026,/competition/basketball/lpb-2026-2027/regular-season/159055/
 4931,2026/2027,LPB,yes,yes,35,35,35,2026-10-02,2026-11-08,2026-11-10T21:59:42Z,,LPB 2026/2027,/competition/basketball/lpb-2026-2027/regular-season/159055/
 6035,2026,Macau,no,yes,25,25,0,2026-10-17,2026-10-18,2026-11-10T21:59:56Z,3 finished games tested: no_scoreboard,Macau 2026,/competition/basketball/macau-2026/final/170217/
 6072,2026,Madrid Challenger,no,yes,25,25,0,2026-10-03,2026-10-04,2026-11-10T22:00:12Z,3 finished games tested: no_scoreboard,Madrid Challenger 2026,/competition/basketball/madrid-challenger-2026/final/170577/
@@ -171,52 +171,52 @@
 2822,2026/2027,Maxa NBL,yes,yes,67,66,66,2026-09-17,2026-11-08,2026-11-10T22:01:00Z,,Maxa NBL 2026/2027,/competition/basketball/maxa-nbl-2026-2027/regular-season/158052/
 5660,2025/2026,Meridianbet KLS,no,yes,252,252,0,2025-10-03,2026-05-31,2026-11-11T02:22:41Z,8 finished games tested: no_scoreboard,Meridianbet KLS 2025/2026,/competition/basketball/meridianbet-kls-2026-2027/regular-season/166105/
 5660,2026/2027,Meridianbet KLS,yes,yes,48,48,46,2026-10-03,2026-11-09,2026-11-10T22:01:23Z,,Meridianbet KLS 2026/2027,/competition/basketball/meridianbet-kls-2026-2027/regular-season/166105/
-933,2025/2026,NBA,yes,yes,1322,1322,450,2025-10-22,2026-06-14,2026-11-10T22:01:28Z,,NBA 2025/2026,/competition/basketball/nba-2026-2027/regular-season/159063/
+933,2025/2026,NBA,yes,yes,1322,1322,486,2025-10-22,2026-06-14,2026-11-10T22:01:28Z,,NBA 2025/2026,/competition/basketball/nba-2026-2027/regular-season/159063/
 933,2026/2027,NBA,yes,yes,154,154,154,2026-10-20,2026-11-10,2026-11-10T22:01:34Z,,NBA 2026/2027,/competition/basketball/nba-2026-2027/regular-season/159063/
-2833,2025/2026,NBA G League,yes,yes,792,792,117,2025-11-08,2026-04-11,2026-11-10T22:01:39Z,,NBA G League 2025/2026,/competition/basketball/nba-g-league-2026-2027/preliminary/164640/
+2833,2025/2026,NBA G League,yes,yes,792,792,144,2025-11-08,2026-04-11,2026-11-10T22:01:39Z,,NBA G League 2025/2026,/competition/basketball/nba-g-league-2026-2027/preliminary/164640/
 2833,2026/2027,NBA G League,yes,yes,25,24,24,2026-11-07,2026-11-10,2026-11-10T22:01:44Z,,NBA G League 2026/2027,/competition/basketball/nba-g-league-2026-2027/preliminary/164640/
 4526,2025/2026,NBA Preseason,yes,yes,65,65,65,2025-10-02,2025-10-18,2026-11-10T22:01:48Z,,NBA Preseason 2025/2026,/competition/basketball/nba-preseason-2026-2027/regular-season/159137/
 4526,2026/2027,NBA Preseason,yes,yes,66,66,66,2026-10-04,2026-10-17,2026-11-10T22:01:53Z,,NBA Preseason 2026/2027,/competition/basketball/nba-preseason-2026-2027/regular-season/159137/
-2830,2025/2026,NBB,yes,yes,439,439,215,2025-10-18,2026-06-07,2026-11-10T22:01:58Z,,NBB 2025/2026,/competition/basketball/nbb-2026-2027/regular-season/164242/
+2830,2025/2026,NBB,yes,yes,439,439,221,2025-10-18,2026-06-07,2026-11-10T22:01:58Z,,NBB 2025/2026,/competition/basketball/nbb-2026-2027/regular-season/164242/
 2830,2026/2027,NBB,yes,yes,54,54,54,2026-10-17,2026-11-10,2026-11-10T22:02:03Z,,NBB 2026/2027,/competition/basketball/nbb-2026-2027/regular-season/164242/
 5975,2026,NBB Pre-Season,yes,yes,12,10,10,2026-10-06,2026-10-09,2026-11-10T22:02:07Z,,NBB Pre-Season 2026,/competition/basketball/nbb-pre-season-2026/regular-round/167444/
-2827,2025/2026,NBL,yes,yes,189,189,94,2025-10-04,2026-06-05,2026-11-10T22:02:12Z,,NBL 2025/2026,/competition/basketball/nbl-2026-2027/regular-season/158157/
+2827,2025/2026,NBL,yes,yes,189,189,99,2025-10-04,2026-06-05,2026-11-10T22:02:12Z,,NBL 2025/2026,/competition/basketball/nbl-2026-2027/regular-season/158157/
 2827,2026/2027,NBL,yes,yes,35,35,31,2026-10-10,2026-11-08,2026-11-10T22:02:21Z,,NBL 2026/2027,/competition/basketball/nbl-2026-2027/regular-season/158157/
 1003,2025/2026,NCAA Division I,no,yes,6319,6300,0,2025-11-03,2026-04-07,2026-11-10T22:02:36Z,3 finished games tested: other_periods (periods: Q1 Q2 TOT),NCAA Division I 2025/2026,/competition/basketball/ncaa-division-i-2026-2027/regular-season/163264/
 1003,2026/2027,NCAA Division I,no,yes,529,527,0,2026-11-01,2026-11-10,2026-11-10T22:02:52Z,3 finished games tested: other_periods (periods: Q1 Q2 TOT),NCAA Division I 2026/2027,/competition/basketball/ncaa-division-i-2026-2027/regular-season/163264/
 1726,2025/2026,NCAA Division I (W),no,yes,6048,6021,0,2025-11-03,2026-04-05,2026-11-10T22:03:06Z,3 finished games tested: other_periods (periods: Q1 Q2 TOT),NCAA Division I (W) 2025/2026,/competition/basketball/ncaa-division-i-w-2026-2027/regular-season/163272/
 1726,2026/2027,NCAA Division I (W),no,yes,543,543,0,2026-11-01,2026-11-10,2026-11-10T22:03:21Z,3 finished games tested: other_periods (periods: Q1 Q2 TOT),NCAA Division I (W) 2026/2027,/competition/basketball/ncaa-division-i-w-2026-2027/regular-season/163272/
 6054,2026,Novi Sad Challenger,no,yes,25,25,0,2026-07-18,2026-07-19,2026-11-10T22:03:36Z,3 finished games tested: no_scoreboard,Novi Sad Challenger 2026,/competition/basketball/novi-sad-challenger-2026/final/170459/
-2818,2025/2026,Orlen Basket Liga,yes,yes,275,275,147,2025-10-03,2026-06-21,2026-11-10T22:03:40Z,,Orlen Basket Liga 2025/2026,/competition/basketball/orlen-basket-liga-2026-2027/regular-season/158222/
+2818,2025/2026,Orlen Basket Liga,yes,yes,275,275,151,2025-10-03,2026-06-21,2026-11-10T22:03:40Z,,Orlen Basket Liga 2025/2026,/competition/basketball/orlen-basket-liga-2026-2027/regular-season/158222/
 2818,2026/2027,Orlen Basket Liga,yes,yes,48,48,48,2026-10-02,2026-11-08,2026-11-10T22:03:45Z,,Orlen Basket Liga 2026/2027,/competition/basketball/orlen-basket-liga-2026-2027/regular-season/158222/
-2889,2025/2026,Orlen Basket Liga Kobiet,yes,yes,163,163,48,2025-10-04,2026-04-19,2026-11-10T22:03:50Z,,Orlen Basket Liga Kobiet 2025/2026,/competition/basketball/basket-liga-kobiet-2026-2027/regular-season/160291/
+2889,2025/2026,Orlen Basket Liga Kobiet,yes,yes,163,163,52,2025-10-04,2026-04-19,2026-11-10T22:03:50Z,,Orlen Basket Liga Kobiet 2025/2026,/competition/basketball/basket-liga-kobiet-2026-2027/regular-season/160291/
 5722,2025/2026,P. League+,no,yes,59,59,0,2025-10-26,2026-06-18,2026-11-11T02:23:06Z,8 finished games tested: no_scoreboard,P. League+ 2025/2026,/competition/basketball/p-league-plus-2026-2027/regular-season/169676/
 5722,2026/2027,P. League+,no,yes,3,3,0,2026-10-25,2026-11-01,2026-11-10T22:04:19Z,3 finished games tested: no_scoreboard,P. League+ 2026/2027,/competition/basketball/p-league-plus-2026-2027/regular-season/169676/
-4793,2026,PBA Commissioner's Cup,yes,yes,103,103,76,2026-03-11,2026-06-17,2026-11-10T22:04:24Z,,PBA Commissioner's Cup 2026,/competition/basketball/pba-commissioners-cup-2026/final/143527/
+4793,2026,PBA Commissioner's Cup,yes,yes,103,103,82,2026-03-11,2026-06-17,2026-11-10T22:04:24Z,,PBA Commissioner's Cup 2026,/competition/basketball/pba-commissioners-cup-2026/final/143527/
 4794,2025,PBA Philippine Cup,yes,yes,91,91,89,2025-04-04,2025-07-25,2026-11-10T22:04:29Z,,PBA Philippine Cup 2025,/competition/basketball/pba-philippine-cup-2025-2026/final/134740/
 4794,2025/2026,PBA Philippine Cup,yes,yes,89,89,44,2025-10-05,2026-02-01,2026-11-10T22:04:34Z,,PBA Philippine Cup 2025/2026,/competition/basketball/pba-philippine-cup-2025-2026/final/134740/
 6069,2026,Phoenix Challenger,no,yes,25,25,0,2026-09-19,2026-09-21,2026-11-10T22:04:48Z,3 finished games tested: no_scoreboard,Phoenix Challenger 2026,/competition/basketball/phoenix-challenger-2026/final/170562/
 3072,2025/2026,Playoffs 1/2,yes,yes,2,2,2,2026-05-16,2026-05-20,2026-11-10T22:04:57Z,,Playoffs 1/2 2025/2026,/competition/basketball/playoffs-1-2-2025-2026/relegation-promotion-playoff/151154/
 3805,2025/2026,Playoffs 1/2,yes,yes,2,2,2,2026-04-27,2026-04-29,2026-11-10T22:04:52Z,,Playoffs 1/2 2025/2026,/competition/basketball/playoffs-1-2-2025-2026/relegation-promotion-playoff/149870/
-2875,2025/2026,Premier Liga,yes,yes,187,187,92,2025-09-26,2026-06-02,2026-11-10T22:05:02Z,,Premier Liga 2025/2026,/competition/basketball/premier-liga-2026-2027/regular-season/165303/
+2875,2025/2026,Premier Liga,yes,yes,187,187,99,2025-09-26,2026-06-02,2026-11-10T22:05:02Z,,Premier Liga 2025/2026,/competition/basketball/premier-liga-2026-2027/regular-season/165303/
 2875,2026/2027,Premier Liga,yes,yes,47,46,46,2026-09-25,2026-11-10,2026-11-10T22:05:07Z,,Premier Liga 2026/2027,/competition/basketball/premier-liga-2026-2027/regular-season/165303/
 4797,2025,Sal's NBL,yes,yes,137,124,124,2025-03-12,2025-07-20,2026-11-10T22:05:11Z,,Sal's NBL 2025,/competition/basketball/sals-nbl-2026/final/139043/
 4797,2026,Sal's NBL,yes,yes,115,115,115,2026-04-09,2026-08-09,2026-11-10T22:05:16Z,,Sal's NBL 2026,/competition/basketball/sals-nbl-2026/final/139043/
 6067,2026,Sansar Challenger,no,yes,25,25,0,2026-09-05,2026-09-06,2026-11-10T22:05:30Z,3 finished games tested: no_scoreboard,Sansar Challenger 2026,/competition/basketball/sansar-challenger-2026/final/170540/
-3899,2025/2026,Serie A2 Old Wild West,yes,yes,426,388,210,2025-09-20,2026-06-14,2026-11-10T22:05:35Z,,Serie A2 Old Wild West 2025/2026,/competition/basketball/serie-a2-old-wild-west-2026-2027/regular-season/160284/
+3899,2025/2026,Serie A2 Old Wild West,yes,yes,426,388,217,2025-09-20,2026-06-14,2026-11-10T22:05:35Z,,Serie A2 Old Wild West 2025/2026,/competition/basketball/serie-a2-old-wild-west-2026-2027/regular-season/160284/
 3899,2026/2027,Serie A2 Old Wild West,yes,yes,79,79,59,2026-09-26,2026-11-08,2026-11-10T22:05:45Z,,Serie A2 Old Wild West 2026/2027,/competition/basketball/serie-a2-old-wild-west-2026-2027/regular-season/160284/
-3900,2025/2026,Serie B Old Wild West,yes,yes,776,775,417,2025-09-20,2026-06-21,2026-11-10T22:05:49Z,,Serie B Old Wild West 2025/2026,/competition/basketball/serie-b-old-wild-west-2026-2027/regular-season/160276/
+3900,2025/2026,Serie B Old Wild West,yes,yes,776,775,433,2025-09-20,2026-06-21,2026-11-10T22:05:49Z,,Serie B Old Wild West 2025/2026,/competition/basketball/serie-b-old-wild-west-2026-2027/regular-season/160276/
 3900,2026/2027,Serie B Old Wild West,yes,yes,126,126,124,2026-09-26,2026-11-08,2026-11-10T22:05:54Z,,Serie B Old Wild West 2026/2027,/competition/basketball/serie-b-old-wild-west-2026-2027/regular-season/160276/
 6044,2026,Shanghai,no,yes,19,19,0,2026-05-23,2026-05-24,2026-11-10T22:06:08Z,3 finished games tested: no_scoreboard,Shanghai 2026,/competition/basketball/shanghai-2026/final/170271/
 6037,2026,Shibuya City Challenger,no,yes,25,25,0,2026-04-18,2026-04-19,2026-11-10T22:06:22Z,3 finished games tested: no_scoreboard,Shibuya City Challenger 2026,/competition/basketball/shibuya-city-challenger-2026/final/170370/
 6062,2026,Singapore Challenger,no,yes,25,25,0,2026-08-15,2026-08-16,2026-11-10T22:06:36Z,3 finished games tested: no_scoreboard,Singapore Challenger 2026,/competition/basketball/singapore-challenger-2026/final/170520/
-5502,2026,SPB,yes,yes,196,195,130,2026-03-07,2026-06-19,2026-11-10T22:06:41Z,,SPB 2026,/competition/basketball/spb-2026/final/151100/
+5502,2026,SPB,yes,yes,196,195,146,2026-03-07,2026-06-19,2026-11-10T22:06:41Z,,SPB 2026,/competition/basketball/spb-2026/final/151100/
 6049,2026,Sukhbaatar Challenger,no,yes,25,25,0,2026-06-23,2026-06-24,2026-11-10T22:06:55Z,3 finished games tested: no_scoreboard,Sukhbaatar Challenger 2026,/competition/basketball/sukhbaatar-challenger-2026/final/170410/
 5436,2025,Super Cup,yes,yes,1,1,1,2025-09-21,2025-09-21,2026-11-10T22:07:00Z,,Super Cup 2025,/competition/basketball/super-cup-2026/final/161549/
 5436,2026,Super Cup,yes,yes,1,1,1,2026-09-17,2026-09-17,2026-11-10T22:07:04Z,,Super Cup 2026,/competition/basketball/super-cup-2026/final/161549/
-2814,2025/2026,Super League 1,yes,yes,258,230,106,2025-09-29,2026-05-25,2026-11-10T22:07:09Z,,Super League 1 2025/2026,/competition/basketball/super-league-1-2026-2027/regular-season/164070/
+2814,2025/2026,Super League 1,yes,yes,258,230,108,2025-09-29,2026-05-25,2026-11-10T22:07:09Z,,Super League 1 2025/2026,/competition/basketball/super-league-1-2026-2027/regular-season/164070/
 2814,2026/2027,Super League 1,yes,yes,54,54,22,2026-10-01,2026-11-10,2026-11-10T22:07:24Z,,Super League 1 2026/2027,/competition/basketball/super-league-1-2026-2027/regular-season/164070/
-2829,2025/2026,Super League Basketball,yes,yes,157,157,87,2025-09-19,2026-05-17,2026-11-10T22:07:28Z,,Super League Basketball 2025/2026,/competition/basketball/super-league-basketball-2026-2027/regular-season/162114/
+2829,2025/2026,Super League Basketball,yes,yes,157,157,90,2025-09-19,2026-05-17,2026-11-10T22:07:28Z,,Super League Basketball 2025/2026,/competition/basketball/super-league-basketball-2026-2027/regular-season/162114/
 2829,2026/2027,Super League Basketball,yes,yes,43,43,43,2026-09-18,2026-11-08,2026-11-10T22:07:34Z,,Super League Basketball 2026/2027,/competition/basketball/super-league-basketball-2026-2027/regular-season/162114/
 2877,2025,Supercopa,yes,yes,3,3,3,2025-09-27,2025-09-28,2026-11-10T22:07:38Z,,Supercopa 2025,/competition/basketball/supercopa-2026/final/162013/
 5495,2025/2026,Supercopa,yes,yes,1,1,1,2026-03-06,2026-03-06,2026-11-10T22:07:48Z,,Supercopa 2025/2026,/competition/basketball/supercopa-2025-2026/final/143612/
@@ -226,11 +226,11 @@
 5503,2026,Superliga Feminina,no,yes,76,76,0,2026-03-08,2026-06-12,2026-11-11T02:23:30Z,8 finished games tested: no_scoreboard,Superliga Feminina 2026,/competition/basketball/superliga-feminina-2026/final/139448/
 2879,2025,Superpokal,yes,yes,1,1,1,2025-09-23,2025-09-23,2026-11-10T22:08:17Z,,Superpokal 2025,/competition/basketball/superpokal-2025/final/131728/
 2826,2026/2027,Supersport Premijer liga,yes,yes,42,42,42,2026-09-26,2026-11-09,2026-11-10T22:08:22Z,,Supersport Premijer liga 2026/2027,/competition/basketball/supersport-premijer-liga-2026-2027/regular-season/161984/
-4521,2025/2026,Svenska Basketligan,yes,yes,197,197,88,2025-09-18,2026-05-07,2026-11-10T22:08:27Z,,Svenska Basketligan 2025/2026,/competition/basketball/svenska-basketligan-2026-2027/regular-season/153624/
+4521,2025/2026,Svenska Basketligan,yes,yes,197,197,92,2025-09-18,2026-05-07,2026-11-10T22:08:27Z,,Svenska Basketligan 2025/2026,/competition/basketball/svenska-basketligan-2026-2027/regular-season/153624/
 4521,2026/2027,Svenska Basketligan,yes,yes,54,54,54,2026-09-25,2026-11-10,2026-11-10T22:08:32Z,,Svenska Basketligan 2026/2027,/competition/basketball/svenska-basketligan-2026-2027/regular-season/153624/
-4796,2025/2026,Tipos SBL,yes,yes,209,208,82,2025-09-27,2026-05-29,2026-11-10T22:08:37Z,,Tipos SBL 2025/2026,/competition/basketball/tipos-sbl-2026-2027/regular-season/158232/
+4796,2025/2026,Tipos SBL,yes,yes,209,208,88,2025-09-27,2026-05-29,2026-11-10T22:08:37Z,,Tipos SBL 2025/2026,/competition/basketball/tipos-sbl-2026-2027/regular-season/158232/
 4796,2026/2027,Tipos SBL,yes,yes,40,40,40,2026-09-24,2026-11-07,2026-11-10T22:08:42Z,,Tipos SBL 2026/2027,/competition/basketball/tipos-sbl-2026-2027/regular-season/158232/
-1075,2025/2026,Türkiye Sigorta Basketbol Süper Ligi,yes,yes,262,262,142,2025-09-26,2026-06-19,2026-11-10T22:08:47Z,,Türkiye Sigorta Basketbol Süper Ligi 2025/2026,/competition/basketball/turkiye-sigorta-basketbol-super-ligi-2026-2027/regular-season/160915/
+1075,2025/2026,Türkiye Sigorta Basketbol Süper Ligi,yes,yes,262,262,145,2025-09-26,2026-06-19,2026-11-10T22:08:47Z,,Türkiye Sigorta Basketbol Süper Ligi 2025/2026,/competition/basketball/turkiye-sigorta-basketbol-super-ligi-2026-2027/regular-season/160915/
 1075,2026/2027,Türkiye Sigorta Basketbol Süper Ligi,yes,yes,56,56,56,2026-09-25,2026-11-09,2026-11-10T22:08:52Z,,Türkiye Sigorta Basketbol Süper Ligi 2026/2027,/competition/basketball/turkiye-sigorta-basketbol-super-ligi-2026-2027/regular-season/160915/
 6059,2026,Uenohara Challenger,no,yes,25,25,0,2026-08-08,2026-08-09,2026-11-10T22:09:06Z,3 finished games tested: no_scoreboard,Uenohara Challenger 2026,/competition/basketball/uenohara-challenger-2026/final/170489/
 6050,2026,Ulaanbaatar,no,yes,19,19,0,2026-06-27,2026-06-28,2026-11-10T22:09:21Z,3 finished games tested: no_scoreboard,Ulaanbaatar 2026,/competition/basketball/ulaanbaatar-2026/final/170285/
@@ -238,17 +238,17 @@
 2091,2026/2027,UNITEL Basket,no,yes,21,21,0,2026-10-23,2026-11-10,2026-11-10T22:09:50Z,3 finished games tested: no_scoreboard,UNITEL Basket 2026/2027,/competition/basketball/unitel-basket-2026-2027/regular-season/168702/
 6038,2026,Utsunomiya,no,yes,22,22,0,2026-04-25,2026-04-26,2026-11-10T22:10:04Z,3 finished games tested: no_scoreboard,Utsunomiya 2026,/competition/basketball/utsunomiya-2026/final/170227/
 6046,2026,Vienna,no,yes,22,22,0,2026-06-12,2026-06-14,2026-11-10T22:10:18Z,3 finished games tested: no_scoreboard,Vienna 2026,/competition/basketball/vienna-2026/final/170276/
-2815,2025/2026,VTB United League,yes,yes,254,254,127,2025-09-28,2026-06-12,2026-11-10T22:10:23Z,,VTB United League 2025/2026,/competition/basketball/vtb-united-league-2026-2027/regular-season/161560/
+2815,2025/2026,VTB United League,yes,yes,254,254,135,2025-09-28,2026-06-12,2026-11-10T22:10:23Z,,VTB United League 2025/2026,/competition/basketball/vtb-united-league-2026-2027/regular-season/161560/
 2815,2026/2027,VTB United League,yes,yes,46,45,45,2026-09-25,2026-11-10,2026-11-10T22:10:28Z,,VTB United League 2026/2027,/competition/basketball/vtb-united-league-2026-2027/regular-season/161560/
 2816,2026/2027,win2day Superliga,yes,yes,45,45,45,2026-09-26,2026-11-08,2026-11-10T22:10:33Z,,win2day Superliga 2026/2027,/competition/basketball/win2day-superliga-2026-2027/regular-season/158046/
 2884,2025,Winner League Cup,yes,yes,32,32,32,2025-09-08,2025-11-08,2026-11-10T22:10:37Z,,Winner League Cup 2025,/competition/basketball/winner-league-cup-2026/final/165023/
 2884,2026,Winner League Cup,yes,yes,26,26,26,2026-09-08,2026-11-09,2026-11-10T22:10:43Z,,Winner League Cup 2026,/competition/basketball/winner-league-cup-2026/final/165023/
-2864,2025/2026,WKBL,yes,yes,100,100,21,2025-11-16,2026-04-26,2026-11-10T22:10:48Z,,WKBL 2025/2026,/competition/basketball/wkbl-2026-2027/regular-season/167694/
+2864,2025/2026,WKBL,yes,yes,100,100,24,2025-11-16,2026-04-26,2026-11-10T22:10:48Z,,WKBL 2025/2026,/competition/basketball/wkbl-2026-2027/regular-season/167694/
 2864,2026/2027,WKBL,yes,yes,8,8,8,2026-11-01,2026-11-09,2026-11-10T22:10:53Z,,WKBL 2026/2027,/competition/basketball/wkbl-2026-2027/regular-season/167694/
 2341,2025,WNBA,yes,yes,311,311,311,2025-05-17,2025-10-11,2026-11-10T22:10:57Z,,WNBA 2025,/competition/basketball/wnba-2026/final/165700/
 2341,2026,WNBA,yes,yes,353,353,353,2026-05-09,2026-11-01,2026-11-10T22:11:02Z,,WNBA 2026,/competition/basketball/wnba-2026/final/165700/
 4680,2026/2027,WNBL,yes,yes,22,22,22,2026-10-15,2026-11-10,2026-11-10T22:11:07Z,,WNBL 2026/2027,/competition/basketball/wnbl-2026-2027/regular-season/156835/
 6042,2026,Xi'an Challenger,no,yes,25,25,0,2026-05-16,2026-05-17,2026-11-10T22:11:22Z,3 finished games tested: no_scoreboard,Xi'an Challenger 2026,/competition/basketball/xian-challenger-2026/final/170390/
 6041,2026,Zadar,no,yes,22,22,0,2026-05-15,2026-05-16,2026-11-10T22:11:36Z,3 finished games tested: no_scoreboard,Zadar 2026,/competition/basketball/zadar-2026/final/170267/
-2874,2025/2026,Zain League,yes,yes,89,89,10,2025-11-11,2026-04-17,2026-11-10T22:11:41Z,,Zain League 2025/2026,/competition/basketball/zain-league-2026-2027/regular-season/167686/
+2874,2025/2026,Zain League,yes,yes,89,89,14,2025-11-11,2026-04-17,2026-11-10T22:11:41Z,,Zain League 2025/2026,/competition/basketball/zain-league-2026-2027/regular-season/167686/
 2874,2026/2027,Zain League,yes,yes,27,26,25,2026-10-04,2026-11-10,2026-11-10T22:11:46Z,,Zain League 2026/2027,/competition/basketball/zain-league-2026-2027/regular-season/167686/
