@@ -82,6 +82,10 @@ it may do from a minutes budget.
   Older games wait for the next month's budget.
 - **Nothing:** a slot stops within seconds if the day's run is already done,
   or if the month has reached 1,950 minutes.
+- **Backup slots:** GitHub sometimes drops a scheduled start, so every slot
+  has a second one 30 minutes later. If the main slot ran, the backup stops
+  within seconds (about one billed minute). If it did not, the backup does
+  the work.
 
 The budget is the collector's own count, kept in `data/usage.csv`. It is
 close to GitHub's meter but not the same thing; Settings, Billing shows the

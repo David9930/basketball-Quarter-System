@@ -6,6 +6,10 @@ on:
     # run" below). Once the backlog is cleared or the budget is spent, only one
     # run a day does any work; the other slots stop within seconds.
     - cron: "17 1,7,13,19 * * *"
+    # Backup for each slot, 30 minutes later. GitHub sometimes drops a
+    # scheduled start. If the main slot ran, the backup stops within seconds;
+    # if it did not, the backup does the work.
+    - cron: "47 1,7,13,19 * * *"
   # A commit that changes .github/run-now starts a run (same as "update").
   push:
     branches: [main]
@@ -73,6 +77,13 @@ jobs:
           if grep -q "^$month,$today.*,\(schedule\|push\)," data/usage.csv 2>/dev/null; then ran_today=true; fi
           backlog=false
           if grep -q '"outcome": "paused' data/last_run.json 2>/dev/null; then backlog=true; fi
+          # Minutes since the last scheduled run finished (a large number if none).
+          since=99999
+          last=$(awk -F, 'NR>1 && ($3=="schedule" || $3=="push") {t=$2} END {print t}' data/usage.csv 2>/dev/null || true)
+          if [ -n "$last" ]; then
+            then_s=$(date -u -d "$last" +%s 2>/dev/null || echo 0)
+            since=$(( ( $(date +%s) - then_s ) / 60 ))
+          fi
           mode=manual; minutes=$MAX_MINUTES; skip=false; extra=""; reason=""
           held=$(gh issue list --state open --limit 100 --json number,title \
                  --jq "[.[] | select(.title==\"$ALERT_TITLE\")][0].number // empty" 2>/dev/null || true)
@@ -95,6 +106,10 @@ jobs:
             if [ "$room" -lt "$minutes" ]; then minutes=$room; fi
             if [ "$minutes" -lt 5 ]; then
               skip=true; reason="This month's minutes budget is used."
+            fi
+            # A backup slot that arrives just after a run has finished is not needed.
+            if [ "$GITHUB_EVENT_NAME" = "schedule" ] && [ "$since" -lt 60 ]; then
+              skip=true; reason="A run finished $since minutes ago, so this backup slot is not needed."
             fi
             if [ -n "$held" ]; then
               skip=true; reason="On hold: issue #$held (\"$ALERT_TITLE\") is open. Close it to resume."
