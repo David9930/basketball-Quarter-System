@@ -110,10 +110,11 @@ stop is never retried blindly. Runs started by hand ignore the hold.
 
 | Reason given | What it means | What to do |
 | --- | --- | --- |
+| The site is sending a notice instead of pages | The site answered with its own short message, such as "Currently we experience technical problems. Please try later". The collector waited and asked again three times first. Nothing was recorded from it | Leave it a few hours, then close the issue. If the same notice comes back run after run, treat it as the site turning the collector away |
 | The site refused the request (HTTP 401/403) | The site is turning the collector away | Leave it a day or more. If it persists, the site no longer accepts this; do not work around it |
 | The site is still asking us to slow down | Repeated 429/503 responses | Wait, then close the issue. Consider a longer `delay_seconds` |
 | robots.txt does not allow ... | The site's rules now exclude a page the collector needs | Stop collecting that page type |
-| Reader check failed | The site changed its page layout, so scores no longer read correctly | Run `probe` to save current pages, update `collector/parse.py` to match, refresh `tests/`, then close the issue |
+| Reader check failed | Pages no longer read as scores: the layout changed, or the site sent something else in place of match reports | Look at the newest files in `probe/examples/`. If the layout changed: run `probe`, update `collector/parse.py` to match, refresh `tests/`, then close the issue |
 | Self-test failed | A code change broke the readers | Undo or fix the change until `python run.py selftest` passes |
 | N requests in a row failed | The site or the network was down | Close the issue to try again |
 
@@ -130,6 +131,9 @@ The checks behind this:
   and puts those games back to be fetched again.
 - **Daily list check.** If a day's list links to games the reader cannot make
   sense of, that day is not recorded and the run stops.
+- **Site notice check.** If the site answers with a short message of its own
+  in place of a page, the collector waits one, two and four minutes, asking
+  again each time, then stops. The message is never read as a blank game.
 
 What nothing here can detect is the schedule itself not firing. If
 `data/run_started.txt` is more than two days old, start a run by hand.

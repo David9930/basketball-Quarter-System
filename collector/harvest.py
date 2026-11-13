@@ -314,8 +314,9 @@ def collect(fetcher, store, cfg, log=print, only=None, recent_days=0):
                     store.touch("schedule", r["date"])
                 raise ReaderAlarm(
                     f"Reader check failed: {len(bad)} of the last {WINDOW} match reports read as blank or "
-                    "wrong, across several leagues that normally have quarter scores. The match page "
-                    "layout has probably changed. Those games were put back to be fetched again.")
+                    "wrong, across several leagues that normally have quarter scores. Either the site is "
+                    "sending something other than match reports or the page layout has changed "
+                    "(see probe/examples/). Those games were put back to be fetched again.")
             if n % int(cfg["harvest"]["save_every"]) == 0:
                 store.save()
             if n % 200 == 0:

@@ -25,12 +25,35 @@ class ReaderAlarm(StopRun):
     """The site's pages no longer read the way they did; stop before bad data is recorded."""
 
 
+class SiteTrouble(StopRun):
+    """The site sent its own short "we are having problems" notice instead of pages."""
+
+
 class BudgetReached(Exception):
     """This run's time or request allowance is used up."""
 
 
 class PageError(Exception):
     """One page could not be fetched; the run carries on."""
+
+
+NOTICE_MAX_CHARS = 600          # a real page runs to tens of thousands of characters
+NOTICE_WORDS = ("technical problem", "try later", "try again", "maintenance", "temporarily",
+                "unavailable", "too many", "overload")
+
+
+def site_notice(text):
+    """Return the site's notice if that is all it sent, otherwise "".
+
+    When the site is unwell it still answers HTTP 200, with one plain line such
+    as "Currently we experience technical problems. Please try later or contact
+    us." That is not a match report or a match list and must never be read as one.
+    """
+    body = " ".join((text or "").split())
+    if body and len(body) <= NOTICE_MAX_CHARS and "<" not in body:
+        if any(word in body.lower() for word in NOTICE_WORDS):
+            return body
+    return ""
 
 
 class Fetcher:
@@ -144,6 +167,9 @@ class Fetcher:
         except requests.RequestException as exc:
             raise StopRun(f"Could not reach the site to read robots.txt ({exc.__class__.__name__}).")
         code = resp.status_code
+        if code == 200 and "user-agent" not in resp.text.lower() and site_notice(resp.text):
+            raise SiteTrouble(f'The site sent a notice instead of robots.txt: "{site_notice(resp.text)}". '
+                              "Nothing was fetched. Try again later.")
         if code == 200:
             self.robots_text = resp.text
             parser.parse(resp.text.splitlines())
@@ -172,18 +198,31 @@ class Fetcher:
                           "The collector does not fetch pages the site rules out, so it stops here.")
         last_error = "no response"
         slowed = False
+        notice = ""
         for attempt in range(self.max_retries + 1):
             self._check_budget()
             try:
                 resp = self._send(url, data)
             except requests.RequestException as exc:
-                last_error, slowed = f"network error ({exc.__class__.__name__})", False
+                last_error, slowed, notice = f"network error ({exc.__class__.__name__})", False, ""
                 time.sleep(min(60, 5 * 2 ** attempt))
                 continue
             code = resp.status_code
             if code == 200:
-                self.consecutive_failures = 0
-                return self._decode(resp)
+                text = self._decode(resp)
+                notice = site_notice(text)
+                if not notice:
+                    self.consecutive_failures = 0
+                    return text
+                # The site's own trouble notice: wait and ask again a few times, then stop.
+                last_error, slowed = "site notice", False
+                if attempt < self.max_retries:
+                    wait = min(self.max_wait, 60.0 * 2 ** attempt)
+                    self.log(f'The site sent a notice instead of the page ("{notice[:90]}"); '
+                             f"waiting {wait:.0f}s.")
+                    time.sleep(wait)
+                continue
+            notice = ""
             if code in (401, 403, 451):
                 raise StopRun(f"The site refused the request (HTTP {code}) for {url}. "
                               "Stopping; a refusal is not retried.")
@@ -199,6 +238,9 @@ class Fetcher:
                 continue
             last_error, slowed = f"HTTP {code}", False
             time.sleep(min(60, 5 * 2 ** attempt))
+        if notice:
+            raise SiteTrouble(f'The site is sending a notice instead of pages: "{notice}". '
+                              "Nothing was recorded from it. Stopping; try again later.")
         if slowed:
             raise StopRun(f"The site is still asking us to slow down ({last_error}). Stopping.")
         self._fail(last_error)

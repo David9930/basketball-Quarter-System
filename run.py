@@ -25,7 +25,7 @@ import yaml
 
 from collector import discover, export, harvest, parse, validate
 from collector import store as st
-from collector.fetch import BudgetReached, Fetcher, StopRun
+from collector.fetch import BudgetReached, Fetcher, StopRun, site_notice
 
 ROOT = Path(__file__).resolve().parent
 
@@ -95,6 +95,16 @@ def selftest():
         for key, value in want.items():
             if got.get(key) != value:
                 problems.append(f"{name}: {key} read as {got.get(key)!r}, expected {value!r}")
+    # The site's own trouble notice must be told apart from a page, and no real page taken for one.
+    notice = "Currently we experience technical problems. Please try later or contact us."
+    if not site_notice(notice):
+        problems.append("the site's trouble notice was not recognised")
+    for name in expected:
+        text = gzip.decompress((ROOT / "tests" / "fixtures" / f"{name}.html.gz").read_bytes()).decode("utf-8")
+        if site_notice(text):
+            problems.append(f"{name}: a real page was taken for a site notice")
+    if site_notice("User-agent: *\nAllow: /") or site_notice(""):
+        problems.append("robots.txt or an empty reply was taken for a site notice")
     for line in problems:
         print("SELF-TEST FAILED  " + line)
     if not problems:
